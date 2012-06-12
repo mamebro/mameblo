@@ -1,0 +1,305 @@
+@charset "UTF-8";
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+body {	
+	color: #000000;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 100%;
+	line-height: 1;
+	letter-spacing: 0em;
+	
+	background: linear-gradient(top, #f19baf 0%, #ffffff 100%);
+	background: -o-linear-gradient(top, #f19baf 0%, #ffffff 100%);
+	background: -moz-linear-gradient(top, #eeeeee 0%, #bbbbbb 100%);
+	background: -webkit-linear-gradient(top, #f19baf 0%, #ffffff 100%);
+	background: -ms-linear-gradient(top, #f19baf 0%, #ffffff 100%);
+}
+
+a {
+	color: #0099fa;
+	text-decoration: none;
+	border-bottom: 1px dotted #666666;
+}
+
+a:hover {
+	color: #0099fa;
+	border-bottom: 1px dotted #000000;
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+	font-weight: normal;
+}
+
+input[type='text'],
+input[type='password'],
+textarea {
+	color: #000000;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 200%;
+	line-height: 1;
+}
+
+input[type='button'],
+input[type='submit'],
+p.button {
+	display: inline-block;
+	padding: 0.5em 1em;
+	
+	color: #ffffff;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 120%;
+	font-weight: bold;
+	border-radius: 3px;
+	border: 1px solid #909090;
+	box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 -1px rgba(255, 255, 255, 0.1);
+	cursor: pointer;
+}
+
+p.button {
+	text-shadow: 0 -1px #909090;
+}
+
+input[type='button'],
+input[type='submit'] {
+	text-shadow: 0 -1px #909090;
+	background-color: transparent;
+}
+
+input[type='button']:hover,
+input[type='submit']:hover,
+p.button:hover {
+	box-shadow: inset 0 1px 16px rgba(0, 0, 0, 0.33);
+}
+
+.clear { zoom: 1; }
+.clear:after { content: ""; display: block; clear: both; }
+
+
+header,
+header hgroup,
+header div,
+div#bg,
+article,
+footer,
+footer p,
+div.blackboard div {
+	position: relative;
+	margin: 0 auto;
+	text-align: justify;
+	display: block;
+}
+
+header,
+header hgroup,
+header div,
+footer {
+	width: 100%;
+}
+
+div#greenboard {
+	width: 960px;
+}
+
+article,
+footer p,
+div.blackboard div {
+	width: 540px;
+}
+
+header hgroup,
+header div,
+footer p,
+div.blackboard div {
+	text-align: center;
+}
+
+div.blackboard {
+	position: absolute;
+	top: 2%;
+	left: 2%;
+	width: 96%;
+	height: 96%;
+	z-index: 100;
+}
+
+
+body.login.false header {
+	background-color: #ffffff;
+	border-bottom: dashed 1px #ffffff;
+}
+
+header {
+	padding: 30px 0;
+}
+
+
+header p.button {
+	padding: 20px 60px;
+	font-size: 140%;
+}
+
+header p.button.signup {
+	background-color: #eeeeee;
+	background: -webkit-linear-gradient(#a40, #830 50%, #720 50%, #610);
+	background: -moz-linear-gradient(#ffcb63, #ffc34a 50%, #ffb016 50%, #ffba30);
+	background: -o-linear-gradient(#a40, #830 50%, #720 50%, #610);
+	background: linear-gradient(#a40, #830 50%, #720 50%, #610);
+}
+
+header p.button.signup:hover {
+	background-color: #19a;
+	background: -webkit-linear-gradient(#c60, #a50 50%, #940 50%, #830);
+	background: -moz-linear-gradient(#c60, #a50 50%, #940 50%, #830);
+	background: -o-linear-gradient(#c60, #a50 50%, #940 50%, #830);
+	background: linear-gradient(#c60, #a50 50%, #940 50%, #830);
+}
+
+header p.button.signin {
+	background-color: #eeeeee;
+	background: -webkit-linear-gradient(#a40, #830 50%, #720 50%, #610);
+	background: -moz-linear-gradient(#5ec6d1, #49c4d1 50%, #0abdd1 50%, #1fbfd1);
+	background: -o-linear-gradient(#a40, #830 50%, #720 50%, #610);
+	background: linear-gradient(#a40, #830 50%, #720 50%, #610);
+}
+
+div#greenboard {
+	margin: 1em auto 0 auto;
+	padding: 2em 0;
+	
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	background: linear-gradient(top, #f19baf 0%, #ffffff 100%);
+	background: -o-linear-gradient(top, #f19baf 0%, #ffffff 100%);
+	background: -moz-linear-gradient(top, #9be64b 0%, #5ca32a 100%);
+	background: -webkit-linear-gradient(top, #f19baf 0%, #ffffff 100%);
+	background: -ms-linear-gradient(top, #f19baf 0%, #ffffff 100%);
+}
+
+article {
+	margin: 0 auto 4px auto;
+	padding: 2em 60px;
+	background-color: rgba(255,255,255,1);
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+}
+
+article h3 {
+	margin-bottom: 1em;
+	
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 120%;
+	font-weight: bold;
+	line-height: 1;
+	letter-spacing: 0em;
+}
+
+article p {
+	margin-bottom: 1em;
+	
+	color: #000000;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 100%;
+	line-height: 1.6;
+	letter-spacing: 0em;
+}
+
+article time {
+	font-size: 80%;
+}
+
+footer {
+	background: linear-gradient(top, #f19baf 0%, #ffffff 100%);
+	background: -o-linear-gradient(top, #f19baf 0%, #ffffff 100%);
+	background: -moz-linear-gradient(top, #bbbbbb 0%, #eeeeee 100%);
+	background: -webkit-linear-gradient(top, #f19baf 0%, #ffffff 100%);
+	background: -ms-linear-gradient(top, #f19baf 0%, #ffffff 100%);
+}
+
+footer p {
+	padding-top: 120px;
+}
+
+div.blackboard {
+	background-color: rgba(255,255,255,0.66);
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+div.blackboard div {
+	margin-top: 80px;
+	padding: 2em 0;
+	background-color: rgba(0,0,0,0.25);
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+div.blackboard label {
+	width: 100%;
+	margin-bottom: 1em;
+	display: block;
+}
+
+div.blackboard label p {
+	margin-bottom: 1em;
+	
+	font-size: 120%;
+	font-weight: bold;
+	line-height: 1.5;
+}
+
+
+div.blackboard p.close {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+background: linear-gradient(top, #f19baf 0%, #ffffff 100%);
+background: -o-linear-gradient(top, #f19baf 0%, #ffffff 100%);
+background: -moz-linear-gradient(top, #f19baf 0%, #ffffff 100%);
+background: -webkit-linear-gradient(top, #f19baf 0%, #ffffff 100%);
+background: -ms-linear-gradient(top, #f19baf 0%, #ffffff 100%);
+
+background: url('') repeat no-repeat repeat-x repeat-y;
+background-color: #ffffff;
+background-image: url('');
+background-repeat: repeat no-repeat repeat-x repeat-y;
+list-style-type: disc;
+
+@media screen and (max-width: 640px){
+
+}
+*/
