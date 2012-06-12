@@ -6,9 +6,10 @@ class User < ActiveRecord::Base
 
 
   VALID_NAME_REGEX = /[a-z]+\z/i
-  validates :name, presence:   true,
-                    format:     { with: VALID_NAME_REGEX },
-                    uniqueness: { case_sensitive: false }
+  validates :name, presence: true,
+  format: { with: VALID_NAME_REGEX },
+  uniqueness: true
+  
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
 end

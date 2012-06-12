@@ -17,6 +17,34 @@ describe User do
 
   it { should be_valid }
 
+  describe "when name is not present" do
+    before { @user.name = " " }
+    it { should_not be_valid }
+  end
+
+  describe "when name is too long" do
+    before { @user.name = "a" * 51 }
+    it { should_not be_valid }
+  end
+
+  describe "when name format is invalid" do
+    it "should be invalid" do
+      addresses = %w[@@@, #, ||, ---]
+      addresses.each do |invalid_address|
+        @user.email = invalid_address
+        @user.should_not be_valid
+      end      
+    end
+  end
+
+  describe "when name is already taken" do
+    before do
+      user_with_same_name = @user.dup
+      user_with_same_name.save
+    end
+    it { should_not be_valid }
+  end
+
   describe "when password is not present" do
     before { @user.password = @user.password_confirmation = " " }
       it { should_not be_valid }
