@@ -1,10 +1,22 @@
 $(document).ready(function() {
 	$("div.blackboard, div.blackboard div.step2, div.blackboard div.step3").hide();
 	
+	setInterval(function(){
 	
-	$("p.button.signup").click(function(){ $("div#signup").fadeIn("slow"); });
-	$("p.button.signin").click(function(){ $("div#signin").fadeIn("slow"); });
-	$("p.close").click(function(){ $("div.blackboard").fadeOut("slow"); });
+		var mode = location.hash;
+		
+		if (mode == "#signup") {
+			$("div#signup").fadeIn("slow");
+		} else if (mode == "#signin") {
+			$("div#signin").fadeIn("slow");
+		}
+	
+	},100);
+	
+	$("p.close").click(function(){
+		$("div.blackboard").fadeOut("slow");
+		location.hash = "";
+	});
 	
 	$("p.button.next").click(function(){
 		$(this).parent("div").fadeOut(200);
