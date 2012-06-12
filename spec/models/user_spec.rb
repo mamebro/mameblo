@@ -3,8 +3,8 @@ require 'spec_helper'
 describe User do
 
   before do
-   @user = User.new(name: "Example User",
-             password: "foobar", password_confirmation: "foobar")
+    @user = User.new(name: "Example User",
+                     password: "foobar", password_confirmation: "foobar")
   end
 
   subject{ @user }
@@ -29,9 +29,9 @@ describe User do
 
   describe "when name format is invalid" do
     it "should be invalid" do
-      addresses = %w[@@@, #, ||, ---]
-      addresses.each do |invalid_address|
-        @user.email = invalid_address
+      username = %w[@@@, #, ||, ---]
+      username.each do |invalid_name|
+        @user.name = invalid_name
         @user.should_not be_valid
       end      
     end
@@ -68,7 +68,6 @@ describe User do
   describe "return value of authenticate method" do
     before { @user.save }
     let(:found_user) { User.find_by_name(@user.name) }
-  end
   
   describe "with valid password" do
     it { should == found_user.authenticate(@user.password) }
@@ -78,8 +77,7 @@ describe User do
     let(:user_for_invalid_password) { found_user.authenticate("invalid") }
 
     it { should_not == user_for_invalid_password }
-    specify { user_for_invalid_password.should be_false }
+      specify { user_for_invalid_password.should be_false }
+    end
   end
-
-
 end
