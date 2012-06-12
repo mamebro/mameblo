@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:mixi="http://mixi-platform.com/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
-  <title>Mameblog</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=980">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta property="og:title" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="" />
+<meta property="og:image" content="" />
+<meta property="og:description" content="" /> 
+<link rel="start index contents" title="" href="">
+<link rel="shortcut icon" href="">
+<title>mameblog</title>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load("jquery","1"); google.load("jqueryui","1"); google.load("swfobject","1"); google.load("feeds","1");</script>
+
+<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
+
 </head>
-<body>
+<body class="login false">
 
 <%= yield %>
 
