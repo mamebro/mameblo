@@ -39,39 +39,11 @@
 <footer>
   <p>mameblog</p>
 </footer>
+
 <div id="signup" class="blackboard signup">
-  <form action="" method="post">
-    <div class="step1">
-      <label>
-				<p>mameblogでのあなたの名前を決めてください!</p>
-				<input type="text" name="name">
-      </label>
-      <label>
-				<p>パスワードを決めてね!</p>
-				<input type="password" name="password">
-      </label>
-      <label>
-				<p>悪いけど、もういちどパスワード教えてくれる？</p>
-				<input type="password" name="confirm">
-      </label>
-      <input type="submit" value="参加する">
-      <img src="/assets/blackboardclose.png" class="close">
-    </div>
-  </form>
+  <%= render 'shared/new_user' %>
 </div>
+    
 <div id="signin" class="blackboard signin">
-  <form action="" method="post">
-    <div class="step1">
-      <label>
-				<p>名前</p>
-				<input type="text" name="name">
-      </label>
-      <label>
-				<p>パスワード</p>
-				<input type="password" name="password">
-      </label>
-      <input type="submit" value="ログインする">
-      <img src="/assets/blackboardclose.png" class="close">
-    </div>
-  </form>
+  <%= render 'shared/signin_user>
 </div>
