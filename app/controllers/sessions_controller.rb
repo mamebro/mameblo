@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       respond_to do |format|
         format.json { render :json => response }
       end
-      render 'new'
+      redirect_to root_path
     end
   end
 
