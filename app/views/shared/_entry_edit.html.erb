@@ -1,0 +1,8 @@
+    <%= form_for(:session, url: sessions_path) do |f| %>
+			<%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    	<%= f.submit "Sign in", class: "blue" %>
+    	<img src="/assets/blackboardclose.png" class="close">
+    <% end %>

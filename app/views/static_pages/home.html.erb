@@ -7,8 +7,14 @@
   	<hgroup>
     	<h1>mameblog</h1>
   	</hgroup>
+  	<nav>
+  		<a href="#edit" class="button blue">Your post</a><a href="#edit" class="button green">Setting</a></li>
+  	</nav>
 	</header>
 	<div id="greenboard">
+		<nav>
+			
+		</nav>
   	<article>
     	<h3>entryの:titleをココに出す。最新のから</h3>
     	<p>entryのコンテンツをココに出す！entryテーブル</p>
@@ -48,4 +54,7 @@
 </div>
 <div id="edit" class="blackboard edit">
   <%= render 'shared/signin_user' %>
+</div>
+<div class="message success welcome">
+	<p><b>!!! Congratulations !!!</b><br>!!!!!!!!!! Welcome to "mameblog" !!!!!!!!!!<br><a href="home" class="button red">OK</a></p>
 </div>

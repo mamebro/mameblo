@@ -163,7 +163,8 @@ div#greenboard,
 article,
 footer,
 footer p,
-div.blackboard form {
+div.blackboard form,
+div.message p {
 	position: relative;
 	margin: 0;
 	text-align: justify;
@@ -172,7 +173,8 @@ div.blackboard form {
 
 div#content,
 footer p,
-div.blackboard form {
+div.blackboard form,
+div.message p {
 	margin: 0 auto;
 }
 
@@ -188,7 +190,8 @@ div#content {
 
 article,
 footer p,
-div.blackboard form {
+div.blackboard form,
+div.message p {
 	width: 460px;
 }
 
@@ -225,23 +228,43 @@ div#service:after, div#content:after { content: ""; display: block; clear: both;
 	div#greenboard {
 		float: none;
 	}
+	
+}
+
+@media screen and (max-width: 545px){
+	div#service,
+	div#service a.button,
+	div#content,
+	header,
+	div#greenboard,
+	article,
+	footer,
+	footer p,
+	div.blackboard form {
+		width: 95% !important;
+	}
 }
 
 header hgroup,
 header div,
 footer p,
-div.blackboard label {
+div.blackboard label,
+div.message,
+div.message p {
 	text-align: center;
 }
 
-div.blackboard {
+div.blackboard,
+div.message {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 100;
 }
+
+div.blackboard { z-index: 99; }
+div.message { z-index: 100; }
 
 
 /* details */
@@ -262,12 +285,23 @@ div#service .button {
 	font-size: 140%;
 }
 
+@media screen and (max-width: 545px){
+	div#service .button {
+		padding: 20px 0;
+		font-size: 100%;
+	}
+}
+
 div#content {
 	padding: 30px 0;
 }
 
 header {
 	padding: 10px;
+}
+
+@media screen and (max-width: 796px){
+	header { padding: 10px 0; }
 }
 
 header h1 {
@@ -369,6 +403,20 @@ div.blackboard input[type="password"] {
 	text-align: center;
 }
 
+div.blackboard p.error {
+	margin-bottom: 2em;
+	padding: 1em;
+	
+	color: #ffffff;
+	font-size: 100%;
+	line-height: 1.5;
+	background-color: #db5673;
+	border: 2px solid #dc133d;
+}
+
+div.blackboard p.error b {
+	font-size: 140%;
+}
 
 div.blackboard img.close {
 	position: absolute;
@@ -377,9 +425,30 @@ div.blackboard img.close {
 	cursor: pointer;
 }
 
+div.message.success {
+	background: url("/assets/messagebg.png") top left repeat;
+}
 
+div.message p {
+	padding: 6em;
+	
+	font-size: 120%;
+	font-weight: normal;
+	line-height: 1.5;
+	background-color: #ffffff;
+	-moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
+	background-color: #ffffff;
+}
 
+div.message p b {
+	font-size: 140%;
+	font-weight: bold;
+}
 
+div.message p a.button {
+	margin-top: 1em;
+}
 
 
 

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("div.blackboard, div.blackboard div.step2, div.blackboard div.step3").hide();
+	$("div.blackboard, div.blackboard p.error, div.message").hide();
 	
 	setInterval(function(){
 	
@@ -16,19 +16,30 @@ $(document).ready(function() {
 	},100);
 	
 	$("img.close").click(function(){
-		$("div.blackboard").fadeOut("slow");
 		location.hash = "";
+		$("div.blackboard").fadeOut("slow");
 	});
 	
 	$(window).keydown(function(e){
  		if (e.keyCode == "27") {
+ 			location.hash = "";
  			$("div.blackboard").fadeOut("slow");
-			location.hash = "";
  		}
 	});
 	
 	$("div#signup input[type='text']").focus(function(){
 		
+	});
+	
+	$("form#new_user").live("ajax:success", function(xhr, data, status){
+		if (data.result == "success") {
+			location.hash = "";
+			$("div.blackboard").fadeOut("slow");
+			$("div#service").slideUp("slow");
+			$("div.message.success").slideDown("slow");
+		}else{
+			$("p.error").slideDown("fast").html("<b>Failure</b>");
+		}
 	});
 });
 
