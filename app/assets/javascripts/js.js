@@ -9,6 +9,8 @@ $(document).ready(function() {
 			$("div#signup").fadeIn("slow");
 		} else if (mode == "#signin") {
 			$("div#signin").fadeIn("slow");
+		} else if (mode == "#edit") {
+			$("div#edit").fadeIn("slow");
 		}
 	
 	},100);

@@ -1,6 +1,13 @@
 ﻿@charset "UTF-8";
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700");
 
+/* greenbar */
+#0f2d3b
+#385752
+#889474
+#757161
+#999044
+
 html {
 	font-size: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -13,12 +20,6 @@ body {
 	font-size: 100%;
 	line-height: 1;
 	letter-spacing: 0em;
-	
-	background: linear-gradient(top, #f19baf 0%, #ffffff 100%);
-	background: -o-linear-gradient(top, #f19baf 0%, #ffffff 100%);
-	background: -moz-linear-gradient(top, #eeeeee 0%, #bbbbbb 100%);
-	background: -webkit-linear-gradient(top, #f19baf 0%, #ffffff 100%);
-	background: -ms-linear-gradient(top, #f19baf 0%, #ffffff 100%);
 }
 
 a {
@@ -57,6 +58,13 @@ input[type='submit'],
 	border: 1px solid #909090;
 	box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 -1px rgba(255, 255, 255, 0.1);
 	cursor: pointer;
+	
+	/* default */
+	background-color: #eeeeee;
+	background: -webkit-linear-gradient(#a40, #830 50%, #720 50%, #610);
+	background: -moz-linear-gradient(#fcca00, #fcca00 50%, #f3980d 50%, #f3980d);
+	background: -o-linear-gradient(#a40, #830 50%, #720 50%, #610);
+	background: linear-gradient(#a40, #830 50%, #720 50%, #610);
 }
 
 .button {
@@ -84,7 +92,8 @@ input[type='submit']:hover,
 header,
 header hgroup,
 header div,
-div#bg,
+div#content,
+div#greenboard,
 article,
 footer,
 footer p,
@@ -98,18 +107,16 @@ div.blackboard div {
 header,
 header hgroup,
 header div,
+div#content,
+div#greenboard,
 footer {
 	width: 100%;
-}
-
-div#greenboard {
-	width: 960px;
 }
 
 article,
 footer p,
 div.blackboard div {
-	width: 540px;
+	width: 460px;
 }
 
 header hgroup,
@@ -137,15 +144,19 @@ body.login.false header {
 
 /* details */
 
+body {
+	background: url("/assets/bodybg.png") top left repeat;
+}
+
 header {
 	padding: 30px 0;
 }
 
 header h1 {
 	position: relative;
-	width: 280px;
-	height: 89px;
-	margin: 0 auto 11px auto;
+	width: 320px;
+	height: 102px;
+	margin: 0 auto 18px auto;
 	text-indent: -9999px;
 	
 	background: url("/assets/logo.png") top center no-repeat;
@@ -181,21 +192,23 @@ header .button.signin {
 	background: linear-gradient(#a40, #830 50%, #720 50%, #610);
 }
 
-div#greenboard {
-	margin: 1em auto 0 auto;
-	padding: 2em 0;
-	
-	//background: url("./images/blackboardbg.png") top left repeat;
+div#content {
+	background: url("/assets/contentbg.png") top left repeat;
+}
+
+div#greenboard {	
+	background: linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
 }
 
 article {
 	margin: 0 auto 4px auto;
-	padding: 2em 60px;
-	background-color: rgba(255,255,255,1);
-	border-radius: 3px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+	padding: 2em;
+	background-color: #ffffff;
+	-moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
 	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
 }
 
