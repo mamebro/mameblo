@@ -218,6 +218,7 @@ div#service:after, div#content:after { content: ""; display: block; clear: both;
 		width: 100%;
 	}
 	
+	div#greenboard nav,
 	article,
 	footer p,
 	div.blackboard form {
@@ -328,7 +329,14 @@ div#greenboard {
 	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
 }
 
-article {
+div#greenboard nav a.button {
+	width: 100%;
+	padding: 0.5em 0;
+	text-align: center;
+}
+
+article,
+div#greenboard nav {
 	margin: 0 auto 4px auto;
 	padding: 2em;
 	background-color: #ffffff;
@@ -420,8 +428,8 @@ div.blackboard p.error b {
 
 div.blackboard img.close {
 	position: absolute;
-	top: -20px;
-	right: -20px;
+	top: -40px;
+	right: -25px;
 	cursor: pointer;
 }
 
