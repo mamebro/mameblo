@@ -1,0 +1,11 @@
+<% @entries.each do |entry| %>
+<article>
+  <h3><%= entry.title %></h3>
+  <p><%= entry.content %></p>
+  <p><%= entry.user_id %></p>
+  <p><%= link_to 'Show', entry %></p>
+  <p><%= link_to 'Edit', edit_entry_path(entry) %></p>
+  <p><%= link_to 'Destroy', entry, confirm: 'Are you sure?', method: :delete %></p>
+  <time pubdate=""><%= entry.created_at%></time>
+</article>
+<% end %>

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("div.blackboard, div.blackboard div.step2, div.blackboard div.step3").hide();
+	$("div.blackboard, div.blackboard p.error, div.message").hide();
 	
 	setInterval(function(){
 	
@@ -9,29 +9,45 @@ $(document).ready(function() {
 			$("div#signup").fadeIn("slow");
 		} else if (mode == "#signin") {
 			$("div#signin").fadeIn("slow");
+		} else if (mode == "#edit") {
+			$("div#edit").fadeIn("slow");
 		}
 	
 	},100);
 	
 	$("p.close").click(function(){
-		$("div.blackboard").fadeOut("slow");
 		location.hash = "";
+		$("div.blackboard").fadeOut("slow");
 	});
 	
-	$("p.button.next").click(function(){
-		$(this).parent("div").fadeOut(200);
-		$(this).parent("div").next("div").delay(300).fadeIn(1000);
+	$(window).keydown(function(e){
+ 		if (e.keyCode == "27") {
+ 			location.hash = "";
+ 			$("div.blackboard").fadeOut("slow");
+ 		}
 	});
 	
-	$("div.blackboard input[type='text']").focus(function(){
+	$("div#signup input[type='text']").focus(function(){
 		
 	});
+	
+	$("form#new_user").live("ajax:success", function(xhr, data, status){
+		if (data.result == "success") {
+			location.hash = "";
+			$("div.blackboard").fadeOut("slow");
+			$("div#service").slideUp("slow");
+			$("div.message.success").slideDown("slow");
+		}else{
+			$("p.error").slideDown("fast").html("<b>Failure</b>");
+		}
+	});
+	
+	$("div.message a.button").click(function(){ reload(); });
 });
 
-/*
-$(this).click(function(){});
-$("nav#global ul li").live("hover", function(){});
-*/
+function reload(){
+	window.location.reload();
+}
 
 function test(a) {
 	if(a == null){ a = "alert!" }

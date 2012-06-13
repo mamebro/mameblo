@@ -85,4 +85,19 @@ describe User do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
   end
+
+  describe "entry associations" do
+
+    before { @user.save }
+    let!(:older_entry) do 
+      FactoryGirl.create(:entry, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_entry) do
+      FactoryGirl.create(:entry, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should have the right entries in the right order" do
+      @user.entry.should == [newer_entry, older_entry]
+    end
+  end
 end

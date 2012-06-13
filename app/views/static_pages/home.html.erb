@@ -1,0 +1,37 @@
+<div id="service">
+  <a href="#signup" class="button yellow">Join "mameblog"</a>
+  <a href="#signin" class="button blue">Sign in</a>
+</div>
+<div id="content">
+	<header>
+  	<hgroup>
+    	<h1>mameblog</h1>
+  	</hgroup>
+  	<nav>
+  		<a href="#edit" class="button blue mid">Your post</a>
+  		<a href="#edit" class="button green mid">Setting</a></li>
+  	</nav>
+	</header>
+	<div id="greenboard">
+		<nav>
+  		<a href="#edit" class="button yellow big">Write New Entry</a>
+  	</nav>
+    <%= render 'shared/entry_all' %> 
+  </div>
+</div>
+<footer>
+  <p>mameblog</p>
+</footer>
+
+<div id="signup" class="blackboard signup">
+  <%= render 'shared/new_user' %>
+</div>  
+<div id="signin" class="blackboard signin">
+  <%= render 'shared/signin_user' %>
+</div>
+<div id="edit" class="blackboard edit">
+  <%= render 'shared/signin_user' %>
+</div>
+<div class="message success welcome">
+	<p><b>!!! Congratulations !!!</b><br>!!!!!!!!!! Welcome to "mameblog" !!!!!!!!!!<br><a href="#" class="button red">OK</a></p>
+</div>
