@@ -24,12 +24,10 @@ body {
 a {
 	color: #0099fa;
 	text-decoration: none;
-	border-bottom: 1px dotted #666666;
 }
 
 a:hover {
 	color: #0099fa;
-	border-bottom: 1px dotted #000000;
 }
 
 h1, h2, h3, h4, h5, h6, h7 {
@@ -47,11 +45,11 @@ textarea {
 
 input[type='button'],
 input[type='submit'],
-p.button {
+.button {
 	display: inline-block;
 	padding: 0.5em 1em;
 	
-	color: #ffffff;
+	color: #ffffff !important;
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 120%;
 	font-weight: bold;
@@ -61,7 +59,7 @@ p.button {
 	cursor: pointer;
 }
 
-p.button {
+.button {
 	text-shadow: 0 -1px #909090;
 }
 
@@ -73,13 +71,15 @@ input[type='submit'] {
 
 input[type='button']:hover,
 input[type='submit']:hover,
-p.button:hover {
+.button:hover {
 	box-shadow: inset 0 1px 16px rgba(0, 0, 0, 0.33);
 }
 
 .clear { zoom: 1; }
 .clear:after { content: ""; display: block; clear: both; }
 
+
+/* layouts */
 
 header,
 header hgroup,
@@ -120,11 +120,11 @@ div.blackboard div {
 }
 
 div.blackboard {
-	position: absolute;
-	top: 2%;
-	left: 2%;
-	width: 96%;
-	height: 96%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	z-index: 100;
 }
 
@@ -134,17 +134,30 @@ body.login.false header {
 	border-bottom: dashed 1px #ffffff;
 }
 
+
+/* details */
+
 header {
 	padding: 30px 0;
 }
 
+header h1 {
+	position: relative;
+	width: 280px;
+	height: 89px;
+	margin: 0 auto 11px auto;
+	text-indent: -9999px;
+	
+	background: url("./images/logo.png") top center no-repeat;
+}
 
-header p.button {
+
+header .button {
 	padding: 20px 60px;
 	font-size: 140%;
 }
 
-header p.button.signup {
+header .button.signup {
 	background-color: #eeeeee;
 	background: -webkit-linear-gradient(#a40, #830 50%, #720 50%, #610);
 	background: -moz-linear-gradient(#ffcb63, #ffc34a 50%, #ffb016 50%, #ffba30);
@@ -152,7 +165,7 @@ header p.button.signup {
 	background: linear-gradient(#a40, #830 50%, #720 50%, #610);
 }
 
-header p.button.signup:hover {
+header .button.signup:hover {
 	background-color: #19a;
 	background: -webkit-linear-gradient(#c60, #a50 50%, #940 50%, #830);
 	background: -moz-linear-gradient(#c60, #a50 50%, #940 50%, #830);
@@ -160,7 +173,7 @@ header p.button.signup:hover {
 	background: linear-gradient(#c60, #a50 50%, #940 50%, #830);
 }
 
-header p.button.signin {
+header .button.signin {
 	background-color: #eeeeee;
 	background: -webkit-linear-gradient(#a40, #830 50%, #720 50%, #610);
 	background: -moz-linear-gradient(#5ec6d1, #49c4d1 50%, #0abdd1 50%, #1fbfd1);
@@ -172,14 +185,7 @@ div#greenboard {
 	margin: 1em auto 0 auto;
 	padding: 2em 0;
 	
-	border-radius: 6px;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	background: linear-gradient(top, #f19baf 0%, #ffffff 100%);
-	background: -o-linear-gradient(top, #f19baf 0%, #ffffff 100%);
-	background: -moz-linear-gradient(top, #9be64b 0%, #5ca32a 100%);
-	background: -webkit-linear-gradient(top, #f19baf 0%, #ffffff 100%);
-	background: -ms-linear-gradient(top, #f19baf 0%, #ffffff 100%);
+	//background: url("./images/blackboardbg.png") top left repeat;
 }
 
 article {
@@ -230,29 +236,26 @@ footer p {
 }
 
 div.blackboard {
-	background-color: rgba(255,255,255,0.66);
-	border-radius: 6px;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
+	background: url("./images/blackboardbg.png") top left repeat;
 }
 
 div.blackboard div {
+	position: relative;
 	margin-top: 80px;
 	padding: 2em 0;
-	background-color: rgba(0,0,0,0.25);
-	border-radius: 3px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
+	-moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+	background-color: #ffffff;
 }
 
 div.blackboard label {
 	width: 100%;
-	margin-bottom: 1em;
+	margin-bottom: 1.75em;
 	display: block;
 }
 
 div.blackboard label p {
-	margin-bottom: 1em;
+	margin-bottom: 0.75em;
 	
 	font-size: 120%;
 	font-weight: bold;
@@ -260,10 +263,10 @@ div.blackboard label p {
 }
 
 
-div.blackboard p.close {
+div.blackboard img.close {
 	position: absolute;
-	top: 0px;
-	right: 0px;
+	top: -20px;
+	right: -20px;
 	cursor: pointer;
 }
 

@@ -13,7 +13,7 @@ $(document).ready(function() {
 	
 	},100);
 	
-	$("p.close").click(function(){
+	$("img.close").click(function(){
 		$("div.blackboard").fadeOut("slow");
 		location.hash = "";
 	});
