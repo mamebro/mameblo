@@ -60,11 +60,11 @@ input[type='submit'],
 	cursor: pointer;
 	
 	/* default */
-	background-color: #eeeeee;
-	background: -webkit-linear-gradient(#a40, #830 50%, #720 50%, #610);
-	background: -moz-linear-gradient(#fcca00, #fcca00 50%, #f3980d 50%, #f3980d);
-	background: -o-linear-gradient(#a40, #830 50%, #720 50%, #610);
-	background: linear-gradient(#a40, #830 50%, #720 50%, #610);
+	background-color: #0060af;
+	background: -webkit-linear-gradient(#3579b0, #2371b0 50%, #1269b0 50%, #0060af);
+	background: -moz-linear-gradient(#3579b0, #2371b0 50%, #1269b0 50%, #0060af);
+	background: -o-linear-gradient(#3579b0, #2371b0 50%, #1269b0 50%, #0060af);
+	background: linear-gradient(#3579b0, #2371b0 50%, #1269b0 50%, #0060af);
 }
 
 .button {
@@ -82,6 +82,73 @@ input[type='submit']:hover,
 .button:hover {
 	box-shadow: inset 0 1px 16px rgba(0, 0, 0, 0.33);
 }
+
+.red {
+	background-color: #dc133d;
+	background: -webkit-linear-gradient(#db5673, #db4061 50%, #db2a50 50%, #dc133d);
+	background: -moz-linear-gradient(#db5673, #db4061 50%, #db2a50 50%, #dc133d);
+	background: -o-linear-gradient(#db5673, #db4061 50%, #db2a50 50%, #dc133d);
+	background: linear-gradient(#db5673, #db4061 50%, #db2a50 50%, #dc133d);
+}
+
+.red:hover {
+	background-color: #a80f30;
+	background: -webkit-linear-gradient(#a84258, #a8314b 50%, #a8203e 50%, #a80f30);
+	background: -moz-linear-gradient(#a84258, #a8314b 50%, #a8203e 50%, #a80f30);
+	background: -o-linear-gradient(#a84258, #a8314b 50%, #a8203e 50%, #a80f30);
+	background: linear-gradient(#a84258, #a8314b 50%, #a8203e 50%, #a80f30);
+}
+
+.yellow {
+	background-color: #f3980d;
+	background: -webkit-linear-gradient(#f2b355, #f2aa3d 50%, #f2a024 50%, #f3980d);
+	background: -moz-linear-gradient(#f2b355, #f2aa3d 50%, #f2a024 50%, #f3980d);
+	background: -o-linear-gradient(#f2b355, #f2aa3d 50%, #f2a024 50%, #f3980d);
+	background: linear-gradient(#f2b355, #f2aa3d 50%, #f2a024 50%, #f3980d);
+}
+
+.yellow:hover {
+	background-color: #bf770a;
+	background: -webkit-linear-gradient(#bf8e43, #bf8630 50%, #bf7e1d 50%, #bf770a);
+	background: -moz-linear-gradient(#bf8e43, #bf8630 50%, #bf7e1d 50%, #bf770a);
+	background: -o-linear-gradient(#bf8e43, #bf8630 50%, #bf7e1d 50%, #bf770a);
+	background: linear-gradient(#bf8e43, #bf8630 50%, #bf7e1d 50%, #bf770a);
+}
+
+.green {
+	background-color: #00af80;
+	background: -webkit-linear-gradient(#35b08f, #23b08a 50%, #12b086 50%, #00af80);
+	background: -moz-linear-gradient(#35b08f, #23b08a 50%, #12b086 50%, #00af80);
+	background: -o-linear-gradient(#35b08f, #23b08a 50%, #12b086 50%, #00af80);
+	background: linear-gradient(#35b08f, #23b08a 50%, #12b086 50%, #00af80);
+}
+
+.green:hover {
+	background-color: #007d5c;
+	background: -webkit-linear-gradient(#257d66, #197d62 50%, #0c7d5f 50%, #007d5c);
+	background: -moz-linear-gradient(#257d66, #197d62 50%, #0c7d5f 50%, #007d5c);
+	background: -o-linear-gradient(#257d66, #197d62 50%, #0c7d5f 50%, #007d5c);
+	background: linear-gradient(#257d66, #197d62 50%, #0c7d5f 50%, #007d5c);
+}
+
+.blue {
+	background-color: #0060af;
+	background: -webkit-linear-gradient(#3579b0, #2371b0 50%, #1269b0 50%, #0060af);
+	background: -moz-linear-gradient(#3579b0, #2371b0 50%, #1269b0 50%, #0060af);
+	background: -o-linear-gradient(#3579b0, #2371b0 50%, #1269b0 50%, #0060af);
+	background: linear-gradient(#3579b0, #2371b0 50%, #1269b0 50%, #0060af);
+}
+
+.blue:hover {
+	background-color: #00457d;
+	background: -webkit-linear-gradient(#25567d, #19507d 50%, #0c4a7d 50%, #00457d);
+	background: -moz-linear-gradient(#25567d, #19507d 50%, #0c4a7d 50%, #00457d);
+	background: -o-linear-gradient(#25567d, #19507d 50%, #0c4a7d 50%, #00457d);
+	background: linear-gradient(#25567d, #19507d 50%, #0c4a7d 50%, #00457d);
+}
+
+
+
 
 .clear { zoom: 1; }
 .clear:after { content: ""; display: block; clear: both; }
@@ -154,12 +221,12 @@ header {
 
 header h1 {
 	position: relative;
-	width: 320px;
-	height: 102px;
-	margin: 0 auto 18px auto;
+	width: 228px;
+	height: 120px;
+	margin: 0 auto 20px auto;
 	text-indent: -9999px;
 	
-	background: url("/assets/logo.png") top center no-repeat;
+	background: url("/assets/logo.gif") top center no-repeat;
 }
 
 
