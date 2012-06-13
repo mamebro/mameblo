@@ -21,11 +21,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      flash[:success] = "Welcome to the mameblog!"
-      redirect_to @user
-      redirect_to root_path
+      response = { :result => "success" }
+      respond_to do |format|
+        format.json { render :json => response }
+      end
     else
-      render 'new'
+      response = { :result => "failure" }
+      respond_to do |format|
+        format.json { render :json => response }
+      end
     end
   end
 

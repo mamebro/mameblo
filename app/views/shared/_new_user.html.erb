@@ -1,5 +1,5 @@
 <div class="step1">
-  <%= form_for(@user) do |f| %>
+  <%= form_for(@user, remote:true) do |f| %>
   <%= render 'shared/error_messages' %>
   <label>
     <p>mameblogでのあなたの名前を決めてください!</p>
