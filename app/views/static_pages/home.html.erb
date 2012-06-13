@@ -1,6 +1,6 @@
 <div id="service">
-	<a href="#signup" class="button yellow">Join "mameblog"</a>
-	<a href="#signin" class="button blue">Sign in</a>
+  <a href="#signup" class="button yellow">Join "mameblog"</a>
+  <a href="#signin" class="button blue">Sign in</a>
 </div>
 <div id="content">
 	<header>
@@ -15,32 +15,8 @@
 		<nav>
   		<a href="#edit" class="button yellow big">Write New Entry</a>
   	</nav>
-  	<article>
-    	<h3>entryの:titleをココに出す。最新のから</h3>
-    	<p>entryのコンテンツをココに出す！entryテーブル</p>
-    	<time pubdate="2012-6-12">さっき</time>
-  	</article>
-  	<article>
-  	  <h3>entryの:titleをココに出す</h3>
-  	  <p>entryのコンテンツをココに出す！entryテーブル</p>
-  	  <time pubdate="2012-6-11">さっき</time>
-  	</article>
-  	<article>
-  	  <h3>entryの:titleをココに出す</h3>
-  	  <p>entryのコンテンツをココに出す！entryテーブル</p>
-  	  <time pubdate="2012-6-10">さっき</time>
-  	</article>
-  	<article>
-  	  <h3>entryの:titleをココに出す</h3>
-  	  <p>entryのコンテンツをココに出す！entryテーブル</p>
-  	  <time pubdate="2012-6-9">さっき</time>
-  	</article>
-  	<article>
-  	  <h3>entryの:titleをココに出す</h3>
-  	  <p>entryのコンテンツをココに出す！entryテーブル</p>
-  	  <time pubdate="2012-6-8">さっき</time>
-  	</article>
-	</div>
+    <%= render 'shared/entry_all' %> 
+  </div>
 </div>
 <footer>
   <p>mameblog</p>
