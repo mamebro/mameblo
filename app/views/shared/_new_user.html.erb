@@ -1,22 +1,11 @@
-<div class="step1">
   <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages' %>
-  <label>
-    <p>mameblogでのあなたの名前を決めてください!</p>
     <%= f.label :name %>
     <%= f.text_field :name %>
-  </label>
-  <label>
-    <p>パスワードを決めてね!</p>
     <%= f.label :password %>
     <%= f.password_field :password %>
-  </label>
-  <label>
-    <p>悪いけど、もういちどパスワード教えてくれる？</p>
-    <%= f.label :password_confirmation, "Confirmation" %>
+		<%= f.label :password_confirmation, "Confirmation" %>
     <%= f.password_field :password_confirmation %>
-  </label>
-  <%= f.submit "参加する" %>
-  <img src="/assets/blackboardclose.png" class="close">
+  	<%= f.submit "Join \"mameblog\"", class: "yellow" %>
+  	<img src="/assets/blackboardclose.png" class="close">
   <% end %>
-</div>

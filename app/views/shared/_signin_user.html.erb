@@ -1,16 +1,8 @@
-  <div class="step1">
     <%= form_for(:session, url: sessions_path) do |f| %>
-    <label>
-      <p>名前</p>
-      <%= f.label :name %>
+			<%= f.label :name %>
       <%= f.text_field :name %>
-    </label>
-    <label>
-      <p>パスワード</p>
       <%= f.label :password %>
       <%= f.password_field :password %>
-    </label>
-    <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
-    <img src="/assets/blackboardclose.png" class="close">
+    	<%= f.submit "Sign in", class: "blue" %>
+    	<img src="/assets/blackboardclose.png" class="close">
     <% end %>
-  </div>

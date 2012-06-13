@@ -1,39 +1,39 @@
-<header>
-  <hgroup>
-    <h1>mameblog</h1>
-  </hgroup>
-  <div id="service" class="clear">
-    <a href="#signup" class="button yellow">mameblogに参加する</a>
-    <a href="#signin" class="button blue">ログインする</a>
-  </div>
-</header>
+<div id="service">
+	<a href="#signup" class="button yellow">Join "mameblog"</a>
+	<a href="#signin" class="button blue">Sign in</a>
+</div>
 <div id="content">
+	<header>
+  	<hgroup>
+    	<h1>mameblog</h1>
+  	</hgroup>
+	</header>
 	<div id="greenboard">
-  <article>
-    <h3>entryの:titleをココに出す。最新のから</h3>
-    <p>entryのコンテンツをココに出す！entryテーブル</p>
-    <time pubdate="2012-6-12">さっき</time>
-  </article>
-  <article>
-    <h3>entryの:titleをココに出す</h3>
-    <p>entryのコンテンツをココに出す！entryテーブル</p>
-    <time pubdate="2012-6-11">さっき</time>
-  </article>
-  <article>
-    <h3>entryの:titleをココに出す</h3>
-    <p>entryのコンテンツをココに出す！entryテーブル</p>
-    <time pubdate="2012-6-10">さっき</time>
-  </article>
-  <article>
-    <h3>entryの:titleをココに出す</h3>
-    <p>entryのコンテンツをココに出す！entryテーブル</p>
-    <time pubdate="2012-6-9">さっき</time>
-  </article>
-  <article>
-    <h3>entryの:titleをココに出す</h3>
-    <p>entryのコンテンツをココに出す！entryテーブル</p>
-    <time pubdate="2012-6-8">さっき</time>
-  </article>
+  	<article>
+    	<h3>entryの:titleをココに出す。最新のから</h3>
+    	<p>entryのコンテンツをココに出す！entryテーブル</p>
+    	<time pubdate="2012-6-12">さっき</time>
+  	</article>
+  	<article>
+  	  <h3>entryの:titleをココに出す</h3>
+  	  <p>entryのコンテンツをココに出す！entryテーブル</p>
+  	  <time pubdate="2012-6-11">さっき</time>
+  	</article>
+  	<article>
+  	  <h3>entryの:titleをココに出す</h3>
+  	  <p>entryのコンテンツをココに出す！entryテーブル</p>
+  	  <time pubdate="2012-6-10">さっき</time>
+  	</article>
+  	<article>
+  	  <h3>entryの:titleをココに出す</h3>
+  	  <p>entryのコンテンツをココに出す！entryテーブル</p>
+  	  <time pubdate="2012-6-9">さっき</time>
+  	</article>
+  	<article>
+  	  <h3>entryの:titleをココに出す</h3>
+  	  <p>entryのコンテンツをココに出す！entryテーブル</p>
+  	  <time pubdate="2012-6-8">さっき</time>
+  	</article>
 	</div>
 </div>
 <footer>
@@ -42,8 +42,10 @@
 
 <div id="signup" class="blackboard signup">
   <%= render 'shared/new_user' %>
-</div>
-    
+</div>  
 <div id="signin" class="blackboard signin">
+  <%= render 'shared/signin_user' %>
+</div>
+<div id="edit" class="blackboard edit">
   <%= render 'shared/signin_user' %>
 </div>
