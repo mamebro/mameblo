@@ -15,7 +15,7 @@ $(document).ready(function() {
 	
 	},100);
 	
-	$("img.close").click(function(){
+	$("p.close").click(function(){
 		location.hash = "";
 		$("div.blackboard").fadeOut("slow");
 	});
@@ -41,12 +41,13 @@ $(document).ready(function() {
 			$("p.error").slideDown("fast").html("<b>Failure</b>");
 		}
 	});
+	
+	$("div.message a.button").click(function(){ reload(); });
 });
 
-/*
-$(this).click(function(){});
-$("nav#global ul li").live("hover", function(){});
-*/
+function reload(){
+	window.location.reload();
+}
 
 function test(a) {
 	if(a == null){ a = "alert!" }

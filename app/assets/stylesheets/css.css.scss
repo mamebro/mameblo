@@ -247,7 +247,7 @@ div#service:after, div#content:after { content: ""; display: block; clear: both;
 }
 
 header hgroup,
-header div,
+header nav,
 footer p,
 div.blackboard label,
 div.message,
@@ -321,7 +321,7 @@ div#content {
 	background: url("/assets/contentbg.png") top left repeat;
 }
 
-div#greenboard {	
+div#greenboard {
 	background: linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
 	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
 	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
@@ -426,11 +426,19 @@ div.blackboard p.error b {
 	font-size: 140%;
 }
 
-div.blackboard img.close {
+div.blackboard p.close {
 	position: absolute;
 	top: -40px;
-	right: -25px;
+	right: -21px;
+	width: 42px;
+	height: 80px;
+	
+	background: url("/assets/blackboardclose.png") top left no-repeat;
 	cursor: pointer;
+}
+
+div.blackboard p.close:hover {
+	background: url("/assets/blackboardclose.png") top right no-repeat;
 }
 
 div.message.success {
