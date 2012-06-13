@@ -20,12 +20,14 @@ $(document).ready(function() {
 		location.hash = "";
 	});
 	
-	$("p.button.next").click(function(){
-		$(this).parent("div").fadeOut(200);
-		$(this).parent("div").next("div").delay(300).fadeIn(1000);
+	$(window).keydown(function(e){
+ 		if (e.keyCode == "27") {
+ 			$("div.blackboard").fadeOut("slow");
+			location.hash = "";
+ 		}
 	});
 	
-	$("div.blackboard input[type='text']").focus(function(){
+	$("div#signup input[type='text']").focus(function(){
 		
 	});
 });
