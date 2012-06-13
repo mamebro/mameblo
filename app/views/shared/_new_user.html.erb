@@ -1,11 +1,11 @@
-  <%= form_for(@user, remote:true) do |f| %>
-  <%= render 'shared/error_messages' %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-		<%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation %>
-  	<%= f.submit "Join \"mameblog\"", class: "yellow" %>
-  	<img src="/assets/blackboardclose.png" class="close">
-  <% end %>
+<%= form_for(@user, remote:true) do |f| %>
+ <%= render 'shared/error_messages' %>
+ <%= f.label :name %>
+ <%= f.text_field :name %>
+ <%= f.label :password %>
+ <%= f.password_field :password %>
+ <%= f.label :password_confirmation, "Confirmation" %>
+ <%= f.password_field :password_confirmation %>
+ <%= f.submit "Join \"mameblog\"", class: "yellow" %>
+ <img src="/assets/blackboardclose.png" class="close">
+<% end %>

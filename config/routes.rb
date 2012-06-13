@@ -1,4 +1,6 @@
 Mameblog::Application.routes.draw do
+  resources :entries
+
   get "static_pages/home"
   root to: 'static_pages#home'
   
