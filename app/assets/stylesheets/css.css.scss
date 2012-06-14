@@ -1,5 +1,5 @@
 ﻿@charset "UTF-8";
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
 
 html {
 	font-size: 100%;
@@ -447,6 +447,53 @@ article section a {
 	border-bottom: dotted 1px #000000;
 }
 
+article section ul,
+article section blockquote {
+	margin: 1em 0;
+}
+
+article section hr {
+	height: 0;
+	margin: 1.5em 0;
+	
+	border: 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.44);
+	border-bottom: 2px solid rgba(0, 0, 0, 0.22);
+}
+
+article section ul li {
+	margin-left: 2em;
+	
+	list-style-type: disc;
+}
+
+article section blockquote {
+	padding: 0.75em 1em;
+	
+	border: 2px solid #c0c0c0;
+}
+
+article section blockquote p {
+	margin-bottom: 0;
+}
+
+article section h1,
+article section h2,
+article section h3,
+article section h4,
+article section h5,
+article section h6 {
+	margin: 1.5em 0;
+	font-weight: bold;
+}
+
+article section h1 { font-size: 115%; }
+article section h2 { font-size: 115%; font-weight: normal; }
+article section h3 { font-size: 108%; }
+article section h4 { font-size: 108%; font-weight: normal; }
+article section h5 { font-size: 100%; }
+article section h6 { font-size: 100%; font-weight: normal; }
+
 article time {
 	width: 100%;
 	text-align: right;
@@ -671,10 +718,21 @@ div.alert p {
 }
 
 div#show article {
+	margin-top: 40px;
 	width: 60%;
+	
+	font-size: 100%;
+	box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
+	-webkit-box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
 }
 
-
+div#show article h1 {
+	margin-bottom: 1em;
+	
+	font-size: 160%;
+	font-weight: bold;
+}
 
 
 
