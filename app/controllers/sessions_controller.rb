@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
         format.json { render :json => response }
       end
       sign_in user
+      redirect_to root_path
     else
       response = { :result => "failure" }
       respond_to do |format|

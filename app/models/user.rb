@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
       self.remember_token = SecureRandom.urlsafe_base64
     end
 
-  VALID_NAME_REGEX = /[a-z]+\z/i
+  VALID_NAME_REGEX = /[a-z0-9]+\z/i
   validates :name, presence: true,
   format: { with: VALID_NAME_REGEX },
   uniqueness: true
