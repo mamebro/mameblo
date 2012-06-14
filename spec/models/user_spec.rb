@@ -97,7 +97,7 @@ describe User do
     end
 
     it "should have the right entries in the right order" do
-      @user.entry.should == [newer_entry, older_entry]
+      @user.entries.should =~ [newer_entry, older_entry]
     end
   end
 end

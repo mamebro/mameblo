@@ -50,6 +50,8 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  private
+
   def signed_in_user
     redirect_to root_path, notice: "Please sign in." unless signed_in?
   end
