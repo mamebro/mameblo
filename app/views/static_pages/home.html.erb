@@ -45,6 +45,15 @@
   <p>&copy;&nbsp;mameblog&nbsp;&copy;</p>
 </footer>
 
+<% if signed_in? %>
+<div id="signout" class="">
+<%= link_to "Sign out", signout_path, method: "delete" %>
+</div>
+<div id="edit" class="blackboard edit">
+  <%= render 'shared/entry_edit' %>
+</div>
+<% end %>
+
 <% unless signed_in? %>
 <div id="signup" class="blackboard signup">
   <%= render 'shared/new_user' %>
@@ -52,11 +61,7 @@
 <div id="signin" class="blackboard signin">
   <%= render 'shared/signin_user' %>
 </div>
-<% end %>
-
-<div id="edit" class="blackboard edit">
-  <%= render 'shared/entry_edit' %>
-</div>
 <div class="message success welcome">
   <p><b>!!! Congratulations !!!</b><br>!!!!!!!!!! Welcome to "mameblog" !!!!!!!!!!<br><a href="#" class="button red">OK</a></p>
 </div>
+<% end %>

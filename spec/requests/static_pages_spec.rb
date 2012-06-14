@@ -29,6 +29,7 @@ describe "mame blog(static_pages)" do
           visit root_path
         end
         it { should have_content('Write New Entry') }
+        it { should have_content('Sign out') }
       end
 
       describe "user failed login" do 
