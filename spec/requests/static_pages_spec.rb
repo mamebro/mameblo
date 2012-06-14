@@ -18,6 +18,8 @@ describe "mame blog(static_pages)" do
         sign_in user
         visit root_path
       end
+      it { should have_content('日記をかくよ、楽しいな') }
+      it { should have_content('メロンパン食べた！') }
     end
 
     describe " user" do

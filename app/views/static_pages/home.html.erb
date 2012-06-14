@@ -20,27 +20,27 @@
     <% end %>
   </header>
   <div id="greenboard">
-  	<% if signed_in? %>
+    <% if signed_in? %>
     <nav>
       <a href="#edit" class="button yellow big">Write New Entry</a>
     </nav>
     <% end %>
 
     <%= render 'shared/entry_all' %> 
-		
-		<article>
-  		<h3>entry.title</h3>
-  		<p>entry.content</p>
-  		<time pubdate="">entry.created_at</time>
-  		<aside>
-  			<p class="userId">entry.user_id</p>
-  			<p class="admin">
-  				<a class="button yellow">Edit</a>
-  				<a class="button red">Delete</a>
-  			</p>
-  			<p class="permalink"><a href="#" class="button blue" target="_blank">Read more</a></p>
-  		</aside>
-		</article>
+    
+    <article>
+      <h3>entry.title</h3>
+      <p>entry.content</p>
+      <time pubdate="">entry.created_at</time>
+      <aside>
+  	<p class="userId">entry.user_id</p>
+  	<p class="admin">
+  	  <a class="button yellow">Edit</a>
+  	  <a class="button red">Delete</a>
+  	</p>
+  	<p class="permalink"><a href="#" class="button blue" target="_blank">Read more</a></p>
+      </aside>
+    </article>
   </div>
 </div>
 <footer>
@@ -49,7 +49,7 @@
 
 <% if signed_in? %>
 <div id="signout" class="">
-<%= link_to "Sign out", signout_path, method: "delete" %>
+  <%= link_to "Sign out", signout_path, method: "delete" %>
 </div>
 <div id="edit" class="blackboard edit">
   <%= render 'shared/entry_edit' %>
