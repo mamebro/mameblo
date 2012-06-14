@@ -238,11 +238,12 @@ div#service:after, div#content:after { content: ""; display: block; clear: both;
 	div#content,
 	header,
 	div#greenboard,
+	div#greenboard nav,
 	article,
 	footer,
 	footer p,
 	div.blackboard form {
-		width: 95% !important;
+		width: 100% !important;
 	}
 }
 
@@ -314,6 +315,13 @@ div#service .button {
 
 div#content {
 	padding: 30px 0;
+	background: url("/assets/contentbg.png") top left repeat;
+}
+
+@media screen and (max-width: 545px){
+	div#content {
+		padding: 0;
+	}
 }
 
 header {
@@ -334,12 +342,6 @@ header h1 {
 	background: url("/assets/logo.gif") top center no-repeat;
 }
 
-
-
-div#content {
-	background: url("/assets/contentbg.png") top left repeat;
-}
-
 div#greenboard {
 	background: linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
 	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
@@ -357,10 +359,21 @@ div#greenboard nav a.button {
 article,
 div#greenboard nav {
 	margin: 0 auto 4px auto;
-	padding: 2em;
+	padding: 2em 2em 1.33em 2em;
 	background-color: #ffffff;
 	-moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
 	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
+}
+
+@media screen and (max-width: 545px){
+	article,
+	div#greenboard nav {
+		padding: 1em 0;
+		
+		border-bottom: 2px solid #c0c0c0;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+	}
 }
 
 article h3 {
@@ -386,6 +399,7 @@ article p {
 article time {
 	width: 100%;
 	text-align: right;
+	display: block;
 	
 	font-size: 80%;
 }
@@ -449,15 +463,11 @@ article aside p.permalink:after {
 }
 
 footer {
-	background: linear-gradient(top, rgba(255,255,255,0) 0%,  rgba(255,255,255,1) 100%);
-	background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,  rgba(255,255,255,1) 100%);
-	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%,  rgba(255,255,255,1) 100%);
-	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,  rgba(255,255,255,1) 100%);
-	background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,  rgba(255,255,255,1) 100%);
+	background: url("/assets/footerbg.png") top left repeat-x;
 }
 
 footer p {
-	padding-top: 120px;
+	padding: 60px 0;
 }
 
 div.blackboard {
