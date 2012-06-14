@@ -74,7 +74,7 @@ input[type='submit'],
 input[type='button'],
 input[type='submit'] {
 	text-shadow: 0 -1px #909090;
-	background-color: transparent;
+	background-color: #0060af;
 }
 
 input[type='button']:hover,
@@ -361,8 +361,10 @@ div#greenboard nav {
 	margin: 0 auto 4px auto;
 	padding: 2em 2em 1.33em 2em;
 	background-color: #ffffff;
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
 	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
+	filter: progid:DXImageTransform.Microsoft.Shadow(color='#909090', Direction=180, Strength=2);
 }
 
 @media screen and (max-width: 545px){
@@ -371,6 +373,7 @@ div#greenboard nav {
 		padding: 1em 0;
 		
 		border-bottom: 2px solid #c0c0c0;
+		box-shadow: none;
 		-moz-box-shadow: none;
 		-webkit-box-shadow: none;
 	}
@@ -410,8 +413,10 @@ article aside {
 	
 	background-color: #404040;
 	border-radius: 6px;
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
 	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
+	border-radius: 6px;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 }
@@ -468,6 +473,8 @@ footer {
 
 footer p {
 	padding: 60px 0;
+	
+	text-shadow: 0 1px 0px #909090;
 }
 
 div.blackboard {
@@ -480,6 +487,7 @@ div.blackboard form {
 	padding: 2em;
 	text-align: center;
 	
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
 	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
 	background-color: #ffffff;
@@ -564,6 +572,7 @@ div.message p {
 	font-weight: normal;
 	line-height: 1.5;
 	background-color: #ffffff;
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
 	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
 	background-color: #ffffff;
