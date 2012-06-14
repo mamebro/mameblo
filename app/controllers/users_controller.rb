@@ -24,6 +24,7 @@ class UsersController < ApplicationController
       response = { :result => "success" }
       respond_to do |format|
         format.json { render :json => response }
+        sign_in @user
       end
     else
       response = { :result => "failure" }

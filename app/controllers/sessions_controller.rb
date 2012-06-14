@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
     user = User.find_by_name(params[:session][:name])
     if user && user.authenticate(params[:session][:password])
       sign_in user
-      flash[:success] = "ログインできました"
+      flash[:success] = "!!!!!!!! Welcome to the mameblog !!!!!!!!"
       redirect_to root_path
     else
-      flash[:error] = "もう一度入力してください"
+      flash[:error] = "sorry! please try again!!!"
       redirect_to root_path
     end
   end
