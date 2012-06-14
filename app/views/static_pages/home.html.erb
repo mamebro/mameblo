@@ -5,9 +5,6 @@
 </div>
 <% end %>
 <div id="content">
-  <% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %>"><%= value %></div>
-  <% end %>
   <header>
     <hgroup>
       <h1>mameblog</h1>
@@ -59,4 +56,8 @@
 <div class="message success welcome">
   <p><b>!!! Congratulations !!!</b><br>!!!!!!!!!! Welcome to "mameblog" !!!!!!!!!!<br><a href="#" class="button red">OK</a></p>
 </div>
+<% end %>
+
+<% flash.each do |key, value| %>
+<div class="alert alert-<%= key %>"><p><%= value %></p></div>
 <% end %>

@@ -1,20 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>User:</b>
-  <%= @entry.user_id %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @entry.content %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @entry.title %>
-</p>
-
-
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', root_path %>
+<div id="show">
+	<article>
+		<h1><%= @entry.title %></h1>
+		<section>
+			<%= raw @entry.content_as_markdown %>
+		</section>
+		
+		<!--<p class="author"><%= @entry.user_id %></p>-->
+		
+	</article>
+</div>

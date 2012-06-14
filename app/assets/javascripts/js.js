@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	$("header nav.responsive.px796over div, article aside, div.blackboard, div.blackboard p.error, div.message").hide();
+	$("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
 	
 	setInterval(function(){
 	
@@ -60,6 +61,8 @@ $(document).ready(function() {
 		$(this).next("div").stop().fadeIn("fast");
 		$(this).css({ opacity: "0.44" });
 	});
+	
+	$("div.alert").delay(4000).slideUp("slow");
 	
 	$("div.message a.button").click(function(){ reload(); });
 });

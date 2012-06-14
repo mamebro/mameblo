@@ -48,6 +48,8 @@ input[type='submit'],
 	font-size: 120%;
 	font-weight: bold;
 	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	border: 1px solid #909090;
 	box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 -1px rgba(255, 255, 255, 0.1);
 	cursor: pointer;
@@ -262,7 +264,8 @@ header nav,
 footer p,
 div.blackboard label,
 div.message,
-div.message p {
+div.message p,
+div.alert {
 	text-align: center;
 }
 
@@ -274,6 +277,14 @@ div.message {
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+
+div.alert {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: block;
 }
 
 article aside {
@@ -417,6 +428,10 @@ article h3 {
 	letter-spacing: 0em;
 }
 
+article h3 a {
+	color: #202020;
+}
+
 article p {
 	margin-bottom: 1em;
 	
@@ -427,7 +442,7 @@ article p {
 	letter-spacing: 0em;
 }
 
-article p.content a {
+article section a {
 	color: #000000;
 	border-bottom: dotted 1px #000000;
 }
@@ -440,7 +455,8 @@ article time {
 	font-size: 80%;
 }
 
-article p.content a:hover,
+article h3 a:hover,
+article section a:hover,
 article time a:hover {
 	color: #0060af;
 	border-bottom: dotted 1px #0060af;
@@ -451,7 +467,6 @@ article aside {
 	padding: 10px;
 	
 	background-color: #a0a0a0;
-	border-radius: 6px;
 	box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
 	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
@@ -486,6 +501,7 @@ article aside p.admin {
 	
 	background-color: #c0c0c0;
 	box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 -1px rgba(255, 255, 255, 0.1);
+	border-radius: 6px;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 }
@@ -636,9 +652,27 @@ div.message p a.button {
 	margin-top: 1em;
 }
 
+div.alert {
+	padding: 0.85em 0;
+	
+	background: url("/assets/messagebg.png") top left repeat;
+}
 
+div.alert p {
+	padding: 0.15em 0.85em;
+	display: inline;
+	
+	font-size: 115%;
+	font-weight: bold;
+	background-color: #ffffff;
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 2px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.75);
+}
 
-
+div#show article {
+	width: 60%;
+}
 
 
 

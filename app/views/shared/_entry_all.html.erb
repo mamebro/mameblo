@@ -1,7 +1,9 @@
 <% @entries.each do |entry| %>
 <article>
-  <h3><%= entry.title %></h3>
-  <p class="content"><%= raw entry.content_as_markdown %></p>
+  <h3><%= link_to entry.title, entry, target: '_blank' %></h3>
+  <section>
+  	<%= raw entry.content_as_markdown %>
+  </section>
   <time pubdate="<%= entry.created_at %>"><%= link_to entry.created_at.to_s(:mameblogTimestamp), entry, target: '_blank' %></time>
   <% if signed_in? %>
   <aside>
