@@ -17,8 +17,10 @@
       <a href="#edit" class="button blue mid">Your post</a>
       <a href="#edit" class="button green mid">Setting</a>
     </nav>
+    <% end %>
   </header>
   <div id="greenboard">
+  	<% if signed_in? %>
     <nav>
       <a href="#edit" class="button yellow big">Write New Entry</a>
     </nav>

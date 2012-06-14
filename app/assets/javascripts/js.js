@@ -43,13 +43,13 @@ $(document).ready(function() {
 	});
 	
 	$("article").hover(
-  function () {
-    $(this).children("aside").fadeIn("fast");
-  },
-  function () {
-    $(this).children("aside").fadeOut(100);
-  }
-);
+  	function () {
+    	$(this).children("aside").stop().fadeIn("fast");
+  	},
+  	function () {
+    	$(this).children("aside").fadeOut(100);
+  	}
+	);
 	
 	$("div.message a.button").click(function(){ reload(); });
 });
