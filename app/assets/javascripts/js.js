@@ -27,8 +27,13 @@ $(document).ready(function() {
  		}
 	});
 	
-	$("div#signup input[type='text']").focus(function(){
-		
+	$("input[type='text']").focus(function(){
+		if($(this).val() == $(this).attr('defaultValue'))
+			$(this).val('');
+		}).blur(function() {
+			if(jQuery.trim($(this).val()) == "") {
+				$(this).val($(this).attr('defaultValue'));
+		}
 	});
 	
 	$("form#new_user").live("ajax:success", function(xhr, data, status){
