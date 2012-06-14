@@ -4,7 +4,7 @@ Mameblog::Application.routes.draw do
   root to: 'static_pages#home'
 
   match '/signout', to: 'sessions#destroy', via: :delete
-  match '/entries', to: 'entries#create', via: :put
+#  match '/entries', to: 'entries#create', via: :put
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
