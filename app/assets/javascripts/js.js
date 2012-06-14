@@ -44,10 +44,10 @@ $(document).ready(function() {
 	
 	$("article").hover(
   	function () {
-    	$(this).children("aside").stop().fadeIn("fast");
+    	$(this).children("aside").show();
   	},
   	function () {
-    	$(this).children("aside").fadeOut(100);
+    	$(this).children("aside").hide();
   	}
 	);
 	
