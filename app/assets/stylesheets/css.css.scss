@@ -172,6 +172,7 @@ article,
 footer,
 footer p,
 div.blackboard form,
+div.whiteboard form,
 div.message p {
 	position: relative;
 	margin: 0;
@@ -182,6 +183,7 @@ div.message p {
 div#content,
 footer p,
 div.blackboard form,
+div.whiteboard form,
 div.message p {
 	margin: 0 auto;
 }
@@ -265,6 +267,7 @@ div.message p {
 }
 
 div.blackboard,
+div.whiteboard,
 div.message {
 	position: fixed;
 	top: 0;
@@ -288,7 +291,7 @@ article aside {
 
 article aside { z-index: 10; }
 header nav.responsive.px796over div { z-index: 9; }
-div.blackboard { z-index: 99; }
+div.blackboard, div.whiteboard { z-index: 99; }
 div.message { z-index: 100; }
 
 header nav.responsive.px796under { display: none; }
@@ -516,11 +519,13 @@ footer p {
 	text-shadow: 0 1px 0px #909090;
 }
 
-div.blackboard {
+div.blackboard,
+div.whiteboard {
 	background: url("/assets/blackboardbg.png") top left repeat;
 }
 
-div.blackboard form {
+div.blackboard form,
+div.whiteboard form {
 	position: relative;
 	margin-top: 80px;
 	padding: 2em;
@@ -532,7 +537,8 @@ div.blackboard form {
 	background-color: #ffffff;
 }
 
-div.blackboard#edit form {
+div.blackboard#edit form,
+div.whiteboard form {
 	position: absolute;
 	top: 6%;
 	left: 4%;
@@ -558,13 +564,15 @@ div.blackboard input[type="password"] {
 	text-align: center;
 }
 
-div.blackboard#edit input[type="text"] {
+div.blackboard#edit input[type="text"],
+div.whiteboard input[type="text"] {
 	width: 100%;
 	margin-bottom: 2%;
 	text-align: left;
 }
 
-div.blackboard#edit textarea {
+div.blackboard#edit textarea,
+div.whiteboard textarea {
 	width: 100%;
 	height: 82%;
 	margin-bottom: 2%;
@@ -585,7 +593,8 @@ div.blackboard p.error b {
 	font-size: 140%;
 }
 
-div.blackboard p.close {
+div.blackboard p.close,
+div.whiteboard a.close {
 	position: absolute;
 	top: -40px;
 	right: -21px;
@@ -596,7 +605,8 @@ div.blackboard p.close {
 	cursor: pointer;
 }
 
-div.blackboard p.close:hover {
+div.blackboard p.close:hover,
+div.whiteboard a.close:hover {
 	background: url("/assets/blackboardclose.png") top right no-repeat;
 }
 
