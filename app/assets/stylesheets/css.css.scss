@@ -447,6 +447,36 @@ article section a {
 	border-bottom: dotted 1px #000000;
 }
 
+article section ul,
+article section blockquote {
+	margin: 1em 0;
+}
+
+article section hr {
+	height: 0;
+	margin: 1.5em 0;
+	
+	border: 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.44);
+	border-bottom: 2px solid rgba(0, 0, 0, 0.22);
+}
+
+article section ul li {
+	margin-left: 2em;
+	
+	list-style-type: disc;
+}
+
+article section blockquote {
+	padding: 0.75em 1em;
+	
+	border: 2px solid #c0c0c0;
+}
+
+article section blockquote p {
+	margin-bottom: 0;
+}
+
 article time {
 	width: 100%;
 	text-align: right;
@@ -672,9 +702,19 @@ div.alert p {
 
 div#show article {
 	width: 60%;
+	
+	font-size: 100%;
+	box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
+	-webkit-box-shadow: 0px 1px 4px rgba(0,0,0,0.25);
 }
 
-
+div#show article h1 {
+	margin-bottom: 1em;
+	
+	font-size: 160%;
+	font-weight: bold;
+}
 
 
 
