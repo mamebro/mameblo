@@ -16,12 +16,12 @@ body {
 }
 
 a {
-	color: #0099fa;
+	color: #000000;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #0099fa;
+	color: #000000;
 }
 
 h1, h2, h3, h4, h5, h6, h7 {
@@ -424,12 +424,23 @@ article p {
 	letter-spacing: 0em;
 }
 
+article p.content a {
+	color: #000000;
+	border-bottom: dotted 1px #000000;
+}
+
 article time {
 	width: 100%;
 	text-align: right;
 	display: block;
 	
 	font-size: 80%;
+}
+
+article p.content a:hover,
+article time a:hover {
+	color: #0060af;
+	border-bottom: dotted 1px #0060af;
 }
 
 article aside {

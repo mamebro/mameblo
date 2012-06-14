@@ -56,12 +56,10 @@ $(document).ready(function() {
   	}
 	);
 	
-	$("header nav.responsive.px796over span.tool").hover(
-  	function () {
-    	$(this).next("div").stop().fadeIn("fast");
-  	},
-  	function () {}
-	);
+	$("header nav.responsive.px796over span.tool").click(function(){
+		$(this).next("div").stop().fadeIn("fast");
+		$(this).css({ opacity: "0.44" });
+	});
 	
 	$("div.message a.button").click(function(){ reload(); });
 });
