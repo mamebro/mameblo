@@ -1,15 +1,15 @@
 <% @entries.each do |entry| %>
 <article>
   <h3><%= entry.title %></h3>
-  <p class="content"><%= entry.content %></p>
+  <p class="content"><%= raw entry.content_as_markdown %></p>
   <time pubdate="<%= entry.created_at %>"><%= link_to entry.created_at.to_s(:mameblogTimestamp), entry, target: '_blank' %></time>
   <aside>
-  	<p class="userId"><%= entry.user_id %></p>
-  	<p class="admin">
-  		<%= link_to 'Edit', edit_entry_path(entry), class: 'button yellow' %>
-  		<%= link_to 'Destroy', entry, confirm: 'Are you sure?', method: :delete, class: 'button red' %>
-  	</p>
-  	<p class="permalink"><a href="#" class="button blue" target="_blank">Read more</a></p>
+    <p class="userId"><%= entry.user_id %></p>
+    <p class="admin">
+      <%= link_to 'Edit', edit_entry_path(entry), class: 'button yellow' %>
+      <%= link_to 'Destroy', entry, confirm: 'Are you sure?', method: :delete, class: 'button red' %>
+    </p>
+    <p class="permalink"><a href="#" class="button blue" target="_blank">Read more</a></p>
   </aside>
 </article>
 <% end %>
