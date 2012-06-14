@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("div.blackboard, div.blackboard p.error, div.message").hide();
+	$("article aside, div.blackboard, div.blackboard p.error, div.message").hide();
 	
 	setInterval(function(){
 	
@@ -42,6 +42,15 @@ $(document).ready(function() {
 		}
 	});
 	
+	$("article").hover(
+  function () {
+    $(this).children("aside").fadeIn("fast");
+  },
+  function () {
+    $(this).children("aside").fadeOut(100);
+  }
+);
+	
 	$("div.message a.button").click(function(){ reload(); });
 });
 
@@ -53,3 +62,4 @@ function test(a) {
 	if(a == null){ a = "alert!" }
 	window.alert(a);
 }
+

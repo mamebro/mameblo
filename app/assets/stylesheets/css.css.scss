@@ -54,7 +54,7 @@ input[type='submit'],
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 120%;
 	font-weight: bold;
-	border-radius: 3px;
+	border-radius: 5px;
 	border: 1px solid #909090;
 	box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 -1px rgba(255, 255, 255, 0.1);
 	cursor: pointer;
@@ -264,21 +264,40 @@ div.message {
 	height: 100%;
 }
 
+article aside {
+	position: absolute;
+	top: -70px;
+	left: -170px;
+	min-width: 200px;
+}
+
+@media screen and (max-width: 796px){
+	article aside {
+		left: 10px;
+	}
+}
+
+article aside { z-index: 10; }
 div.blackboard { z-index: 99; }
 div.message { z-index: 100; }
+
+
+
+
+
 
 
 /* details */
 
 body {
-	background: url("/assets/bodybg.png") top left repeat;
+	background: url("/assets/bodybg.png") repeat;
 }
 
 div#service {
 	padding: 30px 0;
 	text-align: center;
 	
-	background-color: #eeeeee;
+	background: url("/assets/servicebg.png") bottom left repeat-x;
 }
 
 div#service .button {
@@ -365,7 +384,68 @@ article p {
 }
 
 article time {
+	width: 100%;
+	text-align: right;
+	
 	font-size: 80%;
+}
+
+article aside {
+	margin: 0;
+	padding: 10px;
+	
+	background-color: #404040;
+	border-radius: 6px;
+	-moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+}
+
+article aside p {
+	width: 100%;
+	margin-bottom: 0.25em;
+	text-align: center;
+}
+
+article aside p a.button {
+	padding: 0.25em 0.75em;
+	
+	font-size: 90%;
+	font-weight: normal;
+}
+
+article aside p.userId {
+	color: #ffffff;
+	font-size: 140%;
+	font-weight: bold;
+	word-break: break-all;
+}
+
+article aside p.admin {
+	padding: 0.5em 0;
+	margin-bottom: 0.65em;
+	
+	background-color: #606060;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+}
+
+article aside p.permalink {
+	margin: 0;
+}
+
+article aside p.permalink:after {
+	content: "";
+	
+	position: absolute;
+	bottom: -18px;
+	right: 36px;
+	width: 0;
+	height: 0;
+	
+	border-top: 18px solid #404040;
+	border-left: 24px solid transparent; 
 }
 
 footer {
@@ -395,6 +475,16 @@ div.blackboard form {
 	background-color: #ffffff;
 }
 
+div.blackboard#edit form {
+	position: absolute;
+	top: 6%;
+	left: 4%;
+	width: 86%;
+	height: 82%;
+	margin: 0;
+	padding: 3%;
+}
+
 div.blackboard label {
 	width: 100%;
 	margin-bottom: 0.5em;
@@ -409,6 +499,18 @@ div.blackboard input[type="text"],
 div.blackboard input[type="password"] {
 	margin-bottom: 1.5em;
 	text-align: center;
+}
+
+div.blackboard#edit input[type="text"] {
+	width: 100%;
+	margin-bottom: 2%;
+	text-align: left;
+}
+
+div.blackboard#edit textarea {
+	width: 100%;
+	height: 82%;
+	margin-bottom: 2%;
 }
 
 div.blackboard p.error {
@@ -474,27 +576,3 @@ div.message p a.button {
 
 
 
-
-
-
-
-
-
-
-/*
-background: linear-gradient(top, #f19baf 0%, #ffffff 100%);
-background: -o-linear-gradient(top, #f19baf 0%, #ffffff 100%);
-background: -moz-linear-gradient(top, #f19baf 0%, #ffffff 100%);
-background: -webkit-linear-gradient(top, #f19baf 0%, #ffffff 100%);
-background: -ms-linear-gradient(top, #f19baf 0%, #ffffff 100%);
-
-background: url('') repeat no-repeat repeat-x repeat-y;
-background-color: #ffffff;
-background-image: url('');
-background-repeat: repeat no-repeat repeat-x repeat-y;
-list-style-type: disc;
-
-@media screen and (max-width: 640px){
-
-}
-*/
