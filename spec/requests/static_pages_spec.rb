@@ -21,14 +21,23 @@ describe "mame blog(static_pages)" do
     end
 
     describe " user" do
+      let(:user) { FactoryGirl.create(:user) }
+
       describe "login&signin do not appear for signed-in users" do
-        let(:user) { FactoryGirl.create(:user) }
         before do
           sign_in user
           visit root_path
         end
-        it { should have_selector('href',    text: 'Sign in') }
-        it { should have_selector('href',    text: 'Join "mameblog"') }
+        it { should have_content('Write New Entry') }
+      end
+
+      describe "user failed login" do 
+        before do
+          signin_with_failed user
+          visit root_path
+        end
+        it { should_not have_content('Write New Entry') }
+        it { should have_content("Sign in") }
       end
     end
   end

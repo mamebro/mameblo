@@ -1,10 +1,13 @@
-<% if !signed_in? %>
+<% unless signed_in? %>
 <div id="service">
   <a href="#signup" class="button yellow">Join "mameblog"</a>
   <a href="#signin" class="button blue">Sign in</a>
 </div>
 <% end %>
 <div id="content">
+  <% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
   <header>
     <hgroup>
       <h1>mameblog</h1>
@@ -28,7 +31,7 @@
   <p>mameblog</p>
 </footer>
 
-<% if !signed_in? %>
+<% unless signed_in? %>
 <div id="signup" class="blackboard signup">
   <%= render 'shared/new_user' %>
 </div>  
