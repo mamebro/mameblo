@@ -13,9 +13,18 @@
       <h1>mameblog</h1>
     </hgroup>
     <% if signed_in? %>
-    <nav>
-      <a href="#edit" class="button blue mid">Your post</a>
-      <a href="#edit" class="button green mid">Setting</a>
+    <nav class="responsive px796over">
+      <a href="#" class="button blue" target="_blank">Your post</a>
+      <span class="button gray tool">Tool</span>
+      <div>
+      	<a href="#settings" class="button green">Settings</a>
+      	<%= link_to "Sign out", signout_path, method: "delete", class: "button red" %>
+      </div>
+    </nav>
+    <nav class="responsive px796under" target="_blank">
+      <a href="#edit" class="button blue">Your post</a>
+      <a href="#settings" class="button green">Settings</a>
+      <%= link_to "Sign out", signout_path, method: "delete", class: "button red" %>
     </nav>
     <% end %>
   </header>
@@ -48,15 +57,12 @@
 </footer>
 
 <% if signed_in? %>
-<div id="signout" class="">
-<%= link_to "Sign out", signout_path, method: "delete" %>
-</div>
 <div id="edit" class="blackboard edit">
   <%= render 'shared/entry_edit' %>
 </div>
 <% end %>
-
 <% unless signed_in? %>
+
 <div id="signup" class="blackboard signup">
   <%= render 'shared/new_user' %>
 </div>  

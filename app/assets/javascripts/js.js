@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("article aside, div.blackboard, div.blackboard p.error, div.message").hide();
+	$("header nav.responsive.px796over div, article aside, div.blackboard, div.blackboard p.error, div.message").hide();
 	
 	setInterval(function(){
 	
@@ -49,6 +49,13 @@ $(document).ready(function() {
   	function () {
     	$(this).children("aside").fadeOut(100);
   	}
+	);
+	
+	$("header nav.responsive.px796over span.tool").hover(
+  	function () {
+    	$(this).next("div").stop().fadeIn("fast");
+  	},
+  	function () {}
 	);
 	
 	$("div.message a.button").click(function(){ reload(); });

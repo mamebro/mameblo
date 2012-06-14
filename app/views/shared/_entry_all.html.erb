@@ -2,10 +2,14 @@
 <article>
   <h3><%= entry.title %></h3>
   <p><%= entry.content %></p>
-  <p><%= entry.user_id %></p>
-  <p><%= link_to 'Show', entry %></p>
-  <p><%= link_to 'Edit', edit_entry_path(entry) %></p>
-  <p><%= link_to 'Destroy', entry, confirm: 'Are you sure?', method: :delete %></p>
-  <time pubdate=""><%= entry.created_at%></time>
+  <time pubdate="">entry.created_at | <%= link_to 'Show', entry %></time>
+  <aside>
+  	<p class="userId"><%= entry.user_id %></p>
+  	<p class="admin">
+  		<%= link_to 'Edit', edit_entry_path(entry), class: 'button yellow' %>
+  		<%= link_to 'Destroy', entry, confirm: 'Are you sure?', method: :delete, class: 'button red' %>
+  	</p>
+  	<p class="permalink"><a href="#" class="button blue" target="_blank">Read more</a></p>
+  </aside>
 </article>
 <% end %>

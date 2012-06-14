@@ -1,13 +1,6 @@
 ﻿@charset "UTF-8";
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700");
 
-/* greenbar */
-#0f2d3b
-#385752
-#889474
-#757161
-#999044
-
 html {
 	font-size: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -74,6 +67,8 @@ input[type='submit'],
 input[type='button'],
 input[type='submit'] {
 	text-shadow: 0 -1px #909090;
+	
+	/* default */
 	background-color: #0060af;
 }
 
@@ -145,6 +140,22 @@ input[type='submit']:hover,
 	background: -moz-linear-gradient(#25567d, #19507d 50%, #0c4a7d 50%, #00457d);
 	background: -o-linear-gradient(#25567d, #19507d 50%, #0c4a7d 50%, #00457d);
 	background: linear-gradient(#25567d, #19507d 50%, #0c4a7d 50%, #00457d);
+}
+
+.gray {
+	background-color: #777777;
+	background: -webkit-linear-gradient(#989898, #8d8d8d 50%, #828282 50%, #777777);
+	background: -moz-linear-gradient(#989898, #8d8d8d 50%, #828282 50%, #777777);
+	background: -o-linear-gradient(#989898, #8d8d8d 50%, #828282 50%, #777777);
+	background: linear-gradient(#989898, #8d8d8d 50%, #828282 50%, #777777);
+}
+
+.gray:hover {
+	background-color: #5b5b5b;
+	background: -webkit-linear-gradient(#757575, #6c6c6c 50%, #646464 50%, #5b5b5b);
+	background: -moz-linear-gradient(#757575, #6c6c6c 50%, #646464 50%, #5b5b5b);
+	background: -o-linear-gradient(#757575, #6c6c6c 50%, #646464 50%, #5b5b5b);
+	background: linear-gradient(#757575, #6c6c6c 50%, #646464 50%, #5b5b5b);
 }
 
 
@@ -278,12 +289,17 @@ article aside {
 	}
 }
 
-article aside { z-index: 10; }
+article aside { z-index: 9; }
+header nav.responsive.px796over div { z-index: 10; }
 div.blackboard { z-index: 99; }
 div.message { z-index: 100; }
 
+header nav.responsive.px796under { display: none; }
 
-
+@media screen and (max-width: 796px){
+	header nav.responsive.px796over { display: none; }
+	header nav.responsive.px796under { display: block; }
+}
 
 
 
@@ -340,6 +356,17 @@ header h1 {
 	text-indent: -9999px;
 	
 	background: url("/assets/logo.gif") top center no-repeat;
+}
+
+header nav a.button {
+	margin: 0 2px 2px 0;
+}
+
+header nav.responsive.px796over div {
+	position: absolute;
+	width: 120px;
+	bottom: -70px;
+	right: 10px;
 }
 
 div#greenboard {
