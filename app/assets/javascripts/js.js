@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("header nav.responsive.px796over div, article aside, div.blackboard, div.blackboard p.error, div.message").hide();
+	$("header nav.responsive.px796over div,, div.blackboard, div.blackboard p.error, div.message, div#show ul.socialbutton").hide();
 	$("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
 	
 	setInterval(function(){
@@ -30,12 +30,24 @@ $(document).ready(function() {
  		}
 	});
 	
-	$("input[type='text']").focus(function(){
-		if($(this).val() == $(this).attr('defaultValue'))
-			$(this).val('');
-		}).blur(function() {
-			if(jQuery.trim($(this).val()) == "") {
-				$(this).val($(this).attr('defaultValue'));
+	$("div#signup input").focus(function(){
+		
+	});
+	
+	var flagExTitle = 0;
+	var flagExContent = 0;
+	$("div#edit input[type='text']").val("Title").addClass("defaultValue");
+	$("div#edit textarea").val("Content").addClass("defaultValue");
+	$("div#edit input[type='text']").click(function(){
+		if(flagExTitle == 0){
+			$(this).val("").removeClass("defaultValue");
+			flagExTitle = 1;
+		}
+	});
+	$("div#edit textarea").click(function(){
+		if(flagExContent == 0){
+			$(this).val("").removeClass("defaultValue");
+			flagExContent = 1;
 		}
 	});
 	
@@ -56,6 +68,15 @@ $(document).ready(function() {
   	},
   	function () {
     	$(this).children("aside").hide();
+  	}
+	);
+	
+	$("div#show article").hover(
+  	function () {
+    	$("div#show ul.socialbutton").slideDown();
+  	},
+  	function () {
+    	$("div#show ul.socialbutton").hide();
   	}
 	);
 	

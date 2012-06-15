@@ -1,13 +1,30 @@
 <div id="show">
-  <article>
-    <h1><%= @entry.title %></h1>
-    <section>
-      <%= raw @entry.content_as_markdown %>
-    </section>
-
-    <p class="slideviewClose"><span class="button green">Thank you!</span></p>
-
-    <p class="author"><%= @entry.user_id %></p>
-
-  </article>
+	<article>
+		<h1><%= @entry.title %></h1>
+		<section>
+			<%= raw @entry.content_as_markdown %>
+		</section>
+		
+		<p class="slideviewClose"><span class="button green">Thank you!</span></p>
+		<ul class="socialbutton">
+			<li class="tumblr">
+				<a href="http://www.tumblr.com/share" title="Share on Tumblr" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;">Share on Tumblr</a>
+				<script type="text/javascript" src="http://platform.tumblr.com/v1/share.js"></script>
+			</li>
+			<li class="facebook">
+				<div id="fb-root"></div>
+         <script>(function(d, s, id) {
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) return;
+           js = d.createElement(s); js.id = id;
+           js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+           fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));</script>
+         <div class="fb-like" data-send="false" data-layout="button_count" data-width="115" data-show-faces="false"></div>
+			</li>
+		</ul>
+		
+		<!--<p class="author"><%= @entry.user_id %></p>-->
+		
+	</article>
 </div>

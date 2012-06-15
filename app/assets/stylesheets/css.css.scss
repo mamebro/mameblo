@@ -216,8 +216,8 @@ div#greenboard {
 	float: left;
 }
 
-div#service, div#content { zoom: 1; }
-div#service:after, div#content:after { content: ""; display: block; clear: both; }
+div#service, div#content, article ul.socialbutton { zoom: 1; }
+div#service:after, div#content:after, article ul.socialbutton:after { content: ""; display: block; clear: both; }
 
 @media screen and (max-width: 796px){
 	header,
@@ -246,7 +246,10 @@ div#service:after, div#content:after { content: ""; display: block; clear: both;
 
 @media screen and (max-width: 545px){
 	div#service,
-	div#service a.button,
+	div#show ul.socialbutton {
+		display: none !important;
+	}
+	
 	div#content,
 	header,
 	div#greenboard,
@@ -256,6 +259,14 @@ div#service:after, div#content:after { content: ""; display: block; clear: both;
 	footer p,
 	div.blackboard form {
 		width: 100% !important;
+	}
+	
+	header {
+		margin: 20px 0 10px 0 !important;
+	}
+	
+	div#show article {
+		margin: 0 !important;
 	}
 }
 
@@ -292,11 +303,24 @@ article aside {
 	top: -14px;
 	left: -215px;
 	min-width: 200px;
+	min-height: 50px;
+	display: none;
 }
 
 @media screen and (max-width: 796px){
 	article aside {
-		left: 10px;
+		top: 10px;
+		left: -10px;
+	}
+}
+
+@media screen and (max-width: 545px){
+	article aside {
+		position: relative;
+		top: 10%;
+		left: 0;
+		width: 100%;
+		display: block !important;
 	}
 }
 
@@ -509,6 +533,16 @@ article time a:hover {
 	border-bottom: dotted 1px #0060af;
 }
 
+article ul.socialbutton {
+	width: 100%;
+	padding-top: 1em;
+}
+
+article ul.socialbutton li {
+	float: left;
+	margin-right: 10px;
+}
+
 article aside {
 	margin: 0;
 	padding: 10px;
@@ -520,6 +554,38 @@ article aside {
 	border-radius: 6px;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
+}
+
+@media screen and (max-width: 796px){
+	article aside {
+		left: -10px;
+		top: 10px;
+		
+		background: rgba(0, 0, 0, 0.66) !important;
+	}
+	
+	article aside p.userId {
+		text-shadow: 0 1px 2px #000000 !important;
+	}
+}
+
+@media screen and (max-width: 545px){
+	article aside {
+		left: 0;
+		padding: 10px 0 !important;
+		margin: 0 auto !important;
+		width: 95%;
+		
+		background: #eeeeee !important;
+		border-radius: 0px;
+		-moz-border-radius: 0px;
+		-webkit-border-radius: 0px;
+	}
+	
+	article aside p.userId {
+		color: #404040 !important;
+		text-shadow: none !important;
+	}
 }
 
 article aside p {
@@ -564,12 +630,18 @@ article aside p.permalink:after {
 	right: -20px;
 	width: 0;
 	height: 0;
-	-webkit-transform: rotate(-90deg);  
+	-webkit-transform: rotate(-90deg); 
   -moz-transform: rotate(-90deg); 
 	
 	border-top: 18px solid #a0a0a0;
 	border-right: 12px solid transparent; 
 	border-left: 12px solid transparent;
+}
+
+@media screen and (max-width: 796px){
+	article aside p.permalink:after {
+		display: none;
+	}
 }
 
 footer {
@@ -639,6 +711,10 @@ div.whiteboard textarea {
 	width: 100%;
 	height: 82%;
 	margin-bottom: 2%;
+}
+
+.defaultValue {
+	color: #909090 !important;
 }
 
 div.blackboard p.error {
@@ -718,7 +794,7 @@ div.alert p {
 }
 
 div#show article {
-	margin-top: 40px;
+	margin: 40px auto;
 	width: 60%;
 	
 	font-size: 100%;
@@ -750,11 +826,12 @@ body.slideview article ul li {
 
 p.slideviewClose {
 	width: 100%;
-	margin: 3em 0;
+	padding: 3em 0;
 	text-align: center;
 	display: none;
 }
 
 body.slideview p.slideviewClose { display: block; }
+body.slideview ul.socialbutton { display: none !important; }
 
 
