@@ -2,17 +2,17 @@
 <article>
   <h3><%= link_to entry.title, entry, target: '_blank' %></h3>
   <section>
-  	<%= raw entry.content_as_markdown %>
+    <%= raw entry.content_as_markdown %>
   </section>
   <time pubdate="<%= entry.created_at %>"><%= link_to entry.created_at.to_s(:mameblogTimestamp), entry, target: '_blank' %></time>
   <% if signed_in? %>
   <aside>
-  	<p class="userId"><%= entry.user_id %></p>
-  	<p class="admin">
-  		<%= link_to 'Edit This Entry', edit_entry_path(entry), class: 'button yellow' %>
-  		<%= link_to 'Delete', entry, confirm: 'Are you sure?', method: :delete, class: 'button red' %>
-  	</p>
-  	<p class="permalink"><a href="#" class="button blue" target="_blank">Read more</a></p>
+    <p class="userId"><%= entry.user_id %></p>
+    <p class="admin">
+      <%= link_to 'Edit This Entry', edit_entry_path(entry), class: 'button yellow' %>
+      <%= link_to 'Delete', entry, confirm: 'Are you sure?', method: :delete, class: 'button red' %>
+    </p>
+    <p class="permalink"><a href="#" class="button blue" target="_blank">Read more</a></p>
   </aside>
   <% end %>
 </article>
