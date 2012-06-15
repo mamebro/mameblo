@@ -734,5 +734,27 @@ div#show article h1 {
 	font-weight: bold;
 }
 
+body.slideview article {
+	width: 94% !important;
+	margin: 0 !important;
+	padding: 5em 3% 3% 3% !important;
+	text-align: left;
+	
+	font-size: 600% !important;
+}
+
+body.slideview article ul li {	
+	font-size: 500%;
+	line-height: 1.6;
+}
+
+p.slideviewClose {
+	width: 100%;
+	margin: 3em 0;
+	text-align: center;
+	display: none;
+}
+
+body.slideview p.slideviewClose { display: block; }
 
 
