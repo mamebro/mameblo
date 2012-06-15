@@ -4,10 +4,9 @@
   <section>
     <%= raw entry.content_as_markdown %>
   </section>
-  posted by  <%= entry.user.name %>
   <time pubdate="<%= entry.created_at %>"><%= link_to entry.created_at.to_s(:mameblogTimestamp), entry, target: '_blank' %></time>
   <aside>
-    <p class="userId"><%= entry.user_id %></p>
+    <p class="userId"><%= entry.user.name %></p>
     <% if signed_in? %>
     <p class="admin">
       <%= link_to 'Edit This Entry', edit_entry_path(entry), class: 'button yellow' %>
