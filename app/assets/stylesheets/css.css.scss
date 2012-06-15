@@ -571,9 +571,15 @@ article aside {
 
 @media screen and (max-width: 545px){
 	article aside {
-		margin: 0 !important;
+		left: 0;
+		padding: 10px 0 !important;
+		margin: 0 auto !important;
+		width: 95%;
 		
 		background: #eeeeee !important;
+		border-radius: 0px;
+		-moz-border-radius: 0px;
+		-webkit-border-radius: 0px;
 	}
 	
 	article aside p.userId {
