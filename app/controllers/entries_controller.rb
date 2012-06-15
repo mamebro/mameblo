@@ -44,7 +44,7 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
-    @entry = Entry.new(params[:entry])
+    @entry = current_user.entries.new(params[:entry])
 
     respond_to do |format|
       if @entry.save
