@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$("header nav.responsive.px796over div,, div.blackboard, div.blackboard p.error, div.message, div#show ul.socialbutton").hide();
+	$("header nav.responsive.px796over div,, div.blackboard, div.blackboard p.error, div.message, div#show ul.socialbutton, div.comingsoonMessage").hide();
 	$("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
 	
 	setInterval(function(){
@@ -71,6 +71,8 @@ $(document).ready(function() {
 	$("div.alert").delay(4000).slideUp("slow");
 	
 	$("div.message a.button").click(function(){ reload(); });
+	
+	$(".comingsoon").click(function(){ $("div.comingsoonMessage").stop().slideDown().delay(2000).slideUp(); });
 	
 	$("p.slideviewClose span").click(function(){
 		location.hash = "";

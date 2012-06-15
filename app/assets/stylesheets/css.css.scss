@@ -283,7 +283,8 @@ footer p,
 div.blackboard label,
 div.message,
 div.message p,
-div.alert {
+div.alert,
+div.comingsoonMessage {
 	text-align: center;
 }
 
@@ -297,7 +298,8 @@ div.message {
 	height: 100%;
 }
 
-div.alert {
+div.alert,
+div.comingsoonMessage {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -400,6 +402,10 @@ header h1 {
 	text-indent: -9999px;
 	
 	background: url("/assets/logo.gif") top center no-repeat;
+}
+
+@media screen and (max-width: 545px){
+	header nav, div#greenboard nav { display: none !important; }
 }
 
 header nav a.button {
@@ -789,13 +795,15 @@ div.message p a.button {
 	margin-top: 1em;
 }
 
-div.alert {
+div.alert,
+div.comingsoonMessage {
 	padding: 0.85em 0;
 	
 	background: url("/assets/messagebg.png") top left repeat;
 }
 
-div.alert p {
+div.alert p,
+div.comingsoonMessage p {
 	padding: 0.15em 0.85em;
 	display: inline;
 	
@@ -805,6 +813,10 @@ div.alert p {
 	box-shadow: 0px 0px 2px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 2px rgba(0,0,0,0.75);
 	-webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.75);
+}
+
+div.comingsoonMessage p {
+	font-size: 200%;
 }
 
 div#show article {

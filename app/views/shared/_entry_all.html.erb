@@ -10,10 +10,10 @@
     <% if signed_in? %>
     <p class="admin">
       <%= link_to 'Edit This Entry', edit_entry_path(entry), class: 'button yellow' %>
-      <%= link_to 'Delete', entry, confirm: 'Are you sure?', method: :delete, class: 'button red' %>
+      <a href="#comingsoon" class="button red comingsoon">Delete</a>
     </p>
     <% end %>
-    <p class="permalink"><a href="#" class="button blue" target="_blank">Read more</a></p>
+    <p class="permalink"><a href="#comingsoon" class="button blue comingsoon">Read more</a></p>
   </aside>
 </article>
 <% end %>
