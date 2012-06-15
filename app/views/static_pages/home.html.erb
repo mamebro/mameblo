@@ -1,4 +1,4 @@
-<% unless signed_in? %>
+﻿<% unless signed_in? %>
 <div id="service">
   <a href="#signup" class="button yellow">Join "mameblog"</a>
   <a href="#signin" class="button blue">Sign in</a>
@@ -11,10 +11,10 @@
     </hgroup>
     <% if signed_in? %>
     <nav class="responsive px796over">
-      <a href="#" class="button blue" target="_blank">Your post</a>
+      <a href="#comingsoon" class="button blue comingsoon">Your post</a>
       <span class="button gray tool">Tool</span>
       <div>
-      	<a href="#settings" class="button green">Settings</a>
+      	<a href="#comingsoon" class="button green comingsoon">Settings</a>
       	<%= link_to "Sign out", signout_path, method: "delete", class: "button red" %>
       </div>
     </nav>
@@ -62,3 +62,5 @@
 <% flash.each do |key, value| %>
 <div class="alert alert-<%= key %>"><p><%= value %></p></div>
 <% end %>
+
+<div class="comingsoonMessage"><p>Coming soon!</p></div>

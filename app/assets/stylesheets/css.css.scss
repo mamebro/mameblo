@@ -160,6 +160,13 @@ input[type='submit']:hover,
 	background: linear-gradient(#757575, #6c6c6c 50%, #646464 50%, #5b5b5b);
 }
 
+::-webkit-input-placeholder {
+	color: #c0c0c0 !important;
+}
+:-moz-placeholder {
+	color: #c0c0c0 !important;
+}
+
 
 
 
@@ -276,7 +283,8 @@ footer p,
 div.blackboard label,
 div.message,
 div.message p,
-div.alert {
+div.alert,
+div.comingsoonMessage {
 	text-align: center;
 }
 
@@ -290,7 +298,8 @@ div.message {
 	height: 100%;
 }
 
-div.alert {
+div.alert,
+div.comingsoonMessage {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -347,6 +356,7 @@ body {
 }
 
 div#service {
+	margin-top: -20px;
 	padding: 30px 0;
 	text-align: center;
 	
@@ -394,6 +404,10 @@ header h1 {
 	background: url("/assets/logo.gif") top center no-repeat;
 }
 
+@media screen and (max-width: 545px){
+	header nav, div#greenboard nav { display: none !important; }
+}
+
 header nav a.button {
 	margin: 0 2px 2px 0;
 }
@@ -422,13 +436,15 @@ div#greenboard nav a.button {
 article,
 div#greenboard nav {
 	margin: 0 auto 4px auto;
-	padding: 2em 2em 1.33em 2em;
 	background-color: #ffffff;
 	box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
 	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
 	filter: progid:DXImageTransform.Microsoft.Shadow(color='#909090', Direction=180, Strength=2);
 }
+
+article { padding: 2em 2em 1.33em 2em; }
+div#greenboard nav { padding: 1.5em 2em; }
 
 @media screen and (max-width: 545px){
 	article,
@@ -585,6 +601,10 @@ article aside {
 	article aside p.userId {
 		color: #404040 !important;
 		text-shadow: none !important;
+	}
+	
+	article aside p.admin {
+		display: none;
 	}
 }
 
@@ -775,13 +795,15 @@ div.message p a.button {
 	margin-top: 1em;
 }
 
-div.alert {
+div.alert,
+div.comingsoonMessage {
 	padding: 0.85em 0;
 	
 	background: url("/assets/messagebg.png") top left repeat;
 }
 
-div.alert p {
+div.alert p,
+div.comingsoonMessage p {
 	padding: 0.15em 0.85em;
 	display: inline;
 	
@@ -791,6 +813,10 @@ div.alert p {
 	box-shadow: 0px 0px 2px rgba(0,0,0,0.75);
 	-moz-box-shadow: 0px 0px 2px rgba(0,0,0,0.75);
 	-webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.75);
+}
+
+div.comingsoonMessage p {
+	font-size: 200%;
 }
 
 div#show article {
