@@ -12,6 +12,8 @@ $(document).ready(function() {
 			$("div#signin").fadeIn("slow");
 		} else if (mode == "#edit") {
 			$("div#edit").fadeIn("slow");
+		} else if (mode == "#presentation") {
+			$("body").addClass("slideview");
 		}
 	
 	},100);
@@ -65,6 +67,11 @@ $(document).ready(function() {
 	$("div.alert").delay(4000).slideUp("slow");
 	
 	$("div.message a.button").click(function(){ reload(); });
+	
+	$("p.slideviewClose span").click(function(){
+		location.hash = "";
+		$("body").removeClass("slideview");
+	});
 });
 
 function reload(){
