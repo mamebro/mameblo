@@ -34,29 +34,12 @@ $(document).ready(function() {
 		
 	});
 	
-	var flagExTitle = 0;
-	var flagExContent = 0;
-	$("div#edit input[type='text']").val("Title").addClass("defaultValue");
-	$("div#edit textarea").val("Content").addClass("defaultValue");
-	$("div#edit input[type='text']").click(function(){
-		if(flagExTitle == 0){
-			$(this).val("").removeClass("defaultValue");
-			flagExTitle = 1;
-		}
-	});
-	$("div#edit textarea").click(function(){
-		if(flagExContent == 0){
-			$(this).val("").removeClass("defaultValue");
-			flagExContent = 1;
-		}
-	});
-	
 	$("form#new_user").live("ajax:success", function(xhr, data, status){
 		if (data.result == "success") {
 			location.hash = "";
 			$("div.blackboard").fadeOut("slow");
 			$("div#service").slideUp("slow");
-			$("div.message.success").slideDown("slow");
+			$("div.message.success.welcome").slideDown("slow");
 		}else{
 			$("p.error").slideDown("fast").html("<b>Failure</b>");
 		}
