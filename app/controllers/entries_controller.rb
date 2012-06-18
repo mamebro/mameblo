@@ -1,4 +1,7 @@
 class EntriesController < ApplicationController
+  before_filter :signed_in_user, only: [:create, :destroy]
+  before_filter :current_user, only: :destroy
+
   # GET /entries
   # GET /entries.json
   def index
@@ -33,6 +36,7 @@ class EntriesController < ApplicationController
   end
 
   # GET /entries/1/edit
+
   def edit
     @entry = Entry.find(params[:id])
   end
@@ -40,11 +44,11 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
-    @entry = Entry.new(params[:entry])
+    @entry = current_user.entries.new(params[:entry])
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Entry was successfully created.' }
         format.json { render json: @entry, status: :created, location: @entry }
       else
         format.html { render action: "new" }
@@ -60,7 +64,7 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.update_attributes(params[:entry])
-        format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Entry was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +80,7 @@ class EntriesController < ApplicationController
     @entry.destroy
 
     respond_to do |format|
-      format.html { redirect_to entries_url }
+      format.html { redirect_to root_path, notice: 'Entry was successfully deleted.' }
       format.json { head :no_content }
     end
   end

@@ -1,5 +1,6 @@
 $(document).ready(function() {
-	$("div.blackboard, div.blackboard p.error, div.message").hide();
+	$("header nav.responsive.px796over div,, div.blackboard, div.blackboard p.error, div.message, div#show ul.socialbutton, div.comingsoonMessage").hide();
+	$("a[href^='http']:not([href*='" + location.hostname + "'])").attr('target', '_blank');
 	
 	setInterval(function(){
 	
@@ -11,6 +12,8 @@ $(document).ready(function() {
 			$("div#signin").fadeIn("slow");
 		} else if (mode == "#edit") {
 			$("div#edit").fadeIn("slow");
+		} else if (mode == "#presentation") {
+			$("body").addClass("slideview");
 		}
 	
 	},100);
@@ -27,7 +30,7 @@ $(document).ready(function() {
  		}
 	});
 	
-	$("div#signup input[type='text']").focus(function(){
+	$("div#signup input").focus(function(){
 		
 	});
 	
@@ -36,13 +39,45 @@ $(document).ready(function() {
 			location.hash = "";
 			$("div.blackboard").fadeOut("slow");
 			$("div#service").slideUp("slow");
-			$("div.message.success").slideDown("slow");
+			$("div.message.success.welcome").slideDown("slow");
 		}else{
 			$("p.error").slideDown("fast").html("<b>Failure</b>");
 		}
 	});
 	
+	$("article").hover(
+  	function () {
+    	$(this).children("aside").show();
+  	},
+  	function () {
+    	$(this).children("aside").hide();
+  	}
+	);
+	
+	$("div#show article").hover(
+  	function () {
+    	$("div#show ul.socialbutton").slideDown();
+  	},
+  	function () {
+    	$("div#show ul.socialbutton").hide();
+  	}
+	);
+	
+	$("header nav.responsive.px796over span.tool").click(function(){
+		$(this).next("div").stop().fadeIn("fast");
+		$(this).css({ opacity: "0.44" });
+	});
+	
+	$("div.alert").delay(4000).slideUp("slow");
+	
 	$("div.message a.button").click(function(){ reload(); });
+	
+	$(".comingsoon").click(function(){ $("div.comingsoonMessage").stop().slideDown().delay(2000).slideUp(); });
+	
+	$("p.slideviewClose span").click(function(){
+		location.hash = "";
+		$("body").removeClass("slideview");
+	});
 });
 
 function reload(){
@@ -53,3 +88,4 @@ function test(a) {
 	if(a == null){ a = "alert!" }
 	window.alert(a);
 }
+
