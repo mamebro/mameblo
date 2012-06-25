@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
   
   before_save :create_remember_token
 
-
   VALID_NAME_REGEX = /[a-z0-9]+\z/i
   validates :name, presence: true,
   format: { with: VALID_NAME_REGEX },
