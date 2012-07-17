@@ -1,66 +1,34 @@
-﻿<% unless signed_in? %>
-<div id="service">
-  <a href="#signup" class="button yellow">Join "mameblog"</a>
-  <a href="#signin" class="button blue">Sign in</a>
-</div>
-<% end %>
-<div id="content">
+﻿<div id="content">
   <header>
     <hgroup>
       <h1>mameblog</h1>
     </hgroup>
-    <% if signed_in? %>
-    <nav class="responsive px796over">
-      <a href="#comingsoon" class="button blue comingsoon">Your post</a>
-      <span class="button gray tool">Tool</span>
-      <div>
-      	<a href="#comingsoon" class="button green comingsoon">Settings</a>
-      	<%= link_to "Sign out", signout_path, method: "delete", class: "button red" %>
-      </div>
-    </nav>
-    <nav class="responsive px796under" target="_blank">
-      <a href="#edit" class="button blue">Your post</a>
-      <a href="#settings" class="button green">Settings</a>
-      <%= link_to "Sign out", signout_path, method: "delete", class: "button red" %>
-    </nav>
-    <% end %>
+    <%= link_to "Sign out", signout_path, method: "delete", class: "button red" %>
   </header>
-  <div id="greenboard">
-    <% if signed_in? %>
-    <nav>
-      <a href="#edit" class="button yellow big">Write New Entry</a>
-    </nav>
+  <div id="signup">
+    <%= form_for(@user, remote:true) do |f| %>
+    <%= render 'shared/error_messages' %>
+    <p class="error"></p>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "英数字で入力してください!" %>
+    <%= f.label :email %>
+    <%= f.password_field :email, placeholder: "英数字で6文字以上です!" %>
+    <%= f.label :email %>
+    <%= f.password_field :password, placeholder: "英数字で6文字以上です!" %>
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation, placeholder: "パスワードもう一回教えてくれる?" %>
+    <%= f.submit "Join \"mameblog\"", class: "yellow" %>
     <% end %>
-
-    <%= render 'shared/entry_all' %> 
-
+  </div>
+  <div id="signin">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+    <%= f.text_field :name, placeholder: "Name" %>
+    <%= f.password_field :password, placeholder: "Password" %>
+    <%= f.submit "Sign in", class: "blue" %>
+    <% end %>
   </div>
 </div>
 
 <footer>
   <p>&copy;&nbsp;mameblog&nbsp;&copy;</p>
 </footer>
-
-<% if signed_in? %>
-<div id="edit" class="blackboard edit">
-  <%= render 'shared/entry_edit' %>
-</div>
-<% end %>
-<% unless signed_in? %>
-
-<div id="signup" class="blackboard signup">
-  <%= render 'shared/new_user' %>
-</div>  
-<div id="signin" class="blackboard signin">
-  <%= render 'shared/signin_user' %>
-</div>
-<div class="message success welcome">
-  <p><b>!!! Congratulations !!!</b><br>!!!!!!!!!! Welcome to "mameblog" !!!!!!!!!!<br><a href="#" class="button red">OK</a></p>
-</div>
-<% end %>
-
-<% flash.each do |key, value| %>
-<div class="alert alert-<%= key %>"><p><%= value %></p></div>
-<% end %>
-
-<div class="comingsoonMessage"><p>Coming soon!</p></div>
