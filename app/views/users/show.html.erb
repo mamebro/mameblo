@@ -4,3 +4,20 @@
   <%= gravatar_for @user %>
 </h1>
 <p>Find me in app/views/users/show.html.erb</p>
+
+<div class="span8">
+  <% if @user.entries.any? %>
+  <h3>Entries(<%= @user.entries.count %>)</h3>
+  <ol class="entries">
+    <%= render @entries %>
+  </ol>
+  <%= will_paginate @entries %>
+  <% end %>
+</div>
+
+<li>
+  <span class="content"><%= entries.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(entries.created_at) %> ago.
+  </span>
+</li>

@@ -2,7 +2,7 @@ Mameblog::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :entries, except: [:index, :new]
+  resources :entries, only: [:create, :destroy]
 
   get "users/show"
   get "users/new"
