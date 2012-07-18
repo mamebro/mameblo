@@ -1,13 +1,13 @@
 <h1>Users#new</h1>
 <p>Find me in app/views/users/new.html.erb</p>
 <div id="">
-  <%= form_for(@user, remote:true) do |f| %>
+  <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages' %>
   <p class=""></p>
   <%= f.label :name %>
   <%= f.text_field :name, placeholder: "英数字で入力してください!" %>
   <%= f.label :email %>
-  <%= f.email_field :email, placeholder: "英数字で6文字以上です!" %>
+  <%= f.text_field :email, placeholder: "英数字で6文字以上です!" %>
   <%= f.label :password, "Password" %>
   <%= f.password_field :password, placeholder: "英数字で6文字以上です!" %>
   <%= f.label :password_confirmation, "Confirmation" %>
