@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class EntriesController < ApplicationController
   before_filter :signed_in_user, only: [:create, :destroy]
   before_filter :current_user, only: :destroy
@@ -44,16 +45,13 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
-    @entry = current_user.entries.new(params[:entry])
-
-    respond_to do |format|
-      if @entry.save
-        format.html { redirect_to root_path, notice: 'Entry was successfully created.' }
-        format.json { render json: @entry, status: :created, location: @entry }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
+    @entry = current_user.entries.build(params[:entry])
+    if @entry.save
+      flash[:success] = "!!! ぶろぐ投稿できたね !!!"
+      redirect_to root_path
+    else
+      @feed_items = []
+      render 'static_pages/home'
     end
   end
 
@@ -76,12 +74,14 @@ class EntriesController < ApplicationController
   # DELETE /entries/1
   # DELETE /entries/1.json
   def destroy
-    @entry = Entry.find(params[:id])
     @entry.destroy
+    redirect_to root_path
+  end
 
-    respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Entry was successfully deleted.' }
-      format.json { head :no_content }
-    end
+  private
+
+  def correct_user
+    @entry = current_user.entries.find_by_id(params[:id])
+    redirect_to root_path if @entry.nil?
   end
 end

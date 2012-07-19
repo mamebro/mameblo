@@ -20,6 +20,8 @@
     <%= f.submit "Join \"mameblog\"", class: "yellow" %>
     <% end %>
   </div>
+
+
   <div id="">
     <%= form_for(:session, url: sessions_path) do |f| %>
     <%= f.text_field :name, placeholder: "Name" %>
@@ -28,6 +30,18 @@
     <% end %>
   </div>
 </div>
+
+<% if signed_in? %>
+<div class="row">
+  <div class="span8">
+    <h3>Micropost Feed</h3>
+    <%= render 'shared/feed' %>
+  </div>
+</div>
+<% else %>
+<% end %>
+
+
 
 <footer>
   <p>&copy;&nbsp;mameblog&nbsp;&copy;</p>
