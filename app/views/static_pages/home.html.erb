@@ -1,47 +1,9 @@
-﻿<div id="content">
-  <header>
-    <hgroup>
-      <h1>mameblog</h1>
-    </hgroup>
-    <%= link_to "Sign out", signout_path, method: "delete", class: "button red" %>
-  </header>
-  <div id="">
-    <%= form_for(@user) do |f| %>
-    <%= render 'shared/error_messages' %>
-    <p class=""></p>
-    <%= f.label :name %>
-    <%= f.text_field :name, placeholder: "英数字で入力してください!" %>
-    <%= f.label :email %>
-    <%= f.email_field :email, placeholder: "英数字で6文字以上です!" %>
-    <%= f.label :password, "Password" %>
-    <%= f.password_field :password, placeholder: "英数字で6文字以上です!" %>
-    <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation, placeholder: "パスワードもう一回教えてくれる?" %>
-    <%= f.submit "Join \"mameblog\"", class: "yellow" %>
-    <% end %>
-  </div>
-
-
-  <div id="">
-    <%= form_for(:session, url: sessions_path) do |f| %>
-    <%= f.text_field :name, placeholder: "Name" %>
-    <%= f.password_field :password, placeholder: "Password" %>
-    <%= f.submit "Sign in", class: "blue" %>
-    <% end %>
-  </div>
-</div>
-
+﻿<h1>mameblog</h1>
 <% if signed_in? %>
-<div class="row">
-  <div class="span8">
-    <h3>Micropost Feed</h3>
-    <%= render 'shared/feed' %>
-  </div>
-</div>
+<%= render 'static_pages/signedup_user' %>
 <% else %>
+<%= render 'static_pages/signup_home' %>
 <% end %>
-
-
 
 <footer>
   <p>&copy;&nbsp;mameblog&nbsp;&copy;</p>
