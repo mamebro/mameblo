@@ -6,7 +6,7 @@
     <%= link_to "Sign out", signout_path, method: "delete", class: "button red" %>
   </header>
   <div id="">
-    <%= form_for(@user, remote:true) do |f| %>
+    <%= form_for(@user) do |f| %>
     <%= render 'shared/error_messages' %>
     <p class=""></p>
     <%= f.label :name %>
