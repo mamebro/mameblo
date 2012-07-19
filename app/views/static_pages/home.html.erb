@@ -1,10 +1,31 @@
-﻿<h1>mameblog</h1>
-<% if signed_in? %>
-<%= render 'static_pages/signedup_user' %>
-<% else %>
-<%= render 'static_pages/signup_home' %>
-<% end %>
+﻿<% if signed_in? %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+    <section>
+      <%= render 'shared/entry_form' %>
+    </section>
+  </aside>
 
-<footer>
-  <p>&copy;&nbsp;mameblog&nbsp;&copy;</p>
-</footer>
+  <div class="span8">
+    <h3>エントリーの Feed</h3>
+    <%= render 'shared/feed' %>
+  </div>
+</div>
+
+<% else %>
+<div class="center hero-unit">
+  <h1>まめぶろ</h1>
+
+  <h2>
+    まだサインインしていない !!!
+  </h2>
+  <%= link_to "!!! サインイン !!!", signin_path, class: "btn btn-large btn-primary" %>
+  <%= link_to "!!! 新規登録 !!!", signup_path, class: "btn btn-large btn-primary" %>
+</div>
+<% end %>

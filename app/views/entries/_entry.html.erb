@@ -1,11 +1,11 @@
 <li>
-  <span class="content"><%= entries.content %></span>
+  <span class="content"><%= entry.content %></span>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(entries.created_at) %> ago.
+    Posted <%= time_ago_in_words(entry.created_at) %> ago.
   </span>
   <% if current_user?(entry.user) %>
-  <%= link_to "delete", entry, method: :delete,
-      data: { confirm: "You sure?" },
-      title: entries.content %>
+  <%= link_to "消す", entry, method: :delete,
+      confirm: "消えちゃうよ?",
+      title: entry.content %>
   <% end %>
 </li>
