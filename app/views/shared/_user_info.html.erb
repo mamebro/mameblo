@@ -1,11 +1,11 @@
 <a href="<%= user_path(current_user) %>">
-  <%= gravatar_for current_user, size: 52 %>
+  ゆーざーの画像を個々に出したいよん
 </a>
 <h1>
   <%= current_user.name %>
 </h1>
 <span>
-  <%= link_to "user", current_user %>
+  <%= link_to "自分のぷろふぃーる", current_user %>
 </span>
 <span>
   <%= pluralize(current_user.entries.count, "entry") %>

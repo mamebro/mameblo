@@ -1,5 +1,6 @@
 <% provide(:title, "Sign in") %>
 <h1>さいんいん</h1>
+
 <div class="row">
   <div class="span6 offset3">
   <%= form_for(:session, url: sessions_path) do |f| %>
@@ -11,6 +12,6 @@
   <%= f.submit "繧ｵ繧､繝ｳ繧､繝ｳ", class: "blue" %>
   <% end %>
 
-  <p>え、まだ登録してないの? <%= link_to "サインアップはこちら", signup_path %></p>
+  <p>e, mada touroku site inaino???<%= link_to "サインアップはこちら", signup_path %></p>
   </div>
 </div>

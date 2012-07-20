@@ -1,6 +1,20 @@
 <div class="center hero-unit">
-  <h1>まめぶろ</h1>
-  
-  <h2>まめぶろ</h2>  
-  <%= link_to "さいんあっぷ", signup_path, class: "btn btn-large btn-primary" %>
+  <h1>mameblo</h1>
+  <h2>
+    mada sain in site inai yo
+  </h2>
+  <%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages' %>
+  <p class="error"></p>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: "英数字で入力してください!" %>
+  <%= f.label :password %>
+  <%= f.password_field :password, placeholder: "英数字で6文字以上です!" %>
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.password_field :password_confirmation, placeholder: "パスワードもう一回教えてくれる?" %>
+  <%= f.submit "Join \"mameblog\"", class: "yellow" %>
+  <p class="close"></p>
+  <% end %>
+
+  <%= link_to "!!! 新規登録 !!!", signup_path, class: "btn btn-large btn-primary" %>
 </div>
