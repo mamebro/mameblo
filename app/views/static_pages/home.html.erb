@@ -1,66 +1,31 @@
-﻿<% unless signed_in? %>
-<div id="service">
-  <a href="#signup" class="button yellow">Join "mameblog"</a>
-  <a href="#signin" class="button blue">Sign in</a>
-</div>
-<% end %>
-<div id="content">
-  <header>
-    <hgroup>
-      <h1>mameblog</h1>
-    </hgroup>
-    <% if signed_in? %>
-    <nav class="responsive px796over">
-      <a href="#comingsoon" class="button blue comingsoon">Your post</a>
-      <span class="button gray tool">Tool</span>
-      <div>
-      	<a href="#comingsoon" class="button green comingsoon">Settings</a>
-      	<%= link_to "Sign out", signout_path, method: "delete", class: "button red" %>
-      </div>
-    </nav>
-    <nav class="responsive px796under" target="_blank">
-      <a href="#edit" class="button blue">Your post</a>
-      <a href="#settings" class="button green">Settings</a>
-      <%= link_to "Sign out", signout_path, method: "delete", class: "button red" %>
-    </nav>
-    <% end %>
-  </header>
-  <div id="greenboard">
-    <% if signed_in? %>
-    <nav>
-      <a href="#edit" class="button yellow big">Write New Entry</a>
-    </nav>
-    <% end %>
+﻿<% if signed_in? %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+    </section>
+    <section>
+      <%= render 'shared/entry_form' %>
+    </section>
+  </aside>
 
-    <%= render 'shared/entry_all' %> 
-
+  <div class="span8">
+    <h3>エントリーの Feed</h3>
+    <%= render 'shared/feed' %>
   </div>
 </div>
 
-<footer>
-  <p>&copy;&nbsp;mameblog&nbsp;&copy;</p>
-</footer>
+<% else %>
+<div class="center hero-unit">
+  <h1>まめぶろ</h1>
 
-<% if signed_in? %>
-<div id="edit" class="blackboard edit">
-  <%= render 'shared/entry_edit' %>
+  <h2>
+    まだサインインしていない !!!
+  </h2>
+  <%= link_to "!!! サインイン !!!", signin_path, class: "btn btn-large btn-primary" %>
+  <%= link_to "!!! 新規登録 !!!", signup_path, class: "btn btn-large btn-primary" %>
 </div>
 <% end %>
-<% unless signed_in? %>
-
-<div id="signup" class="blackboard signup">
-  <%= render 'shared/new_user' %>
-</div>  
-<div id="signin" class="blackboard signin">
-  <%= render 'shared/signin_user' %>
-</div>
-<div class="message success welcome">
-  <p><b>!!! Congratulations !!!</b><br>!!!!!!!!!! Welcome to "mameblog" !!!!!!!!!!<br><a href="#" class="button red">OK</a></p>
-</div>
-<% end %>
-
-<% flash.each do |key, value| %>
-<div class="alert alert-<%= key %>"><p><%= value %></p></div>
-<% end %>
-
-<div class="comingsoonMessage"><p>Coming soon!</p></div>
