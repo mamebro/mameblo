@@ -21,9 +21,9 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: sqale_90ad38411c
-  host: mysql001.sqale.jp
-  username: sqale_90ad38411c
-  password: 316947bef22ca88a44fe58be3f953d4643200c35b3192c5d
+  database: 
+  host: 
+  username:
+  password:
   pool: 5
   timeout: 5000
