@@ -1,4 +1,4 @@
-<% provide(:title, "More!") %>
+<% provide(:title, "設定") %>
 <section>
   <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages' ,object: f.object%>
@@ -10,5 +10,5 @@
   <% end %>
 </section>
 <section>
-  <%= link_to "設定変更せずサインアウト", signout_path, class: 'button gray', method: "delete" %>
+  <%= link_to "サインアウト", signout_path, class: 'button gray', method: "delete" %>
 </section>
