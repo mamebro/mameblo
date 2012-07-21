@@ -19,11 +19,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: mysql2
   encoding: utf8
-  database: 
-  host: 
-  username:
-  password:
   pool: 5
-  timeout: 5000
+  adapter: mysql2
+  username: sqale_a18a167eaf
+  password: f3a428e186f32bfe5dc6d643a7736d26362c2bc1ac048588
+  database: sqale_a18a167eaf
+  host: mysql001.sqale.jp
