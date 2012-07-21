@@ -48,7 +48,7 @@ class EntriesController < ApplicationController
     @entry = current_user.entries.build(params[:entry])
     if @entry.save
       flash[:success] = "!!! ぶろぐ投稿できたね !!!"
-      redirect_to root_path
+      redirect_to @entry.user
     else
       @feed_items = []
       render 'static_pages/home'
