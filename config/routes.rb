@@ -6,19 +6,15 @@ Mameblog::Application.routes.draw do
     end
   end
 
+  resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :entries, only: [:create, :destroy]
-
   resources :relationships, only: [:create, :destroy]
-
-  get "users/show"
-  get "users/new"
-
   root to: 'static_pages#home'
 
-  match '/signout', to: 'sessions#destroy', via: :delete
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

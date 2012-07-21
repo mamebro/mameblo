@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 class SessionsController < ApplicationController
 
+  def new
+  end
+
   def create
     user = User.find_by_name(params[:session][:email])
     if user && user.authenticate(params[:session][:password])
