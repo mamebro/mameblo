@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class EntriesController < ApplicationController
   before_filter :signed_in_user, only: [:create, :destroy]
-  before_filter :correct_user, only: :destroy
+  before_filter :correct_user, only: [:destroy, :edit]
 
   # GET /entries
   # GET /entries.json
