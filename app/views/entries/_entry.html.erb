@@ -1,11 +1,10 @@
 <section>
-  <h1><%= entry.title %></h1>
+  <h1><%= link_to entry.title, entry %></h1>
   <div>
     <%= simple_format(hbr(entry.content)) %>
   </div>
   <time>
     <%= time_ago_in_words(entry.created_at) %> ago.
-    <%= link_to "日記を読む", entry %>
     <% if current_user?(entry.user) %>
       &nbsp;
       <span class="delete">
