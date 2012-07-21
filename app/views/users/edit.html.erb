@@ -2,11 +2,11 @@
 <section>
   <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages' ,object: f.object%>
-  <%= f.text_field :name, placeholder: 'UserName' %>
-  <%= f.text_field :email, placeholder: 'MailAddress' %>
+  <%= f.text_field :name, placeholder: 'ユーザー名' %>
+  <%= f.text_field :email, placeholder: 'メールアドレス' %>
   <%= f.password_field :password, placeholder: 'Password' %>
-  <%= f.password_field :password_confirmation, placeholder: 'PasswordOnceMore !!' %>
-  <%= f.submit "設定変更ぶちこむ", class: "button red" %>
+  <%= f.password_field :password_confirmation, placeholder: 'Passwordもう一回お願いします !!' %>
+  <%= f.submit "ユーザー名・メールアドレスの変更", class: "button red" %>
   <% end %>
 </section>
 <section>
