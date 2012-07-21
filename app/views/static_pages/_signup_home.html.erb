@@ -1,8 +1,10 @@
-
-
 <%= form_for(:session, url: sessions_path) do |f| %>
   <%= f.text_field :email, placeholder: 'UserName' %>
   <%= f.password_field :password, placeholder: 'Password' %>
-  <%= f.submit "Sign in", class: "button" %>
+  <%= f.submit "SignIn", class: "button" %>
 <% end %>
-<p class="help">まめぶろは初めて? <%= link_to "いますぐブラザーになる!", signup_path %></p>
+<p class="help">
+  まめぶろははじめて?<br />
+  <%= link_to "いますぐブラザーになろうぜ!", signup_path %>
+</p>
+<%= link_to 'SignUp', signup_path, class: 'button yellow' %>

@@ -1,14 +1,14 @@
 <% provide(:title, @user.name) %>
 <aside>
   <h1><%= @user.name %></h1>
-  <section>
+  <div>
     <%= render 'shared/stats' %>
     <p><%= @user.entries.count %>entries</p>
-  </section>
-  <%= render 'follow_form' if signed_in? %>
+    <%= render 'follow_form' if signed_in? %>
+  </div>
 </aside>
 <% if @user.entries.any? %>
-<div class="entries">
+<section>
   <%= render @entries %>
 </div>
 <%= will_paginate @entries %>

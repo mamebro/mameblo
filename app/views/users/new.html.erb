@@ -1,16 +1,35 @@
-<h1>ブラザーに仲間入りしよう!!!</h1>
-<div id="">
-  <%= form_for(@user) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <p class=""></p>
-  <%= f.label :name %>
-  <%= f.text_field :name, placeholder: "英数字で入力してください!" %>
-  <%= f.label :email %>
-  <%= f.text_field :email, placeholder: "英数字で6文字以上です!" %>
-  <%= f.label :password, "Password" %>
-  <%= f.password_field :password, placeholder: "英数字で6文字以上です!" %>
-  <%= f.label :password_confirmation, "Confirmation" %>
-  <%= f.password_field :password_confirmation, placeholder: "パスワードもう一回教えてくれる?" %>
-  <%= f.submit "Join \"mameblog\"", class: "yellow" %>
+<%= form_for(@user) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<p class="help">
+  ブラザーに仲間入りしよう!!!<br />
+  まずは、まめぶろでの名前を決めてくれよ。<br />
+  <span>
+    英数字で入力してください!
+  </span>
+</p>
+  <%= f.text_field :name, placeholder: 'UserName' %>
+<p class="help">
+  次にお前のメアドを教えてくれよ。<br />
+  <span>
+    英数字で6文字以上です!<br />
+    いまのところ別にメールとかしません!
+  </span>
+</p>
+  <%= f.text_field :email, placeholder: 'MailAddress' %>
+<p class="help">
+  パスワードはどうする?<br />
+  <span>
+    英数字で6文字以上です!
+  </span>
+</p>
+  <%= f.password_field :password, placeholder: 'Password' %>
+<p class="help">
+  パスワードもう一回教えてくれる?
+</p>
+  <%= f.password_field :password_confirmation, placeholder: 'Confirmation' %>
+<p class="help">
+  ブラザーになるか?
+</p>
+  <%= f.submit '絶対ブラザーになる!!', class: 'yellow' %>
   <% end %>
 </div>

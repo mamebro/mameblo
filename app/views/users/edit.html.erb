@@ -1,25 +1,9 @@
-<% provide(:title, "user henkou") %>
-<h1>password username no henkou</h1>
-
-<div class="">
-  <div class="">
-    <%= form_for(@user) do |f| %>
-    <%= render 'shared/error_messages' ,object: f.object%>
-
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-
-    <%= f.label :password_confirmation, "once more!!" %>
-    <%= f.password_field :password_confirmation %>
-
-    <%= f.submit "buchikome", class: "btn btn-large btn-primary" %>
-    <% end %>
-
-  </div>
-</div>
+<% provide(:title, "ブラザー設定の変更") %>
+  <%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages' ,object: f.object%>
+  <%= f.text_field :name, placeholder: 'UserName' %>
+  <%= f.text_field :email, placeholder: 'MailAddress' %>
+  <%= f.password_field :password, placeholder: 'Password' %>
+  <%= f.password_field :password_confirmation, placeholder: 'PasswordOnceMore !!' %>
+  <%= f.submit "buchikome", class: "button red" %>
+<% end %>
