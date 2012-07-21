@@ -4,9 +4,9 @@
     <ul>
     <% if signed_in? %>
       <li><%= link_to current_user.name, current_user %></li>
-      <li><%= link_to "Users", users_path %></li>
-      <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-      <li><%= link_to "SignOut", signout_path, method: "delete" %></li>
+      <li><%= link_to "ブラザーズ", users_path %></li>
+      <li><%= link_to "設定", edit_user_path(current_user) %></li>
+      <li><%= link_to "サインアウト", signout_path, method: "delete" %></li>
     <% else %>
     <% end %>
     </ul>
