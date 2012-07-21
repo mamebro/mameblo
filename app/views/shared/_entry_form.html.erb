@@ -2,7 +2,7 @@
 <%= render 'shared/error_messages', object: f.object %>
 <div class="field">
   <%= f.text_field :title, placeholder: "☆タイトル☆" %>
-  <%= f.text_area :content, placeholder: "!!!記事をここにかいちゃお!!!" %>
+  <%= f.text_area :content, id: 'textarea', placeholder: "!!!記事をここにかいちゃお!!!" %>
 </div>
 <%= f.submit "!!!ポストする!!!", class: "button" %>
 <% end %>
