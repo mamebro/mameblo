@@ -1,7 +1,6 @@
-<div class="">
-  <h1>まめぶろ</h1>
-  <h2>
-    まださいんいんしていない
-  </h2>
-  <%= link_to "!!! 新規登録 !!!", signup_path, class: "btn btn-large btn-primary" %>
-</div>
+<%= form_for(:session, url: sessions_path) do |f| %>
+  <%= f.text_field :email, placeholder: 'UserName' %>
+  <%= f.password_field :password, placeholder: 'Password' %>
+  <%= f.submit "Sign in", class: "button" %>
+<% end %>
+<p class="help">まめぶろは初めて? <%= link_to "いますぐブラザーになる!", signup_path %></p>
