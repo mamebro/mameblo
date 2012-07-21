@@ -199,7 +199,7 @@ div#content:after { content: ""; display: block; clear: both; }
 /* details */
 
 body {
-	background-color: #202020;
+	background-color: #ffffff;
 }
 
 div#content {
@@ -219,8 +219,35 @@ article {
 
 }
 
+div.alert {
+  position: relative;
+  width: 96%;
+  margin-bottom: 1em;
+	padding: 2em 2%;
+	text-align: center;
+	
+	background: url('alertbg.png') top center repeat;
+}
+
+div.alert p {
+  position: relative;
+  width: 92%;
+  margin: 2%;
+  padding: 1em 2%;
+  text-align: center;
+  
+  font-size: 90%;
+	background-color: #ffffff;
+	box-shadow: 0 0 4px #909090;
+  -webkit-box-shadow: 0 0 4px #909090;
+  -moz-box-shadow: 0 0 4px #909090;
+}
+
 footer {
 	padding: 0.5em 0;
+	text-align: center;
+	
+	background-color: #ffffff;
 }
 
 

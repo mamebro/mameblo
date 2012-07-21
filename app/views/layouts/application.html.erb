@@ -32,7 +32,9 @@
       <%= render 'layouts/header' %>
       <article>
         <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
+        <div class="alert alert-<%= key %>">
+          <p><%= value %></p>
+        </div>
         <% end %>
         <%= yield %>
         <%= debug(params) if Rails.env.development? %>
