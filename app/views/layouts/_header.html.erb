@@ -3,12 +3,13 @@
   <nav>
     <ul>
     <% if signed_in? %>
-      <li><%= link_to "書く", root_path, class: 'button' %></li>
-      <li><%= link_to current_user.name, current_user, class: 'button' %></li>
-      <li><%= link_to "ブラザーズ", users_path, class: 'button' %></li>
-      <li><%= link_to "設定", edit_user_path(current_user), class: 'button' %></li>
-      <li><%= link_to "サインアウト", signout_path, method: "delete" %></li>
+      <li><%= link_to "書く", root_path, class: 'button blue' %></li>
+      <li><%= link_to current_user.name, current_user, class: 'button yellow' %></li>
+      <li><%= link_to "ブラザーズ", users_path, class: 'button green' %></li>
+      <li><%= link_to "設定", edit_user_path(current_user), class: 'button red' %></li>
     <% else %>
+      <li><%= link_to "サインイン", signin_path, class: 'button blue' %></li>
+      <li><%= link_to "はじめる", signup_path, class: 'button yellow' %></li>
     <% end %>
     </ul>
   </nav>

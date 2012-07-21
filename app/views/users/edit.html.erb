@@ -1,9 +1,14 @@
-<% provide(:title, "エディットできるか??????") %>
+<% provide(:title, "More!") %>
+<section>
   <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages' ,object: f.object%>
   <%= f.text_field :name, placeholder: 'UserName' %>
   <%= f.text_field :email, placeholder: 'MailAddress' %>
   <%= f.password_field :password, placeholder: 'Password' %>
   <%= f.password_field :password_confirmation, placeholder: 'PasswordOnceMore !!' %>
-  <%= f.submit "ぶちこめえええええ！！！！", class: "button red" %>
-<% end %>
+  <%= f.submit "設定変更ぶちこむ", class: "button red" %>
+  <% end %>
+</section>
+<section>
+  <%= link_to "設定変更せずサインアウト", signout_path, class: 'button gray', method: "delete" %>
+</section>
