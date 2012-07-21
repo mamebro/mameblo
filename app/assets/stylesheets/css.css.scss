@@ -175,26 +175,33 @@ input[type='submit']:hover,
 
 /* layouts */
 
-div#content,
-footer {
+div#page {
   position: relative;
 	width: 320px;
+	margin: 0;
 }
 
-article {
-  position: relative;
-  float: left;
-	width: 240px;
-}
-
-header {
+header h1 {
   position: relative;
   float: left;
   width: 80px;
 }
 
-div#content { zoom: 1; }
-div#content:after { content: ""; display: block; clear: both; }
+header nav {
+  position: relative;
+  float: left;
+	width: 240px;
+}
+
+header nav ul li {
+  position: relative;
+  float: left;
+}
+
+header,
+header nav ul { zoom: 1; }
+header:after,
+header nav ul:after { content: ""; display: block; clear: both; }
 
 /* details */
 
@@ -202,21 +209,8 @@ body {
 	background-color: #ffffff;
 }
 
-div#content {
-	background-color: #ffffff;
-	/*
-	box-shadow: 0 0 12px #ffffff;
-  -webkit-box-shadow: 0 0 12px #ffffff;
-  -moz-box-shadow: 0 0 12px #ffffff;
-  */
-}
-
-header {
-	
-}
-
-article {
-
+header nav ul li {
+	padding: 0.25em 0.5em;
 }
 
 div.alert {
@@ -252,7 +246,5 @@ footer {
 
 
 pre.debug_dump { font-size: 70%; }
-
-
 
 
