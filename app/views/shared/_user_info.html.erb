@@ -1,11 +1,11 @@
 <a href="<%= user_path(current_user) %>">
-  ゆーざーの画像を個々に出したいよん
+  ゆーざーの画像をここに出したいんだよなああ(ユーザーinfo)
 </a>
 <h1>
-  <%= current_user.name %>
+  お、ブラザーの<%= current_user.name %>さん!!!
 </h1>
 <span>
-  <%= link_to "自分のぷろふぃーる", current_user %>
+  <%= link_to "プロフィールを見る", current_user %>
 </span>
 <span>
   <%= pluralize(current_user.entries.count, "entry") %>

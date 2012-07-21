@@ -2,13 +2,13 @@
 <div class="stats">
   <a href="<%= following_user_path(@user) %>">
     <strong id="following" class="stat">
-      <%= @user.followed_users.count %>
+      ふぉろった<%= @user.followed_users.count %>ブラザー
     </strong>
     読んでる
   </a>
   <a href="<%= followers_user_path(@user) %>">
     <strong id="followers" class="stat">
-      <%= @user.followers.count %>
+      ブラザー<%= @user.followers.count %>人が見守っている
     </strong>
     読まれてる
   </a>
