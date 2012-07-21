@@ -1,4 +1,18 @@
 $(document).ready(function() {
+  $('header nav').hide();
+  var swNav = 0;
+  
+  $('header h1').click(function(){
+	  if(swNav == 0){
+	    $('header nav').slideDown('fast');
+	    swNav = 1;
+	  }else{
+		  $('header nav').slideUp('fast');
+	    swNav = 0;
+	  }
+  });
+  
+  // textarea resize
   $('textarea').each(function(){
 	$(this)
 	    .css({
