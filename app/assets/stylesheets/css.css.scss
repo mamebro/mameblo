@@ -1,4 +1,5 @@
 ﻿@charset "UTF-8";
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700");
 
 html {
 	font-size: 100%;
@@ -33,6 +34,9 @@ input[type='password'],
 input[type='search'],
 input[type='number'],
 textarea {
+  width: 95%;
+  padding: 0;
+  
 	color: #000000;
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 100%;
@@ -168,3 +172,60 @@ input[type='submit']:hover,
 :-moz-placeholder {
 	color: #c0c0c0 !important;
 }
+
+/* layouts */
+
+div#content,
+footer {
+  position: relative;
+	width: 320px;
+}
+
+article {
+  position: relative;
+  float: left;
+	width: 240px;
+}
+
+header {
+  position: relative;
+  float: left;
+  width: 80px;
+}
+
+div#content { zoom: 1; }
+div#content:after { content: ""; display: block; clear: both; }
+
+/* details */
+
+body {
+	background-color: #202020;
+}
+
+div#content {
+	background-color: #ffffff;
+	/*
+	box-shadow: 0 0 12px #ffffff;
+  -webkit-box-shadow: 0 0 12px #ffffff;
+  -moz-box-shadow: 0 0 12px #ffffff;
+  */
+}
+
+header {
+	
+}
+
+article {
+
+}
+
+footer {
+	padding: 0.5em 0;
+}
+
+
+pre.debug_dump { font-size: 70%; }
+
+
+
+

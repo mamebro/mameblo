@@ -1,5 +1,5 @@
 <header>
-  <%= link_to root_path do %>logo<% end %>
+  <h1><%= link_to root_path do %><%= image_tag 'brothers.png', alt: 'まめぶろ' %><% end %></h1>
   <nav id="global">
     <ul>
     <% if signed_in? %>
@@ -8,8 +8,6 @@
       <li><%= link_to "Settings", edit_user_path(current_user) %></li>
       <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
     <% else %>
-      <li><%= link_to "Sign in", signin_path %></li>
-      <li><%= link_to "Sign up", signup_path %></li>
     <% end %>
     </ul>
   </nav>
