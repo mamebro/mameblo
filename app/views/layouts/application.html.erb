@@ -12,11 +12,15 @@
 |  |_)  | |  |     |  |  |  | |  |  __  
 |   _  <  |  |     |  |  |  | |  | |_ | 
 |  |_)  | |  `----.|  `--'  | |  |__| | 
-|______/  |_______| \______/   \______| 
+|______/  |_______| \______/   \______|  version 2.0.0
                                         
 -->
-<html>
+<html lang="ja" dir="ltr">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=480">
+    <meta name="keywords" content="まめぶろ,mameblo,mameblog">
+    <meta name="description" content="かわいいブログ。まめぶろ。">
     <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
@@ -25,7 +29,7 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <div class="container">
+    <div class="content">
       <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
