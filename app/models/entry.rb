@@ -2,11 +2,11 @@ require 'rdiscount'
 
 class Entry < ActiveRecord::Base
   attr_accessible :content, :title
+  belongs_to :user
 
+  validates :title, presence: true # length: { maximum: 255 }
   validates :content, presence: true # length: { maximum: 255 }
   validates :user_id, presence: true
-
-  belongs_to :user
 
   default_scope order: 'entries.created_at DESC'
 

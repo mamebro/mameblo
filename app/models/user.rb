@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
   has_secure_password
 
-  before_save { |user|user.email = email.downcase }  
+  before_save { self.email = email.downcase! }  
   before_save :create_remember_token
   
   has_many :entries, dependent: :destroy
@@ -10,8 +10,7 @@ class User < ActiveRecord::Base
   has_many :followed_users, through: :relationships, source: :followed
 
   has_many :reverse_relationships, foreign_key: "followed_id",
-  class_name:  "Relationship",
-  dependent:   :destroy
+  class_name:  "Relationship", dependent:   :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

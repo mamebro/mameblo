@@ -6,12 +6,12 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+#    @entries = Entry.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @entries }
-    end
+#    respond_to do |format|
+#      format.html # index.html.erb
+#      format.json { render json: @entries }
+#    end
   end
 
   # GET /entries/1
