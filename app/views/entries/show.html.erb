@@ -2,8 +2,8 @@
   <article>
     <h1><%= @entry.title %></h1>
     <section>
-      <%= raw @entry.content_as_markdown %>
+      <%= simple_format(hbr(@entry.content)) %>
     </section>    
-    <!--<p class="author"><%= @entry.user_id %></p>-->
+    <p class="author">ブラザー名<%= @entry.user.name %></p>
   </article>
 </div>
