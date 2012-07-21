@@ -1,5 +1,6 @@
 <li>
-  <span class="content"><%= entry.content %></span>
+  <span class="title"><%= entry.title %></span>
+  <span class="content"><%= simple_format(hbr(entry.content)) %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(entry.created_at) %> ago.
   </span>
