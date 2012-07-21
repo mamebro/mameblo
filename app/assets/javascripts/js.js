@@ -1,5 +1,7 @@
 $(document).ready(function() {
   $('header nav').hide();
+  $('#beBrotherAfter').hide();
+  $('#unBrotherAfter').hide();
   var swNav = 0;
   
   $('header h1').click(function(){
@@ -10,6 +12,16 @@ $(document).ready(function() {
 		  $('header nav').slideUp('fast');
 	    swNav = 0;
 	  }
+  });
+  
+  $('#beBrother').click(function(){
+    $('#beBrother').hide();
+    $('#beBrotherAfter').show();
+  });
+  
+  $('#unBrother').click(function(){
+    $('#unBrother').hide();
+    $('#unBrotherAfter').show();
   });
   
   // textarea resize
