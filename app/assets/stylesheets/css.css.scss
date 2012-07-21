@@ -40,7 +40,7 @@ textarea {
   
 	color: #000000;
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-	font-size: 140%;
+	font-size: 100%;
 	line-height: 1;
 	border: 0;
 	background-color: #ffffff;
@@ -96,7 +96,7 @@ a.button {
 header nav a.button {
 	padding: 1em 0;
 	
-	font-size: 200%;
+	font-size: 120%;
 }
 
 input[type='button'],
@@ -210,7 +210,7 @@ p.help a {
 div#page {
   position: relative;
 	width: 320px;
-	margin: 0;
+	margin: 0 auto;
 }
 
 header h1 {
@@ -230,6 +230,7 @@ header nav {
   position: relative;
   float: left;
 	width: 240px;
+	margin-left: 20px;
 }
 
 header nav ul li {
@@ -249,10 +250,6 @@ body {
 }
 
 div#page {
-	background-color: #ffffff;
-	box-shadow: 0 0 4px #aaaaaa;
-  -webkit-box-shadow: 0 0 4px #aaaaaa;
-  -moz-box-shadow: 0 0 4px #aaaaaa;
 }
 
 header nav ul li {
@@ -331,7 +328,6 @@ footer p.copyright {
 	
 	color: #909090;
 	font-size: 80%;
-	background-color: #ffffff;
 }
 
 

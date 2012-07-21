@@ -1,8 +1,8 @@
 <%= form_for(@entry) do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
 <div class="field">
-  <%= f.text_field :title, placeholder: "☆タイトル☆" %>
-  <%= f.text_area :content, id: 'textarea', placeholder: "!!!記事をここにかいちゃお!!!" %>
+  <%= f.text_field :title, placeholder: "!!! タイトル !!!" %>
+  <%= f.text_area :content, id: 'textarea', rows: '8', placeholder: "!!! 本文 !!!" %>
 </div>
-<%= f.submit "!!!ポストする!!!", class: "button" %>
+<%= f.submit "!!! 投稿 !!!", class: "button blue" %>
 <% end %>
