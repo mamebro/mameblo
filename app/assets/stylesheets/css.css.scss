@@ -239,9 +239,11 @@ header nav ul li {
 }
 
 header,
-header nav ul { zoom: 1; }
+header nav ul,
+ul.users { zoom: 1; }
 header:after,
-header nav ul:after { content: ""; display: block; clear: both; }
+header nav ul:after,
+ul.users:after { content: ""; display: block; clear: both; }
 
 /* details */
 
@@ -280,12 +282,24 @@ div.alert p {
   -moz-box-shadow: 0 0 4px #909090;
 }
 
-article aside {
-	background-color: #eee;
+article section {
+  margin-bottom: 3em;
+  
+	line-height: 1.66;
 }
 
-article section {
-	line-height: 1.33;
+article section h1 {
+  margin-bottom: 0.75em;
+  
+  font-size: 120%;
+}
+
+article section time {
+  width: 100%;
+  text-align: right;
+  display: block;
+  
+  font-size: 70%;
 }
 
 p.help {
@@ -319,6 +333,27 @@ p.help span {
   color: #dc133d;
 	font-size: 90%;
 	line-height: 1.33 !important;
+}
+
+p.help b.username {
+  margin-right: 0.25em;
+  
+	font-size: 140%;
+}
+
+p.help b.username a {
+  color: #000000;
+  
+  border-bottom: 0;
+}
+
+ul.users li {
+	position: relative;
+	float: left;
+	margin: 0 1em 0.5em 0;
+	
+	font-size: 120%;
+	font-weight: bold;
 }
 
 footer p.copyright {

@@ -1,28 +1,11 @@
 <%= provide(:title, @title) %>
-<div class="row">
-  <aside class="span4">
-    <section>
-      <h1><%= @user.name %></h1>
-      <span><%= link_to "view my profile", @user %></span>
-      <span><b>entry</b> <%= @user.entries.count %></span>
-    </section>
-    <section>
-      <%= render 'shared/stats' %>
-      <% if @users.any? %>
-      <div class="user_avatars">
-        <% @users.each do |user| %>
-        <% end %>
-      </div>
-      <% end %>
-    </section>
-  </aside>
-  <div class="span8">
-    <h3><%= @title %></h3>
-    <% if @users.any? %>
-    <ul class="users">
-      <%= render @users %>
-    </ul>
-    <%= will_paginate %>
-    <% end %>
-  </div>
-</div>
+<p class="help">
+  <%= render 'shared/stats' %><br />
+  <b class="username"><%= link_to @user.name, @user %></b>の<%= @title %>
+</p>
+<% if @users.any? %>
+<ul class="users">
+  <%= render @users %>
+</ul>
+<%= will_paginate %>
+<% end %>

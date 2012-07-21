@@ -1,15 +1,10 @@
 <% provide(:title, @user.name) %>
-<aside>
-  <h1><%= @user.name %></h1>
-  <div>
-    <%= render 'shared/stats' %>
-    <p><%= @user.entries.count %>entries</p>
-    <%= render 'follow_form' if signed_in? %>
-  </div>
-</aside>
+<p class="help">
+  <%= render 'shared/stats' %><br />
+  <b class="username"><%= @user.name %></b>の<%= @user.entries.count %>つの記事<br />
+  <%= render 'follow_form' if signed_in? %>
+</p>
 <% if @user.entries.any? %>
-<section>
-  <%= render @entries %>
-</div>
+<%= render @entries %>
 <%= will_paginate @entries %>
 <% end %>
