@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
     user = User.find_by_name(params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       sign_in user
-      flash[:success] = "!!!!!!!! Welcome to the mameblog !!!!!!!!"
+      flash[:success] = "!!!!!!!! ブラザーよ !!!!!!!!"
       redirect_back_or user
     else
-      flash[:error] = "sorry! please try again!!!"
+      flash[:error] = "あちゃー、もう一回お願いします!!!"
       render'new'
     end
   end
