@@ -314,6 +314,7 @@ article section div {
 }
 
 article section time {
+  position: relative;
   width: 100%;
   text-align: right;
   display: block;
@@ -323,6 +324,12 @@ article section time {
 
 article section.single time {
   margin-top: 3em;
+}
+
+article section.single time div.facebook {
+  position: absolute;
+  top: 1px;
+  left: 0;
 }
 
 p.help,
