@@ -412,7 +412,15 @@ footer p.copyright {
 	font-size: 80%;
 }
 
-
-pre.debug_dump { font-size: 70%; }
+#brothersflash {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 60px;
+	height: 60px;
+	z-index: 100;
+	
+	cursor: pointer;
+}
 
 
