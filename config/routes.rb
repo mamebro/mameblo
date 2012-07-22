@@ -7,7 +7,7 @@ Mameblog::Application.routes.draw do
   end
 
   resources :users
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:create, :destroy]
   resources :entries, only: [:create, :destroy, :show]
   resources :relationships, only: [:create, :destroy]
   root to: 'static_pages#home'

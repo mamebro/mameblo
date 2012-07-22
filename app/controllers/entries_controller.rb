@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class EntriesController < ApplicationController
   before_filter :signed_in_user, only: [:create, :destroy]
-  before_filter :correct_user, only: [:destroy, :edit]
+  before_filter :correct_user, only: [:destroy, :update]
 
   # GET /entries
   # GET /entries.json
@@ -37,7 +37,6 @@ class EntriesController < ApplicationController
   end
 
   # GET /entries/1/edit
-
   def edit
     @entry = Entry.find(params[:id])
   end
