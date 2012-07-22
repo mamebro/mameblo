@@ -1,9 +1,10 @@
-<div id="show">
-  <article>
-    <h1><%= @entry.title %></h1>
-    <section>
-      <%= simple_format(hbr(@entry.content)) %>
-    </section>    
-    <p class="author">ブラザー名<%= @entry.user.name %></p>
-  </article>
-</div>
+<section>
+  <h1><%= @entry.title %></h1>
+  <div>
+    <%= simple_format(hbr(@entry.content)) %>
+  </div>
+  <time>
+    ago
+  </time>
+  <p class="author">ブラザー名<%= @entry.user.name %></p>
+</section>
