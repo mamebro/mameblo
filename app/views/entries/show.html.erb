@@ -4,7 +4,7 @@
     <%= simple_format(hbr(@entry.content)) %>
   </div>
   <time>
-    ago
+    <%= time_ago_in_words(@entry.created_at) %>前 
   </time>
   <p class="author">ブラザー名<%= @entry.user.name %></p>
 </section>

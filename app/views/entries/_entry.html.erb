@@ -4,7 +4,7 @@
     <%= simple_format(hbr(entry.content)) %>
   </div>
   <time>
-    <%= link_to time_ago_in_words(entry.created_at), entry %> ago
+    <%= link_to time_ago_in_words(entry.created_at), entry %>前
     <% if current_user?(entry.user) %>
       &nbsp;
       <span class="delete">
