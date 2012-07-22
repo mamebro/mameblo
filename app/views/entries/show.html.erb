@@ -1,4 +1,4 @@
-<section>
+<section class="single">
   <h1><%= @entry.title %></h1>
   <div>
     <%= simple_format(hbr(@entry.content)) %>
@@ -6,5 +6,5 @@
   <time>
     <%= time_ago_in_words(@entry.created_at) %>前 
   </time>
-  <p class="author">ブラザー名<%= @entry.user.name %></p>
+  <p class="helpUp">Written by ブラザー <strong><%= @entry.user.name %></strong></p>
 </section>

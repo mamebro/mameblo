@@ -194,9 +194,15 @@ input[type='submit']:hover,
 	color: #909090 !important;
 }
 
-p.help a {
+p.help a,
+p.helpUp a {
   color: #0060af;
   border-bottom: 1px dotted #0060af;
+}
+
+p.help a:hover,
+p.helpUp a:hover {
+  border-bottom: 1px dashed #0060af;
 }
 
 /* layouts */
@@ -282,10 +288,25 @@ article section {
 	line-height: 1.66;
 }
 
+section.entry {
+  position: relative;
+  padding-bottom: 96px;
+}
+
+section.single {
+  padding: 96px 0;
+}
+
 article section h1 {
   margin-bottom: 0.75em;
   
   font-size: 120%;
+}
+
+article section h1 a:hover,
+article section time a:hover {
+  color: #0060af;
+  border-bottom: 1px dashed #0060af;
 }
 
 article section div {
@@ -300,7 +321,12 @@ article section time {
   font-size: 70%;
 }
 
-p.help {
+article section.single time {
+  margin-top: 3em;
+}
+
+p.help,
+p.helpUp {
   position: relative;
   margin: 2em;
 	padding: 0.5em 1em;
@@ -313,6 +339,10 @@ p.help {
   -webkit-border-radius: 6px;
 }
 
+p.helpUp {
+	text-align: right;
+}
+
 p.help:after {
   content: "";
   position: absolute;
@@ -322,6 +352,17 @@ p.help:after {
   height: 0;
   border-top: 18px solid #eeeeee;
   border-right: 24px solid transparent;
+}
+
+p.helpUp:after {
+  content: "";
+  position: absolute;
+  top: -18px;
+  right: 36px;
+  width: 0;
+  height: 0;
+  border-bottom: 18px solid #eeeeee;
+  border-left: 24px solid transparent; 
 }
 
 p.help span {
