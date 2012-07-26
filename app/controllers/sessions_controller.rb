@@ -2,7 +2,7 @@
 class SessionsController < ApplicationController
 
   def create
-    user = User.find_by_name(params[:session][:email])
+    user = User.find_by_name(params[:session][:name])
     if user && user.authenticate(params[:session][:password])
       sign_in user
       flash[:success] = "!!!!!!!! ブラザーよ !!!!!!!!"
@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
+    flash[:success] = "!!!!!!!! またあおう !!!!!!!!"
     redirect_to root_path
   end
 end

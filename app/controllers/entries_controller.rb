@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class EntriesController < ApplicationController
   before_filter :signed_in_user, only: [:create, :destroy]
-  before_filter :correct_user, only: [:destroy, :edit]
+  before_filter :correct_user, only: [:destroy, :update]
 
   # GET /entries
   # GET /entries.json
@@ -27,20 +27,19 @@ class EntriesController < ApplicationController
 
   # GET /entries/new
   # GET /entries/new.json
-  def new
-    @entry = Entry.new
+ # def new
+  #  @entry = Entry.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @entry }
-    end
-  end
+#    respond_to do |format|
+ #     format.html # new.html.erb
+  #    format.json { render json: @entry }
+   # end
+  #end
 
   # GET /entries/1/edit
-
-  def edit
-    @entry = Entry.find(params[:id])
-  end
+#  def edit
+ #   @entry = Entry.find(params[:id])
+ # end
 
   # POST /entries
   # POST /entries.json
