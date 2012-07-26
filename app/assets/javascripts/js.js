@@ -14,11 +14,11 @@ $(document).ready(function() {
 	  }
   });
   
-  $('#brothersflash').click(function(){
-	  $('#brothersflash').hide();
-	  $('header nav').slideDown('fast');
-	  swNav = 1;
-  });
+//  $('#brothersflash').click(function(){
+//	  $('#brothersflash').hide();
+//    $('header nav').slideDown('fast');
+//  swNav = 1;
+//  });
   
   $('#beBrother').click(function(){
     $('#beBrother').hide();
