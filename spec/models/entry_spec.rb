@@ -1,11 +1,14 @@
+# -*- coding: utf-8 -*-
 require 'spec_helper'
 
 describe Entry do
-  
-  let(:user) { FactoryGirl.create(:user) }
-  before { @entry = user.entry.build(content: "Lorem ipsum") }
 
-  subject { @entry }
+  let(:user) { FactoryGirl.create(:user) }
+  before do @entry = user.entries.build(title: "まめぶろ最高",
+                                      content: "ここに本文を書いてるよブラザー！") 
+    subject { @entry }
+
+  end
 
   it { should respond_to(:content) }
   it { should respond_to(:user_id) }
