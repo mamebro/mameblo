@@ -8,8 +8,6 @@ describe "mame blog(static_pages)" do
   describe "Home" do
     before{ visit root_path }
 
-    it { should have_selector 'h1',  text: "mameblog" }
-
     describe "for signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
       before do
