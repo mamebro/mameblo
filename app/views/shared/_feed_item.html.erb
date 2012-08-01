@@ -1,9 +1,0 @@
-<section id="<%= feed_item.id %>">
-  <div class="body"><%= feed_item.content %></div>
-  <time><%= time_ago_in_words(feed_item.created_at) %></time>
-  <% if current_user?(feed_item.user) %>
-  <%= link_to "消す", feed_item, method: :delete,
-      confirm: "消すけどいいの？？",
-      title: feed_item.content %>
-  <% end %>
-</section>
