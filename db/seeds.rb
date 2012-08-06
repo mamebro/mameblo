@@ -7,10 +7,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user_name = "しかくん"
+user_name = "shikakun"
 content_msg = "テンションあがってきた"
 
-20.times do |i| 
+200.times do |i| 
   User.create( name: "#{user_name}#{i}号" )
   Entry.create( user_id: i, title: "テンションが#{i}あがった", content: content_msg * i )
 end
