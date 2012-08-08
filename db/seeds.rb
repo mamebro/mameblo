@@ -1,16 +1,10 @@
-# -*- coding: utf-8 -*-
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+B# -*- coding: utf-8 -*-
 
-user_name = "shikakun"
-content_msg = "テンションあがってきた"
+require 'factory_girl'
+# Dir[Rails.root.join('spec/support/factories/*.rb')].each {|f| require f }
 
-200.times do |i| 
-  User.create( name: "#{user_name}#{i}号" )
-  Entry.create( user_id: i, title: "テンションが#{i}あがった", content: content_msg * i )
-end
+User.delete_all
+Entry.delete_all
+
+FactoryGirl.create_list(:user, 200)
+FactoryGirl.create_list(:entry, 100)

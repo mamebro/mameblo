@@ -17,6 +17,7 @@ group :development, :test do
   gem 'rspec-rails','2.9.0'
   gem 'guard-rspec','0.5.5'
   gem 'annotate','~>2.4.1.beta'
+  gem 'factory_girl_rails','1.4.0'
 end
 
 group :production do
@@ -48,7 +49,6 @@ group :test do
    :require => false
   gem 'guard-spork','0.3.2'
   gem 'spork','0.9.0'
-  gem 'factory_girl_rails','1.4.0'
 end
 
 # To use ActiveModel has_secure_password
