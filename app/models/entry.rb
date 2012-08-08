@@ -1,7 +1,7 @@
 require 'rdiscount'
 
 class Entry < ActiveRecord::Base
-  attr_accessible :content, :title
+  attr_accessible :content, :title, :user_id
   belongs_to :user
 
   validates :title, presence: true, length: { maximum: 20000 }

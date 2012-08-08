@@ -2,14 +2,14 @@
 FactoryGirl.define do
   factory :user do
     sequence(:name)  { |n| "shikakun #{n}" }
-    sequence(:email) { |n| "shika_#{n}@example.com"}   
-    password "foobar"
-    password_confirmation "foobar"
+    sequence(:email) { |n| "shika_#{n}@example.com" }
+    password "shikakun"
+    password_confirmation "shikakun"
   end
 
   factory :entry do
-    title "テンション上がってきた"
-    content "kunshika"
+    sequence(:title) { |n| "テンションが#{n}上がってきた" }
+    sequence(:content) { |n| "kunshika #{n}" }
     user
   end
 end
