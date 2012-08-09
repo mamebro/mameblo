@@ -1,8 +1,7 @@
-B# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 require 'factory_girl'
 # Dir[Rails.root.join('spec/support/factories/*.rb')].each {|f| require f }
-
 User.delete_all
 Entry.delete_all
 
