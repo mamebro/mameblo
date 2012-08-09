@@ -11,16 +11,19 @@ describe "mame blog(static_pages)" do
     describe "for signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
       before do
-        FactoryGirl.create(:entry, user: user, content: "日記をかくよ、楽しいな")
-        FactoryGirl.create(:entry, user: user, content: "メロンパン食べた！")
+        FactoryGirl.create(:entry, user: user)
+        FactoryGirl.create(:entry, user: user)
         sign_in user
         visit root_path
       end
-      it { should have_content('日記をかくよ、楽しいな') }
-      it { should have_content('メロンパン食べた！') }
+      it { should have_content('shikakun') }
+      it { should have_content('書く') }
+      it { should have_content('ブラザー') }
+      it { should have_content('設定') }
+
     end
 
-    describe " user" do
+    describe "user" do
       let(:user) { FactoryGirl.create(:user) }
 
       describe "login&signin do not appear for signed-in users" do
@@ -37,8 +40,10 @@ describe "mame blog(static_pages)" do
           signin_with_failed user
           visit root_path
         end
-        it { should_not have_content('Write New Entry') }
-        it { should have_content("Sign in") }
+        it { should_not have_content('書く') }
+        it { should_not have_content('shikakun') }
+        it { should_not have_content('ブラザーズ') }
+        it { should have_content("あちゃー、もう一回お願いします!!!") }
       end
     end
   end
