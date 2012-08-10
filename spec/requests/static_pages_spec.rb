@@ -5,7 +5,7 @@ describe "mame blog(static_pages)" do
 
   subject { page }
 
-  describe "Home" do
+  describe "サインインした時" do
     before{ visit root_path }
 
     describe "for signed-in users" do
@@ -23,17 +23,8 @@ describe "mame blog(static_pages)" do
 
     end
 
-    describe "user" do
+    describe "サインイン失敗した時" do
       let(:user) { FactoryGirl.create(:user) }
-
-      describe "login&signin do not appear for signed-in users" do
-        before do
-          sign_in user
-          visit root_path
-        end
-        it { should have_content('Write New Entry') }
-        it { should have_content('Sign out') }
-      end
 
       describe "user failed login" do 
         before do
