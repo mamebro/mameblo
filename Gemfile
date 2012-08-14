@@ -22,6 +22,7 @@ end
 
 group :production do
   gem 'mysql2'
+  gem 'google-analytics-rails'
 end
 
   

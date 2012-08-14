@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--
 .___  ___.      ___      .___  ___.  _______ 
 |   \/   |     /   \     |   \/   | |   ____|
@@ -26,6 +26,7 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
+    <%= analytics_init if Rails.env.production? %>
   </head>
   <body>
     <div id="page">
