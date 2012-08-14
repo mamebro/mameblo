@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require "spec_helper"
 
 describe EntriesController do
@@ -7,7 +8,8 @@ describe EntriesController do
       get("/entries/1").should route_to("entries#show", :id => "1")
     end
 
-    it "routes to #edit" do
+    # エディット機能
+    pending "routes to #edit" do
       get("/entries/1/edit").should route_to("entries#edit", :id => "1")
     end
 
@@ -15,7 +17,7 @@ describe EntriesController do
       post("/entries").should route_to("entries#create")
     end
 
-    it "routes to #update" do
+    pending "routes to #update" do
       put("/entries/1").should route_to("entries#update", :id => "1")
     end
 
