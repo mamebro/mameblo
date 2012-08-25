@@ -7,9 +7,14 @@
     <%= link_to time_ago_in_words(entry.created_at), entry %>前 
     <% if current_user?(entry.user) %>
       &nbsp;
-      <span class="delete">
-        <%= link_to "× Delete", entry, method: :delete, confirm: "消えちゃうよ?", title: '削除する' %>
-      </span>
+
+    <span class="edit">
+      <%= link_to "Edit", edit_entry_path(entry), title: '編集する' %>
+    </span>
+
+    <span class="delete">
+      <%= link_to "× Delete", entry, method: :delete, confirm: "消えちゃうよ?", title: '削除する' %>
+    </span>
     <% end %>
   </time>
 </section>

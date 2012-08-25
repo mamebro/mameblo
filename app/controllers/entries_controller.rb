@@ -37,9 +37,9 @@ class EntriesController < ApplicationController
   #end
 
   # GET /entries/1/edit
-#  def edit
- #   @entry = Entry.find(params[:id])
- # end
+  def edit
+    @entry = Entry.find(params[:id])
+  end
 
   # POST /entries
   # POST /entries.json
@@ -61,7 +61,7 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.update_attributes(params[:entry])
-        format.html { redirect_to root_path, notice: 'Entry was successfully updated.' }
+        format.html { redirect_to root_path, notice: '!!! 編集完了したね !!!' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
