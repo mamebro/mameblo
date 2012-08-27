@@ -26,4 +26,4 @@ production:
   username: ENV['SQALE_USERNAME']
   password: ENV['SQALE_PASSWORD']
   database: ENV['SQALE_DATABASE']
-  host: ENV['SQALE_HOST']
+  host: mysql001.sqale.jp
