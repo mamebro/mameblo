@@ -22,8 +22,7 @@ production:
   encoding: utf8
   pool: 5
   adapter: mysql2
-  username: sqale_8f3b732645
-  password: 0751d5100125b91f5983a875ad54d24d9c085fee22632914
-  database: sqale_8f3b732645
-  host: mysql001.sqale.jp
-            
+  username: ENV['SQALE_USERNAME']
+  password: ENV['SQALE_PASSWORD']
+  database: ENV['SQALE_DATABASE']
+  host: ENV['SQALE_HOST']
