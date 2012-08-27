@@ -22,4 +22,3 @@ production:
   adapter: mysql2
   encoding: utf8
   pool: 5
-  adapter: mysql2
