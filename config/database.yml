@@ -22,3 +22,7 @@ production:
   adapter: mysql2
   encoding: utf8
   pool: 5
+  username: <%= ENV['SQALE_USERNAME'] %>
+  password: <%= ENV['SQALE_PASSWORD'] %>
+  database: <%= ENV['SQALE_DATABASE'] %>
+  host: <%= ENV['SQALE_HOST'] %>
