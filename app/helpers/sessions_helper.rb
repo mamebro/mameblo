@@ -1,29 +1,29 @@
 # -*- coding: utf-8 -*-
 module SessionsHelper
 
-  def sign_in(user)
-    cookies.permanent[:remember_token] = user.remember_token
-    self.current_user = user
+  def sign_in(brother)
+    cookies.permanent[:remember_token] = brother.remember_token
+    self.current_brother = brother
   end
 
   def signed_in?
-    !current_user.nil?
+    !current_brother.nil?
   end
 
-  def current_user=(user)
-    @current_user = user
+  def current_brother=(brother)
+    @current_brother = brother
   end
 
-  def current_user
+  def current_brother
     return unless cookies[:remember_token]
-    @current_user ||= User.find_by_remember_token(cookies[:remember_token])
+    @current_brother ||= Brother.find_by_remember_token(cookies[:remember_token])
   end
 
-  def current_user?(user)
-    user == current_user
+  def current_brother?(brother)
+    brother == current_brother
   end
 
-  def signed_in_user
+  def signed_in_brother
     unless signed_in?
       store_location
       redirect_to signin_path, notice: "サインインしてください、お願いします!"
@@ -31,7 +31,7 @@ module SessionsHelper
   end
 
   def sign_out
-    current_user = nil
+    current_brother = nil
     cookies.delete(:remember_token)
   end
  

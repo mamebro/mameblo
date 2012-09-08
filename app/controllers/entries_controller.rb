@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class EntriesController < ApplicationController
-  before_filter :signed_in_user, only: [:create, :destroy]
-  before_filter :correct_user, only: [:destroy, :update]
+  before_filter :signed_in_brother, only: [:create, :destroy]
+  before_filter :correct_brother, only: [:destroy, :update]
 
   def index
   end
@@ -20,10 +20,10 @@ class EntriesController < ApplicationController
   end
 
   def create
-    @entry = current_user.entries.build(params[:entry])
+    @entry = current_brother.entries.build(params[:entry])
     if @entry.save
       flash[:success] = "!!! ぶろぐ投稿できたね !!!"
-      redirect_to @entry.user
+      redirect_to @entry.brother
     else
       @feed_items = []
       render 'static_pages/home'
@@ -51,8 +51,8 @@ class EntriesController < ApplicationController
 
   private
 
-  def correct_user
-    @entry = current_user.entries.find_by_id(params[:id])
+  def correct_brother
+    @entry = current_brother.entries.find_by_id(params[:id])
     redirect_to root_path if @entry.nil?
   end
 end

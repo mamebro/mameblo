@@ -8,12 +8,12 @@ describe "mame blog(static_pages)" do
   describe "サインインした時" do
     before{ visit root_path }
 
-    describe "for signed-in users" do
-      let(:user) { FactoryGirl.create(:user) }
+    describe "for signed-in brothers" do
+      let(:brother) { FactoryGirl.create(:brother) }
       before do
-        FactoryGirl.create(:entry, user: user)
-        FactoryGirl.create(:entry, user: user)
-        sign_in user
+        FactoryGirl.create(:entry, brother: brother)
+        FactoryGirl.create(:entry, brother: brother)
+        sign_in brother
         visit root_path
       end
       it { should have_content('shikakun') }
@@ -24,11 +24,11 @@ describe "mame blog(static_pages)" do
     end
 
     describe "サインイン失敗した時" do
-      let(:user) { FactoryGirl.create(:user) }
+      let(:brother) { FactoryGirl.create(:brother) }
 
-      describe "user failed login" do 
+      describe "brother failed login" do 
         before do
-          signin_with_failed user
+          signin_with_failed brother
           visit root_path
         end
         it { should_not have_content('書く') }

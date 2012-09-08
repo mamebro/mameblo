@@ -1,18 +1,18 @@
 Mameblog::Application.routes.draw do
 
-  resources :users do
+  resources :brothers do
     member do
       get :following, :followers
     end
   end
 
-  resources :users
+  resources :brothers
   resources :sessions, only: [:create, :destroy]
   resources :entries, only: [:create, :destroy, :show, :update, :edit]
   resources :relationships, only: [:create, :destroy]
   root to: 'static_pages#home'
 
-  match '/signup',  to: 'users#new'
+  match '/signup',  to: 'brothers#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 

@@ -13,8 +13,21 @@
 
 ActiveRecord::Schema.define(:version => 20120719123837) do
 
+  create_table "brothers", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "password_digest"
+    t.string   "remember_token"
+    t.boolean  "admin"
+  end
+
+  add_index "brothers", ["email"], :name => "index_brothers_on_email", :unique => true
+  add_index "brothers", ["remember_token"], :name => "index_brothers_on_remember_token"
+
   create_table "entries", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "brother_id"
     t.text     "content"
     t.string   "title"
     t.datetime "created_at", :null => false
@@ -31,18 +44,5 @@ ActiveRecord::Schema.define(:version => 20120719123837) do
   add_index "relationships", ["followed_id"], :name => "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
-
-  create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.string   "password_digest"
-    t.string   "remember_token"
-    t.boolean  "admin"
-  end
-
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
 end

@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Relationship do
 
-  let(:follower) { FactoryGirl.create(:user) }
-  let(:followed) { FactoryGirl.create(:user) }
+  let(:follower) { FactoryGirl.create(:brother) }
+  let(:followed) { FactoryGirl.create(:brother) }
   let(:relationship) { follower.relationships.build(followed_id: followed.id) }
 
   subject { relationship }

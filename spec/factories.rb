@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 FactoryGirl.define do
-  factory :user do
+  factory :brother do
     sequence(:name)  { |n| "shikakun #{n}" }
     sequence(:email) { |n| "shika_#{n}@example.com" }
     password "shikakun"
@@ -10,6 +10,6 @@ FactoryGirl.define do
   factory :entry do
     sequence(:title) { |n| "テンションが#{n}上がってきた" }
     sequence(:content) { |n| "kunshika #{n}" }
-    user
+    brother
   end
 end

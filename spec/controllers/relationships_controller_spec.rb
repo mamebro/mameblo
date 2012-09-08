@@ -2,29 +2,29 @@ require 'spec_helper'
 
 describe RelationshipsController do
 
-  let(:user) { FactoryGirl.create(:user) }
-  let(:other_user) { FactoryGirl.create(:user) }
+  let(:brother) { FactoryGirl.create(:brother) }
+  let(:other_brother) { FactoryGirl.create(:brother) }
 
-  before { sign_in user }
+  before { sign_in brother }
 
   pending "creating a relationship with Ajax" do
 
     it "should increment the Relationship count" do
       expect do
-        xhr :post, :create, relationship: { followed_id: other_user.id }
+        xhr :post, :create, relationship: { followed_id: other_brother.id }
       end.should change(Relationship, :count).by(1)
     end
 
     it "should respond with success" do
-      xhr :post, :create, relationship: { followed_id: other_user.id }
+      xhr :post, :create, relationship: { followed_id: other_brother.id }
       response.should be_success
     end
   end
 
   pending "destroying a relationship with Ajax" do
 
-    before { user.follow!(other_user) }
-    let(:relationship) { user.relationships.find_by_followed_id(other_user) }
+    before { brother.follow!(other_brother) }
+    let(:relationship) { brother.relationships.find_by_followed_id(other_brother) }
 
     it "should decrement the Relationship count" do
       expect do
