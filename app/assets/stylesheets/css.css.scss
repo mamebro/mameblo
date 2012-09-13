@@ -240,10 +240,10 @@ header nav ul li {
 
 header,
 header nav ul,
-ul.users { zoom: 1; }
+ul.brothers { zoom: 1; }
 header:after,
 header nav ul:after,
-ul.users:after { content: ""; display: block; clear: both; }
+ul.brothers:after { content: ""; display: block; clear: both; }
 
 /* details */
 
@@ -381,13 +381,13 @@ p.help span {
 	line-height: 1.33 !important;
 }
 
-p.help b.username {
+p.help b.brothername {
   margin-right: 0.25em;
   
 	font-size: 140%;
 }
 
-p.help b.username a {
+p.help b.brothername a {
   color: #000000;
   
   border-bottom: 0;
@@ -401,7 +401,7 @@ p.help b.username a {
 	margin-bottom: 4em;
 }
 
-ul.users li {
+ul.brothers li {
 	position: relative;
 	float: left;
 	margin: 0 1em 0.5em 0;

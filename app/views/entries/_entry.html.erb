@@ -5,7 +5,7 @@
   </div>
   <time>
     <%= link_to time_ago_in_words(entry.created_at), entry %>前 
-    <% if current_user?(entry.user) %>
+    <% if current_brother?(entry.brother) %>
       &nbsp;
 
     <span class="edit">

@@ -3,27 +3,27 @@ require 'spec_helper'
 
 describe Entry do
 
-  let(:user) { FactoryGirl.create(:user) }
-  before do @entry = user.entries.build(title: "まめぶろ最高",
+  let(:brother) { FactoryGirl.create(:brother) }
+  before do @entry = brother.entries.build(title: "まめぶろ最高",
                                       content: "ここに本文を書いてるよブラザー！") 
     subject { @entry }
 
   end
 
   it { should respond_to(:content) }
-  it { should respond_to(:user_id) }
-  it { should respond_to(:user) }
+  it { should respond_to(:brother_id) }
+  it { should respond_to(:brother) }
 
   describe "accessible attributes" do
-    it "should not allow access to user_id" do
+    it "should not allow access to brother_id" do
       expect do
-        Entry.new(user_id: user.id)
+        Entry.new(brother_id: brother.id)
       end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
     end
   end
 
-  describe "when user_id is not present" do
-    before { @entry.user_id = nil }
+  describe "when brother_id is not present" do
+    before { @entry.brother_id = nil }
     it { should_not be_valid }
   end
 

@@ -1,0 +1,11 @@
+<%= provide(:title, @title) %>
+<p class="help">
+  <%= render 'shared/stats' %><br />
+  <b class="brothername"><%= link_to @brother.name, @brother %></b>の<%= @title %>
+</p>
+<% if @brothers.any? %>
+<ul class="brothers">
+  <%= render @brothers %>
+</ul>
+<%= will_paginate %>
+<% end %>

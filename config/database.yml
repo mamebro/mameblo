@@ -25,3 +25,4 @@ production:
   password: <%= ENV['SQALE_PASSWORD'] %>
   database: <%= ENV['SQALE_DATABASE'] %>
   host: <%= ENV['SQALE_HOST'] %>
+  pool: 5

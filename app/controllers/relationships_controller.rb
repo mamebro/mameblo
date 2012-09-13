@@ -1,21 +1,21 @@
 # -*- coding: utf-8 -*-
 class RelationshipsController < ApplicationController
-  before_filter :signed_in_user
+  before_filter :signed_in_brother
 
   def create
-    @user = User.find(params[:relationship][:followed_id])
-    current_user.follow!(@user)
+    @brother = Brother.find(params[:relationship][:followed_id])
+    current_brother.follow!(@brother)
     redirect_to do |format|
-      format.html { redirect_to @user }
+      format.html { redirect_to @brother }
       format.js
     end
   end
 
   def destroy
-    @user = Relationship.find(params[:id]).followed
-    current_user.unfollow!(@user)
+    @brother = Relationship.find(params[:id]).followed
+    current_brother.unfollow!(@brother)
     redirect_to do |format|
-      format.html { redirect_to @user }
+      format.html { redirect_to @brother }
       format.js
     end
   end

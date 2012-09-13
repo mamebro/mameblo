@@ -1,21 +1,11 @@
 # -*- coding: utf-8 -*-
 class EntriesController < ApplicationController
-  before_filter :signed_in_user, only: [:create, :destroy]
-  before_filter :correct_user, only: [:destroy, :update]
+  before_filter :signed_in_brother, only: [:create, :destroy]
+  before_filter :correct_brother, only: [:destroy, :update]
 
-  # GET /entries
-  # GET /entries.json
   def index
-#    @entries = Entry.all
-
-#    respond_to do |format|
-#      format.html # index.html.erb
-#      format.json { render json: @entries }
-#    end
   end
 
-  # GET /entries/1
-  # GET /entries/1.json
   def show
     @entry = Entry.find(params[:id])
 
@@ -25,37 +15,21 @@ class EntriesController < ApplicationController
     end
   end
 
-  # GET /entries/new
-  # GET /entries/new.json
- # def new
-  #  @entry = Entry.new
-
-#    respond_to do |format|
- #     format.html # new.html.erb
-  #    format.json { render json: @entry }
-   # end
-  #end
-
-  # GET /entries/1/edit
   def edit
     @entry = Entry.find(params[:id])
   end
 
-  # POST /entries
-  # POST /entries.json
   def create
-    @entry = current_user.entries.build(params[:entry])
+    @entry = current_brother.entries.build(params[:entry])
     if @entry.save
       flash[:success] = "!!! ぶろぐ投稿できたね !!!"
-      redirect_to @entry.user
+      redirect_to @entry.brother
     else
       @feed_items = []
       render 'static_pages/home'
     end
   end
 
-  # PUT /entries/1
-  # PUT /entries/1.json
   def update
     @entry = Entry.find(params[:id])
 
@@ -70,8 +44,6 @@ class EntriesController < ApplicationController
     end
   end
 
-  # DELETE /entries/1
-  # DELETE /entries/1.json
   def destroy
     @entry.destroy
     redirect_to root_path
@@ -79,8 +51,8 @@ class EntriesController < ApplicationController
 
   private
 
-  def correct_user
-    @entry = current_user.entries.find_by_id(params[:id])
+  def correct_brother
+    @entry = current_brother.entries.find_by_id(params[:id])
     redirect_to root_path if @entry.nil?
   end
 end

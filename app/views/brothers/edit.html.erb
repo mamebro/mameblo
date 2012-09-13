@@ -1,0 +1,14 @@
+<% provide(:title, "設定") %>
+<section>
+  <%= form_for(@brother) do |f| %>
+  <%= render 'shared/error_messages' ,object: f.object%>
+  <%= f.text_field :name, placeholder: 'ユーザー名' %>
+  <%= f.text_field :email, placeholder: 'メールアドレス' %>
+  <%= f.password_field :password, placeholder: 'Password' %>
+  <%= f.password_field :password_confirmation, placeholder: 'Passwordもう一回お願いします !!' %>
+  <%= f.submit "ユーザー名・メールアドレスの変更", class: "button red" %>
+  <% end %>
+</section>
+<section>
+  <%= link_to "サインアウト", signout_path, class: 'button gray', method: "delete" %>
+</section>

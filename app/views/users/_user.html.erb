@@ -1,6 +1,0 @@
-<li>
-  <%= link_to user.name, user %>
-  <% if current_user.admin? && !current_user?(user) %>
-  |<%= link_to "!!! 消す !!!", user, method: :delete, confirm: "本当に消えるよ!!!!!!?" %>
-  <% end %>
-</li>
