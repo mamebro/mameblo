@@ -1,5 +1,7 @@
 # !!! Welcome to mameblo !!!
 
+[![Build Status](https://secure.travis-ci.org/kurotaky/mameblog.png)](http://travis-ci.org/kurotaky/mameblog)
+
 .___  ___.      ___      .___  ___.  _______  
 |   \/   |     /   \     |   \/   | |   ____|  
 |  \  /  |    /  ^  \    |  \  /  | |  |__  
