@@ -10,6 +10,7 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'rdiscount'
 gem 'kaminari'
 gem 'jquery-rails', '2.0.2'
+gem 'twitter'
 
 group :development, :test do
   gem 'sqlite3','1.3.5'
