@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/kurotaky/mameblog.png)](http://travis-ci.org/kurotaky/mameblog)
+[![Build Status](https://secure.travis-ci.org/kurotaky/mameblo.png)](http://travis-ci.org/kurotaky/mameblo)
 
 ```
 .___  ___.      ___      .___  ___.  _______ 
