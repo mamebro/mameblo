@@ -18,6 +18,7 @@ group :development, :test do
   gem 'guard-rspec','0.5.5'
   gem 'annotate','~>2.4.1.beta'
   gem 'factory_girl_rails','3.3.0'
+  gem 'tapp'
 end
 
 group :production do
