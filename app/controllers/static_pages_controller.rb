@@ -6,9 +6,10 @@ class StaticPagesController < ApplicationController
       @feed_items = current_brother.feed.paginate(page: params[:page])
     else
       begin
-        @res ||= Twitter.user_timeline("mameblo", {"count" => 1})
+        @res = Twitter.user_timeline("mameblo", {"count" => 1}).text
+        @res.to_s
       rescue
-        @res = "まめぶろに来てくれてありがとう!!!"
+        @res = "!!! ブラザーになろうぜ !!!"
       end
     end
   end
