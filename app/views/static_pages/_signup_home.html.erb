@@ -5,7 +5,11 @@
 </section>
 
 <p>
-  <% @res.each do |res| %>
-  <%= res.text %>
+  <% if @res %>
+    <% @res.each do |res| %>
+    <%= res.text %>
+  <% end %>
+  <% else %>
+    <%= @res %>
   <% end %>
 </p>
