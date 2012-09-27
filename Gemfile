@@ -11,6 +11,7 @@ gem 'rdiscount'
 gem 'kaminari'
 gem 'jquery-rails', '2.0.2'
 gem 'twitter'
+gem 'whenever', :require => false
 
 group :development, :test do
   gem 'sqlite3','1.3.5'
