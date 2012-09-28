@@ -20,6 +20,7 @@ group :development, :test do
   gem 'annotate','~>2.4.1.beta'
   gem 'factory_girl_rails','3.3.0'
   gem 'tapp'
+  gem 'pry-rails'
 end
 
 group :production do
