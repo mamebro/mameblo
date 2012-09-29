@@ -2,23 +2,23 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 gem "railties", "~> 3.2.8"
-gem 'bootstrap-sass','2.0.0'
+gem 'bootstrap-sass','2.1.0'
 gem 'bcrypt-ruby','3.0.1'
-gem 'faker', '1.0.1'
+gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.3'
-gem 'bootstrap-will_paginate', '0.0.6'
+gem 'bootstrap-will_paginate', '0.0.9'
 gem 'rdiscount'
 gem 'kaminari'
-gem 'jquery-rails', '2.0.2'
+gem 'jquery-rails', '2.1.3'
 gem 'twitter'
 gem 'whenever', :require => false
 
 group :development, :test do
-  gem 'sqlite3','1.3.5'
+  gem 'sqlite3','1.3.6'
   gem 'rspec-rails','2.11.0'
-  gem 'guard-rspec','0.5.5'
-  gem 'annotate','~>2.4.1.beta'
-  gem 'factory_girl_rails','3.3.0'
+  gem 'guard-rspec','2.0.0'
+  gem 'annotate','2.5.0'
+  gem 'factory_girl_rails', '4.1.0'
   gem 'tapp'
   gem 'pry-rails'
 end
@@ -44,6 +44,6 @@ group :test do
    :git => 'git://github.com/ttilley/rb-fsevent.git',
    :branch => 'pre-compiled-gem-one-off',
    :require => false
-  gem 'guard-spork','0.3.2'
+  gem 'guard-spork','1.2.0'
   gem 'spork','~> 1.0rc'
 end
