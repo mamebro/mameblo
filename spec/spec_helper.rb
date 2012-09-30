@@ -1,4 +1,8 @@
 require 'rubygems'
+
+require 'simplecov'
+SimpleCov.start
+
 require 'spork'
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'

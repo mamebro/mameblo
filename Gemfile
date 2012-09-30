@@ -37,6 +37,7 @@ group :assets do
 end
 
 group :test do
+  gem 'simplecov', require: false
   gem 'launchy'
   gem 'capybara', git: 'git://github.com/jnicklas/capybara.git'
   gem 'growl','1.0.3'
