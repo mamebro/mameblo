@@ -38,7 +38,7 @@ end
 
 group :test do
   gem 'launchy'
-  gem 'capybara','1.1.2'
+  gem 'capybara', git: 'git://github.com/jnicklas/capybara.git'
   gem 'growl','1.0.3'
   gem 'rb-fsevent',
    :git => 'git://github.com/ttilley/rb-fsevent.git',
