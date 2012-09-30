@@ -5,12 +5,12 @@ class BrothersController < ApplicationController
   before_filter :admin_brother,     only: :destroy
 
   def index
-    @brothers = Brother.paginate(page: params[:page])
+    @brothers = Brother.page params[:page]
   end
 
   def show
     @brother = Brother.find(params[:id])
-    @entries = @brother.entries.paginate(page: params[:page])
+    @entries = @brother.entries.page params[:page]
   end
 
   def new
@@ -52,14 +52,14 @@ class BrothersController < ApplicationController
   def following
     @title = "ブラザー"
     @brother = Brother.find(params[:id])
-    @brothers = @brother.followed_brothers.paginate(page: params[:page])
+    @brothers = @brother.followed_brothers.page params[:page]
     render 'show_follow'
   end
 
   def followers
     @title = "見守っているブラザー"
     @brother = Brother.find(params[:id])
-    @brothers = @brother.followers.paginate(page: params[:page])
+    @brothers = @brother.followers.page params[:page]
     render 'show_follow'
   end
 
