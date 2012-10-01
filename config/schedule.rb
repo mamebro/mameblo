@@ -23,6 +23,6 @@
 
 # mameblo Twitter から最新のつぶやきを拾ってくる
 # OAuth無しだと 150リクエスト/1hour 超えると制限かかる
-every 1.hours, at: 'start of the month at 10:00am' do
-  rake "develop:brother_tweet"
+every 1.hours do
+  rake "develop:brothers_tweet"
 end

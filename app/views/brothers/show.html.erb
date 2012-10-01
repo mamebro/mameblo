@@ -6,5 +6,5 @@
 </p>
 <% if @brother.entries.any? %>
 <%= render @entries %>
-<%= will_paginate @entries %>
+<%= paginate @entries %>
 <% end %>

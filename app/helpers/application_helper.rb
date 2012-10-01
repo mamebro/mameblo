@@ -1,16 +1,6 @@
 # -*- coding: utf-8 -*-
 module ApplicationHelper
 
-  # http://d.hatena.ne.jp/nedate/20101005/1286243852
-  module ActionView
-    class OutputBuffer < ActiveSupport::SafeBuffer
-      def <<(value)
-        super(value.to_s.force_encoding('UTF-8'))
-      end
-      alias :append= :<<
-    end
-  end
-
   #Returns the full title on a per-page basis.
   def full_title(page_title)
     base_title = "まめぶろ"
@@ -26,4 +16,14 @@ module ApplicationHelper
     target = html_escape(target)
     target.gsub(/\r\n|\r|\n/, "<br />")
   end
+
+  # ブラザーTwitterのつぶやきを表示する
+  def brothers_tweet
+    begin
+      @res = Twitter.user_timeline("mameblo").sample.text
+    rescue
+      @res = "まめまめまめまめまめぶろ♪"
+    end
+  end
+
 end

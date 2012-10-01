@@ -1,5 +1,11 @@
-<% if signed_in? %>
 <footer>
-  <p class="copyright"><a href="#header">&copy;&nbsp;mameblo&nbsp;&copy;</a></p>
+  <p class="tweet">
+    <% brothers_tweet %>
+    <%= @res %>
+  </p>
+  <p class="copyright">
+    <a href="#header">
+      &copy;&nbsp;mameblo&nbsp;&copy;
+    </a>
+  </p>
 </footer>
-<% end %>
