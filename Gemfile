@@ -24,6 +24,7 @@ end
 group :production do
   gem 'mysql2'
   gem 'google-analytics-rails'
+  gem 'newrelic_rpm'
 end
 
 # Gems used only for assets and not required
