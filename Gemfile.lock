@@ -119,6 +119,7 @@ GEM
     multipart-post (1.1.5)
     mysql2 (0.3.11)
     mysql2 (0.3.11-x86-mingw32)
+    newrelic_rpm (3.4.2.1)
     nokogiri (1.5.5)
     nokogiri (1.5.5-x86-mingw32)
     polyglot (0.3.3)
@@ -240,6 +241,7 @@ DEPENDENCIES
   kaminari
   launchy
   mysql2
+  newrelic_rpm
   pry-rails
   rails (= 3.2.8)
   railties (~> 3.2.8)
