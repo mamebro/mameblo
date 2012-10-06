@@ -10,6 +10,7 @@ gem 'kaminari'
 gem 'jquery-rails', '2.1.3'
 gem 'twitter'
 gem 'whenever', :require => false
+gem 'haml'
 
 group :development, :test do
   gem 'sqlite3','1.3.6'
