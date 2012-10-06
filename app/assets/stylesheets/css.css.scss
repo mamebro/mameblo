@@ -326,14 +326,9 @@ article section.single time {
   margin-top: 3em;
 }
 
-article section.single time div.facebook {
-  position: absolute;
-  top: 1px;
-  left: 0;
-}
-
 p.help,
-p.helpUp {
+p.helpUp,
+p.tweet {
   position: relative;
   margin: 2em;
 	padding: 0.5em 1em;
@@ -370,6 +365,20 @@ p.helpUp:after {
   height: 0;
   border-bottom: 18px solid #eeeeee;
   border-left: 24px solid transparent; 
+}
+
+p.tweet:after {
+  content: "";
+  position: absolute;
+  margin-left: -12px;
+  border-top: 13px solid #eeeeee;
+  border-right: 12px solid transparent; 
+  border-left: 12px solid transparent; 
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  width: 0; 
+  height: 0;
 }
 
 p.help span {

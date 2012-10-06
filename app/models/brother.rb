@@ -23,6 +23,8 @@ class Brother < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
 
+  paginates_per 30
+
   def feed
     Entry.from_brothers_followed_by(self)
   end
