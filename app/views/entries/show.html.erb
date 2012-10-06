@@ -5,17 +5,6 @@
   </div>
   <time>
     <%= time_ago_in_words(@entry.created_at) %>前
-    <div class="facebook">
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
-      fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
-    <div class="fb-like" data-send="false" data-layout="button_count" data-width="115" data-show-faces="false"></div>
-    </div>
   </time>
   <p class="helpUp">Written by ブラザー <strong><%= @entry.brother.name %></strong></p>
 </section>
