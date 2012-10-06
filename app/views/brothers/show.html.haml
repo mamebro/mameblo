@@ -1,0 +1,12 @@
+= provide(:title, @brother.name)
+%p.help
+  = render 'shared/stats'
+  <br>
+  %b.brothername= @brother.name
+  の
+  = @brother.entries.count
+  つの記事<br>
+  = render 'follow_form' if signed_in?
+- if @brother.entries.any?
+  = render @entries
+  = paginate @entries

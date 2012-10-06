@@ -1,0 +1,3 @@
+= form_for(current_brother.relationships.find_by_followed_id(@brother), html: { method: :delete }, remote: true) do |f|
+  = f.submit "Un ブラザー", class: "brother button red", id: 'unBrother'
+  %input#unBrotherAfter.brother.button.gray{ type: "button", value="ブラザーをやめました" }

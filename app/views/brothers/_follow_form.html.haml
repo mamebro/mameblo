@@ -1,0 +1,6 @@
+- unless current_brother?(@brother)
+  %div#follow_form
+    - if current_brother.following?(@brother)
+      = render 'unfollow'
+    - else
+      = render 'follow'
