@@ -1,6 +1,7 @@
 !!!
 %html{ lang: "ja", dir: "ltr" }
-  -#
+  :erb
+    <!--
     .___  ___.      ___      .___  ___.  _______ 
     |   \/   |     /   \     |   \/   | |   ____|
     |  \  /  |    /  ^  \    |  \  /  | |  |__   
@@ -14,13 +15,13 @@
     |   _  <  |  |     |  |  |  |
     |  |_)  | |  `----.|  `--'  |
     |______/  |_______| \______/ 
+    -->
   %head
     %meta{ charset: "UTF-8" }
     %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
     %meta{ name: "keywords", content: "まめぶろ,mameblo,mameblog,ブラザー,かわいい" }
     %meta{ name: "description", content: "かわいいブログ。まめぶろ。" }
-    %title
-      = full_title(yield(:title))
+    %title= full_title(yield(:title))
     = stylesheet_link_tag "application", media: "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
