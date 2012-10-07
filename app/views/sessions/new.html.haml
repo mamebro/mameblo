@@ -1,0 +1,8 @@
+- provide(:title, "さいんいん")
+= form_for(:session, url: sessions_path) do |f|
+  = f.text_field :name, placeholder: 'BrotherName'
+  = f.password_field :password, placeholder: 'Password'
+  = f.submit "マイブラザー元気かな", class: "button"
+%p.helpUp
+  まめぶろははじめて?<br>
+  = link_to "いますぐブラザーになろうぜ!", signup_path
