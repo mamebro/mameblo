@@ -9,6 +9,7 @@
   <nav>
     <ul>
     <% if signed_in? %>
+    <li><%= link_to "サーカス", circuses_path, class: 'button yellow' %></li>
       <li><%= link_to "書く", root_path, class: 'button blue' %></li>
       <li><%= link_to current_brother.name, current_brother, class: 'button yellow' %></li>
       <li><%= link_to "ブラザーズ", brothers_path, class: 'button green' %></li>
