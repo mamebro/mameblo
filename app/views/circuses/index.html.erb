@@ -1,3 +1,5 @@
+<%= provide(:title, 'サーカス') %>
+
 <h1>ヤアヤアヤア！サーカスがくるらしいよ！</h1>
 
 <p>サーカス見たい！？</p>
@@ -5,3 +7,10 @@
 <p>サーカスみたい!!と意思表明された回数</p><%= @count %>回<br />
 
 <%= button_to 'サーカス見たい!!' %>
+
+<p>サーカス会場に集まってきたブラザー</p>
+<% @participate_brother.each do |brother| %>
+<ul class="brothers">
+  <%= render brother %>
+</ul>
+<% end %>
