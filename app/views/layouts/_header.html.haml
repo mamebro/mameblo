@@ -1,0 +1,23 @@
+%header#header
+  %h1
+    - num = rand(2)
+    - brothers_source = 'brothers' + num.to_s() + '.png'
+    = image_tag brothers_source, alt: 'まめぶろ'
+  %nav
+    %ul
+      - if signed_in?
+        %li
+          = link_to "サーカス", circuses_path, class: 'button yellow'
+        %li
+          = link_to "書く", root_path, class: 'button blue'
+        %li
+          = link_to current_brother.name, current_brother, class: 'button yellow'
+        %li
+          = link_to "ブラザーズ", brothers_path, class: 'button green'
+        %li
+          = link_to "設定", edit_brother_path(current_brother), class: 'button red'
+      - else
+        %li
+          = link_to "サインイン", signin_path, class: 'button blue'
+        %li
+          = link_to "はじめる", signup_path, class: 'button yellow'
