@@ -5,10 +5,10 @@ describe "mame blog(static_pages)" do
 
   subject { page }
 
-  describe "サインインした時" do
+  describe "まめぶろに来たとき" do
     before{ visit root_path }
 
-    describe "for signed-in brothers" do
+    describe "サインイン成功すること" do
       let(:brother) { FactoryGirl.create(:brother) }
       before do
         FactoryGirl.create(:entry, brother: brother)
@@ -16,14 +16,18 @@ describe "mame blog(static_pages)" do
         sign_in brother
         visit root_path
       end
+      it { should have_content('サーカス') }
       it { should have_content('shikakun') }
       it { should have_content('書く') }
-      it { should have_content('ブラザー') }
+      it { should have_content('ブラザーズ') }
       it { should have_content('設定') }
+      it { should have_selector('.field #entry_title', 'タイトル') }
+      it { should have_selector('.field #textarea', '本文') }
+      it { should have_selector('.button.blue', '投稿') }
 
     end
 
-    describe "サインイン失敗した時" do
+    describe "サインイン失敗すること" do
       let(:brother) { FactoryGirl.create(:brother) }
 
       describe "brother failed login" do 
