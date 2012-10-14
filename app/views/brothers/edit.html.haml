@@ -6,6 +6,6 @@
     = @brother.email
     = f.password_field :password, placeholder: 'Password'
     = f.password_field :password_confirmation, placeholder: 'Passwordもう一回お願いします !!'
-    = f.submit "メールアドレスの変更", class: "button red"
+    = f.submit "パスワードの変更", class: "button red"
 %section
   = link_to "サインアウト", signout_path, class: 'button gray', method: "delete"
