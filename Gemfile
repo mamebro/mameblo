@@ -15,7 +15,7 @@ gem 'haml'
 group :development, :test do
   gem 'sqlite3','1.3.6'
   gem 'rspec-rails','2.11.0'
-  gem 'guard-rspec','2.0.0'
+  gem 'guard-rspec','2.1.0'
   gem 'annotate','2.5.0'
   gem 'factory_girl_rails', '4.1.0'
   gem 'tapp'
