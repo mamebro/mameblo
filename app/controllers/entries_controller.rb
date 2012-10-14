@@ -32,7 +32,7 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.update_attributes(params[:entry])
-        format.html { redirect_to root_path, notice: '!!! 編集完了したね !!!' }
+        format.html { redirect_to @entry.brother, notice: '!!! 編集完了したね !!!' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
