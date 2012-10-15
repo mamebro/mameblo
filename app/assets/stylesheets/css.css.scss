@@ -1,27 +1,65 @@
 ﻿@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
 
+$font-color: #000;
+$font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+$font-size: 100%;
+$font-size-small: 90%;
+$font-size-large: 110%;
+$line-height: 1.66;
+$letter-spacing: 0;
+
+@mixin font($type: default) {
+  @if $type == default {
+    color: $font-color;
+    font-size: $font-size;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+  } @else if $type == reset {
+    color: $font-color;
+    font-size: $font-size;
+    line-height: 1;
+    letter-spacing: $letter-spacing;
+  } @else if $type == link {
+    color: $font-color;
+    text-decoration: none;
+  }
+  
+  font-family: $font-family;
+}
+
+@mixin link {
+  @include font(link);
+  
+  &:hover {
+	  @include font(link);
+  }
+}
+
+@mixin border-radius($size: small) {
+  @if $size == small {
+    @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  
+      #{$prefix}border-radius: 5px;  
+    }
+  } @else if $size == large {
+	  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  
+      #{$prefix}border-radius: 10px;  
+    } 
+  }
+}
+
 html {
-	font-size: 100%;
+	font-size: $font-size;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 }
 
 body {	
-	color: #000000;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-	font-size: 100%;
-	line-height: 1;
-	letter-spacing: 0em;
+	@include font(reset);
 }
 
 a {
-	color: #000000;
-	text-decoration: none;
-  
-  &:hover {
-	  color: #000000;
-  }
+	@include link;
 }
 
 h1, h2, h3, h4, h5, h6, h7 {
@@ -38,12 +76,9 @@ textarea {
   padding: 0;
   margin-bottom: 2px;
   
-	color: #000000;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-	font-size: 100%;
-	line-height: 1;
+	@include font;
 	border: 0;
-	background-color: #ffffff;
+	background-color: #fff;
 	border-top: 1px solid rgba(0, 0, 0, 0.3);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -54,7 +89,7 @@ input[type='password']:focus,
 input[type='search']:focus,
 input[type='number']:focus,
 textarea:focus {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 input[type='button'],
@@ -69,9 +104,6 @@ input[type='submit'],
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 100%;
 	font-weight: bold;
-	border-radius: 0;
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
 	border: 0px solid #909090;
 	cursor: pointer;
 }
