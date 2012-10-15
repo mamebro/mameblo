@@ -66,6 +66,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.3)
+    colorize (0.5.8)
     diff-lcs (1.1.3)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -105,6 +106,12 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
       railties (>= 3.0.0)
+    konacha (1.5.1)
+      actionpack (~> 3.1)
+      capybara
+      colorize
+      railties (~> 3.1)
+      sprockets
     launchy (2.1.0)
       addressable (~> 2.2.6)
     libwebsocket (0.1.5)
@@ -241,6 +248,7 @@ DEPENDENCIES
   haml
   jquery-rails (= 2.1.3)
   kaminari
+  konacha
   launchy
   mysql2
   newrelic_rpm
