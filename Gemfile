@@ -20,6 +20,7 @@ group :development, :test do
   gem 'factory_girl_rails', '4.1.0'
   gem 'tapp'
   gem 'pry-rails'
+  gem 'konacha'
 end
 
 group :production do
@@ -28,8 +29,6 @@ group :production do
   gem 'newrelic_rpm'
 end
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'
