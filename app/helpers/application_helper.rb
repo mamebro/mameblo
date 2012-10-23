@@ -16,14 +16,4 @@ module ApplicationHelper
     target = html_escape(target)
     target.gsub(/\r\n|\r|\n/, "<br />")
   end
-
-  # ブラザーTwitterのつぶやきを表示する
-  def brothers_tweet
-    begin
-      @res = Twitter.user_timeline("mameblo").sample.text
-    rescue
-      @res = "まめまめまめまめまめぶろ♪"
-    end
-  end
-
 end

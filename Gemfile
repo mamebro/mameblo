@@ -24,6 +24,7 @@ end
 group :production do
   gem 'mysql2'
   gem 'google-analytics-rails'
+  gem 'newrelic_rpm'
 end
 
 # Gems used only for assets and not required
@@ -43,6 +44,6 @@ group :test do
    :git => 'git://github.com/ttilley/rb-fsevent.git',
    :branch => 'pre-compiled-gem-one-off',
    :require => false
-  gem 'guard-spork','1.2.0'
+  gem 'guard-spork','1.2.1'
   gem 'spork','~> 1.0rc'
 end

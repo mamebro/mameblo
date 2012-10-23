@@ -10,6 +10,8 @@ Mameblog::Application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   resources :entries, only: [:create, :destroy, :show, :update, :edit]
   resources :relationships, only: [:create, :destroy]
+  resources :circus
+
   root to: 'static_pages#home'
 
   match '/signup',  to: 'brothers#new'
