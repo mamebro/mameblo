@@ -504,6 +504,24 @@ footer p.copyright {
   font-weight: bold;
 }
 
+#circus-preview {
+  position: relative;
+  padding: 20px 0;
+  
+  background: url('/assets/circus-bg-back.png') no-repeat center center;
+}
+
+#circus-preview:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 110px;
+  width: 100px;
+  height: 160px;
+  
+  background: url('/assets/circus-bg-front.png') no-repeat center center;
+}
+
 #maintenance-info {
   position: relative;
   padding: 1.5em 1em;
