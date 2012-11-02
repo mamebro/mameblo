@@ -5,7 +5,7 @@ describe Entry do
 
   let(:brother) { FactoryGirl.create(:brother) }
   before do @entry = brother.entries.build(title: "まめぶろ最高",
-                                      content: "ここに本文を書いてるよブラザー！") 
+                                           content: "ここに本文を書いてるよブラザー！") 
     subject { @entry }
 
   end

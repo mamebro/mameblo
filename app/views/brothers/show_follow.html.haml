@@ -1,0 +1,11 @@
+= provide(:title, @title)
+%p.help
+  = render 'shared/stats'
+  <br>
+  %b.brothername= link_to @brother.name, @brother
+  の
+  = @title
+- if @brothers.any?
+  %ul.brothers
+    = render @brothers
+= paginate @brothers

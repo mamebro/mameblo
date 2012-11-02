@@ -1,3 +1,0 @@
-<% @brother ||= current_brother %>
-<a href="<%= following_brother_path(@brother) %>"><%= @brother.followed_brothers.count %>人のブラザー</a>であり、<br />
-<a href="<%= followers_brother_path(@brother) %>">ブラザー<%= @brother.followers.count %>人</a>が見守っている

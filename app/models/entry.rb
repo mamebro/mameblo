@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'rdiscount'
 
 class Entry < ActiveRecord::Base
@@ -12,6 +13,7 @@ class Entry < ActiveRecord::Base
   paginates_per 5
 
   # https://github.com/rtomayko/rdiscount
+  # Markdownで出力する
   def content_as_markdown
     markdown = RDiscount.new(content.to_s, :filter_html, :autolink)
     markdown.to_html

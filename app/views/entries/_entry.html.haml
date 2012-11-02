@@ -1,0 +1,10 @@
+%section.entry
+  %h1= link_to entry.title, entry
+  %div= simple_format(hbr(entry.content))
+  %time
+    = link_to time_ago_in_words(entry.created_at), entry
+    前
+    - if current_brother?(entry.brother)
+      &nbsp;
+      %span.edit= link_to "Edit", edit_entry_path(entry), title: '編集する'
+      %span.delete= link_to "× Delete", entry, method: :delete, confirm: "消えちゃうよ?", title: '削除する'
