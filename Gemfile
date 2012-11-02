@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 gem "railties", "~> 3.2.8"
-gem 'bootstrap-sass','2.1.0'
+gem 'bootstrap-sass','2.1.1'
 gem 'bcrypt-ruby','3.0.1'
 gem 'faker', '1.1.2'
 gem 'rdiscount'
@@ -14,13 +14,12 @@ gem 'haml'
 
 group :development, :test do
   gem 'sqlite3','1.3.6'
-  gem 'rspec-rails','2.11.0'
-  gem 'guard-rspec','2.1.0'
+  gem 'rspec-rails','2.11.4'
+  gem 'guard-rspec','2.1.1'
   gem 'annotate','2.5.0'
   gem 'factory_girl_rails', '4.1.0'
   gem 'tapp'
   gem 'pry-rails'
-  gem 'konacha'
 end
 
 group :production do
@@ -44,6 +43,6 @@ group :test do
    :git => 'git://github.com/ttilley/rb-fsevent.git',
    :branch => 'pre-compiled-gem-one-off',
    :require => false
-  gem 'guard-spork','1.2.1'
+  gem 'guard-spork','1.2.3'
   gem 'spork','~> 1.0rc'
 end
