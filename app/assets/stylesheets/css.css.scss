@@ -346,6 +346,16 @@ article section time a:hover {
   border-bottom: 1px dashed #0060af;
 }
 
+article section h2 { /* circus */
+  margin-bottom: 0.33em;
+  
+  font-size: 110%;
+}
+
+article section h2.circus-list {
+  margin-top: 2em;
+}
+
 article section div {
 	text-align: justify;
 }
@@ -365,7 +375,8 @@ article section.single time {
 
 p.help,
 p.helpUp,
-p.tweet {
+p.tweet,
+p.circus-count {
   position: relative;
   margin: 2em;
 	padding: 0.5em 1em;
@@ -376,6 +387,10 @@ p.tweet {
   border-radius: 6px;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
+}
+
+p.circus-count {
+  margin: 1em 2em;
 }
 
 p.helpUp {
@@ -404,7 +419,8 @@ p.helpUp:after {
   border-left: 24px solid transparent; 
 }
 
-p.tweet:after {
+p.tweet:after,
+p.circus-count:after {
   content: "";
   position: absolute;
   margin-left: -12px;
@@ -476,6 +492,16 @@ footer p.copyright {
 	cursor: pointer;
 	
 	display: none;/* 一時停止中 */
+}
+
+.circus-count {
+  text-align: center;
+  
+  font-size: 133% !important;
+}
+
+.circus-count span {
+  font-weight: bold;
 }
 
 #maintenance-info {

@@ -1,12 +1,35 @@
 = provide(:title, 'サーカス')
-%h1 ヤアヤアヤア！サーカスがくるらしいよ！
-%p サーカス見たい!?
-%p.bubble サーカスみたい!!と意思表明された回数
-%p
-  = @count
-  回
-= button_to 'サーカス見たい!!'
-%p サーカス会場に集まってきたブラザー
-- @participate_brother.each do |brother|
-  %ul.brothers
-    = render brother
+%section
+  %h1
+    ヤアヤアヤア！
+    %br
+    サーカスがくるらしいよ！
+  %h2 サーカス見たい!?
+  - num_circus_a = rand(2)
+  - num_circus_b = rand(2)
+  - num_circus_c = rand(2)
+  - num_circus_d = rand(2)
+  - num_circus_e = rand(2)
+  - brothers_source_circus_a = 'brothers' + num_circus_a.to_s() + '.png'
+  - brothers_source_circus_b = 'brothers' + num_circus_b.to_s() + '.png'
+  - brothers_source_circus_c = 'brothers' + num_circus_c.to_s() + '.png'
+  - brothers_source_circus_d = 'brothers' + num_circus_d.to_s() + '.png'
+  - brothers_source_circus_e = 'brothers' + num_circus_e.to_s() + '.png'
+  %marquee
+    = image_tag brothers_source_circus_a, alt: 'サーカス待機ブラザー'
+    = image_tag brothers_source_circus_b, alt: 'サーカス待機ブラザー'
+    = image_tag brothers_source_circus_c, alt: 'サーカス待機ブラザー'
+    = image_tag brothers_source_circus_d, alt: 'サーカス待機ブラザー'
+    = image_tag brothers_source_circus_e, alt: 'サーカス待機ブラザー'
+    = image_tag brothers_source_circus_d, alt: 'サーカス待機ブラザー'
+    = image_tag brothers_source_circus_c, alt: 'サーカス待機ブラザー'
+    = image_tag brothers_source_circus_b, alt: 'サーカス待機ブラザー'
+    = image_tag brothers_source_circus_a, alt: 'サーカス待機ブラザー'
+  %p.circus-count
+    %span #{@count}
+    みたいね!
+  = button_to 'サーカスみたい！', circuses_path, class: 'button purple'
+  %h2.circus-list サーカス会場に集まってきたブラザー
+  - @participate_brother.each do |brother|
+    %ul.brothers
+      = render brother
