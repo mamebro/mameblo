@@ -1,0 +1,12 @@
+= provide(:title, 'サーカス')
+%h1 ヤアヤアヤア！サーカスがくるらしいよ！
+%p サーカス見たい!?
+%p.bubble サーカスみたい!!と意思表明された回数
+%p
+  = @count
+  回
+= button_to 'サーカス見たい!!'
+%p サーカス会場に集まってきたブラザー
+- @participate_brother.each do |brother|
+  %ul.brothers
+    = render brother
