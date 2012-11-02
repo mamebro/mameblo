@@ -8,7 +8,7 @@ describe CircusesController do
     end
   end
 
-  describe "POST 'create'" do
+  pending "POST 'create'" do
     it "returns http success" do
       post 'create'
       response.should be_success
