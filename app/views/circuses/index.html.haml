@@ -31,6 +31,6 @@
     みたいね!
   = button_to 'サーカスみたい！', circuses_path, class: 'button purple'
   %h2.circus-list サーカス会場に集まってきたブラザー
-  - @participate_brother.each do |brother|
-    %ul.brothers
+  %ul.brothers
+    - @participate_brother.each do |brother|
       = render brother
