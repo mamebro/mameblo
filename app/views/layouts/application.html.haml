@@ -1,0 +1,58 @@
+!!!
+%html{ lang: "ja", dir: "ltr" }
+  :erb
+      <!--
+                  @@@@'       ,@@@@`          
+                :@@@@@@@     @@@@@@@+         
+               .@@     @@   @@.    +@;        
+               @@       @# ,@.      @@        
+              ,@        #@ @@        @+       
+              @@         @,@.        @@       
+              @'         @@@         .@       
+              @          @@@          @:      
+          ;@@;@          ;@#          @@#@'   
+         #@@@@@  `;   @   @;  @`  ,,  @@@@@@  
+         @#  @@  @@  @@+  @` .@@  @@  @@  :@` 
+        ;@   ,;  #@  `@       @,  @@  .'   @# 
+        @@                                 @@ 
+        @@                                 @@ 
+        @@                                 +@ 
+        @@                                 +@ 
+        @@                                 +@ 
+        @@                                 @@ 
+        @@                                 @@ 
+        ,@   ++   #@ `@       @; @@   ,@   @# 
+         @#  @@   .@@@@   @.  @@@@+   @@` '@  
+         '@@@@@    .@#    @;   '@:    @@@@@#  
+          `+';@          ;@@          @#;#.   
+              @          @@@          @,      
+              @+         @@@         ,@       
+              @@         @.@,        @@       
+              .@`       @@ @@        @'       
+               @@      `@' .@;      @@        
+               `@@    .@@   @@;    @@,        
+                .@@@@@@@     @@@@@@@;         
+                  '@@@.       `@@@+                                                   
+      -->
+  %head
+    %meta{ charset: "UTF-8" }
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
+    %meta{ name: "keywords", content: "まめぶろ,mameblo,mameblog,ブラザー,かわいい" }
+    %meta{ name: "description", content: "かわいいブログ。まめぶろ。" }
+    %title= full_title(yield(:title))
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    = render 'layouts/shim'
+    %link{ rel: "icon", type: "image/x-icon", href: "/assets/favicon.png" }
+    %link{ rel: "apple-touch-icon", type: "text/css", media: "screen", href: "/assets/apple-touch-icon.png" }
+    = analytics_init if Rails.env.production?
+  %body
+    %div#page
+      - flash.each do |key, value|
+        %div(class = "alert alert-#{key}")
+          %p= value
+      = render 'layouts/header'
+      %article
+        = yield
+      = render 'layouts/footer'

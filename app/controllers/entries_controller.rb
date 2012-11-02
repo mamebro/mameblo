@@ -3,9 +3,6 @@ class EntriesController < ApplicationController
   before_filter :signed_in_brother, only: [:create, :destroy]
   before_filter :correct_brother, only: [:destroy, :update]
 
-  def index
-  end
-
   def show
     @entry = Entry.find(params[:id])
 
@@ -35,7 +32,7 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.update_attributes(params[:entry])
-        format.html { redirect_to root_path, notice: '!!! 編集完了したね !!!' }
+        format.html { redirect_to @entry.brother, notice: '!!! 編集完了したね !!!' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -46,6 +43,7 @@ class EntriesController < ApplicationController
 
   def destroy
     @entry.destroy
+    flash[:success] = "!!! 日記を消したぜブラザー !!!"
     redirect_to root_path
   end
 
