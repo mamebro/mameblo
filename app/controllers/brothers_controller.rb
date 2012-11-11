@@ -68,7 +68,7 @@ class BrothersController < ApplicationController
   def signed_in_brother
     unless signed_in?
       store_location
-      redirect_to signin_path, notice: "!!! サインしてちょ !!!" unless signed_in?
+      redirect_to signin_path, notice: "!!! サインインしてちょ !!!" unless signed_in?
     end
   end
 
