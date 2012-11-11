@@ -23,8 +23,8 @@
 
 # mameblo Twitter から最新のつぶやきを拾ってくる
 # OAuth無しだと 150リクエスト/1hour 超えると制限かかる
-every 1.hours do
-  rake "develop:brothers_tweet"
+every 5.minutes do
+  rake "batches:twitter_api"
 end
 
 # Dailyでスコアメールを送信する
