@@ -45,4 +45,5 @@ group :test do
    :require => false
   gem 'guard-spork','1.2.3'
   gem 'spork','~> 1.0rc'
+  gem "timecop"
 end
