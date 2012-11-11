@@ -26,3 +26,11 @@
 every 1.hours do
   rake "develop:brothers_tweet"
 end
+
+# Dailyでスコアメールを送信する
+# ブラザー数, エントリー数, サーカスみたいね数
+if environment == 'production'
+  every 1.day, at: '8:00am' do
+    rake 'batches:score_mailer:daily_report'
+  end
+end
