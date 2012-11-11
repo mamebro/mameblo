@@ -14,6 +14,10 @@ class Brother < ActiveRecord::Base
   has_many :followers, through: :reverse_relationships, source: :follower
   has_many :circuses
 
+  scope :by_created_day, lambda { |date|
+    where("#{table_name}.created_at" => date.all_day)
+  }
+
   VALID_EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
   
