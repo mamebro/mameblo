@@ -118,16 +118,6 @@ describe Brother do
     end
   end
 
-  describe "email address with mixed case" do
-    let(:mixed_case_email) { "Foo@ExAMPle.CoM" }
-
-    it "should be saved as all lower-case" do
-      @brother.email = mixed_case_email
-      @brother.save
-      @brother.reload.email.should == mixed_case_email.downcase
-    end
-  end
-
   describe "remember token" do
     before { @brother.save }
     its(:remember_token) { should_not be_blank }

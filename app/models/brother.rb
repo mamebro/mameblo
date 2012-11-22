@@ -2,7 +2,6 @@ class Brother < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
   has_secure_password
 
-  before_save { self.email = email.downcase! }  
   before_save :create_remember_token
 
   has_many :entries, dependent: :destroy
