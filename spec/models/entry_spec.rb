@@ -18,7 +18,7 @@ describe Entry do
     it "should not allow access to brother_id" do
       expect do
         Entry.new(brother_id: brother.id)
-      end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
+      end.to raise_error(ActiveModel::ForbiddenAttributesError)
     end
   end
 

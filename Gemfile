@@ -26,18 +26,23 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', platforms: :ruby
 
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
 end
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
 group :development, :test do
-  gem 'sqlite3','1.3.6'
-  gem 'rspec-rails','2.11.4'
-  gem 'guard-rspec','2.1.1'
-  gem 'annotate','2.5.0'
-  gem 'factory_girl_rails', '4.1.0'
+  gem 'sqlite3'
+  gem "rspec-rails",        :git => "git://github.com/rspec/rspec-rails.git"
+  gem "rspec",              :git => "git://github.com/rspec/rspec.git"
+  gem "rspec-core",         :git => "git://github.com/rspec/rspec-core.git"
+  gem "rspec-expectations", :git => "git://github.com/rspec/rspec-expectations.git"
+  gem "rspec-mocks",        :git => "git://github.com/rspec/rspec-mocks.git"
+
+  gem 'guard-rspec'
+  gem 'annotate'
+  gem 'factory_girl_rails'
   gem 'tapp'
   gem 'pry-rails'
 end
@@ -52,13 +57,13 @@ group :test do
   gem 'simplecov', require: false
   gem 'launchy'
   gem 'capybara', git: 'git://github.com/jnicklas/capybara.git'
-  gem 'growl','1.0.3'
+  gem 'growl'
   gem 'rb-fsevent',
   git: 'git://github.com/ttilley/rb-fsevent.git',
   branch: 'pre-compiled-gem-one-off',
   require: false
-  gem 'guard-spork','1.2.3'
-  gem 'spork','~> 1.0rc'
+  gem 'guard-spork'
+  gem 'spork'
   gem "timecop"
 end
 

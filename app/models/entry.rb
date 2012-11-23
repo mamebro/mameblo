@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 require 'rdiscount'
-
 class Entry < ActiveRecord::Base
-  attr_accessible :content, :title
+  include ActiveModel::ForbiddenAttributesProtection
+  # attr_accessible :content, :title
   belongs_to :brother
 
   scope :by_created_day, lambda { |date|

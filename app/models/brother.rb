@@ -1,5 +1,6 @@
 class Brother < ActiveRecord::Base
-  attr_accessible :name, :email, :password, :password_confirmation
+  include ActiveModel::ForbiddenAttributesProtection
+  # attr_accessible  :name, :email, :password, :password_confirmation
   has_secure_password
 
   before_save :create_remember_token
