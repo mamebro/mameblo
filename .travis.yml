@@ -1,4 +1,8 @@
 bundler_args: "--without development"
+
+before_install:
+  - gem update bundler
+
 script: "RAILS_ENV=test bundle exec rake db:drop db:create db:migrate spec"
 rvm:
   - 1.9.3
