@@ -134,7 +134,7 @@ describe Brother do
     end
 
     it "should have the right entries in the right order" do
-      @brother.entries.should =~ [newer_entry, older_entry]
+      @brother.entries.should == [newer_entry, older_entry]
     end
   end
 end
