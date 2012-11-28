@@ -3,13 +3,11 @@ class EntriesController < ApplicationController
   before_filter :signed_in_brother, only: [:create, :destroy]
   before_filter :correct_brother, only: [:destroy, :update]
 
+  respond_to :html, :json
+
   def show
     @entry = Entry.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @entry }
-    end
+    respond_with @entry
   end
 
   def edit
