@@ -1,23 +1,48 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.9'
-gem "railties", "~> 3.2.8"
-gem 'bootstrap-sass','2.1.1'
-gem 'bcrypt-ruby','3.0.1'
-gem 'faker', '1.1.2'
+# rails 4 edge
+gem 'rails',     github: 'rails/rails'
+gem 'journey',   github: 'rails/journey'
+gem 'arel',      github: 'rails/arel'
+gem 'activerecord-deprecated_finders', github: 'rails/activerecord-deprecated_finders'
+
+gem 'bootstrap-sass'
+gem 'bcrypt-ruby'
+gem 'faker'
 gem 'rdiscount'
 gem 'kaminari'
-gem 'jquery-rails', '2.1.3'
+gem 'jquery-rails'
 gem 'twitter'
-gem 'whenever', :require => false
+gem 'whenever', require: false
 gem 'haml'
 
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sprockets-rails', github: 'rails/sprockets-rails'
+  gem 'sass-rails',   github: 'rails/sass-rails'
+  gem 'coffee-rails', github: 'rails/coffee-rails'
+
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer', platforms: :ruby
+
+  gem 'uglifier'
+end
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+
 group :development, :test do
-  gem 'sqlite3','1.3.6'
-  gem 'rspec-rails','2.11.4'
-  gem 'guard-rspec','2.1.1'
-  gem 'annotate','2.5.0'
-  gem 'factory_girl_rails', '4.1.0'
+  gem 'sqlite3'
+  gem "rspec-rails",        :git => "git://github.com/rspec/rspec-rails.git"
+  gem "rspec",              :git => "git://github.com/rspec/rspec.git"
+  gem "rspec-core",         :git => "git://github.com/rspec/rspec-core.git"
+  gem "rspec-expectations", :git => "git://github.com/rspec/rspec-expectations.git"
+  gem "rspec-mocks",        :git => "git://github.com/rspec/rspec-mocks.git"
+
+  gem 'guard-rspec'
+  gem 'annotate'
+  gem 'factory_girl_rails'
   gem 'tapp'
   gem 'pry-rails'
 end
@@ -28,22 +53,28 @@ group :production do
   gem 'newrelic_rpm'
 end
 
-group :assets do
-  gem 'sass-rails',   '~> 3.2.5'
-  gem 'coffee-rails', '~> 3.2.2'
-  gem 'uglifier', '>= 1.2.3'
-end
-
 group :test do
   gem 'simplecov', require: false
   gem 'launchy'
   gem 'capybara', git: 'git://github.com/jnicklas/capybara.git'
-  gem 'growl','1.0.3'
+  gem 'growl'
   gem 'rb-fsevent',
-   :git => 'git://github.com/ttilley/rb-fsevent.git',
-   :branch => 'pre-compiled-gem-one-off',
-   :require => false
-  gem 'guard-spork','1.2.3'
-  gem 'spork','~> 1.0rc'
+  git: 'git://github.com/ttilley/rb-fsevent.git',
+  branch: 'pre-compiled-gem-one-off',
+  require: false
+  gem 'guard-spork'
+  gem 'spork'
   gem "timecop"
 end
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+# gem 'jbuilder'
+
+# Use unicorn as the app server
+# gem 'unicorn'
+
+# Deploy with Capistrano
+# gem 'capistrano', group: :development
+
+# To use debugger
+# gem 'debugger'

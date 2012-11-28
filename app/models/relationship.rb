@@ -1,5 +1,5 @@
 class Relationship < ActiveRecord::Base
-  attr_accessible :followed_id
+  include ActiveModel::ForbiddenAttributesProtection
 
   belongs_to :follower, class_name: "Brother"
   belongs_to :followed, class_name: "Brother"

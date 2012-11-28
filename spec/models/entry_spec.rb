@@ -14,14 +14,6 @@ describe Entry do
   it { should respond_to(:brother_id) }
   it { should respond_to(:brother) }
 
-  describe "accessible attributes" do
-    it "should not allow access to brother_id" do
-      expect do
-        Entry.new(brother_id: brother.id)
-      end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
-    end
-  end
-
   describe "when brother_id is not present" do
     before { @entry.brother_id = nil }
     it { should_not be_valid }
