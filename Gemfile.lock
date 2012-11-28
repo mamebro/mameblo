@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/jnicklas/capybara.git
-  revision: 6e6702858dc849dffdc8491e92fa9f0ca23559bd
+  revision: 6a22ae8f1f5a9133c8b3b4ba86b11c8dddaaa278
   specs:
     capybara (2.0.1)
       mime-types (>= 1.16)
@@ -195,7 +195,7 @@ GEM
     simplecov-html (0.7.1)
     slop (3.3.3)
     spork (1.0.0rc3)
-    sprockets (2.2.1)
+    sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
