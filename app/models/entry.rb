@@ -1,13 +1,8 @@
 # -*- coding: utf-8 -*-
 require 'rdiscount'
-
 class Entry < ActiveRecord::Base
-  attr_accessible :content, :title
+  include ActiveModel::ForbiddenAttributesProtection
   belongs_to :brother
-
-  scope :by_created_day, lambda { |date|
-    where("#{table_name}.created_at" => date.all_day)
-  }
 
   validates :title, presence: true, length: { maximum: 20000 }
   validates :content, presence: true, length: { maximum: 20000 }

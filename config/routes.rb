@@ -12,10 +12,10 @@ Mameblog::Application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :circuses
 
-  root to: 'static_pages#home'
+  root 'static_pages#home'
 
-  match '/signup',  to: 'brothers#new'
-  match '/signin',  to: 'sessions#new'
-  match '/signout', to: 'sessions#destroy', via: :delete
+  get '/signup',  to: 'brothers#new'
+  get '/signin',  to: 'sessions#new'
+  delete '/signout', to: 'sessions#destroy'
 
 end

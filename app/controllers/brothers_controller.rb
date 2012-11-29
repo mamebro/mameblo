@@ -18,7 +18,7 @@ class BrothersController < ApplicationController
   end
 
   def create
-    @brother = Brother.new(params[:brother])
+    @brother = Brother.new brother_params
     if @brother.save
       sign_in @brother
       flash[:success] = "!!! まめぶろにようこそ !!!"
@@ -40,7 +40,7 @@ class BrothersController < ApplicationController
 
   def update
     @brother = Brother.find(params[:id])
-    if @brother.update_attributes(params[:brother])
+    if @brother.update_attributes brother_params
       flash[:success] = "!!! プロフィール更新しました !!!"
       sign_in @brother
       redirect_to @brother
@@ -64,6 +64,13 @@ class BrothersController < ApplicationController
   end
 
   private
+
+  def brother_params
+    params.require(:brother).permit(:name,
+                                    :email,
+                                    :password,
+                                    :password_confirmation)
+  end
 
   def signed_in_brother
     unless signed_in?
