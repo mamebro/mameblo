@@ -50,7 +50,6 @@ end
 group :production do
   gem 'mysql2'
   gem 'google-analytics-rails'
-  gem 'newrelic_rpm'
 end
 
 group :test do
