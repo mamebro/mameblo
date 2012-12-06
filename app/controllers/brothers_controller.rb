@@ -4,8 +4,11 @@ class BrothersController < ApplicationController
   before_filter :correct_brother,   only: [:edit, :update]
   before_filter :admin_brother,     only: :destroy
 
+  respond_to :html, :json
+
   def index
     @brothers = Brother.page params[:page]
+    respond_with @brothers
   end
 
   def show
