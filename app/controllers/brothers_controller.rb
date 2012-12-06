@@ -8,7 +8,7 @@ class BrothersController < ApplicationController
 
   def index
     @brothers = Brother.page params[:page]
-    respond_with @brothers
+    respond_with(@brothers, :only => [:id, :name])
   end
 
   def show
