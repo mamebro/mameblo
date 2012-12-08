@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/jnicklas/capybara.git
-  revision: c65a61c6a5f91c92c474056e03c69b74e6654cd1
+  revision: 0320ab65930b89ee55c5a237f9c86996116ce745
   specs:
     capybara (2.0.1)
       mime-types (>= 1.16)
@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/activerecord-deprecated_finders.git
-  revision: dd99c375c44b7cb38c5323cd419a5882817249f0
+  revision: 2125c7b4f959c1aa025f61bdfb5f95b5d6a52b51
   specs:
     activerecord-deprecated_finders (0.0.1)
 
@@ -38,11 +38,11 @@ GIT
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: 0a6afef374028ccb558e4a8f65d49034d79188f4
+  revision: 69163ccae6a49c89e1a62ac94b98222651dd5aa8
   specs:
     actionmailer (4.0.0.beta)
       actionpack (= 4.0.0.beta)
-      mail (~> 2.5.2)
+      mail (~> 2.5.3)
     actionpack (4.0.0.beta)
       activesupport (= 4.0.0.beta)
       builder (~> 3.1.0)
@@ -99,26 +99,26 @@ GIT
 
 GIT
   remote: git://github.com/rspec/rspec-core.git
-  revision: c765c3b850cbbfbe1299d5429a863508f50532d8
+  revision: 4c760a38fe60136c9f98dfdb16e12e01fb78e1bf
   specs:
-    rspec-core (2.12.0)
+    rspec-core (2.12.1)
 
 GIT
   remote: git://github.com/rspec/rspec-expectations.git
-  revision: 5baaccafec67c23f563627eac7363d39aa4d7619
+  revision: 7fe9ec4428285c8c6fc7ba6a8b3ff78374db14e3
   specs:
     rspec-expectations (2.12.0)
       diff-lcs (~> 1.1.3)
 
 GIT
   remote: git://github.com/rspec/rspec-mocks.git
-  revision: 148db3c200a88db1987913ca92c7b3db35a5b518
+  revision: 17daf44bc400de9cef6af8401e5ae7fde5243059
   specs:
     rspec-mocks (2.12.0)
 
 GIT
   remote: git://github.com/rspec/rspec-rails.git
-  revision: 6e7712b3f425f3c98dc9532c77505fcec190e4a8
+  revision: ee3f224c61cac7d4de919a23945418fd07ada7c6
   specs:
     rspec-rails (2.12.0)
       actionpack (>= 3.0)
@@ -185,10 +185,10 @@ GEM
       lumberjack (>= 1.0.2)
       pry (>= 0.9.10)
       thor (>= 0.14.6)
-    guard-rspec (2.3.0)
+    guard-rspec (2.3.1)
       guard (>= 1.1)
       rspec (~> 2.11)
-    guard-spork (1.3.0)
+    guard-spork (1.4.0)
       childprocess (>= 0.2.3)
       guard (>= 1.1)
       spork (>= 0.8.4)
@@ -209,14 +209,14 @@ GEM
       websocket
     listen (0.6.0)
     lumberjack (1.0.2)
-    mail (2.5.2)
+    mail (2.5.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     method_source (0.8.1)
     mime-types (1.19)
-    minitest (4.3.2)
-    multi_json (1.3.7)
+    minitest (4.3.3)
+    multi_json (1.4.0)
     multipart-post (1.1.5)
     mysql2 (0.3.11)
     mysql2 (0.3.11-x86-mingw32)
@@ -243,7 +243,7 @@ GEM
       json (~> 1.4)
     rubyzip (0.9.9)
     sass (3.2.3)
-    selenium-webdriver (2.26.0)
+    selenium-webdriver (2.27.1)
       childprocess (>= 0.2.5)
       libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
@@ -270,9 +270,9 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (0.5.2)
+    turbolinks (0.6.1)
       coffee-rails
-    twitter (4.3.0)
+    twitter (4.4.0)
       faraday (~> 0.8)
       multi_json (~> 1.3)
       simple_oauth (~> 0.1.6)
