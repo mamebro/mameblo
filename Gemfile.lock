@@ -305,6 +305,7 @@ DEPENDENCIES
   bootstrap-sass
   capybara!
   coffee-rails!
+  execjs
   factory_girl_rails
   faker
   google-analytics-rails
