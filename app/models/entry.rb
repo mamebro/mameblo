@@ -3,8 +3,6 @@ require 'rdiscount'
 class Entry < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
   belongs_to :brother
-  has_many :beans
-  has_many :brothers, through: :beans
 
   validates :title, presence: true, length: { maximum: 20000 }
   validates :content, presence: true, length: { maximum: 20000 }
