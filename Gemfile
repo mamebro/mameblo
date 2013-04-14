@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'twitter'
 gem 'whenever', require: false
 gem 'haml'
+gem 'faraday'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 class CircusesController < ApplicationController
+include Ikachan
   def index
     # 最低一回はサーカス見たい!!ボタンを押したブラザーを表示する
     participation = []
@@ -20,6 +21,7 @@ class CircusesController < ApplicationController
   def create
     circus = Circus.new(brother_id: current_brother.id, participation: true)
     circus.save
+    ikachan_post 'サーカスみたい!'
     flash[:notice] = "サーカス楽しみだね!!!"
     redirect_to root_path
   end
