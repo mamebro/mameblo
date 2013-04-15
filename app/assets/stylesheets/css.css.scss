@@ -36,14 +36,6 @@ $line-height: 1.66;
 $line-height-small: $line-height*0.8;
 $letter-spacing: 0;
 
-$font-color: #000;
-$font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-$font-size: 100%;
-$font-size-small: 90%;
-$font-size-large: 110%;
-$line-height: 1.66;
-$letter-spacing: 0;
-
 @mixin font($type: default) {
   @if $type == default {
     color: $font-color;
@@ -285,7 +277,7 @@ ul.brothers:after { content: ""; display: block; clear: both; }
 /* details */
 
 body {
-	background: url('bodybg.png') top left repeat;
+	background: asset-url('bodybg.png', image) top left repeat;
 }
 
 div#page {
@@ -302,7 +294,7 @@ div.alert {
 	padding: 2em 2%;
 	text-align: center;
 	
-	background: url('alertbg.png') top center repeat;
+	background: asset-url('alertbg.png', image) top center repeat;
 }
 
 div.alert p {
@@ -508,7 +500,7 @@ footer p.copyright {
   position: relative;
   padding: 20px 0;
   
-  background: url('/assets/circus-bg-back.png') no-repeat center top;
+  background: asset-url('circus-bg-back.png', image) no-repeat center top;
 }
 
 #circus-preview:after {
@@ -519,7 +511,7 @@ footer p.copyright {
   width: 100px;
   height: 160px;
   
-  background: url('/assets/circus-bg-front.png') no-repeat center center;
+  background: asset-url('circus-bg-front.png', image) no-repeat center center;
 }
 
 #maintenance-info {

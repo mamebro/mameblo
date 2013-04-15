@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20121009135012) do
+ActiveRecord::Schema.define do
+
+  migrations do
+    migration 20120611112223, "", ""
+    migration 20120611120316, "", ""
+    migration 20120612055825, "", ""
+    migration 20120613084159, "", ""
+    migration 20120717164053, "", ""
+    migration 20120718224804, "", ""
+    migration 20120719123837, "", ""
+    migration 20121009135012, "", ""
+    migration 20121210141646, "bda427a8fdef4a65b9622f826de39c46", "create_beans"
+    migration 20121210144106, "fdb50f914a242d075e82a289add8c1ec", "add_beans_migration"
+  end
+
+  create_table "beans", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "brothers", force: true do |t|
     t.string   "name"

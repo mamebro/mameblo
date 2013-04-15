@@ -17,5 +17,6 @@ Mameblog::Application.routes.draw do
   get '/signup',  to: 'brothers#new'
   get '/signin',  to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
+  get "/contributors", to: 'contributors#index'
 
 end
