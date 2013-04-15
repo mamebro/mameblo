@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 class EntriesController < ApplicationController
+include Ikachan
   before_filter :signed_in_brother, only: [:create, :destroy]
   before_filter :correct_brother, only: [:destroy, :update]
 
@@ -18,6 +19,7 @@ class EntriesController < ApplicationController
     @entry = current_brother.entries.build entry_params
     if @entry.save
       flash[:success] = "!!! ぶろぐ投稿できたね !!!"
+      ikachan_post "#{current_brother.name} が投稿したよ! #{request.url}/#{@entry.id.to_s}"
       redirect_to @entry.brother
     else
       @feed_items = []

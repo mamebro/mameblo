@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 class BrothersController < ApplicationController
+include Ikachan
   before_filter :signed_in_brother, only: [:index, :edit, :update, :destroy, :following, :followers]
   before_filter :correct_brother,   only: [:edit, :update]
   before_filter :admin_brother,     only: :destroy
@@ -24,6 +25,7 @@ class BrothersController < ApplicationController
     @brother = Brother.new brother_params
     if @brother.save
       sign_in @brother
+      ikachan_post "おめでとう! #{@brother.name} がブラザーになったよ。 #{@brother.name} は #{@brother.id} 番目の弟です。"
       flash[:success] = "!!! まめぶろにようこそ !!!"
       redirect_to root_path
     else
