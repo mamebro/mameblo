@@ -1,11 +1,13 @@
-# -*- coding: utf-8 -*-
 class ScoreMailer < ActionMailer::Base
-  def daily_report
-    @date = Time.now.yesterday
-    @score = ScoreCounter.new.count_by_day(@date)
+  default from: "example@mameblo.com"
 
+  def daily
+    @date          = Time.now.yesterday.strftime('%Y年%m月%d日')
+    @brother_total = Brother.count
+    @entry_total   = Entry.count
+    @circus_total  = Circus.count
     mail(to:      ["yuta.kurotaki@gmail.com"],
          # cc:      [""],
-         subject: "【まめぶろ】Dailyスコアレポート #{@date.to_s}")
+         subject: "【まめぶろ】Dailyスコアレポート #{@date}")
   end
 end
