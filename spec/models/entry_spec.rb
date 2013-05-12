@@ -4,10 +4,10 @@ require 'spec_helper'
 describe Entry do
 
   let(:brother) { FactoryGirl.create(:brother) }
-  before do @entry = brother.entries.build(title: "まめぶろ最高",
-                                           content: "ここに本文を書いてるよブラザー！") 
+  before do
+    @entry = brother.entries.build(title: "まめぶろ最高",
+                                   content: "ここに本文を書いてるよブラザー！")
     subject { @entry }
-
   end
 
   it { should respond_to(:content) }

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Brother do
 
   before do
-    @brother = Brother.new(name: "shikakun",email: "test@example.com",
+    @brother = Brother.new(name: "kunshika",email: "kunshika@example.com",
                      password: "foobar", password_confirmation: "foobar")
   end
 
