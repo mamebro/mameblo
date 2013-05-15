@@ -1,6 +1,6 @@
 %section.single
   %h1= @entry.title
-  %div= simple_format(hbr(@entry.content))
+  %div= sanitize @entry.content
   %time
     = time_ago_in_words(@entry.created_at)
     前
