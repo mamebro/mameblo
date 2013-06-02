@@ -1,6 +1,6 @@
 %section.entry
   %h1= link_to entry.title, entry
-  %div= simple_format(hbr(entry.content))
+  %div= sanitize entry.content
   %time
     = link_to time_ago_in_words(entry.created_at), entry
     前
