@@ -4,10 +4,11 @@ include Ikachan
   before_filter :signed_in_brother, only: [:create, :destroy]
   before_filter :correct_brother, only: [:destroy, :update]
 
-  respond_to :html, :json
+  respond_to :html
 
   def show
     @entry = Entry.find(params[:id])
+    @entry.content = @entry.content_as_markdown
     respond_with @entry
   end
 
