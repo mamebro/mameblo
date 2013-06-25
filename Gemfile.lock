@@ -239,9 +239,9 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.0.2)
-    rdiscount (1.6.8)
     rdoc (3.12)
       json (~> 1.4)
+    redcarpet (2.2.2)
     ref (1.0.4)
     rubyzip (0.9.9)
     sass (3.2.3)
@@ -322,7 +322,7 @@ DEPENDENCIES
   pry-rails
   rails!
   rb-fsevent!
-  rdiscount
+  redcarpet
   rspec!
   rspec-core!
   rspec-expectations!

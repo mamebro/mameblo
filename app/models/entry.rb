@@ -1,5 +1,5 @@
+require 'redcarpet'
 # -*- coding: utf-8 -*-
-require 'rdiscount'
 class Entry < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
   belongs_to :brother
@@ -14,8 +14,11 @@ class Entry < ActiveRecord::Base
   # https://github.com/rtomayko/rdiscount
   # Markdownで出力する
   def content_as_markdown
-    markdown = RDiscount.new(content.to_s, :filter_html, :autolink)
-    markdown.to_html
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+                                       autolink: true,
+                                       space_after_headers: true,
+                                       filter_html: true)
+    markdown.render(content)
   end
 
   def self.from_brothers_followed_by(brother)

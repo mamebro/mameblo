@@ -9,7 +9,7 @@ gem 'activerecord-deprecated_finders', github: 'rails/activerecord-deprecated_fi
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'faker'
-gem 'rdiscount'
+gem 'redcarpet'
 gem 'kaminari'
 gem 'jquery-rails'
 gem 'twitter'

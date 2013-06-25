@@ -15,6 +15,9 @@ include Ikachan
   def show
     @brother = Brother.find(params[:id])
     @entries = @brother.entries.page params[:page]
+    @entries.each_with_index do |entry, index|
+      @entries[index].content = entry.content_as_markdown
+    end
   end
 
   def new
