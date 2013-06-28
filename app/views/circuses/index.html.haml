@@ -1,32 +1,9 @@
 = provide(:title, 'サーカス')
 %section
   %h1
-    ヤアヤアヤア！
-    %br
-    サーカスがくるらしいよ！
-  %h2 サーカス見たい!?
-  - brothers_source_circus_a = 'brothers' + rand(2).to_s + '.png'
-  - brothers_source_circus_b = 'brothers' + rand(2).to_s + '.png'
-  - brothers_source_circus_c = 'brothers' + rand(2).to_s + '.png'
-  - brothers_source_circus_d = 'brothers' + rand(2).to_s + '.png'
-  - brothers_source_circus_e = 'brothers' + rand(2).to_s + '.png'
-  %div#circus-preview
-    - brother_speed = @count / 4
-    %marquee{ scrollamount: brother_speed }
-      = image_tag brothers_source_circus_a, alt: 'サーカス待機ブラザー'
-      = image_tag brothers_source_circus_b, alt: 'サーカス待機ブラザー'
-      = image_tag brothers_source_circus_c, alt: 'サーカス待機ブラザー'
-      = image_tag brothers_source_circus_d, alt: 'サーカス待機ブラザー'
-      = image_tag brothers_source_circus_e, alt: 'サーカス待機ブラザー'
-      = image_tag brothers_source_circus_d, alt: 'サーカス待機ブラザー'
-      = image_tag brothers_source_circus_c, alt: 'サーカス待機ブラザー'
-      = image_tag brothers_source_circus_b, alt: 'サーカス待機ブラザー'
-      = image_tag brothers_source_circus_a, alt: 'サーカス待機ブラザー'
-  %p.circus-count
-    %span #{@count}
-    みたいね!
-  = button_to 'サーカスみたい！', circuses_path, class: 'button purple'
-  %h2.circus-list サーカス会場に集まってきたブラザー
+    サーカスきたね！
+  = image_tag 'circus_tent.png', id: 'circus-tent', alt: 'サーカス団'
+  %h2.circus-list やったね！
   %ul.brothers
     - @participate_brother.each do |brother|
       = render brother
