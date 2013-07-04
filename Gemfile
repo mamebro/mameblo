@@ -1,10 +1,7 @@
 source 'https://rubygems.org'
 
-# rails 4 edge
-gem 'rails',     github: 'rails/rails'
-gem 'journey',   github: 'rails/journey'
-gem 'arel',      github: 'rails/arel'
-gem 'activerecord-deprecated_finders', github: 'rails/activerecord-deprecated_finders'
+# rails 4
+gem 'rails', '4.0.0'
 
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
@@ -31,9 +28,6 @@ group :assets do
 
   gem 'uglifier'
 end
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
 
 group :development, :test do
   gem 'sqlite3'
@@ -68,15 +62,3 @@ group :test do
   gem 'spork'
   gem "timecop"
 end
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano', group: :development
-
-# To use debugger
-# gem 'debugger'
