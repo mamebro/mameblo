@@ -328,6 +328,10 @@ section.entry {
 
 section.single {
   padding: 96px 0;
+
+  img {
+    max-width: 100%;
+  }
 }
 
 article section h1 {

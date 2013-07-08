@@ -3,19 +3,12 @@ class CircusesController < ApplicationController
 include Ikachan
   def index
     # 最低一回はサーカス見たい!!ボタンを押したブラザーを表示する
-    participation = []
-    circuses = Circus.find(:all, select: 'brother_id')
-    # サーカス見たい!!ボタンを押したブラザーをArrayに入れる
+    participate_brother = []
+    circuses = Circus.select(:brother_id).uniq
     circuses.each do |circus|
-      participation << circus[:brother_id]
+      participate_brother << circus.brother_id
     end
-    # 重複している要素を取り除いて、サーカス見たいブラザー達のArrayを作る
-    @participate_brother = []
-    participation.uniq.each do |id|
-      @participate_brother << Brother.find(id)
-    end
-    @participate_brother
-    @count = circuses.count # サーカス見たいボタンが押された数
+    @participate_brother = Brother.where(id: participate_brother)
   end
 
   def create
