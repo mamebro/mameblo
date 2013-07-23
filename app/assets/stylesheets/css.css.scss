@@ -320,10 +320,18 @@ article section {
 section.entry {
   position: relative;
   padding-bottom: 96px;
+
+  img {
+    max-width: 100%;
+  }
 }
 
 section.single {
   padding: 96px 0;
+
+  img {
+    max-width: 100%;
+  }
 }
 
 article section h1 {

@@ -11,18 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define do
-
-  migrations do
-    migration 20120611112223, "efa3c17c0d86ab780b11dcbf141b9cd3", "create_brothers"
-    migration 20120611120316, "05b0e7cc41008830d5f2240b0eebb772", "add_password_digest_to_brothers"
-    migration 20120612055825, "ef2f95ab51fd39b76447caafedceb83e", "add_remember_token_to_brothers"
-    migration 20120613084159, "639eee2fbab4706bc054e56f631bfb06", "create_entries"
-    migration 20120717164053, "1f05f32ef3c7f091af43c06638446bc4", "add_index_to_brothers_email"
-    migration 20120718224804, "21ecc0765737d18c666a74d0eb7f02aa", "add_admin_to_brothers"
-    migration 20120719123837, "5d9b62d5f2f78567b246e6afe31cdef5", "create_relationships"
-    migration 20121009135012, "13a9b52639644e80427bc5ef8be3c3ff", "create_circuses"
-  end
+ActiveRecord::Schema.define(version: 20121009135012) do
 
   create_table "brothers", force: true do |t|
     t.string   "name"
