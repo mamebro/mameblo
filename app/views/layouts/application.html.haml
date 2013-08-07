@@ -44,8 +44,8 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
     = render 'layouts/shim'
-    %link{ rel: "icon", type: "image/x-icon", href: "/assets/favicon.png" }
-    %link{ rel: "apple-touch-icon", type: "text/css", media: "screen", href: "/assets/apple-touch-icon.png" }
+    = favicon_link_tag "/favicon.png"
+    = favicon_link_tag "/apple-touch-icon.png", rel: 'apple-touch-icon', type: 'image/png', sizes: '114x114'
     = analytics_init if Rails.env.production?
   %body
     %div#page
