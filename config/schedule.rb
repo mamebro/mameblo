@@ -20,17 +20,10 @@
 
 # Learn more: http://github.com/javan/whenever
 
-
-# mameblo Twitter から最新のつぶやきを拾ってくる
-# OAuth無しだと 150リクエスト/1hour 超えると制限かかる
-every 5.minutes do
-  rake "batches:twitter_api"
-end
-
 # Dailyでスコアメールを送信する
 # ブラザー数, エントリー数, サーカスみたいね数
-if environment == 'production'
-  every 1.day, at: '8:00am' do
-    rake 'batches:score_mailer:daily_report'
+if Rails.env.production?
+  every 1.day, at: '7:00am' do
+    runner 'ScoreMailer.daily.deliver'
   end
 end
