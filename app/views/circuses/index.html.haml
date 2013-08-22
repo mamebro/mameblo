@@ -1,10 +1,10 @@
-= provide(:title, 'サーカス')
+= provide(:title, '夏祭り')
 %section
   %h1
-    サーカスきたね！
-  = image_tag 'circus_tent.png', id: 'circus-tent-close', class: 'circus-tent', alt: 'サーカス団'
-  = image_tag 'circus_tent_left_open.png', id: 'circus-tent-left-open', class: 'circus-tent', alt: 'サーカス団'
-  %h2.circus-list やったね！
+    夏祭り会場
+  = image_tag 'circus_tent.png', id: 'circus-tent-close', class: 'circus-tent', alt: '夏祭り会場の様子'
+  = image_tag 'circus_tent_left_open.png', id: 'circus-tent-left-open', class: 'circus-tent', alt: '夏祭り会場の様子'
+  %h2.circus-list 夏祭りに集まってきたブラザーたち
   %ul.brothers
     - @participate_brother.each do |brother|
       = render brother
