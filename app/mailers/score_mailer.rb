@@ -6,7 +6,7 @@ class ScoreMailer < ActionMailer::Base
     @brother_total = Brother.count
     @entry_total   = Entry.count
     @circus_total  = Circus.count
-    mail(to:      ["yuta.kurotaki@gmail.com"],
+    mail(to:      ["yuta.kurotaki@gmail.com", "k@u-n.jp"],
          # cc:      [""],
          subject: "【まめぶろ】Daily スコアレポート #{@date}")
   end
