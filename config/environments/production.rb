@@ -56,10 +56,10 @@ Mameblog::Application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address => <%= ENV['SQALE_MAIL_ADDRESS'] %>,
-    :port => <%= ENV['SQALE_MAIL_PORT'] %>,
-    :user_name => <%= ENV['SQALE_MAIL_USERNAME'] %>,
-    :password => <%= ENV['SQALE_MAIL_PASSWORD'] %>,
+    :address => ENV['SQALE_MAIL_ADDRESS'],
+    :port => ENV['SQALE_MAIL_PORT'],
+    :user_name => ENV['SQALE_MAIL_USERNAME'],
+    :password => ENV['SQALE_MAIL_PASSWORD'],
     :authentication => :login,
     :enable_starttls_auto => true,
   }
