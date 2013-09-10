@@ -1,5 +1,5 @@
 = form_for(current_brother.relationships.build(followed_id: @brother.id),remote: true) do |f|
   %div
     = f.hidden_field :followed_id
-    = f.submit "ブラザーになる", class: "brother button green", id: 'beBrother'
-    %input#beBrotherAfter.brother.button.gray{ type: "button", value: "ブラザーになりました" }
+    = f.submit "兄弟になる", class: "brother button green", id: 'beBrother'
+    %input#beBrotherAfter.brother.button.gray{ type: "button", value: "兄弟になりました" }
