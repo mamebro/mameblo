@@ -2,3 +2,4 @@
 
 set -e
 ln -s /home/sqale/etc/irc.yml /home/sqale/current/config/irc.yml
+ln -s /home/sqale/etc/staff_mail.yml /home/sqale/current/config/staff_mail.yml
