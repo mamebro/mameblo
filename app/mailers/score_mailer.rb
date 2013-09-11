@@ -7,16 +7,17 @@ class ScoreMailer < ActionMailer::Base
     yesterday            = Time.now.yesterday.all_day
     day_before_yesterday = Time.now.yesterday.yesterday.all_day
 
-    @brother_yesterday_count      = Brother.where(created_at: yesterday).count
-    @brother_day_before_yesterday = Brother.where(created_at: day_before_yesterday).count
-    @brother_diff                 = @brother_day_before_yesterday - @brother_yesterday_count
+    @brother_yesterday            = Brother.where(created_at: yesterday)
+    @brother_day_before_yesterday = Brother.where(created_at: day_before_yesterday)
+    @brother_diff                 = @brother_day_before_yesterday.count - @brother_yesterday.count
     @brother_total                = Brother.where("created_at <= ?" ,Time.now.yesterday.end_of_day).count
 
-    @entry_yesterday_count        = Entry.where(created_at: yesterday).count
-    @entry_day_before_yesterday   = Entry.where(created_at: day_before_yesterday).count
-    @entry_diff                   = @entry_day_before_yesterday - @entry_yesterday_count
+    @entry_yesterday              = Entry.where(created_at: yesterday)
+    @entry_day_before_yesterday   = Entry.where(created_at: day_before_yesterday)
+    @entry_diff                   = @entry_day_before_yesterday.count - @entry_yesterday.count
     @entry_total                  = Entry.where("created_at <= ?" ,Time.now.yesterday.end_of_day).count
 
+    @url  = Rails.env.production? ? 'http://www.mameblo.com/' : 'http://mameblo.dev/'
     @date = Time.now.yesterday.strftime('%Y年%m月%d日')
 
     mail(to: staff_mail_list,
