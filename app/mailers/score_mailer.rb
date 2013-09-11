@@ -9,12 +9,12 @@ class ScoreMailer < ActionMailer::Base
 
     @brother_yesterday            = Brother.where(created_at: yesterday)
     @brother_day_before_yesterday = Brother.where(created_at: day_before_yesterday)
-    @brother_diff                 = @brother_day_before_yesterday.count - @brother_yesterday.count
+    @brother_diff                 = @brother_yesterday.count - @brother_day_before_yesterday.count
     @brother_total                = Brother.where("created_at <= ?" ,Time.now.yesterday.end_of_day).count
 
     @entry_yesterday              = Entry.where(created_at: yesterday)
     @entry_day_before_yesterday   = Entry.where(created_at: day_before_yesterday)
-    @entry_diff                   = @entry_day_before_yesterday.count - @entry_yesterday.count
+    @entry_diff                   = @entry_yesterday.count - @entry_day_before_yesterday.count
     @entry_total                  = Entry.where("created_at <= ?" ,Time.now.yesterday.end_of_day).count
 
     @url  = Rails.env.production? ? 'http://www.mameblo.com/' : 'http://mameblo.dev/'
