@@ -1,6 +1,5 @@
 Mameblog::Application.routes.draw do
 
-  get "votes/index"
   resources :brothers do
     member do
       get :following, :followers
@@ -19,5 +18,5 @@ Mameblog::Application.routes.draw do
   get '/signin',  to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
   get "/contributors", to: 'contributors#index'
-
+  get "votes", to: 'votes#index'
 end
