@@ -48,7 +48,7 @@ describe Brother do
       brothername.each do |invalid_name|
         @brother.name = invalid_name
         @brother.should_not be_valid
-      end      
+      end
     end
   end
 
@@ -68,7 +68,7 @@ describe Brother do
       addresses.each do |invalid_address|
         @brother.email = invalid_address
         @brother.should_not be_valid
-      end      
+      end
     end
   end
 
@@ -78,7 +78,7 @@ describe Brother do
       addresses.each do |valid_address|
         @brother.email = valid_address
         @brother.should be_valid
-      end      
+      end
     end
   end
 
@@ -95,7 +95,7 @@ describe Brother do
   describe "when password confirmation is nil" do
     before { @brother.password_confirmation = nil }
       it { should_not be_valid }
-  end  
+  end
 
   describe "with a password that's too short" do
     before { @brother.password = @brother.password_confirmation = "a" * 5 }
@@ -105,7 +105,7 @@ describe Brother do
   describe "return value of authenticate method" do
     before { @brother.save }
     let(:found_brother) { Brother.find_by_name(@brother.name) }
-  
+
   describe "with valid password" do
     it { should == found_brother.authenticate(@brother.password) }
   end
@@ -126,7 +126,7 @@ describe Brother do
   describe "entry associations" do
 
     before { @brother.save }
-    let!(:older_entry) do 
+    let!(:older_entry) do
       FactoryGirl.create(:entry, brother: @brother, created_at: 1.day.ago)
     end
     let!(:newer_entry) do
@@ -135,6 +135,18 @@ describe Brother do
 
     it "should have the right entries in the right order" do
       @brother.entries.should == [newer_entry, older_entry]
+    end
+  end
+
+  describe "find_by_name_or_id" do
+    before { @brother.save }
+
+    it "find by name should return brother" do
+      Brother.find_by_name_or_id(@brother.name).should == @brother
+    end
+
+    it "find by id should return brother" do
+      Brother.find_by_name_or_id(@brother.id).should == @brother
     end
   end
 end
