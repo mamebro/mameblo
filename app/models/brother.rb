@@ -17,11 +17,11 @@ class Brother < ActiveRecord::Base
 
   VALID_EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
-  
+
   VALID_NAME_REGEX = /[a-z0-9]+\z/i
-  validates :name, presence: true, length: {within: 3..20}, 
+  validates :name, presence: true, length: {within: 3..20},
             format: { with: VALID_NAME_REGEX }, uniqueness: true
-  
+
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
 
@@ -42,6 +42,14 @@ class Brother < ActiveRecord::Base
 
   def unfollow!(other_brother)
     relationships.find_by_followed_id(other_brother.id).destroy
+  end
+
+  def to_param
+    name
+  end
+
+  def self.find_by_name_or_id(arg)
+    find_by_name(arg) || find(arg)
   end
 
   private
