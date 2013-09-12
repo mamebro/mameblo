@@ -146,7 +146,7 @@ input[type='submit'],
 	background: linear-gradient(#3579b0, #2371b0 50%, #1269b0 50%, #0060af);
 }
 
-header nav a.button {
+#nav a.button {
 	padding: 1em 0;
 	
 	font-size: 120%;
@@ -242,7 +242,7 @@ div#page {
 	margin: 0 auto;
 }
 
-header h1 {
+#brand {
   position: relative;
   float: left;
   width: 60px;
@@ -250,28 +250,29 @@ header h1 {
   cursor: pointer;
 }
 
-header h1 img {
+#brand img {
 	width: 100%;
 	height: auto;
 }
 
-header nav {
+#nav {
   position: relative;
   float: left;
 	width: 240px;
-	margin-left: 20px;
+	margin: 0 0 20px 20px;
+  display: none;
 }
 
-header nav ul li {
+#nav li {
   position: relative;
   float: left;
 }
 
 header,
-header nav ul,
+#nav ul,
 ul.brothers { zoom: 1; }
 header:after,
-header nav ul:after,
+#nav ul:after,
 ul.brothers:after { content: ""; display: block; clear: both; }
 
 /* details */
