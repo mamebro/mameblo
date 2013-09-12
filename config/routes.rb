@@ -1,5 +1,6 @@
 Mameblog::Application.routes.draw do
 
+  get "votes/index"
   resources :brothers do
     member do
       get :following, :followers
