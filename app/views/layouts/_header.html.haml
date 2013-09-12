@@ -1,9 +1,9 @@
 %header#header
-  %h1
+  %h1#brand
     - num = rand(2)
     - brothers_source = 'brothers' + num.to_s() + '.png'
     = image_tag brothers_source, alt: 'まめぶろ'
-  %nav
+  %nav#nav
     %ul
       - if signed_in?
         %li

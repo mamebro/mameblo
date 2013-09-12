@@ -1,15 +1,14 @@
 $(document).ready(function() {
-  $('header nav').hide();
   $('#beBrotherAfter').hide();
   $('#unBrotherAfter').hide();
   var swNav = 0;
   
-  $('header h1').click(function(){
+  $('#brand').click(function(){
 	  if(swNav == 0){
-	    $('header nav').slideDown('fast');
+	    $('#nav').slideDown('fast');
 	    swNav = 1;
 	  }else{
-		  $('header nav').slideUp('fast');
+		  $('#nav').slideUp('fast');
 	    swNav = 0;
 	  }
   });
