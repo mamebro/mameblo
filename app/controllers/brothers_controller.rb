@@ -2,6 +2,7 @@
 class BrothersController < ApplicationController
 include Ikachan
   before_filter :signed_in_brother, only: [:index, :edit, :update, :destroy, :following, :followers]
+  before_filter :load_brother,      only: [:show, :edit, :update, :destroy, :following, :followers]
   before_filter :correct_brother,   only: [:edit, :update]
   before_filter :admin_brother,     only: :destroy
 
@@ -13,7 +14,6 @@ include Ikachan
   end
 
   def show
-    @brother = Brother.find(params[:id])
     @entries = @brother.entries.page params[:page]
     @entries.each_with_index do |entry, index|
       @entries[index].content = entry.content_as_markdown
@@ -37,17 +37,15 @@ include Ikachan
   end
 
   def destroy
-    Brother.find(params[:id]).destroy
+    @brother.destroy
     flash[:success] = "ユーザーを削除しました."
     redirect_to brothers_path
   end
 
   def edit
-    @brother = Brother.find(params[:id])
   end
 
   def update
-    @brother = Brother.find(params[:id])
     if @brother.update_attributes brother_params
       flash[:success] = "!!! プロフィール更新しました !!!"
       sign_in @brother
@@ -59,14 +57,12 @@ include Ikachan
 
   def following
     @title = "ブラザー"
-    @brother = Brother.find(params[:id])
     @brothers = @brother.followed_brothers.page params[:page]
     render 'show_follow'
   end
 
   def followers
     @title = "見守っているブラザー"
-    @brother = Brother.find(params[:id])
     @brothers = @brother.followers.page params[:page]
     render 'show_follow'
   end
@@ -87,8 +83,12 @@ include Ikachan
     end
   end
 
+  def load_brother
+    @brother = Brother.find_by_name_or_id(params[:id])
+  end
+
   def correct_brother
-    @brother = Brother.find(params[:id])
+    @brother = Brother.find_by_name_or_id(params[:id])
     redirect_to(root_path) unless current_brother?(@brother)
   end
 
