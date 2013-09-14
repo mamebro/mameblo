@@ -12,7 +12,6 @@ gem 'twitter'
 gem 'whenever', require: false
 gem 'haml'
 gem 'faraday'
-gem 'ligature-symbols-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
