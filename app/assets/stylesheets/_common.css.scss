@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* fonts */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400");
 
 @font-face {
     font-family: 'LigatureSymbols';
@@ -30,9 +30,9 @@
 }
 
 .lsf-icon:before {
-  content:attr(title);
-  margin-right:0.3em;
-  font-size:130%;
+  content: attr(title);
+  margin-right: 0.3em;
+  font-size: 130%;
 }
 
 .lsf-icon.amazon:before {
