@@ -11,6 +11,7 @@ Mameblog::Application.routes.draw do
   resources :entries, only: [:create, :destroy, :show, :update, :edit]
   resources :relationships, only: [:create, :destroy]
   resources :circuses
+  resources :votes
 
   root 'static_pages#home'
 
@@ -18,5 +19,4 @@ Mameblog::Application.routes.draw do
   get '/signin',  to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
   get "/contributors", to: 'contributors#index'
-  get "votes", to: 'votes#index'
 end
