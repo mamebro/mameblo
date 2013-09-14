@@ -1,13 +1,13 @@
 %header#header
-  %h1
+  %h1#brand
     - num = rand(2)
     - brothers_source = 'brothers' + num.to_s() + '.png'
     = image_tag brothers_source, alt: 'まめぶろ'
-  %nav
+  %nav#nav
     %ul
       - if signed_in?
         %li
-          = link_to "サーカス", circuses_path, class: 'button purple'
+          = link_to "夏祭り", circuses_path, class: 'button purple'
         %li
           = link_to "書く", root_path, class: 'button blue'
         %li

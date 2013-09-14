@@ -1,19 +1,51 @@
-まめぶろデイリースコアレポート <%= @date %>
+!!! まめぶろ Daily スコアレポート !!!
+<%= @date %>
 
+---------------------------------------------------
 ブラザー数合計: <%= @brother_total %>
+昨日兄弟になったブラザー: <%= @brother_yesterday.count %> 前日比(<%= @brother_diff %>)
+
 エントリー数合計: <%= @entry_total %>
-サーカスみたい！: <%= @circus_total %>
+昨日のエントリー数: <%= @entry_yesterday.count %> 前日比(<%= @entry_diff %>)
 
 
+※  合計: まめぶろ開始から昨日の終わりまでの累計
+※  前日比: (昨日の合計) - (おとといの合計)
+---------------------------------------------------
 
-かわいいブログ。まめぶろ。
+
+昨日のエントリー一覧
+---------------------------------------------------
+<% @entry_yesterday.each do |entry| %>
+  <%= entry.title %>
+  <%= @url %>entries/<%= entry.id %>
+<% end %>
+---------------------------------------------------
+
+
+昨日生まれたブラザー
+---------------------------------------------------
+<% @brother_yesterday.each do |brother| %>
+  <%= brother.name %>
+  <%= @url %>brothers/<%= brother.id %>
+<% end %>
+---------------------------------------------------
+
+
+関連Link
+---------------------------------------------------
+かわいいブログ。まめぶろ
 http://www.mameblo.com/
 
 GitHub リポジトリ
-https://github.com/kurotaky/mameblo
+https://github.com/mamebro/mameblo
+
+minne
+http://minne.com/mameblo
 
 Twitter 公式アカウント
 https://twitter.com/mameblo
 
 Facebookページ
 http://www.facebook.com/mamebrother
+---------------------------------------------------
