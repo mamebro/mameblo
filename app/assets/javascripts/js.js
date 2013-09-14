@@ -5,10 +5,10 @@ $(document).ready(function() {
   
   $('#brand').click(function(){
 	  if(swNav == 0){
-	    $('#nav').slideDown('fast');
+	    $('#navs').slideDown('fast');
 	    swNav = 1;
 	  }else{
-		  $('#nav').slideUp('fast');
+		  $('#navs').slideUp('fast');
 	    swNav = 0;
 	  }
   });

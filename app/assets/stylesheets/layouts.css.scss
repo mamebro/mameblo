@@ -1,4 +1,48 @@
+@import 'common';
+
 #page {
-  width: 300px;
+  width: 320px;
   margin: 0 auto;
+}
+
+#header {
+  width: 100%;
+}
+
+#brand {
+  width: 100%;
+  margin: 0 auto;
+  cursor: pointer;
+  background-color: $yellow;
+}
+
+#brand img {
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
+  display: block;
+}
+
+#navs {
+  display: none;
+  border-top: 1px solid $white;
+}
+
+.nav a {
+  width: 100%;
+  height: 50px;
+  padding: 0 $gap;
+  display: block;
+  line-height: 50px;
+  color: $black;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0 1px $white;
+  background-color: $gray-light;
+  border-bottom: 1px solid $white;
+  @include box-sizing;
+}
+
+.nav {
+
 }

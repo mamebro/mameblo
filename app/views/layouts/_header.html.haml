@@ -1,23 +1,21 @@
 %header#header
   %h1#brand
-    - num = rand(2)
-    - brothers_source = 'brothers' + num.to_s() + '.png'
-    = image_tag brothers_source, alt: 'まめぶろ'
-  %nav#nav
+    = image_tag "brothers#{rand(2).to_s()}.png", alt: 'まめぶろ'
+  %nav#navs
     %ul
       - if signed_in?
-        %li
-          = link_to "選挙", votes_path, class: 'button purple'
-        %li
-          = link_to "書く", root_path, class: 'button blue'
-        %li
-          = link_to current_brother.name, current_brother, class: 'button yellow'
-        %li
-          = link_to "ブラザーズ", brothers_path, class: 'button green'
-        %li
-          = link_to "設定", edit_brother_path(current_brother), class: 'button red'
+        %li.nav.nav-votes
+          = link_to "選挙", votes_path
+        %li.nav.nav-writes
+          = link_to "書く", root_path
+        %li.nav.nav-entries
+          = link_to current_brother.name, current_brother
+        %li.nav.nav-brothers
+          = link_to "ブラザーズ", brothers_path
+        %li.nav.nav-settings
+          = link_to "設定", edit_brother_path(current_brother)
       - else
-        %li
-          = link_to "サインイン", signin_path, class: 'button blue'
-        %li
-          = link_to "はじめる", signup_path, class: 'button yellow'
+        %li.nav.nav-signin
+          = link_to "サインイン", signin_path
+        %li.nav.nav-signup
+          = link_to "はじめる", signup_path
