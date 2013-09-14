@@ -8,6 +8,7 @@
 
 #header {
   width: 100%;
+  margin-bottom: $gap;
 }
 
 #brand {
@@ -32,7 +33,7 @@
 .nav a {
   width: 100%;
   height: 50px;
-  padding: 0 $gap;
+  padding: 0 $gap*2;
   display: block;
   line-height: 50px;
   color: $black;
@@ -41,8 +42,4 @@
   background-color: $gray-light;
   border-bottom: 1px solid $white;
   @include box-sizing;
-}
-
-.nav {
-
 }

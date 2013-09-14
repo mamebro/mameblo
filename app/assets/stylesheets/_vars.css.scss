@@ -1,4 +1,4 @@
-$gap: 20px;
+$gap: 10px;
 
 $white: #f2f2f2;
 $gray-light: #e0e0e0;
@@ -24,32 +24,18 @@ $yellow-dark: darken($yellow, $color-diff);
 $purple-light: lighten($purple, $color-diff);
 $purple-dark: darken($purple, $color-diff);
 
-$font-color: $black;
-$font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-$font-size: 100%;
-$font-size-small: 90%;
-$font-size-large: 110%;
-$line-height: 1.66;
-$line-height-small: $line-height*0.8;
-$letter-spacing: 0;
-
 @mixin font($type: default) {
   @if $type == default {
-    color: $font-color;
-    font-size: $font-size;
-    line-height: $line-height;
-    letter-spacing: $letter-spacing;
-  } @else if $type == reset {
-    color: $font-color;
-    font-size: $font-size;
+    color: $black;
+    font-size: 14px;
+    line-height: 1.66;
+  } @else if $type == input {
+    color: $black;
+    font-size: 16px;
     line-height: 1;
-    letter-spacing: $letter-spacing;
-  } @else if $type == link {
-    color: $font-color;
-    text-decoration: none;
   }
   
-  font-family: $font-family;
+  font-family: 'Open Sans', sans-serif;
 }
 
 @mixin link {
