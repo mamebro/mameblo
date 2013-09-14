@@ -1,5 +1,43 @@
 @charset "UTF-8";
+
+/* fonts */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+@font-face {
+    font-family: 'LigatureSymbols';
+    src: asset-url('LigatureSymbols/LigatureSymbols-2.11.eot');
+    src: asset-url('LigatureSymbols/LigatureSymbols-2.11.eot?#iefix') format('embedded-opentype'),
+         asset-url('LigatureSymbols/LigatureSymbols-2.11.woff') format('woff'),
+         asset-url('LigatureSymbols/LigatureSymbols-2.11.ttf') format('truetype'),
+         asset-url('LigatureSymbols/LigatureSymbols-2.11.svg#LigatureSymbols') format('svg');
+    src: asset-url('LigatureSymbols/LigatureSymbols-2.11.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.lsf, .lsf-icon:before {
+  font-family: 'LigatureSymbols';
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  -o-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.lsf-icon:before {
+  content:attr(title);
+  margin-right:0.3em;
+  font-size:130%;
+}
+
+.lsf-icon.amazon:before {
+  content: '\E007';
+}
 
 /* common class */
 .hidden { display: none; }
