@@ -1,6 +1,12 @@
 @charset "UTF-8";
 @import 'vars';
 
+.brother-name {
+  margin-bottom: $gap;
+  text-align: center;
+  @include font(title);
+}
+
 .entry {
   min-height: 100px;
   padding: $gap;
