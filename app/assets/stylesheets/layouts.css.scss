@@ -48,3 +48,16 @@
   border-bottom: 1px solid $white;
   @include box-sizing;
 }
+
+#footer {
+  padding: $gap 0 $gap*2;
+
+  .copyright {
+    text-align: center;
+    @include font(small);
+    
+    a {
+      color: $black;
+    }
+  }
+}
