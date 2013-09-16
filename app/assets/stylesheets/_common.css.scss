@@ -2,7 +2,7 @@
 @import 'vars';
 
 /* fonts */
-@import url("//fonts.googleapis.com/css?family=Open+Sans:400");
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400,700");
 
 @font-face {
     font-family: 'LigatureSymbols';
@@ -63,8 +63,8 @@ body {
 /* common class */
 .hidden { display: none; }
 .half { -ms-filter: "alpha(opacity=50)"; filter: alpha( opacity=50 ); opacity: 0.5; }
-.clear { zoom: 1; }
-.clear:after { content: ""; display: block; clear: both; }
+.clearfix { zoom: 1; }
+.clearfix:after { content: ""; display: block; clear: both; }
 
 /* module class */
 .input {

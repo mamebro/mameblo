@@ -1,0 +1,45 @@
+@charset "UTF-8";
+@import 'vars';
+
+.entry {
+  min-height: 100px;
+  padding: $gap;
+  margin-bottom: $gap;
+  background-color: $true-white;
+  box-shadow: 0 1px 0 $silver;
+}
+
+.entry-title {
+  margin-bottom: $gap;
+  @include font(title);
+}
+
+.entry-content {
+  margin-bottom: $gap;
+}
+
+.entry-footer {
+  margin-bottom: $gap/2;
+  @include font(small);
+
+  a {
+    color: $black;
+  }
+
+  .control {
+    float: right;
+    line-height: 1;
+  }
+
+  .edit {
+    &:after {
+      content: '/';
+      margin: 0 $gap/4;
+    }
+  }
+}
+
+.tool {
+  margin-bottom: $gap;
+  text-align: center;
+}

@@ -1,10 +1,12 @@
 $gap: 10px;
 
+$true-white: #fff;
 $white: #f2f2f2;
 $gray-light: #e0e0e0;
 $gray: #999;
 $gray-dark: #666;
 $black: #2c3e50;
+$true-black: #000;
 
 $red: #D04255;
 $yellow: #ffff00;
@@ -58,6 +60,14 @@ $midnightblue: #2c3e50;
     color: $white;
     font-size: 16px;
     line-height: 45px;
+  } @else if $type == title {
+    color: $black;
+    font-size: 16px;
+    line-height: 1.66;
+  } @else if $type == small {
+    color: $black;
+    font-size: 12px;
+    line-height: 1.44;
   }
   
   font-family: 'Open Sans', sans-serif;
