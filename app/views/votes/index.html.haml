@@ -1,5 +1,6 @@
 = provide(:title, '選挙')
-%h1.title ??? 着たい ???
+%h1.page-title
+  ??? 着たい ???
 - num = rand(11) + 1
 %section.vote{data:{tshirt: num}}
   = image_tag "votes/tshirts/tshirt#{num}.png", class: 'tshirt'

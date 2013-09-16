@@ -144,3 +144,9 @@ body {
     cursor: default;
   }
 }
+
+.page-title {
+  margin-bottom: $gap;
+  text-align: center;
+  @include font(title);
+}
