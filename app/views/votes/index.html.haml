@@ -1,9 +1,10 @@
 = provide(:title, '選挙')
-%h1.title ??? 着たい ???
-%section.vote{data:{tshirt: @num}}
+%h1.page-title
+  ??? 着たい ???
+%section.vote-buttons.clearfix{data:{tshirt: @num}}
   = image_tag "votes/tshirts/tshirt#{@num}.png", class: 'tshirt'
 - unless @voted
-  = button_to "着たい !!!", action: 'create', tshirt_id: @num
-  = button_to "他のTシャツが見たい !!!", votes_path, method: 'get'
+  = button_to "着たい !!!", votes_path, tshirt_id: @num, id: 'vote-good', class: 'button button-primary', action: 'create'
+  = button_to "わかりません", votes_path, id: 'vote-pass', class: 'button button-warning', method: 'get'
 - else
-  = button_to "他のTシャツが見たい !!!", votes_path, method: 'get'
+  = button_to "わかりません", votes_path, id: 'vote-pass', class: 'button button-warning', method: 'get'
