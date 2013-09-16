@@ -2,7 +2,7 @@
 %h1.page-title
   ??? 着たい ???
 - num = rand(11) + 1
-%section.vote{data:{tshirt: num}}
+%section.vote-buttons.clearfix{data:{tshirt: num}}
   = image_tag "votes/tshirts/tshirt#{num}.png", class: 'tshirt'
-  = button_to "着たい !!!", action: 'create'
-  = button_to "他のTシャツが見たい !!!", votes_path, method: 'get'
+  = button_to "着たい !!!", votes_path, id: 'vote-good', class: 'button button-primary', action: 'create'
+  = button_to "わかりません", votes_path, id: 'vote-pass', class: 'button button-warning', method: 'get'
