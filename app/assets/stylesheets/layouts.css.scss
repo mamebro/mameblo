@@ -20,6 +20,10 @@
   @include border-radius(bottom);
 }
 
+#brand.opened {
+  background-color: $asbestos;
+} 
+
 #brand img {
   width: 38px;
   height: 30px;
@@ -29,7 +33,6 @@
 
 #navs {
   display: none;
-  border-top: 1px solid $white;
 }
 
 .nav a {
@@ -41,7 +44,7 @@
   color: $black;
   font-size: 18px;
   text-shadow: 0 1px $white;
-  background-color: $gray-light;
+  background-color: $silver;
   border-bottom: 1px solid $white;
   @include box-sizing;
 }
