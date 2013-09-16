@@ -1,7 +1,9 @@
 = provide(:title, '選挙')
 %h1.title ??? 着たい ???
-- num = rand(11) + 1
-%section.vote{data:{tshirt: num}}
-  = image_tag "votes/tshirts/tshirt#{num}.png", class: 'tshirt'
-  = button_to "着たい !!!", action: 'create'
+%section.vote{data:{tshirt: @num}}
+  = image_tag "votes/tshirts/tshirt#{@num}.png", class: 'tshirt'
+- unless @voted
+  = button_to "着たい !!!", action: 'create', tshirt_id: @num
+  = button_to "他のTシャツが見たい !!!", votes_path, method: 'get'
+- else
   = button_to "他のTシャツが見たい !!!", votes_path, method: 'get'
