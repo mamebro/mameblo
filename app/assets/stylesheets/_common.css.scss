@@ -77,18 +77,67 @@ body {
 .button {
   height: 45px;
   padding: 0 20px;
+  margin-bottom: $gap/2;
   display: inline-block;
   text-align: center;
   @include font(button);
-  text-shadow: 0 -1px $blue;
+  text-shadow: 0 -1px $asbestos;
   border: 0;
-  background-color: $blue-light;
+  background-color: $concrete;
   @include border-radius(small);
   @include box-sizing;
-  box-shadow: 0 2px 0 $blue;
+  box-shadow: 0 2px 0 $asbestos;
   cursor: pointer;
   
   &.button-horizontal {
     width: 100%;  
+  }
+
+  &.button-default {
+    text-shadow: 0 -1px $asbestos;
+    background-color: $concrete;
+    box-shadow: 0 2px 0 $asbestos;
+  }
+
+  &.button-primary {
+    text-shadow: 0 -1px $greensea;
+    background-color: $turquoise;
+    box-shadow: 0 2px 0 $greensea;
+  }
+
+  &.button-success {
+    text-shadow: 0 -1px $pumpkin;
+    background-color: $carrot;
+    box-shadow: 0 2px 0 $pumpkin;
+  }
+
+  &.button-info {
+    text-shadow: 0 -1px $belizehole;
+    background-color: $peterriver;
+    box-shadow: 0 2px 0 $belizehole;
+  }
+
+  &.button-warning {
+    text-shadow: 0 -1px $orange;
+    background-color: $sunflower;
+    box-shadow: 0 2px 0 $orange;
+  }
+
+  &.button-danger {
+    text-shadow: 0 -1px $pomegranate;
+    background-color: $alizarin;
+    box-shadow: 0 2px 0 $pomegranate;
+  }
+
+  &.button-inverse {
+    text-shadow: 0 -1px $greensea;
+    background-color: $turquoise;
+    box-shadow: 0 2px 0 $greensea;
+  }
+
+  &.button-disabled {
+    text-shadow: 0 -1px $asbestos;
+    background-color: $silver;
+    box-shadow: 0 2px 0 $asbestos;
   }
 }
