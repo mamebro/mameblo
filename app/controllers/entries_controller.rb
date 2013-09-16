@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 class EntriesController < ApplicationController
 include Ikachan
-  before_filter :signed_in_brother, only: [:create, :destroy]
-  before_filter :correct_brother, only: [:destroy, :update]
+  before_action :signed_in_brother, only: [:create, :destroy]
+  before_action :correct_brother, only: [:destroy, :update]
 
   respond_to :html
 
