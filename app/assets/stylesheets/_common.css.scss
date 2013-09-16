@@ -67,6 +67,15 @@ body {
 .clearfix:after { content: ""; display: block; clear: both; }
 
 /* module class */
+.alert {
+  padding: $gap;
+  margin-bottom: $gap;
+  text-align: center;
+  @include font(default);
+  background-color: $sunflower;
+  box-shadow: 0 1px 0 $orange;
+}
+
 .input {
   width: 100%;
   margin-bottom: $gap/2;

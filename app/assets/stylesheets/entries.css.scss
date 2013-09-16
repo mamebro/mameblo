@@ -22,6 +22,7 @@
 
 .entry-content {
   margin-bottom: $gap;
+  @include font(default);
 }
 
 .entry-footer {
