@@ -1,10 +1,8 @@
 = provide(:title, @title)
-%p.help
-  = render 'shared/stats'
-  <br>
-  %b.brothername= link_to @brother.name, @brother
-  の
-  = @title
+= provide(:title, @brother.name)
+%h1.brother-name
+  = @brother.name
+= render 'shared/stats'
 - if @brothers.any?
   %ul.brothers
     = render @brothers
