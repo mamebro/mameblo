@@ -64,7 +64,7 @@ body {
 .clear { zoom: 1; }
 .clear:after { content: ""; display: block; clear: both; }
 
-/* input */
+/* module class */
 .input {
   width: 100%;
   margin-bottom: $gap/2;
@@ -72,4 +72,23 @@ body {
   @include font(input);
   border: 1px solid $gray-light;
   @include box-sizing;
+}
+
+.button {
+  height: 45px;
+  padding: 0 20px;
+  display: inline-block;
+  text-align: center;
+  @include font(button);
+  text-shadow: 0 -1px $blue;
+  border: 0;
+  background-color: $blue-light;
+  @include border-radius(small);
+  @include box-sizing;
+  box-shadow: 0 2px 0 $blue;
+  cursor: pointer;
+  
+  &.button-horizontal {
+    width: 100%;  
+  }
 }

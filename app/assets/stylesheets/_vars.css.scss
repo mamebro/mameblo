@@ -33,6 +33,10 @@ $purple-dark: darken($purple, $color-diff);
     color: $black;
     font-size: 16px;
     line-height: 1;
+  } @else if $type == button {
+    color: $white;
+    font-size: 16px;
+    line-height: 45px;
   }
   
   font-family: 'Open Sans', sans-serif;
