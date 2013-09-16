@@ -1,6 +1,4 @@
 %header#header
-  %h1#brand
-    = image_tag "brand.png", alt: 'まめぶろ'
   %nav#navs
     %ul
       - if signed_in?
@@ -19,3 +17,5 @@
           = link_to "サインイン", signin_path, class: 'lsf-icon', title: 'file'
         %li.nav.nav-signup
           = link_to "はじめる", signup_path, class: 'lsf-icon', title: 'file'
+  %h1#brand
+    = image_tag "brand.png", alt: 'まめぶろ'

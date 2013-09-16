@@ -2,7 +2,7 @@
 @import 'vars';
 
 #page {
-  width: 320px;
+  width: 300px;
   margin: 0 auto;
 }
 
@@ -17,6 +17,7 @@
   padding: 10px 0;
   cursor: pointer;
   background-color: $midnightblue;
+  @include border-radius(bottom);
 }
 
 #brand img {

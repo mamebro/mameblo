@@ -80,6 +80,10 @@ $midnightblue: #2c3e50;
     @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  
       #{$prefix}border-radius: 10px;  
     } 
+  } @else if $size == bottom {
+    @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  
+      #{$prefix}border-radius: 0 0 5px 5px;  
+    } 
   }
 }
 

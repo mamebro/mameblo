@@ -1,15 +1,12 @@
 $(document).ready(function() {
   $('#beBrotherAfter').hide();
   $('#unBrotherAfter').hide();
-  var swNav = 0;
   
-  $('#brand').click(function(){
-	  if(swNav == 0){
-	    $('#navs').slideDown('fast');
-	    swNav = 1;
-	  }else{
-		  $('#navs').slideUp('fast');
-	    swNav = 0;
+  $('#brand').click(function () {
+	  if ($('#navs').hasClass('opened')) {
+	    $('#navs').slideUp('fast').removeClass('opened');
+	  } else {
+		  $('#navs').slideDown('fast').addClass('opened');
 	  }
   });
   
