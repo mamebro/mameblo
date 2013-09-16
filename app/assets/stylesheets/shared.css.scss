@@ -36,3 +36,11 @@
 .follow-button {
   margin-bottom: $gap;
 }
+
+.brothers {
+  li {
+    margin: 0 $gap/2 $gap/2 0;
+    display: inline-block;
+    font-weight: bold;
+  }
+}
