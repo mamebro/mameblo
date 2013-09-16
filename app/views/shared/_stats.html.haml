@@ -4,8 +4,8 @@
     = @brother.entries.count
     %span.label 日記
   %a.stat.following{href: "#{following_brother_path(@brother)}"}
-    = @brother.followed_brothers.count
+    = @brother.followed_brothers.count + 1
     %span.label 人兄弟
   %a.stat.follower{href: "#{followers_brother_path(@brother)}"}
     = @brother.followers.count
-    %span.label 見守られ
+    %span.label 保護者
