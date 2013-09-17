@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class RelationshipsController < ApplicationController
-  before_filter :signed_in_brother
+  before_action :signed_in_brother
 
   def create
     @brother = Brother.find(params[:relationship][:followed_id])

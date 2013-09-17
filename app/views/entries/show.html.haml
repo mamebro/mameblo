@@ -1,12 +1,19 @@
-%section.single
-  %h1= @entry.title
-  %div= sanitize @entry.content
-  %time
-    = time_ago_in_words(@entry.created_at)
-    前
+%section.entry
+  %h1.entry-title= link_to @entry.title
+  %div.entry-content= sanitize @entry.content
+%div.entry-footer
+  %time.time
+    = link_to time_ago_in_words(@entry.created_at) + '前'
+  %div.control
+    - if current_brother?(@entry.brother)
+      %span.edit
+        = link_to "Edit", edit_entry_path(@entry), title: '編集する', class: 'lsf-icon', title: 'edit'
+      %span.delete
+        = link_to "Delete", @entry, method: :delete, confirm: "消えちゃうよ?", class: 'lsf-icon', title: 'delete'
+    - else
+      %a{href: "/brothers/#{@entry.brother.name}"}
+        = @entry.brother.name
+%div.tool
   %a(data-pocket-label="pocket" data-pocket-count="none" class="pocket-btn" data-lang="en")
   %script{type: "text/javascript"}
     !function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");
-  %p.helpUp
-    Written by ブラザー&nbsp;
-    %strong= @entry.brother.name

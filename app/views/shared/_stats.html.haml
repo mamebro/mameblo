@@ -1,4 +1,11 @@
 - @brother ||= current_brother
-:erb
-  <a href="<%= following_brother_path(@brother) %>"><%= @brother.followed_brothers.count %>人の兄弟</a>であり、<br />
-  <a href="<%= followers_brother_path(@brother) %>"><%= @brother.followers.count %>人が見守って</a>いる
+%div.stats.clearfix
+  %a.stat.entries-number{href: "/brothers/#{@brother.name}"}
+    = @brother.entries.count
+    %span.label 日記
+  %a.stat.following{href: "#{following_brother_path(@brother)}"}
+    = @brother.followed_brothers.count + 1
+    %span.label 人兄弟
+  %a.stat.follower{href: "#{followers_brother_path(@brother)}"}
+    = @brother.followers.count
+    %span.label 保護者

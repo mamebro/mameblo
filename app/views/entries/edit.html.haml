@@ -1,6 +1,1 @@
-= form_for(@entry) do |f|
-  = render 'shared/error_messages', object: f.object
-  %div.field
-    = f.text_field :title, placeholder: "!!! タイトル !!!"
-    = f.text_area :content, id: 'textarea', rows: '8', placeholder: "!!! 本文 !!!"
-  = f.submit "!!! 投稿 !!!", class: "button blue"
+= render 'shared/entry_form'
