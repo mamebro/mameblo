@@ -1,0 +1,19 @@
+@charset "UTF-8";
+@import 'vars';
+
+.tshirt {
+  margin-bottom: $gap;
+  width: 300px;
+  height: 300px;
+}
+
+.vote-buttons {
+  .vote-button {
+    float: left;
+    width: 145px;
+  }
+
+  #vote-good {
+    margin-right: 10px;
+  }
+}

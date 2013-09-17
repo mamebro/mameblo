@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 class BrothersController < ApplicationController
 include Ikachan
-  before_filter :signed_in_brother, only: [:index, :edit, :update, :destroy, :following, :followers]
-  before_filter :load_brother,      only: [:show, :edit, :update, :destroy, :following, :followers]
-  before_filter :correct_brother,   only: [:edit, :update]
-  before_filter :admin_brother,     only: :destroy
+  before_action :signed_in_brother, only: [:index, :edit, :update, :destroy, :following, :followers]
+  before_action :load_brother,      only: [:show, :edit, :update, :destroy, :following, :followers]
+  before_action :correct_brother,   only: [:edit, :update]
+  before_action :admin_brother,     only: :destroy
 
   respond_to :html, :json
 

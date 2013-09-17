@@ -1,0 +1,46 @@
+@charset "UTF-8";
+@import 'vars';
+
+.stats {
+  margin-bottom: $gap;
+
+  .stat {
+    float: left;
+    padding: $gap/2 0;
+    text-align: center;
+    display: block;
+    @include font(number);
+    font-weight: bold;
+    
+    .label {
+      width: 100%;
+      margin-top: $gap/4;
+      text-align: center;
+      display: block;
+      @include font(small);
+      font-weight: normal;
+    }
+
+    &.entries-number,
+    &.following {
+      width: 99px;
+      border-right: 1px dotted $black;
+    }
+
+    &.follower {
+      width: 100px;
+    }
+  }
+}
+
+.follow-button {
+  margin-bottom: $gap;
+}
+
+.brothers {
+  li {
+    margin: 0 $gap/2 $gap/2 0;
+    display: inline-block;
+    font-weight: bold;
+  }
+}
