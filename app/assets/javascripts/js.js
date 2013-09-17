@@ -21,6 +21,16 @@ $(document).ready(function() {
     $('#unBrother').hide();
     $('#unBrotherAfter').show();
   });
+
+  // vote
+  var voice_kitai = new Audio('/assets/votes/voices/kitai.wav');
+  var voice_wakarimasen = new Audio('/assets/votes/voices/wakarimasen.wav');
+  $('#vote-good').click( function () {
+    voice_kitai.play();
+  });
+  $('#vote-pass').click( function () {
+    voice_wakarimasen.play();
+  });
   
   // anchor
   $("a[href*=#]").click(function(){
