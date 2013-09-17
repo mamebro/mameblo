@@ -1,10 +1,9 @@
 - provide(:title, "設定")
-%section
-  = form_for(@brother) do |f|
-    = render 'shared/error_messages', object: f.object
-    = @brother.name
-    = f.password_field :password, placeholder: 'Password'
-    = f.password_field :password_confirmation, placeholder: 'Passwordもう一回お願いします !!'
-    = f.submit "パスワードの変更", class: "button red"
-%section
-  = link_to "サインアウト", signout_path, class: 'button gray', method: "delete"
+%h1.brother-name
+  = @brother.name
+= form_for(@brother) do |f|
+  = render 'shared/error_messages', object: f.object
+  = f.password_field :password, class: 'input input-text', placeholder: 'Password'
+  = f.password_field :password_confirmation, class: 'input input-text', placeholder: 'Passwordもう一回お願いします !!'
+  = f.submit "パスワードの変更", class: "button button-horizontal button-primary"
+= link_to "サインアウト", signout_path, class: 'button button-horizontal button-danger', method: "delete"

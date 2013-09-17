@@ -1,0 +1,63 @@
+@charset "UTF-8";
+@import 'vars';
+
+#page {
+  width: 300px;
+  margin: 0 auto;
+}
+
+#header {
+  width: 100%;
+  margin-bottom: $gap;
+}
+
+#brand {
+  width: 100%;
+  hieght: 30px;
+  padding: 10px 0;
+  cursor: pointer;
+  background-color: $midnightblue;
+  @include border-radius(bottom);
+}
+
+#brand.opened {
+  background-color: $asbestos;
+} 
+
+#brand img {
+  width: 38px;
+  height: 30px;
+  margin: 0 auto;
+  display: block;
+}
+
+#navs {
+  display: none;
+}
+
+.nav a {
+  width: 100%;
+  height: 50px;
+  padding: 0 $gap*2;
+  display: block;
+  line-height: 50px;
+  color: $black;
+  font-size: 18px;
+  text-shadow: 0 1px $white;
+  background-color: $silver;
+  border-bottom: 1px solid $white;
+  @include box-sizing;
+}
+
+#footer {
+  padding: $gap 0 $gap*2;
+
+  .copyright {
+    text-align: center;
+    @include font(small);
+    
+    a {
+      color: $black;
+    }
+  }
+}

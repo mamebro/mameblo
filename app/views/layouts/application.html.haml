@@ -49,10 +49,10 @@
     = analytics_init if Rails.env.production?
   %body
     %div#page
+      = render 'layouts/header'
       - flash.each do |key, value|
         %div(class = "alert alert-#{key}")
           %p= value
-      = render 'layouts/header'
       %article
         = yield
       = render 'layouts/footer'
