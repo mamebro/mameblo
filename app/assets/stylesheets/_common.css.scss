@@ -82,7 +82,13 @@ body {
   padding: $gap/4;
   @include font(input);
   border: 1px solid $gray-light;
+  @include border-radius(reset);
   @include box-sizing;
+  -webkit-appearance: none;
+  
+  &.input-text {
+    line-height: 1.5;
+  }
 }
 
 .button {
@@ -99,6 +105,7 @@ body {
   @include box-sizing;
   box-shadow: 0 2px 0 $asbestos;
   cursor: pointer;
+  -webkit-appearance: none;
   
   &.button-horizontal {
     width: 100%;  
