@@ -86,8 +86,12 @@ body {
   @include box-sizing;
   -webkit-appearance: none;
   
-  &.input-text {
-    line-height: 1.5;
+  &.input-textarea {
+    height: 8em;
+    
+    &.focus {
+      height: auto;
+    }
   }
 }
 
@@ -165,4 +169,9 @@ body {
   margin-bottom: $gap;
   text-align: center;
   @include font(title);
+}
+
+/* hidden */
+#entry-form-submit {
+  display: none;
 }

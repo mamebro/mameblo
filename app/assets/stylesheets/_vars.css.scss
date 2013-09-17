@@ -55,7 +55,7 @@ $midnightblue: #2c3e50;
   } @else if $type == input {
     color: $black;
     font-size: 18px;
-    line-height: 1;
+    line-height: 1.5;
   } @else if $type == button {
     color: $white;
     font-size: 16px;

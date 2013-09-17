@@ -52,4 +52,12 @@ $(document).ready(function() {
 	  var next_row = (input_row <= value_row) ? value_row+1 : Math.max(value_row+1,original_row);
 	  $(this).attr('rows',next_row);
   });
+
+  $('textarea').focus(function () {
+    $(this).addClass('focus');
+  });
+
+  $('#entry_form .input').focus(function () {
+    $('#entry-form-submit').show();
+  });
 });
