@@ -1,6 +1,11 @@
 $(document).ready(function() {
   $('#beBrotherAfter').hide();
   $('#unBrotherAfter').hide();
+
+  $.autopager( {
+    content: '#content',
+    link: '.pager-next'
+  });
   
   $('#brand').click(function () {
 	  if ($('#navs').hasClass('opened')) {
