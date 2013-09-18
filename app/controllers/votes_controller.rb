@@ -2,7 +2,7 @@ class VotesController < ApplicationController
   before_action :signed_in_brother, only: [:index, :create]
 
   def index
-    sleep 0.8
+    sleep 0.9
     @num = rand(12) + 1
     @voted = if Vote.exists?(brother_id: current_brother.id, tshirt_id: @num)
                true
