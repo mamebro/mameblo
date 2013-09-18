@@ -4,6 +4,6 @@
 = render 'shared/stats'
 = render 'follow_form' if signed_in?
 - if @brother.entries.any?
-  %article#entries
+  %article#content
     = render @entries
   = paginate @entries

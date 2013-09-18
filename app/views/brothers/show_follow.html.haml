@@ -3,6 +3,6 @@
   = @brother.name
 = render 'shared/stats'
 - if @brothers.any?
-  %ul.brothers
+  %ul#content.brothers
     = render @brothers
 = paginate @brothers
