@@ -4,7 +4,7 @@
 = image_tag "votes/tshirts/tshirt#{@num}.png", class: 'tshirt'
 %section.vote-buttons.clearfix{data:{tshirt: @num}}
   - unless @voted
-    = button_to "着たい !!!", {action: 'create', tshirt_id: @num}, {id: 'vote-good',class: 'vote-button button button-primary'}
+    = button_to "着たい !!!", {action: 'create', tshirt_id: @num}, {id: 'vote-good', class: 'vote-button button button-primary'}
     = button_to "わかりません", votes_path, id: 'vote-pass', class: 'vote-button button button-warning', method: 'get'
   - else
-    = button_to "他のTシャツも見せてよ", votes_path, id: 'vote-pass', class: 'button button-horizontal button-warning', method: 'get'
+    = button_to "他のTシャツも見せてよ", votes_path, id: 'vote-good', class: 'button button-horizontal button-warning', method: 'get'
