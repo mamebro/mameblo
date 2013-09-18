@@ -2,6 +2,7 @@ class VotesController < ApplicationController
   before_action :signed_in_brother, only: [:index, :create]
 
   def index
+    sleep 0.8
     @num = rand(12) + 1
     @voted = if Vote.exists?(brother_id: current_brother.id, tshirt_id: @num)
                true
@@ -11,6 +12,7 @@ class VotesController < ApplicationController
   end
 
   def create
+    sleep 0.8
     if Vote.exists?(brother_id: current_brother.id, tshirt_id: params[:tshirt_id])
       redirect_to votes_path
     else
