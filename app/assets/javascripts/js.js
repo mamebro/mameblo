@@ -2,9 +2,15 @@ $(document).ready(function() {
   $('#beBrotherAfter').hide();
   $('#unBrotherAfter').hide();
 
-  $.autopager( {
+  $.autopager({
     content: '#content',
-    link: '.pager-next'
+    autoLoad: false
+  });
+
+  $('.pager-next').click(function() {
+    $(this).hide();
+    $.autopager('load');
+    return false;
   });
   
   $('#brand').click(function () {
