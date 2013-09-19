@@ -4,11 +4,15 @@ $(document).ready(function() {
 
   $.autopager({
     content: '#content',
-    autoLoad: false
+    autoLoad: false,
+    load: function(current) {
+      if ($(this).attr('data-max-page') == current.page) {
+        $('.pager-next').hide();
+      }
+    }
   });
 
   $('.pager-next').click(function() {
-    $(this).hide();
     $.autopager('load');
     return false;
   });
