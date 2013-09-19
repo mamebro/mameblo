@@ -4,7 +4,7 @@
 = render 'shared/stats'
 = render 'follow_form' if signed_in?
 - if @brother.entries.any?
-  %div#content
+  %div#content{data: {max: {page: @brothers.num_pages}}}
     %article#entries
       = render @entries
   = paginate @entries

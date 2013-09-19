@@ -1,7 +1,7 @@
 = provide(:title, 'All brothers')
 %h1.page-title
   ブラザーズ
-%div#content
+%div#content{data: {max: {page: @brothers.num_pages}}}
   %ul.brothers
     = render @brothers
 = paginate @brothers
