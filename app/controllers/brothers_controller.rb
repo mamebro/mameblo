@@ -9,7 +9,7 @@ include Ikachan
   respond_to :html, :json
 
   def index
-    @brothers = Brother.page params[:page]
+    @brothers = Brother.order(:name).page params[:page]
     respond_with(@brothers, :only => [:id, :name, :created_at])
   end
 
@@ -57,13 +57,13 @@ include Ikachan
 
   def following
     @title = "ブラザー"
-    @brothers = @brother.followed_brothers.page params[:page]
+    @brothers = @brother.followed_brothers.order(:name).page params[:page]
     render 'show_follow'
   end
 
   def followers
     @title = "見守っているブラザー"
-    @brothers = @brother.followers.page params[:page]
+    @brothers = @brother.followers.order(:name).page params[:page]
     render 'show_follow'
   end
 
