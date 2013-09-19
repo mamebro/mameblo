@@ -1,4 +1,5 @@
 class VotesController < ApplicationController
+  include Ikachan
   before_action :signed_in_brother, only: [:index, :create]
 
   def index
@@ -17,6 +18,7 @@ class VotesController < ApplicationController
       redirect_to votes_path
     else
       Vote.create(brother_id: current_brother.id, tshirt_id: params[:tshirt_id], score: 1)
+      ikachan_post "誰かが #{params[:tshirt_id]} のTシャツに投票したよ!!!" if Rails.env.production?
       redirect_to votes_path
     end
   end
