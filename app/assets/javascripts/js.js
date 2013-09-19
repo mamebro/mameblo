@@ -8,7 +8,6 @@ $(document).ready(function() {
   });
 
   $('.pager-next').click(function() {
-    $(this).hide();
     $.autopager('load');
     return false;
   });
