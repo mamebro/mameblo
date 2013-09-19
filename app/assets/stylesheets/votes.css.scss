@@ -8,6 +8,8 @@
 }
 
 .vote-buttons {
+  margin-bottom: $gap;
+
   .vote-button {
     float: left;
     width: 145px;
@@ -16,4 +18,8 @@
   #vote-good {
     margin-right: 10px;
   }
+}
+
+.vote-score {
+  
 }
