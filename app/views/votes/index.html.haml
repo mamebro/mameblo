@@ -8,3 +8,5 @@
     = button_to "わかりません", votes_path, id: 'vote-pass', class: 'vote-button button button-warning', method: 'get'
   - else
     = button_to "他のTシャツも見せてよ", votes_path, id: 'vote-good', class: 'button button-horizontal button-warning', method: 'get'
+%section.vote-score
+  = high_chart("votes_score", @bar)

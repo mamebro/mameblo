@@ -12,6 +12,7 @@ gem 'twitter'
 gem 'whenever', require: false
 gem 'haml'
 gem 'faraday'
+gem 'lazy_high_charts'
 
 # Gems used only for assets and not required
 # in production environments by default.
