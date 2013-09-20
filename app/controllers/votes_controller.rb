@@ -10,6 +10,17 @@ class VotesController < ApplicationController
              else
                false
              end
+
+    vote_results = Vote.group(:tshirt_id).count
+    tshirt_id    = vote_results.keys.map {|i| "tshirt No." + i.to_s}
+    vote_scores  = vote_results.values
+
+    @bar = LazyHighCharts::HighChart.new('column') do |f|
+      f.title(text: '投票結果')
+      f.series(name: '投票数', data: vote_scores)
+      f.xAxis(categories: tshirt_id)
+      f.options[:chart][:defaultSeriesType] = "column"
+    end
   end
 
   def create
