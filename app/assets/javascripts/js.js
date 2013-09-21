@@ -21,6 +21,16 @@ $(document).ready(function() {
 	  navs_switch();
   });
 
+  $('#header').swipe( {
+    swipeDown: function (event, direction, distance, duration, fingerCount) {
+      navs_switch();
+    },
+    swipeUp: function (event, direction, distance, duration, fingerCount) {
+      navs_switch();
+    },
+    threshold: 0
+  });
+
   function navs_switch() {
     if ($('#navs').hasClass('opened')) {
       $('#navs').slideUp('fast').removeClass('opened');
