@@ -18,14 +18,18 @@ $(document).ready(function() {
   });
   
   $('#brand').click(function () {
-	  if ($('#navs').hasClass('opened')) {
-	    $('#navs').slideUp('fast').removeClass('opened');
-      $('#brand').removeClass('opened');
-	  } else {
-		  $('#navs').slideDown('fast').addClass('opened');
-      $('#brand').addClass('opened');
-	  }
+	  navs_switch();
   });
+
+  function navs_switch() {
+    if ($('#navs').hasClass('opened')) {
+      $('#navs').slideUp('fast').removeClass('opened');
+      $('#brand').removeClass('opened');
+    } else {
+      $('#navs').slideDown('fast').addClass('opened');
+      $('#brand').addClass('opened');
+    }
+  }
   
   $('#beBrother').click(function(){
     $('#beBrother').hide();
