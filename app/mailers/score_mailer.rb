@@ -2,8 +2,11 @@ class ScoreMailer < ActionMailer::Base
   default from: "score@mamebro.com"
 
   def daily
-    staff_mail_list = YAML.load_file(Rails.root.to_s + '/config/staff_mail.yml')
-
+    staff_mail_list = if Rails.env.production?
+                        YAML.load_file(Rails.root.to_s + '/config/staff_mail.yml')
+                      else
+                        ['dev@mamebro.com']
+                      end
     yesterday            = Time.now.yesterday.all_day
     day_before_yesterday = Time.now.yesterday.yesterday.all_day
 
