@@ -16,7 +16,7 @@ describe "Brother pages" do
     end
 
     it 'ブラザーの一覧が表示されること' do
-      should have_content('すべてのブラザーたち')
+      should have_content('ブラザーズ')
       should have_content brother.name
       should have_content @brother.name
     end
