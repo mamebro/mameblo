@@ -16,14 +16,12 @@ describe "mame blog(static_pages)" do
         sign_in brother
         visit root_path
       end
-      it { should have_content('サーカス') }
       it { should have_content('shikakun') }
       it { should have_content('書く') }
       it { should have_content('ブラザーズ') }
       it { should have_content('設定') }
       it { should have_selector('.field #entry_title', 'タイトル') }
-      it { should have_selector('.field #textarea', '本文') }
-      it { should have_selector('.button.blue', '投稿') }
+      it { should have_selector('.button', '投稿') }
 
     end
 
