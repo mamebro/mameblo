@@ -1,21 +1,20 @@
 @charset "UTF-8";
 @import 'vars';
 
-.tshirt {
-  margin-bottom: $gap;
-  width: 300px;
-  height: 300px;
-}
-
-.vote-buttons {
-  margin-bottom: $gap;
-
-  .vote-button {
-    float: left;
-    width: 145px;
+.ranking {
+  &.ranking-high {
+    .tshirt {
+      width: 300px;
+      height: 300px;
+    } 
   }
 
-  #vote-good {
-    margin-right: 10px;
+  &.ranking-low {
+    float: left;
+
+    .tshirt {
+      width: 145px;
+      height: 145px;
+    } 
   }
 }

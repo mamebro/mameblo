@@ -1,27 +1,66 @@
 = provide(:title, '選挙')
-%h1.page-title
-  ??? 着たい ???
-= image_tag "votes/tshirts/tshirt7.png", class: 'tshirt'
-17
-= image_tag "votes/tshirts/tshirt2.png", class: 'tshirt'
-16
-= image_tag "votes/tshirts/tshirt3.png", class: 'tshirt'
-14
-= image_tag "votes/tshirts/tshirt1.png", class: 'tshirt'
-13
-= image_tag "votes/tshirts/tshirt8.png", class: 'tshirt'
-12
-= image_tag "votes/tshirts/tshirt10.png", class: 'tshirt'
-12
-= image_tag "votes/tshirts/tshirt11.png", class: 'tshirt'
-11
-= image_tag "votes/tshirts/tshirt4.png", class: 'tshirt'
-10
-= image_tag "votes/tshirts/tshirt9.png", class: 'tshirt'
-10
-= image_tag "votes/tshirts/tshirt6.png", class: 'tshirt'
-9
-= image_tag "votes/tshirts/tshirt12.png", class: 'tshirt'
-8
-= image_tag "votes/tshirts/tshirt5.png", class: 'tshirt'
-7
+%h1.page-title !!! 開票速報 !!!
+%div.rankings
+  %section.ranking.ranking-high
+    %h1.title
+      %span.vote-rank.lsf-icon{title: 'crown'}  1位
+      %span.vote-number 17票
+    = image_tag "votes/tshirts/tshirt7.png", class: 'tshirt'
+    %p.comment まめぶろのシンボルともいえるテントを左胸に大胆にあしらっています。
+  %section.ranking.ranking-high
+    %h1.title
+      %span.vote-rank.lsf-icon{title: 'crown'}  2位
+      %span.vote-number 16票
+    = image_tag "votes/tshirts/tshirt2.png", class: 'tshirt'
+    %p.comment アメブロのTシャツですね。
+  %section.ranking.ranking-high
+    %h1.title
+      %span.vote-rank.lsf-icon{title: 'crown'}  3位
+      %span.vote-number 14票
+    = image_tag "votes/tshirts/tshirt3.png", class: 'tshirt'
+    %p.comment メガネと本をふんだんに盛り込んだサブカルスタイルです。
+  %section.ranking.ranking-low
+    %h1.title
+      %span.vote-rank.lsf-icon{title: 'crown'}  4位
+      %span.vote-number 13票
+    = image_tag "votes/tshirts/tshirt1.png", class: 'tshirt'
+  %section.ranking.ranking-low
+    %h1.title
+      %span.vote-rank.lsf-icon{title: 'crown'}  5位
+      %span.vote-number 12票
+    = image_tag "votes/tshirts/tshirt8.png", class: 'tshirt'
+  %section.ranking.ranking-low
+    %h1.title
+      %span.vote-rank.lsf-icon{title: 'crown'}  5位
+      %span.vote-number 12票
+    = image_tag "votes/tshirts/tshirt10.png", class: 'tshirt'
+  %section.ranking.ranking-low
+    %h1.title
+      %span.vote-rank.lsf-icon{title: 'crown'}  7位
+      %span.vote-number 11票
+    = image_tag "votes/tshirts/tshirt11.png", class: 'tshirt'
+  %section.ranking.ranking-low
+    %h1.title
+      %span.vote-rank.lsf-icon{title: 'crown'}  8位
+      %span.vote-number 10票
+    = image_tag "votes/tshirts/tshirt4.png", class: 'tshirt'
+  %section.ranking.ranking-low
+    %h1.title
+      %span.vote-rank.lsf-icon{title: 'crown'}  8位
+      %span.vote-number 10票
+    = image_tag "votes/tshirts/tshirt9.png", class: 'tshirt'
+  %section.ranking.ranking-low
+    %h1.title
+      %span.vote-rank.lsf-icon{title: 'crown'}  10位
+      %span.vote-number 9票
+    = image_tag "votes/tshirts/tshirt6.png", class: 'tshirt'
+  %section.ranking.ranking-low
+    %h1.title
+      %span.vote-rank.lsf-icon{title: 'crown'}  11位
+      %span.vote-number 8票
+    = image_tag "votes/tshirts/tshirt12.png", class: 'tshirt'
+  %section.ranking.ranking-low
+    %h1.title
+      %span.vote-rank.lsf-icon{title: 'crown'}  12位
+      %span.vote-number 7票
+    = image_tag "votes/tshirts/tshirt5.png", class: 'tshirt'
