@@ -68,3 +68,13 @@
         %span.vote-rank.lsf-icon{title: 'crown'}  12位
         %span.vote-number 7票
       = image_tag "votes/tshirts/tshirt5.png", class: 'tshirt'
+%section.entry
+  %h2.page-title Tシャツを着たいブラザーたち
+  %ul.brothers
+    = render @brothers
+  %p.turnout 投票率 #{number_with_precision(@percentage, precision: 2)}%
+%section#tshirts-designer.entry
+  %h2.page-title Tシャツデザイン
+  %div.entry-content
+    %p#momokoharada
+      %a{href: '/brothers/momokoharada'} momokoharada
