@@ -3,6 +3,8 @@ class VotesController < ApplicationController
   before_action :signed_in_brother, only: [:index]
 
   def index
+    votes = Vote.group(:brother_id).select(:brother_id).map {|vote| p vote.brother_id}
+    @brothers = Brother.select(:id, :name).find(votes)
   end
 
   private
