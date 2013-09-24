@@ -5,6 +5,7 @@ class VotesController < ApplicationController
   def index
     votes = Vote.group(:brother_id).select(:brother_id).map {|vote| p vote.brother_id}
     @brothers = Brother.select(:id, :name).find(votes)
+    @percentage = (@brothers.count.to_f / Brother.all.count.to_f) * 100
   end
 
   private

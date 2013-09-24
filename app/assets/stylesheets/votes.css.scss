@@ -47,3 +47,18 @@
     } 
   }
 }
+
+.turnout {
+  padding: $gap/2;
+  text-align: center;
+  @include font(default);
+}
+
+#tshirts-designer {
+  min-height: 0 !important;
+
+  #momokoharada {
+    text-align: center;
+    font-weight: bold;
+  }
+}

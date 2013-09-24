@@ -69,36 +69,12 @@
         %span.vote-number 7票
       = image_tag "votes/tshirts/tshirt5.png", class: 'tshirt'
 %section.entry
-  %h2.page-title 投票したブラザー
+  %h2.page-title Tシャツを着たいブラザーたち
   %ul.brothers
     = render @brothers
-  :erb
-    <ul class='brothers'>
-    <li>
-    <a href="/brothers/11by11">11by11</a>
-    </li>
-    <li>
-    <a href="/brothers/2get">2get</a>
-    </li>
-    <li>
-    <a href="/brothers/aaaaaaaa12">aaaaaaaa12</a>
-    </li>
-    <li>
-    <a href="/brothers/admin">admin</a>
-    </li>
-    <li>
-    <a href="/brothers/akz">akz</a>
-    </li>
-    <li>
-    <a href="/brothers/annotunzdy">annotunzdy</a>
-    </li>
-    <li>
-    <a href="/brothers/ataka">ataka</a>
-    </li>
-    </ul>
-%section.entry
+  %p.turnout 投票率 #{number_with_precision(@percentage, precision: 2)}%
+%section#tshirts-designer.entry
   %h2.page-title Tシャツデザイン
   %div.entry-content
-    %ul.brothers
-      %li
-        %a{href: '/brothers/momokoharada'} momokoharada
+    %p#momokoharada
+      %a{href: '/brothers/momokoharada'} momokoharada
