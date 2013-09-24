@@ -2,15 +2,43 @@
 @import 'vars';
 
 .ranking {
+  .vote-number {
+    font-weight: normal;
+  }
+
   &.ranking-high {
+    margin-bottom: $gap*2;
+    
+    .title {
+      font-size: 20px;
+      
+      .vote-number {
+        float: right;
+      }
+    }
+
     .tshirt {
-      width: 300px;
-      height: 300px;
-    } 
+      width: 280px;
+      height: 280px;
+      margin-bottom: $gap;
+    }
+
+    .comment {
+      @include font(default);
+    }
   }
 
   &.ranking-low {
     float: left;
+    margin-bottom: $gap*2;
+    
+    &:nth-child(odd) {
+      margin-right: $gap;
+    }
+    
+    .title {
+      text-align: center;
+    }
 
     .tshirt {
       width: 145px;
