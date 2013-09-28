@@ -37,6 +37,11 @@ describe Brother do
     it { should_not be_valid }
   end
 
+  describe "when name contains white space" do
+    before { @brother.name = "kun shi ka" }
+    it { should_not be_valid }
+  end
+
   describe "when name is too long" do
     before { @brother.name = "a" * 51 }
     it { should_not be_valid }

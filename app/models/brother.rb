@@ -18,7 +18,7 @@ class Brother < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
 
-  VALID_NAME_REGEX = /[a-z0-9]+\z/i
+  VALID_NAME_REGEX = /\A[a-z0-9]+\z/i
   validates :name, presence: true, length: {within: 3..20},
             format: { with: VALID_NAME_REGEX }, uniqueness: true
 
