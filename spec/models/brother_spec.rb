@@ -37,6 +37,11 @@ describe Brother do
     it { should_not be_valid }
   end
 
+  describe "when name contains white space" do
+    before { @brother.name = "kun shi ka" }
+    it { should_not be_valid }
+  end
+
   describe "when name is too long" do
     before { @brother.name = "a" * 51 }
     it { should_not be_valid }
@@ -44,7 +49,7 @@ describe Brother do
 
   describe "when name format is invalid" do
     it "should be invalid" do
-      brothername = %w[@@@, #, ||, ---]
+      brothername = %w[@@@, #, ||, ---, www.nakaotakashi.com]
       brothername.each do |invalid_name|
         @brother.name = invalid_name
         @brother.should_not be_valid
