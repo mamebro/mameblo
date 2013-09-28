@@ -49,7 +49,7 @@ describe Brother do
 
   describe "when name format is invalid" do
     it "should be invalid" do
-      brothername = %w[@@@, #, ||, ---]
+      brothername = %w[@@@, #, ||, ---, www.nakaotakashi.com]
       brothername.each do |invalid_name|
         @brother.name = invalid_name
         @brother.should_not be_valid
