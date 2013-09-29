@@ -87,11 +87,8 @@ body {
   -webkit-appearance: none;
   
   &.input-textarea {
-    height: 8em;
-    
-    &.focus {
-      height: auto;
-    }
+    overflow: hidden;
+    resize: none;
   }
 }
 
