@@ -46,7 +46,7 @@ address,article,aside,figure,figcaption,footer,header,hgroup,hr,legend,menu,nav,
 li { list-style-type: none; }
 a img { border: none; }
 img { vertical-align: bottom; }
-object,object:focus { outline:none; }
+object,object:focus { outline: none; }
 
 a {
   color: $turquoise;
@@ -84,14 +84,12 @@ body {
   border: 1px solid $gray-light;
   @include border-radius(reset);
   @include box-sizing;
+  outline: none;
   -webkit-appearance: none;
   
   &.input-textarea {
-    height: 8em;
-    
-    &.focus {
-      height: auto;
-    }
+    overflow: hidden;
+    resize: none;
   }
 }
 
@@ -172,6 +170,8 @@ body {
 }
 
 /* hidden */
-#entry-form-submit {
-  display: none;
+.new_entry {
+  #entry-form-submit {
+    display: none;
+  }
 }
