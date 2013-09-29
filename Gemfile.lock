@@ -258,6 +258,7 @@ DEPENDENCIES
   rspec-mocks
   rspec-rails
   sass-rails
+  simplecov
   spork
   sprockets-rails
   sqlite3

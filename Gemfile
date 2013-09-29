@@ -14,7 +14,6 @@ gem 'haml'
 gem 'faraday'
 gem 'lazy_high_charts'
 gem 'newrelic_rpm'
-gem 'coveralls', require: false
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -62,4 +61,6 @@ group :test do
   gem 'guard-spork'
   gem 'spork'
   gem "timecop"
+  gem 'coveralls', require: false
+  gem 'simplecov', require: false
 end
