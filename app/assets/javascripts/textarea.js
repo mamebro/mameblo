@@ -34,8 +34,4 @@ $(function() {
       return false;
     }
   });
-
-  $('#entry_form .input').focus(function () {
-    $('#entry-form-submit').show();
-  });
 });
