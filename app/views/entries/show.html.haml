@@ -9,7 +9,7 @@
       %span.edit
         = link_to "Edit", edit_entry_path(@entry), title: '編集する', class: 'lsf-icon', title: 'edit'
       %span.delete
-        = link_to "Delete", @entry, method: :delete, confirm: "消えちゃうよ?", class: 'lsf-icon', title: 'delete'
+        = link_to "Delete", @entry, method: :delete, data: { confirm: "消えちゃうよ?" }, class: 'lsf-icon', title: 'delete'
     - else
       %a{href: "/brothers/#{@entry.brother.name}"}
         = @entry.brother.name
