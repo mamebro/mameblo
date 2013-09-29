@@ -20,7 +20,7 @@ describe "mame blog(static_pages)" do
       it { should have_content('書く') }
       it { should have_content('ブラザーズ') }
       it { should have_content('設定') }
-      it { should have_selector('.field #entry_title', 'タイトル') }
+      it { should have_selector('.field #entry-form-title', 'タイトル') }
       it { should have_selector('.button', '投稿') }
 
     end

@@ -12,7 +12,7 @@ describe "Entries" do
       visit root_path
       sign_in brother
       click_link '書く'
-      fill_in 'entry_title', with: '日記のタイトル'
+      fill_in 'entry-form-title', with: '日記のタイトル'
       fill_in 'entry-form-content', with: 'こんにちは、本文です。'
       click_button '投稿'
     end
