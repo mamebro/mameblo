@@ -20,6 +20,21 @@ $(function() {
     $(this).addClass('focus');
   });
 
+  $('#new_entry').submit(function () {
+    var title = $('#entry-form-title').val();
+    var content = $('#entry-form-content').val();
+    if (!title || !content) {
+      if (!title && !content) {
+        $('#entry-form-title').focus();
+      } else if (!title) {
+        $('#entry-form-title').focus();
+      } else {
+        $('#entry-form-content').focus();
+      }
+      return false;
+    }
+  });
+
   $('#entry_form .input').focus(function () {
     $('#entry-form-submit').show();
   });
