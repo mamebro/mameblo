@@ -14,6 +14,7 @@ gem 'haml'
 gem 'faraday'
 gem 'lazy_high_charts'
 gem 'newrelic_rpm'
+gem 'coveralls', require: false
 
 # Gems used only for assets and not required
 # in production environments by default.
