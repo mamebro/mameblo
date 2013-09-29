@@ -168,3 +168,10 @@ body {
   text-align: center;
   @include font(title);
 }
+
+/* hidden */
+.new_entry {
+  #entry-form-submit {
+    display: none;
+  }
+}

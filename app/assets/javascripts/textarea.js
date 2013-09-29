@@ -34,4 +34,8 @@ $(function() {
       return false;
     }
   });
+
+  $('.new_entry .input').focus(function () {
+    $('#entry-form-submit').fadeIn(250);
+  });
 });
