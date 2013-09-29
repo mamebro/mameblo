@@ -1,22 +1,15 @@
 require 'rubygems'
+require 'simplecov'
+require 'coveralls'
 
 ENV["RAILS_ENV"] ||= 'test'
 
-if ENV['COVERAGE'] == 'on'
-  require 'simplecov'
-  require 'coveralls'
-
-  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
-    SimpleCov::Formatter::HTMLFormatter,
-    Coveralls::SimpleCov::Formatter
-  ]
-  SimpleCov.start 'rails'
-end
-
-if ENV['COVERALLS'] == 'on'
-  require 'coveralls'
-  Coveralls.wear!
-end
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
+SimpleCov.start 'rails'
+Coveralls.wear!
 
 require File.expand_path("../../config/environment", __FILE__)
 
