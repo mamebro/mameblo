@@ -20,7 +20,7 @@ $(function() {
     $(this).addClass('focus');
   });
 
-  $('#new_entry').submit(function () {
+  $('.new_entry, .edit_entry').submit(function () {
     var title = $('#entry-form-title').val();
     var content = $('#entry-form-content').val();
     if (!title || !content) {
