@@ -20,6 +20,14 @@ $(function() {
     $(this).addClass('focus');
   });
 
+  if ($('#entry-form-submit').size() > 0) {
+    $(window).keydown(function (e) {
+      if (e.metaKey && e.keyCode === 13) {
+        $('.new_entry, .edit_entry').submit();
+      }
+    });
+  }
+
   $('.new_entry, .edit_entry').submit(function () {
     var title = $('#entry-form-title').val();
     var content = $('#entry-form-content').val();
