@@ -1,5 +1,7 @@
 $(function() {
-  $('#entry-form-title').focus();
+  if ($('#entry-form-title').size() > 0) {
+    $('#entry-form-title').focus();
+  }
 
   $('textarea').each(function() {
 	  $(this).attr('data-rows-original', $(this).attr('rows'));
@@ -18,17 +20,16 @@ $(function() {
 	  $(this).attr('rows', next_row);
   });
 
-  $('textarea').focus(function () {
-    $(this).addClass('focus');
-  });
-
-  if ($('#entry-form-submit').size() > 0) {
+  $('.new_entry, .edit_entry').find('textarea').focus(function () {
+    if (!$(this).hasClass('focus')) {
+      $(this).addClass('focus');
+    }
     $(window).keydown(function (e) {
       if (e.metaKey && e.keyCode === 13) {
         $('.new_entry, .edit_entry').submit();
       }
     });
-  }
+  });
 
   $('.new_entry, .edit_entry').submit(function () {
     var title = $('#entry-form-title').val();
