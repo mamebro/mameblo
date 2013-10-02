@@ -1,5 +1,7 @@
 $(function() {
-  $('#entry-form-title').focus();
+  if ($('#entry-form-title').size() > 0) {
+    $('#entry-form-title').focus();
+  }
 
   $('textarea').each(function() {
 	  $(this).attr('data-rows-original', $(this).attr('rows'));
