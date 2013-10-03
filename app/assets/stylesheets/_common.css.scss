@@ -6,12 +6,12 @@
 
 @font-face {
     font-family: 'LigatureSymbols';
-    src: asset-url('/fonts/LigatureSymbols-2.11.eot');
-    src: asset-url('/fonts/LigatureSymbols-2.11.eot?#iefix') format('embedded-opentype'),
-         asset-url('/fonts/LigatureSymbols-2.11.woff') format('woff'),
-         asset-url('/fonts/LigatureSymbols-2.11.ttf') format('truetype'),
-         asset-url('/fonts/LigatureSymbols-2.11.svg#LigatureSymbols') format('svg');
-    src: asset-url('/fonts/LigatureSymbols-2.11.ttf') format('truetype');
+    src: font-url('LigatureSymbols-2.11.eot');
+    src: font-url('LigatureSymbols-2.11.eot?#iefix') format('embedded-opentype'),
+         font-url('LigatureSymbols-2.11.woff') format('woff'),
+         font-url('LigatureSymbols-2.11.ttf') format('truetype'),
+         font-url('LigatureSymbols-2.11.svg#LigatureSymbols') format('svg');
+    src: font-url('LigatureSymbols-2.11.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
