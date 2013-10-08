@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 include ApplicationHelper
 
 def sign_in(brother)

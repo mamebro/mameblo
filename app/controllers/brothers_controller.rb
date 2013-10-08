@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 class BrothersController < ApplicationController
 include Ikachan
   before_action :signed_in_brother, only: [:index, :edit, :update, :destroy, :following, :followers]
