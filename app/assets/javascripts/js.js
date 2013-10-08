@@ -18,20 +18,6 @@ $(function() {
   });
   
   $('#brand').click(function () {
-	  navs_switch();
-  });
-
-  $('#header').swipe( {
-    swipeDown: function (event, direction, distance, duration, fingerCount) {
-      navs_switch();
-    },
-    swipeUp: function (event, direction, distance, duration, fingerCount) {
-      navs_switch();
-    },
-    threshold: 0
-  });
-
-  function navs_switch() {
     if ($('#navs').hasClass('opened')) {
       $('#navs').slideUp('fast').removeClass('opened');
       $('#brand').removeClass('opened');
@@ -39,7 +25,7 @@ $(function() {
       $('#navs').slideDown('fast').addClass('opened');
       $('#brand').addClass('opened');
     }
-  }
+  });
   
   $('#beBrother').click(function(){
     $('#beBrother').hide();
@@ -53,14 +39,14 @@ $(function() {
 
   // anchor
   $("a[href*=#]").click(function(){
-		if(location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname){
-			var $target = $(this.hash);
-			$target = $target.length && $target || $("[name=' + this.hash.slice(1) +']");
-			if($target.length){
-				var targetOffset = $target.offset().top;
-				$("html,body").animate({scrollTop: targetOffset}, 500);
-				return false;
-			}
-		}
-	});
+    if(location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname){
+      var $target = $(this.hash);
+      $target = $target.length && $target || $("[name=' + this.hash.slice(1) +']");
+      if($target.length){
+        var targetOffset = $target.offset().top;
+        $("html,body").animate({scrollTop: targetOffset}, 500);
+        return false;
+      }
+    }
+  });
 });
