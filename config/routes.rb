@@ -1,17 +1,16 @@
 Mameblog::Application.routes.draw do
 
-  resources :brothers do
+  resources :brothers, except: [:destroy] do
     member do
       get :following, :followers
     end
   end
 
-  resources :brothers
   resources :sessions, only: [:create, :destroy]
   resources :entries, only: [:create, :destroy, :show, :update, :edit]
   resources :relationships, only: [:create, :destroy]
-  resources :circuses
-  resources :votes
+  resources :circuses, only: [:index]
+  resources :votes, only: [:index]
 
   root 'static_pages#home'
 

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 class BrothersController < ApplicationController
 include Ikachan
   before_action :signed_in_brother, only: [:index, :edit, :update, :destroy, :following, :followers]
@@ -34,12 +33,6 @@ include Ikachan
     else
       render 'new'
     end
-  end
-
-  def destroy
-    @brother.destroy
-    flash[:success] = "ユーザーを削除しました."
-    redirect_to brothers_path
   end
 
   def edit

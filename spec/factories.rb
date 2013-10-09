@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 FactoryGirl.define do
   factory :brother do
     sequence(:name)  { |n| "shikakun#{n}" }
