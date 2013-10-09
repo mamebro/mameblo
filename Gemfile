@@ -8,7 +8,6 @@ gem 'faker'
 gem 'redcarpet'
 gem 'kaminari'
 gem 'jquery-rails'
-gem 'twitter'
 gem 'whenever', require: false
 gem 'haml'
 gem 'faraday'
