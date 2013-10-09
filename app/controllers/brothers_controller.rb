@@ -35,12 +35,6 @@ include Ikachan
     end
   end
 
-  def destroy
-    @brother.destroy
-    flash[:success] = "ユーザーを削除しました."
-    redirect_to brothers_path
-  end
-
   def edit
   end
 
