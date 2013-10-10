@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 class SessionsController < ApplicationController
 include Ikachan
   def create
