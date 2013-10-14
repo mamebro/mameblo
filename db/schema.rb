@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20131014093033) do
 
   create_table "beans", force: true do |t|
-    t.integer  "type"
+    t.integer  "kind",             default: 0
     t.integer  "entry_id"
     t.integer  "throw_brother_id"
     t.datetime "created_at"

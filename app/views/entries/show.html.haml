@@ -13,6 +13,11 @@
     - else
       %a{href: "/brothers/#{@entry.brother.name}"}
         = @entry.brother.name
+
+    - if signed_in?
+      %span
+        = form_tag(entry_beans_path(@entry), remote: true, method: "post", name: "beans_name")
+        = submit_tag 'まめを投げる'
 %div.tool
   %a(data-pocket-label="pocket" data-pocket-count="none" class="pocket-btn" data-lang="en")
   %script{type: "text/javascript"}

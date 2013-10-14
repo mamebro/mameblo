@@ -7,7 +7,9 @@ Mameblog::Application.routes.draw do
   end
 
   resources :sessions, only: [:create, :destroy]
-  resources :entries, only: [:create, :destroy, :show, :update, :edit]
+  resources :entries, only: [:create, :destroy, :show, :update, :edit] do
+    resources :beans, only: [:create, :destroy]
+  end
   resources :relationships, only: [:create, :destroy]
   resources :circuses, only: [:index]
   resources :votes, only: [:index]

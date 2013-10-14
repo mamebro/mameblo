@@ -1,7 +1,7 @@
 class CreateBeans < ActiveRecord::Migration
   def change
     create_table :beans do |t|
-      t.integer :type
+      t.integer :kind, default: 0
       t.integer :entry_id
       t.integer :throw_brother_id
 
