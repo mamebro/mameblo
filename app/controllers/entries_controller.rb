@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 class EntriesController < ApplicationController
 include Ikachan
   before_action :signed_in_brother, only: [:create, :destroy]
@@ -8,6 +10,10 @@ include Ikachan
   def show
     @entry = Entry.find(params[:id])
     @entry.content = @entry.content_as_markdown
+    @beans = []
+    Beans.where(entry_id: params[:id]).each do |bean|
+      @beans << (Brother.find(bean.throw_brother_id).name)
+    end
     respond_with @entry
   end
 
