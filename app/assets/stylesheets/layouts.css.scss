@@ -7,7 +7,8 @@
 }
 
 #halloween {
-  position: relative;
+  padding-bottom: 4px;
+  background-color: $pumpkin;
 
   #illust {
     width: 100%;
@@ -41,12 +42,12 @@
   hieght: 30px;
   padding: 10px 0;
   cursor: pointer;
-  background-color: $midnightblue;
+  background-color: $pumpkin;
   @include border-radius(bottom);
 }
 
 #brand.opened {
-  background-color: $asbestos;
+  background-color: $orange;
 } 
 
 #brand img {
@@ -66,10 +67,9 @@
   padding: 0 $gap*2;
   display: block;
   line-height: 50px;
-  color: $black;
+  color: $alizarin;
   font-size: 18px;
-  text-shadow: 0 1px $white;
-  background-color: $silver;
+  background-color: $sunflower;
   border-bottom: 1px solid $white;
   @include box-sizing;
 }
