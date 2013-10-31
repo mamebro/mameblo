@@ -53,7 +53,7 @@ $midnightblue: #2c3e50;
     font-size: 14px;
     line-height: 1.66;
   } @else if $type == input {
-    color: $pumpkin;
+    color: $black;
     font-size: 18px;
     line-height: 1.5;
   } @else if $type == button {
@@ -61,15 +61,15 @@ $midnightblue: #2c3e50;
     font-size: 16px;
     line-height: 45px;
   } @else if $type == title {
-    color: $pumpkin;
+    color: $black;
     font-size: 16px;
     line-height: 1.66;
   } @else if $type == small {
-    color: $pumpkin;
+    color: $black;
     font-size: 12px;
     line-height: 1.44;
   } @else if $type == number {
-    color: $pumpkin;
+    color: $black;
     font-size: 16px;
     line-height: 1;
   }
