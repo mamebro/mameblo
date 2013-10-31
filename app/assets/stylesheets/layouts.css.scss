@@ -6,32 +6,6 @@
   margin: 0 auto;
 }
 
-#halloween {
-  padding-bottom: 4px;
-  background-color: $pumpkin;
-
-  #illust {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-}
-
-#halloween-designer {
-  min-height: 0 !important;
-  margin-top: $gap*2;
-  
-  .page-title {
-    @include font(default);
-  }
-
-  #starshiprain {
-    padding-bottom: $gap;
-    text-align: center;
-    font-weight: bold;
-  }
-}
-
 #header {
   width: 100%;
   margin-bottom: $gap;
@@ -42,12 +16,12 @@
   hieght: 30px;
   padding: 10px 0;
   cursor: pointer;
-  background-color: $pumpkin;
+  background-color: $midnightblue;
   @include border-radius(bottom);
 }
 
 #brand.opened {
-  background-color: $orange;
+  background-color: $asbestos;
 } 
 
 #brand img {
@@ -67,9 +41,10 @@
   padding: 0 $gap*2;
   display: block;
   line-height: 50px;
-  color: $alizarin;
+  color: $black;
   font-size: 18px;
-  background-color: $sunflower;
+  text-shadow: 0 1px $white;
+  background-color: $silver;
   border-bottom: 1px solid $white;
   @include box-sizing;
 }
