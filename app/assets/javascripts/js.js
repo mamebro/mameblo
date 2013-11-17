@@ -2,6 +2,17 @@ $(function() {
   $('#beBrotherAfter').hide();
   $('#unBrotherAfter').hide();
 
+  emojify.setConfig({
+    emojify_tag_type: 'span',
+    emoticons_enabled: true,
+    people_enabled: true,
+    nature_enabled: true,
+    objects_enabled: true,
+    places_enabled: true,
+    symbols_enabled: true
+  });
+  emojify.run();
+
   $.autopager({
     content: '#content',
     autoLoad: false,
