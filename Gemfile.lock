@@ -78,6 +78,7 @@ GEM
       multipart-post (~> 1.1)
     ffi (1.9.0)
     formatador (0.2.4)
+    github-markdown (0.6.3)
     google-analytics-rails (0.0.4)
     growl (1.0.3)
     guard (1.7.0)
@@ -174,7 +175,6 @@ GEM
       railties (>= 4.0.0.beta, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
-    simple_oauth (0.2.0)
     simplecov (0.7.1)
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
@@ -207,10 +207,6 @@ GEM
     treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
-    twitter (4.8.1)
-      faraday (~> 0.8, < 0.10)
-      multi_json (~> 1.0)
-      simple_oauth (~> 0.2)
     tzinfo (0.3.37)
     uglifier (2.1.1)
       execjs (>= 0.3.0)
@@ -237,6 +233,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   faraday
+  github-markdown
   google-analytics-rails
   growl
   guard-rspec
@@ -265,6 +262,5 @@ DEPENDENCIES
   tapp
   therubyracer
   timecop
-  twitter
   uglifier
   whenever

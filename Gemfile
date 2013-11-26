@@ -8,12 +8,12 @@ gem 'faker'
 gem 'redcarpet'
 gem 'kaminari'
 gem 'jquery-rails'
-gem 'twitter'
 gem 'whenever', require: false
 gem 'haml'
 gem 'faraday'
 gem 'lazy_high_charts'
 gem 'newrelic_rpm'
+gem 'github-markdown'
 
 # Gems used only for assets and not required
 # in production environments by default.

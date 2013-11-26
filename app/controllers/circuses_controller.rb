@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 class CircusesController < ApplicationController
 include Ikachan
   def index

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 class EntriesController < ApplicationController
 include Ikachan
   before_action :signed_in_brother, only: [:create, :destroy]

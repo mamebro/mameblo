@@ -1,4 +1,8 @@
 ﻿- if signed_in?
-  = render 'static_pages/signedup_brother'
+  = render 'shared/entry_form'
 - else
-  = render 'static_pages/signup_home'
+  %section
+    %p.help ブラザーへの最新ブラザー情報はこちら
+    :erb
+      <a href="https://twitter.com/mameblo" class="twitter-follow-button" data-show-count="false" data-lang="ja" data-size="large">@mamebloさんをフォロー</a>
+    %script !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs")

@@ -5,15 +5,13 @@ describe ScoreMailer do
     let(:mail) { ScoreMailer.daily }
 
     it "renders the headers" do
-      pending("work in progress")
-      mail.subject.should eq("Daily")
-      mail.to.should eq(["to@example.org"])
-      mail.from.should eq(["from@example.com"])
+      expect(mail.subject).to match /【まめぶろ】Daily スコアレポート/
+      mail.to.should eq(["dev@mamebro.com"])
+      mail.from.should eq(["score@mamebro.com"])
     end
 
     it "renders the body" do
-      pending("work in progress")
-      mail.body.encoded.should match("Hi")
+      expect(mail.body.encoded).to match /!!! まめぶろ Daily スコアレポート !!!/
     end
   end
 

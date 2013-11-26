@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 class RelationshipsController < ApplicationController
   before_action :signed_in_brother
 
