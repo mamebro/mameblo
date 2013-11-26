@@ -29,13 +29,13 @@ $(function() {
   });
   
   $('#brand').click(function () {
-	  if ($('#navs').hasClass('opened')) {
-	    $('#navs').slideUp('fast').removeClass('opened');
+    if ($('#navs').hasClass('opened')) {
+      $('#navs').slideUp('fast').removeClass('opened');
       $('#brand').removeClass('opened');
-	  } else {
-		  $('#navs').slideDown('fast').addClass('opened');
+    } else {
+      $('#navs').slideDown('fast').addClass('opened');
       $('#brand').addClass('opened');
-	  }
+    }
   });
   
   $('#beBrother').click(function(){
@@ -50,14 +50,14 @@ $(function() {
 
   // anchor
   $("a[href*=#]").click(function(){
-		if(location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname){
-			var $target = $(this.hash);
-			$target = $target.length && $target || $("[name=' + this.hash.slice(1) +']");
-			if($target.length){
-				var targetOffset = $target.offset().top;
-				$("html,body").animate({scrollTop: targetOffset}, 500);
-				return false;
-			}
-		}
-	});
+    if(location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname){
+      var $target = $(this.hash);
+      $target = $target.length && $target || $("[name=' + this.hash.slice(1) +']");
+      if($target.length){
+        var targetOffset = $target.offset().top;
+        $("html,body").animate({scrollTop: targetOffset}, 500);
+        return false;
+      }
+    }
+  });
 });

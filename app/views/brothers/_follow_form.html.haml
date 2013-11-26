@@ -1,6 +1,4 @@
 - unless current_brother?(@brother)
   %div.follow-button
-    - if current_brother.following?(@brother)
-      = render 'unfollow'
-    - else
+    - if !current_brother.following?(@brother)
       = render 'follow'
