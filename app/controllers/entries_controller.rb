@@ -3,7 +3,7 @@ include Ikachan
   before_action :signed_in_brother, only: [:create, :destroy]
   before_action :correct_brother, only: [:destroy, :update]
 
-  respond_to :html
+  respond_to :html, :json
 
   def show
     @entry = Entry.find(params[:id])
