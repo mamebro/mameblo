@@ -1,10 +1,9 @@
 $(function() {
   $('#beBrotherAfter').hide();
-  $('#unBrotherAfter').hide();
 
   emojify.setConfig({
     emojify_tag_type: 'span',
-    emoticons_enabled: true,
+    emoticons_enabled: false,
     people_enabled: true,
     nature_enabled: true,
     objects_enabled: true,
@@ -20,6 +19,7 @@ $(function() {
       if ($(this).attr('data-max-page') == current.page) {
         $('.pager-next').hide();
       }
+      emojify.run();
     }
   });
 
@@ -41,11 +41,6 @@ $(function() {
   $('#beBrother').click(function(){
     $('#beBrother').hide();
     $('#beBrotherAfter').show();
-  });
-  
-  $('#unBrother').click(function(){
-    $('#unBrother').hide();
-    $('#unBrotherAfter').show();
   });
 
   // anchor
