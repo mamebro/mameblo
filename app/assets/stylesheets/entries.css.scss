@@ -24,6 +24,10 @@
 .entry-content {
   margin-bottom: $gap;
   @include font(default);
+  
+  img {
+    max-width: 100%;
+  }
 }
 
 .entry-footer {
