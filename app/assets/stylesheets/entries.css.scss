@@ -25,6 +25,41 @@
   margin-bottom: $gap;
   @include font(default);
   
+  ul,
+  ol {
+    padding: $gap/2 $gap/4;
+    
+    li {
+      margin-left: 20px;
+      
+      ul {
+        padding: $gap/4 0;
+        
+        li {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  ul {
+    li {
+      list-style-type: disc;
+      
+      ul {
+        li {
+          list-style-type: circle;
+        }
+      }
+    }
+  }
+
+  ol {
+    li {
+      list-style-type: decimal;
+    }
+  }
+
   img {
     max-width: 100%;
   }
