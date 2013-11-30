@@ -1,6 +1,5 @@
 $(function() {
   $('#beBrotherAfter').hide();
-  $('#unBrotherAfter').hide();
 
   emojify.setConfig({
     emojify_tag_type: 'span',
@@ -42,11 +41,6 @@ $(function() {
   $('#beBrother').click(function(){
     $('#beBrother').hide();
     $('#beBrotherAfter').show();
-  });
-  
-  $('#unBrother').click(function(){
-    $('#unBrother').hide();
-    $('#unBrotherAfter').show();
   });
 
   // anchor
