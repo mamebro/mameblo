@@ -72,7 +72,12 @@
   }
 
   pre {
+    padding: $gap/2 $gap;
+    margin-bottom: $gap/2;
     overflow: auto;
+    background-color: $white;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 $silver;
   }
 }
 
