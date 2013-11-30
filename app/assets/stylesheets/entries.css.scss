@@ -71,6 +71,13 @@
     margin-bottom: $gap/2;
   }
 
+  hr {
+    height: 0;
+    margin: $gap 0;
+    border: none;
+    border-top: 1px dashed $silver;
+  }
+
   pre {
     padding: $gap/2 $gap;
     margin-bottom: $gap/2;
