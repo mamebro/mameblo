@@ -20,6 +20,7 @@ $(function() {
       if ($(this).attr('data-max-page') == current.page) {
         $('.pager-next').hide();
       }
+      emojify.run();
     }
   });
 
