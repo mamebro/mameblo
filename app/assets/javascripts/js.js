@@ -18,12 +18,15 @@ $(function() {
     load: function(current) {
       if ($(this).attr('data-max-page') == current.page) {
         $('.pager-next').hide();
+      } else {
+        $('.pager-next').removeClass('button-disabled').addClass('button-primary');
       }
       emojify.run();
     }
   });
 
   $('.pager-next').click(function() {
+    $(this).removeClass('button-primary').addClass('button-disabled');
     $.autopager('load');
     return false;
   });
