@@ -108,6 +108,7 @@ body {
   box-shadow: 0 2px 0 $asbestos;
   cursor: pointer;
   -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   
   &.button-horizontal {
     width: 100%;  
