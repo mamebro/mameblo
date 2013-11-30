@@ -37,8 +37,9 @@
     li {
       margin-left: 20px;
       
-      ul {
-        padding: $gap/4 0;
+      ul,
+      ol {
+        padding: $gap/2 0;
         margin-bottom: 0;
         
         li {
