@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import 'vars';
+@import 'compass';
 
 /* fonts */
 @import url("//fonts.googleapis.com/css?family=Open+Sans:400,700");
@@ -34,10 +35,6 @@
   content: attr(title);
   margin-right: 0.3em;
   font-size: 130%;
-}
-
-.lsf-icon.amazon:before {
-  content: '\E007';
 }
 
 /* reset */
@@ -82,8 +79,8 @@ body {
   padding: $gap/4;
   @include font(input);
   border: 1px solid $gray-light;
-  @include border-radius(reset);
-  @include box-sizing;
+  @include mameblo-border-radius(reset);
+  @include mameblo-box-sizing;
   outline: none;
   -webkit-appearance: none;
   
@@ -103,11 +100,12 @@ body {
   text-shadow: 0 -1px $asbestos;
   border: 0;
   background-color: $concrete;
-  @include border-radius(small);
-  @include box-sizing;
+  @include mameblo-border-radius(small);
+  @include mameblo-box-sizing;
   box-shadow: 0 2px 0 $asbestos;
   cursor: pointer;
   -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   
   &.button-horizontal {
     width: 100%;  
@@ -160,6 +158,14 @@ body {
     background-color: $silver;
     box-shadow: 0 2px 0 $asbestos;
     cursor: default;
+  }
+
+  &.button-touched {
+    opacity: 0.33 !important;
+    cursor: default !important;
+    @include transition-property(opacity);
+    @include transition-duration(0.2s);
+    @include transition-timing-function(ease);
   }
 }
 

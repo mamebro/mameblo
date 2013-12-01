@@ -12,14 +12,10 @@ class Entry < ActiveRecord::Base
   default_scope { order('created_at DESC') }
   paginates_per 5
 
-  # https://github.com/rtomayko/rdiscount
-  # Markdownで出力する
+  # http://rubygems.org/gems/github-markdown
+  # GitHub-Markdownで出力
   def content_as_markdown
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
-                                       autolink: true,
-                                       space_after_headers: true,
-                                       filter_html: true)
-    markdown.render(content)
+    GitHub::Markdown.render_gfm(content)
   end
 
   def self.from_brothers_followed_by(brother)

@@ -42,6 +42,7 @@ $(function() {
       } else {
         $('#entry-form-content').focus();
       }
+      $('#entry-form-submit').removeClass('button-touched');
       return false;
     }
   });

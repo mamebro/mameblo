@@ -1,6 +1,16 @@
 $(function() {
   $('#beBrotherAfter').hide();
-  $('#unBrotherAfter').hide();
+
+  emojify.setConfig({
+    emojify_tag_type: 'span',
+    emoticons_enabled: false,
+    people_enabled: true,
+    nature_enabled: true,
+    objects_enabled: true,
+    places_enabled: true,
+    symbols_enabled: true
+  });
+  emojify.run();
 
   $.autopager({
     content: '#content',
@@ -8,8 +18,15 @@ $(function() {
     load: function(current) {
       if ($(this).attr('data-max-page') == current.page) {
         $('.pager-next').hide();
+      } else {
+        $('.pager-next').removeClass('button-touched');
       }
+      emojify.run();
     }
+  });
+
+  $('.button').click(function() {
+    $(this).addClass('button-touched');
   });
 
   $('.pager-next').click(function() {
@@ -18,35 +35,30 @@ $(function() {
   });
   
   $('#brand').click(function () {
-	  if ($('#navs').hasClass('opened')) {
-	    $('#navs').slideUp('fast').removeClass('opened');
+    if ($('#navs').hasClass('opened')) {
+      $('#navs').slideUp('fast').removeClass('opened');
       $('#brand').removeClass('opened');
-	  } else {
-		  $('#navs').slideDown('fast').addClass('opened');
+    } else {
+      $('#navs').slideDown('fast').addClass('opened');
       $('#brand').addClass('opened');
-	  }
+    }
   });
   
   $('#beBrother').click(function(){
     $('#beBrother').hide();
     $('#beBrotherAfter').show();
   });
-  
-  $('#unBrother').click(function(){
-    $('#unBrother').hide();
-    $('#unBrotherAfter').show();
-  });
 
   // anchor
   $("a[href*=#]").click(function(){
-		if(location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname){
-			var $target = $(this.hash);
-			$target = $target.length && $target || $("[name=' + this.hash.slice(1) +']");
-			if($target.length){
-				var targetOffset = $target.offset().top;
-				$("html,body").animate({scrollTop: targetOffset}, 500);
-				return false;
-			}
-		}
-	});
+    if(location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname){
+      var $target = $(this.hash);
+      $target = $target.length && $target || $("[name=' + this.hash.slice(1) +']");
+      if($target.length){
+        var targetOffset = $target.offset().top;
+        $("html,body").animate({scrollTop: targetOffset}, 500);
+        return false;
+      }
+    }
+  });
 });

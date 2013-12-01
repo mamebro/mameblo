@@ -13,6 +13,7 @@ gem 'haml'
 gem 'faraday'
 gem 'lazy_high_charts'
 gem 'newrelic_rpm'
+gem 'github-markdown'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -20,6 +21,7 @@ group :assets do
   gem 'sprockets-rails'
   gem 'sass-rails'
   gem 'coffee-rails'
+  gem 'compass-rails', github: 'Compass/compass-rails', branch: 'rails4-hack'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', platforms: :ruby
