@@ -48,7 +48,6 @@
   background-color: $silver;
   border-bottom: 1px solid $white;
   @include box-sizing;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 #footer {
