@@ -158,6 +158,11 @@ body {
     box-shadow: 0 2px 0 $asbestos;
     cursor: default;
   }
+
+  &.button-touched {
+    opacity: 0.33 !important;
+    cursor: default !important;
+  }
 }
 
 .page-title {

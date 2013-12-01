@@ -19,14 +19,17 @@ $(function() {
       if ($(this).attr('data-max-page') == current.page) {
         $('.pager-next').hide();
       } else {
-        $('.pager-next').removeClass('button-disabled').addClass('button-primary');
+        $('.pager-next').removeClass('button-touched');
       }
       emojify.run();
     }
   });
 
+  $('.button').click(function() {
+    $(this).addClass('button-touched');
+  });
+
   $('.pager-next').click(function() {
-    $(this).removeClass('button-primary').addClass('button-disabled');
     $.autopager('load');
     return false;
   });
