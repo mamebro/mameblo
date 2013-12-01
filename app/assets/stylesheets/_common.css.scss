@@ -163,6 +163,9 @@ body {
   &.button-touched {
     opacity: 0.33 !important;
     cursor: default !important;
+    @include transition-property(opacity);
+    @include transition-duration(0.2s);
+    @include transition-timing-function(ease);
   }
 }
 
