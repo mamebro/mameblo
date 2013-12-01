@@ -61,7 +61,24 @@ $(function() {
   });
 
   $('.entry-beans').submit(function() {
-    $(this).append('<span class="bean">豆</span>');
+    $(this)
+      .append('<span class="bean">豆</span>');
+    $(this).find('.bean:last-child')
+      .animate(
+        {
+          'margin-left': '125px',
+          'opacity': 0
+        },
+        0
+      )
+      .animate(
+        {
+          'margin-left': '0',
+          'opacity': 1
+        },
+        250,
+        'swing'
+      );
   });
 
   // anchor
