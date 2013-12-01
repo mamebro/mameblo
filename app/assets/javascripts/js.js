@@ -50,7 +50,7 @@ $(function() {
   });
 
   $('.bean-throw').click(function(){
-    $(this).parents('.entry-beans').submit();
+    $(this).parents('.entry-beans').submit().append('<span class="bean">豆</span>');
   });
 
   // anchor

@@ -147,6 +147,14 @@
   }
 }
 
+.entry-beans {
+  padding: $gap;
+  margin-bottom: $gap;
+  @include font(default);
+  background-color: $true-white;
+  box-shadow: 0 1px 0 $silver;
+}
+
 .entry-footer {
   margin-bottom: $gap/2;
   @include font(small);
