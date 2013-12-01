@@ -85,7 +85,7 @@ $midnightblue: #2c3e50;
   }
 }
 
-@mixin border-radius($size: small) {
+@mixin mameblo-border-radius($size: small) {
   @if $size == small {
     @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {  
       #{$prefix}border-radius: 5px;  
@@ -105,7 +105,7 @@ $midnightblue: #2c3e50;
   }
 }
 
-@mixin box-sizing {
+@mixin mameblo-box-sizing {
   @each $prefix in -webkit-, -moz-, '' {  
     #{$prefix}box-sizing: border-box;  
   }
