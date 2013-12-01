@@ -44,13 +44,24 @@ $(function() {
     }
   });
   
-  $('#beBrother').click(function(){
+  $('#beBrother').click(function() {
     $('#beBrother').hide();
     $('#beBrotherAfter').show();
   });
 
-  $('.bean-throw').click(function(){
-    $(this).parents('.entry-beans').submit().append('<span class="bean">豆</span>');
+  $('.bean-throw').click(function() {
+    $(this).parents('.entry-beans').submit();
+  });
+
+  $('.entry-beans').swipe( {
+    swipeLeft:function(event, direction, distance, duration, fingerCount) {
+      $(this).submit();
+    },
+    threshold: 0
+  });
+
+  $('.entry-beans').submit(function() {
+    $(this).append('<span class="bean">豆</span>');
   });
 
   // anchor
