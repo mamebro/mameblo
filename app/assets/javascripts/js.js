@@ -49,6 +49,10 @@ $(function() {
     $('#beBrotherAfter').show();
   });
 
+  $('.bean-throw').click(function(){
+    $(this).parents('.entry-beans').submit();
+  });
+
   // anchor
   $("a[href*=#]").click(function(){
     if(location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname){

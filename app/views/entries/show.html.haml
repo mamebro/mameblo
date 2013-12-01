@@ -1,6 +1,12 @@
 %section.entry
   %h1.entry-title= link_to @entry.title
   %div.entry-content= sanitize @entry.content
+- if signed_in?
+  = form_tag entry_beans_path(@entry), remote: true, class: 'entry-beans', method: 'post', name: 'beans_name' do
+    %span.bean-throw 投
+    - @beans.each do |bean|
+      %span 豆
+    %span #{@beans.count}
 %div.entry-footer
   %time.time
     = link_to time_ago_in_words(@entry.created_at) + '前'
@@ -13,15 +19,3 @@
     - else
       %a{href: "/brothers/#{@entry.brother.name}"}
         = @entry.brother.name
-
-    - if signed_in?
-      %span
-        - @beans.each do |bean|
-          = bean
-        = form_tag(entry_beans_path(@entry), remote: true, method: "post", name: "beans_name", class: 'beans')
-        = submit_tag 'まめを投げる'
-
-%div.tool
-//  %a(data-pocket-label="pocket" data-pocket-count="none" class="pocket-btn" data-lang="en")
-//  %script{type: "text/javascript"}
-//   !function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");
