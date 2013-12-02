@@ -62,8 +62,9 @@ $(function() {
 
   $('.entry-beans').submit(function() {
     $(this)
-      .append('<span class="bean">豆</span>');
+      .append('<span class="bean"></span>');
     $(this).find('.bean:last-child')
+      .addClass(setBeanType())
       .animate(
         {
           'margin-left': '125px',
@@ -80,6 +81,16 @@ $(function() {
         'swing'
       );
   });
+
+  $('.bean').each(function () {
+    $(this).addClass(setBeanType());
+  });
+
+  function setBeanType() {
+    var beanTypes = ['bean-a', 'bean-b', 'bean-c', 'bean-d'];
+    var rand = 0 + Math.floor(Math.random() * 4); 
+    return beanTypes[rand];
+  }
 
   // anchor
   $("a[href*=#]").click(function(){

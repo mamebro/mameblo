@@ -3,10 +3,10 @@
   %div.entry-content
     = sanitize @entry.content
 - if signed_in?
-  = form_tag entry_beans_path(@entry), remote: true, class: 'entry-beans', method: 'post', name: 'beans_name' do
-    %span.bean-throw 投
+  = form_tag entry_beans_path(@entry), remote: true, class: 'entry-beans clearfix', method: 'post', name: 'beans_name' do
+    %span.bean-throw
     - @beans.each do |bean|
-      %span 豆
+      %span.bean
 %div.entry-footer
   %time.time
     = link_to time_ago_in_words(@entry.created_at) + '前'
