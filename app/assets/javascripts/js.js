@@ -44,55 +44,10 @@ $(function() {
     }
   });
   
-  $('#beBrother').click(function() {
+  $('#beBrother').click(function(){
     $('#beBrother').hide();
     $('#beBrotherAfter').show();
   });
-
-  $('.bean-throw').click(function() {
-    $(this).parents('.entry-beans').submit();
-  });
-
-  $('.entry-beans').swipe( {
-    swipeLeft:function(event, direction, distance, duration, fingerCount) {
-      $(this).submit();
-    },
-    threshold: 0
-  });
-
-  $('.entry-beans').submit(function() {
-    $(this)
-      .append('<span class="bean"></span>');
-    $(this).find('.bean:last-child')
-      .addClass(setBeanType())
-      .animate(
-        {
-          'margin-left': '125px',
-          'opacity': 0
-        },
-        0
-      )
-      .animate(
-        {
-          'margin-left': '0',
-          'opacity': 1
-        },
-        250,
-        'swing'
-      );
-    $count = $(this).prev('.entry').find('.beans-count');
-    $count.html(Number($count.text().replace(/^\s+|\s+$/g, '')) + 1);
-  });
-
-  $('.bean').each(function () {
-    $(this).addClass(setBeanType());
-  });
-
-  function setBeanType() {
-    var beanTypes = ['bean-a', 'bean-b', 'bean-c', 'bean-d'];
-    var rand = 0 + Math.floor(Math.random() * 4); 
-    return beanTypes[rand];
-  }
 
   // anchor
   $("a[href*=#]").click(function(){

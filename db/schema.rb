@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131014093033) do
-
-  create_table "beans", force: true do |t|
-    t.integer  "kind",             default: 0
-    t.integer  "entry_id"
-    t.integer  "throw_brother_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20130912221120) do
 
   create_table "brothers", force: true do |t|
     t.string   "name"
