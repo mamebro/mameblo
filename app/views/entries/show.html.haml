@@ -2,6 +2,9 @@
   %h1.entry-title= link_to @entry.title
   %div.entry-content
     = sanitize @entry.content
+    - if @beans.count > 0
+      %span.beans-count
+        = @beans.count
 - if signed_in?
   = form_tag entry_beans_path(@entry), remote: true, class: 'entry-beans clearfix', method: 'post', name: 'beans_name' do
     %span.bean-throw
