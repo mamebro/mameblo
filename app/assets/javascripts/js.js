@@ -80,6 +80,8 @@ $(function() {
         250,
         'swing'
       );
+    $count = $(this).prev('.entry').find('.beans-count');
+    $count.html(Number($count.text().replace(/^\s+|\s+$/g, '')) + 1);
   });
 
   $('.bean').each(function () {
