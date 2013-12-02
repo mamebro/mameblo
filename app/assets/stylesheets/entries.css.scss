@@ -164,8 +164,9 @@
 }
 
 .entry-beans {
-  padding-left: 7px;
+  padding: 0 0 7px 5px;
   margin-bottom: $gap/2;
+  border-bottom: 1px solid $silver;
   
   .bean {
     float: left;
