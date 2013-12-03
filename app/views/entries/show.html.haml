@@ -1,6 +1,14 @@
 %section.entry
   %h1.entry-title= link_to @entry.title
-  %div.entry-content= sanitize @entry.content
+  %div.entry-content
+    = sanitize @entry.content
+    %span.beans-count
+      = @beans.count
+- if signed_in?
+  = form_tag entry_beans_path(@entry), remote: true, class: 'entry-beans clearfix', method: 'post', name: 'beans_name' do
+    %button.bean-throw
+    - @beans.each do |bean|
+      %span.bean
 %div.entry-footer
   %time.time
     = link_to time_ago_in_words(@entry.created_at) + '前'
@@ -13,7 +21,3 @@
     - else
       %a{href: "/brothers/#{@entry.brother.name}"}
         = @entry.brother.name
-%div.tool
-  %a(data-pocket-label="pocket" data-pocket-count="none" class="pocket-btn" data-lang="en")
-  %script{type: "text/javascript"}
-    !function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");
