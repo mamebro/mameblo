@@ -214,6 +214,13 @@
     background-color: #59493f;
     border-radius: 3px;
     cursor: all-scroll;
+    
+    &:hover {
+      background-color: lighten(#59493f, 10%);
+      @include transition-property(background-color);
+      @include transition-duration(0.2s);
+      @include transition-timing-function(ease);
+    }
   }
 }
 
