@@ -49,14 +49,14 @@ $(function() {
     $('#beBrotherAfter').show();
   });
 
-  $('.entry-beans').swipe( {
+  $('.entry-beans.is_throwable').swipe( {
     swipeLeft:function(event, direction, distance, duration, fingerCount) {
       $(this).submit();
     },
     threshold: 5
   });
 
-  $('.entry-beans').submit(function() {
+  $('.entry-beans.is_throwable').submit(function() {
     $(this)
       .append('<span class="bean"></span>');
     $(this).find('.bean:last-child')
