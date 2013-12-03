@@ -49,15 +49,11 @@ $(function() {
     $('#beBrotherAfter').show();
   });
 
-  $('.bean-throw').click(function() {
-    $(this).parents('.entry-beans').submit();
-  });
-
   $('.entry-beans').swipe( {
     swipeLeft:function(event, direction, distance, duration, fingerCount) {
       $(this).submit();
     },
-    threshold: 0
+    threshold: 5
   });
 
   $('.entry-beans').submit(function() {

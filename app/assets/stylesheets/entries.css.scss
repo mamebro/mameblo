@@ -204,16 +204,21 @@
   }
 
   .bean-throw {
-    @extend .bean;
+    float: left;
     width: 28px;
     height: 14px;
     margin: 0 6px 4px 2px;
+    display: block;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAcCAYAAAA0u3w+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowNDgwMTE3NDA3MjA2ODExODIyQUU1MkEyQkE2MzZENCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGOUM1MzFGRTUzRDAxMUUzOTYxODhFODMzREQ5NkQyQiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGOUM1MzFGRDUzRDAxMUUzOTYxODhFODMzREQ5NkQyQiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MDU4MDExNzQwNzIwNjgxMTgyMkFFNTJBMkJBNjM2RDQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDQ4MDExNzQwNzIwNjgxMTgyMkFFNTJBMkJBNjM2RDQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz76ZJzxAAABe0lEQVR42uyYwUrDQBCG05N3PYhXL72ICr6AIvasKAQLpShFRJDe7AsU7xIfQfEhfIYKBQ/evBSaF7CmxXb9B+awhGZ3GwuZyA58hzazm3zZaXbSilIq+M9R8YJe0At6wVSsgzqogSrYAAn4BD3wAN6dZyPBHKQjWAKrIAKJMkdnkXmlCO6DobLHPaCq2wXbZREMwcQiNgNtzj8BY9Avg+AhX6xN7obzT7X8kXRB+s3FDnLXnH+WWmnxgpGDXEsr45/U8cEyBP8aWfOugW/DuCm45NzzOXIUPcmCLcMYkmlyXiNDjuJZsuCTQa7BOU2DnNLKV6TgW4ZcnY9fWOQSLnOxD5nBHLlQK9+Z5cZF0juZkTZ2wlsAfX/lIBe7rl6Rgl88bsybd8CbuU2ObsZRGXrRPssd8+dbR7lw0XMVJUjN8g43zl2HhxWV5UGeay26F72ziNEqP3Jbl+scRb/wboE22AObYAXE4AO8ghcw9H9ZeEEv6AXFxq8AAwAqN90AaoH8DwAAAABJRU5ErkJggg==);
+    background-repeat: no-repeat;
     background-position: 0 0;
     @include background-size(28px 14px);
     background-color: $bean-coffee;
+    border: 0;
     border-radius: 3px;
     cursor: all-scroll;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
     
     &:hover {
       background-color: lighten($bean-coffee, 10%);
