@@ -76,8 +76,9 @@ $(function() {
         250,
         'swing'
       );
-    $count = $(this).prev('.entry').find('.beans-count');
-    $count.html(Number($count.text().replace(/^\s+|\s+$/g, '')) + 1);
+    var $count = $(this).prev('.entry').find('.beans-count');
+    var currentBeans = Number($count.attr('data-beans-count')) + 1;
+    $count.html(currentBeans).attr('data-beans-count', currentBeans);
   });
 
   $('.bean').each(function () {
