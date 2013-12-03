@@ -49,14 +49,14 @@ $(function() {
     $('#beBrotherAfter').show();
   });
 
-  $('.entry-beans').swipe( {
+  $('.entry-beans.is_throwable').swipe( {
     swipeLeft:function(event, direction, distance, duration, fingerCount) {
       $(this).submit();
     },
     threshold: 5
   });
 
-  $('.entry-beans').submit(function() {
+  $('.entry-beans.is_throwable').submit(function() {
     $(this)
       .append('<span class="bean"></span>');
     $(this).find('.bean:last-child')
@@ -76,8 +76,9 @@ $(function() {
         250,
         'swing'
       );
-    $count = $(this).prev('.entry').find('.beans-count');
-    $count.html(Number($count.text().replace(/^\s+|\s+$/g, '')) + 1);
+    var $count = $(this).prev('.entry').find('.beans-count');
+    var currentBeans = Number($count.attr('data-beans-count')) + 1;
+    $count.html(currentBeans).attr('data-beans-count', currentBeans);
   });
 
   $('.bean').each(function () {
