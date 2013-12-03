@@ -4,9 +4,13 @@
     = sanitize @entry.content
     %span.beans-count
       = @beans.count
-- if signed_in?
+- if signed_in? && !current_brother?(@entry.brother)
   = form_tag entry_beans_path(@entry), remote: true, class: 'entry-beans clearfix', method: 'post', name: 'beans_name' do
     %button.bean-throw
+    - @beans.each do |bean|
+      %span.bean
+- else
+  %div.entry-beans.clearfix
     - @beans.each do |bean|
       %span.bean
 %div.entry-footer
