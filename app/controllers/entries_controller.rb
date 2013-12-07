@@ -10,8 +10,7 @@ include Ikachan
   def show
     @entry = Entry.find(params[:id])
     @entry.content = @entry.content_as_markdown
-    @beans = []
-    @beans = Beans.where(entry_id: params[:id])
+    @beans = Bean.where(entry_id: params[:id])
     respond_with @entry
   end
 

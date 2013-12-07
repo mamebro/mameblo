@@ -1,4 +1,4 @@
-class Beans < ActiveRecord::Base
+class Bean < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
 
   belongs_to :entry
