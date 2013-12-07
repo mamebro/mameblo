@@ -11,9 +11,7 @@ include Ikachan
     @entry = Entry.find(params[:id])
     @entry.content = @entry.content_as_markdown
     @beans = []
-    Beans.where(entry_id: params[:id]).each do |bean|
-      @beans << (Brother.find(bean.throw_brother_id).name)
-    end
+    @beans = Beans.where(entry_id: params[:id])
     respond_with @entry
   end
 
