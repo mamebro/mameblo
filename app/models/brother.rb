@@ -5,6 +5,8 @@ class Brother < ActiveRecord::Base
 
   before_save :create_remember_token
 
+  RESERVED_NAMES ||= YAML.load_file(Rails.root.join('config', 'reserved', 'names.yml'))['names']
+
   has_many :entries, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_brothers, through: :relationships, source: :followed
@@ -18,8 +20,12 @@ class Brother < ActiveRecord::Base
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
 
   VALID_NAME_REGEX = /\A[a-z0-9]+\z/i
-  validates :name, presence: true, length: {within: 3..20},
-            format: { with: VALID_NAME_REGEX }, uniqueness: true
+  validates :name,
+    presence: true,
+    length: {within: 3..20},
+    format: { with: VALID_NAME_REGEX },
+    uniqueness: true,
+    exclusion: { in: RESERVED_NAMES, message: "そういう名前は名乗れないよ。" }
 
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
