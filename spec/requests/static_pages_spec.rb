@@ -38,5 +38,19 @@ describe "mame blog(static_pages)" do
         it { should have_content("あちゃー、もう一回お願いします!!!") }
       end
     end
+
+    describe "新規登録" do
+      describe "NGワードは登録できないこと" do
+        before do
+          visit signup_path
+          fill_in 'brother_name', with: 'mameblo'
+          fill_in 'brother_email', with: 'mameblo@example.com'
+          fill_in 'brother_password', with: 'password'
+          fill_in 'brother_password_confirmation', with: 'password'
+          click_on 'ブラザーになる!! (無料)'
+        end
+        it { should have_content("そういう名前は名乗れないよ。") }
+      end
+    end
   end
 end
