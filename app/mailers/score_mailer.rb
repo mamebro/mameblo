@@ -20,6 +20,8 @@ class ScoreMailer < ActionMailer::Base
     @entry_diff                   = @entry_yesterday.count - @entry_day_before_yesterday.count
     @entry_total                  = Entry.where("created_at <= ?" ,Time.now.yesterday.end_of_day).count
 
+    @beans                        = Bean.count
+
     @url  = Rails.env.production? ? 'http://www.mameblo.com/' : 'http://mameblo.dev/'
     @date = Time.now.yesterday.strftime('%Y年%m月%d日')
 
