@@ -11,6 +11,7 @@
           %h1.entry-title= link_to entry.title, entry
           %div.entry-content
             = sanitize entry.content
-            %span.beans-count{data: {beans: {count: entry.bean.count}}}
-              = entry.bean.count
+            - if entry.bean.count > 0
+              %span.beans-count{data: {beans: {count: entry.bean.count}}}
+                = entry.bean.count
       = paginate @entries
