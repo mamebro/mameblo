@@ -12,6 +12,6 @@
           %div.entry-content
             = sanitize entry.content
             - if entry.bean.count > 0
-              %span.beans-count{data: {beans: {count: entry.bean.count}}}
+              = link_to entry, class: 'beans-count' do
                 = entry.bean.count
       = paginate @entries
