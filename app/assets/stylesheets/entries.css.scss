@@ -19,9 +19,9 @@
   
   .beans-count {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 0 $gap $gap/2 16px;
+    bottom: $gap/2;
+    right: $gap;
+    padding-left: 16px;
     display: block;
     @include font(small);
     color: $asbestos;

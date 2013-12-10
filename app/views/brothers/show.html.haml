@@ -6,5 +6,12 @@
 - if @brother.entries.any?
   %div#content{data: {max: {page: @entries.num_pages}}}
     %article#entries
-      = render @entries
-  = paginate @entries
+      - @entries.each do |entry|
+        %section.entry
+          %h1.entry-title= link_to entry.title, entry
+          %div.entry-content
+            = sanitize entry.content
+            - if entry.bean.count > 0
+              = link_to entry, class: 'beans-count' do
+                = entry.bean.count
+      = paginate @entries
