@@ -3,7 +3,7 @@
     %ul
       - if signed_in?
         %li.nav.nav-writes
-          = link_to "書く", root_path, class: 'lsf-icon', title: 'write'
+          = link_to "近況", root_path, class: 'lsf-icon', title: 'write'
         %li.nav.nav-entries
           = link_to current_brother.name, current_brother, class: 'lsf-icon', title: 'home'
         %li.nav.nav-brothers
