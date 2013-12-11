@@ -3,4 +3,4 @@
   %div#entry_form.field
     = f.text_field :title, id: 'entry-form-title', class: 'input input-text', placeholder: "!!! タイトル !!!"
     = f.text_area :content, id: 'entry-form-content', class: 'input input-textarea', rows: '4', placeholder: "!!! 本文 !!!"
-  = f.submit "!!! 投稿 !!!", id: 'entry-form-submit', class: "button button-horizontal button-primary"
+  = f.submit "!!! 投稿 !!!", data: { disable_with: "!!! 投稿中 !!!" }, id: 'entry-form-submit', class: "button button-horizontal button-primary"
