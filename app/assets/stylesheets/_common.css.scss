@@ -175,6 +175,10 @@ body {
   @include font(title);
 }
 
+#entry_form {
+  margin-bottom: $gap;
+}
+
 /* hidden */
 .new_entry {
   #entry-form-submit {
