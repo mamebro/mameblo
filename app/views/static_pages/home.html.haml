@@ -7,13 +7,9 @@
         %h1.entry-title= link_to entry.title, entry
         %div.entry-content
           = sanitize entry.content
-        %div.entry-footer
-          %div.control
-            %a{href: "brothers/#{entry.brother.name}"}
-              = entry.brother.name
-            - if entry.bean.count > 0
-              = link_to entry, class: 'beans-count' do
-                = entry.bean.count
+          - if entry.bean.count > 0
+            = link_to entry, class: 'beans-count' do
+              = entry.bean.count
   = paginate @entries
 - else
   %section
