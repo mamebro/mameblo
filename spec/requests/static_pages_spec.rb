@@ -16,7 +16,7 @@ describe "mame blog(static_pages)" do
         visit root_path
       end
       it { should have_content('shikakun') }
-      it { should have_content('書く') }
+      it { should have_content('近況') }
       it { should have_content('ブラザーズ') }
       it { should have_content('設定') }
       it { should have_selector('.field #entry-form-title', 'タイトル') }
@@ -32,7 +32,7 @@ describe "mame blog(static_pages)" do
           signin_with_failed brother
           visit root_path
         end
-        it { should_not have_content('書く') }
+        it { should_not have_content('近況') }
         it { should_not have_content('shikakun') }
         it { should_not have_content('ブラザーズ') }
         it { should have_content("あちゃー、もう一回お願いします!!!") }
