@@ -47,7 +47,19 @@ $(function() {
     }
   });
 
-  $('.new_entry .input').focus(function () {
-    $('#entry-form-submit').fadeIn(250);
+  $('.new_entry .input').bind('keyup', function() {
+    var titleLength = $('#entry-form-title').val().length;
+    var contentLength = $('#entry-form-content').val().length;
+    if (titleLength > 0 && contentLength > 0) {
+      if (!$('#new_entry').hasClass('submitable')) {
+        $('#new_entry').addClass('submitable');
+        $('#entry-form-submit').fadeIn(250);
+      }
+    } else {
+      if ($('#new_entry').hasClass('submitable')) {
+        $('#new_entry').removeClass('submitable');
+        $('#entry-form-submit').fadeOut(250);
+      }
+    }
   });
 });
