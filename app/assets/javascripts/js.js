@@ -12,6 +12,8 @@ $(function() {
   });
   emojify.run();
 
+  xmas();
+
   $.autopager({
     content: '#content',
     autoLoad: false,
@@ -22,6 +24,7 @@ $(function() {
         $('.pager-next').removeClass('button-touched');
       }
       emojify.run();
+      xmas();
     }
   });
 
@@ -92,11 +95,13 @@ $(function() {
   }
 
   // xmas
-  $('.entry').each(function () {
-    if ($(this).text().replace(/(\r\n|\s+)/g, '').match(/(xmas|christmas|クリスマス)/)) {
-      $(this).addClass('xmas');
-    }
-  });
+  function xmas() {
+    $('.entry').each(function () {
+      if ($(this).text().replace(/(\r\n|\s+)/g, '').match(/(xmas|christmas|クリスマス)/)) {
+        $(this).addClass('xmas');
+      }
+    });
+  }
 
   // anchor
   $("a[href*=#]").click(function(){
