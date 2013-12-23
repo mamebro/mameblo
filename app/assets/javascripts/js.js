@@ -97,7 +97,7 @@ $(function() {
   // xmas
   function xmas() {
     $('.entry').each(function () {
-      if ($(this).text().replace(/(\r\n|\s+)/g, '').match(/(xmas|christmas|クリスマス)/)) {
+      if ($(this).text().replace(/(\r\n|\s+)/g, '').match(/(xmas|Xmas|XMAS|christmas|Christmas|CHRISTMAS|クリスマス|サンタ|トナカイ)/)) {
         $(this).addClass('xmas');
       }
     });
