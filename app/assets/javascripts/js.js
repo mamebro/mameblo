@@ -12,8 +12,6 @@ $(function() {
   });
   emojify.run();
 
-  xmas();
-
   $.autopager({
     content: '#content',
     autoLoad: false,
@@ -24,7 +22,6 @@ $(function() {
         $('.pager-next').removeClass('button-touched');
       }
       emojify.run();
-      xmas();
     }
   });
 
@@ -92,15 +89,6 @@ $(function() {
     var beanTypes = ['bean-a', 'bean-b', 'bean-c', 'bean-d'];
     var rand = 0 + Math.floor(Math.random() * 4); 
     return beanTypes[rand];
-  }
-
-  // xmas
-  function xmas() {
-    $('.entry').each(function () {
-      if ($(this).text().replace(/(\r\n|\s+)/g, '').match(/(xmas|Xmas|XMAS|christmas|Christmas|CHRISTMAS|クリスマス|サンタ|トナカイ)/)) {
-        $(this).addClass('xmas');
-      }
-    });
   }
 
   // anchor
