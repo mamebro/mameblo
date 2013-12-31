@@ -21,3 +21,13 @@
     border-bottom: 1px solid $clouds;
   }
 }
+
+.circus-tent {
+  margin-bottom: $gap;
+  width: 320px;
+  height: auto;
+}
+
+#circus-tent-left-open {
+  display: none;
+}
