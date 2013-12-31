@@ -1,4 +1,7 @@
 %h1.p !!! まめくじ !!!
 %p おみくじの結果: #{@fortune}
 %p ラッキービーンズ: #{@bean}
-= link_to 'おみくじを引く'
+%p
+  = link_to 'もう一度おみくじを引く'
+%p
+  = link_to '神社に戻る', jinja_path

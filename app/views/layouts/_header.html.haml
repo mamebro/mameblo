@@ -2,6 +2,8 @@
   %nav#navs
     %ul
       - if signed_in?
+        %li.nav
+          = link_to "神社", jinja_path
         %li.nav.nav-writes
           = link_to "近況", root_path, class: 'lsf-icon', title: 'write'
         %li.nav.nav-entries
