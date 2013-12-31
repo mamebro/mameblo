@@ -1,0 +1,2 @@
+module Jinja::OmikujiHelper
+end

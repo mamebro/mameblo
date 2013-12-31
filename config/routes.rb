@@ -20,4 +20,5 @@ Mameblog::Application.routes.draw do
   get '/signin',  to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
   get "/contributors", to: 'contributors#index'
+  get "/jinja/omikuji", to: 'jinja/omikuji#index'
 end
