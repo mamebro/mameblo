@@ -1,9 +1,11 @@
-%h1 まめぶろ神社
-%p
+= provide(:title, '神社')
+%h1.page-title
+  神社
+%div#content
   %ul
     %li
-      = link_to 'おみくじをひく' , jinja_omikuji_path
+      = link_to 'まめくじ', jinja_omikuji_path, class: 'button button-horizontal button-primary'
     %li
-      = link_to '工事中: お賽銭' 
+      = link_to 'お賽銭', jinja_path, class: 'button button-horizontal button-disabled'
     %li
-      = link_to '工事中: 屋台' 
+      = link_to '屋台', jinja_path, class: 'button button-horizontal button-disabled'
