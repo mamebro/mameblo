@@ -1,7 +1,11 @@
-%h1.p !!! まめくじ !!!
-%p おみくじの結果: #{@fortune}
-%p ラッキービーンズ: #{@bean}
-%p
-  = link_to 'もう一度おみくじを引く'
-%p
-  = link_to '神社に戻る', jinja_path
+= provide(:title, 'まめくじ')
+%h1.page-title !!! まめくじ !!!
+%div#content
+  %article#entries
+    %section.entry.omikuji
+      %h1.omikuji-title
+        #{@fortune}
+      %div.entry-content.omikuji-content
+        %h3 ラッキービーンズ
+        %p #{@bean}
+  = link_to '神社にもどる', jinja_path, class: 'button button-horizontal button-primary'
