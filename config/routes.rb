@@ -23,4 +23,5 @@ Mameblog::Application.routes.draw do
   get "/contributors", to: 'contributors#index'
   get "/jinja/omikuji", to: 'jinja/omikuji#index'
   get "/jinja", to: 'jinja#index'
+  get "/jinja/osaisen", to: 'jinja/osaisen#index'
 end

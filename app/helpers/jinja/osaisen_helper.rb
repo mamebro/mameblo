@@ -1,0 +1,2 @@
+module Jinja::OsaisenHelper
+end
