@@ -1,0 +1,33 @@
+@charset "UTF-8";
+@import 'vars';
+@import 'compass';
+
+.omikuji {
+  text-align: center;
+}
+
+.omikuji-title {
+  margin-bottom: $gap;
+  text-align: center;
+  @include font(title);
+  color: $turquoise;
+  font-family: serif;
+  font-size: 60px;
+}
+
+.omikuji-content {
+  h3 {
+    color: $silver;
+    border-bottom: 1px solid $clouds;
+  }
+}
+
+.circus-tent {
+  margin-bottom: $gap;
+  width: 300px;
+  height: auto;
+}
+
+#circus-tent-left-open {
+  display: none;
+}

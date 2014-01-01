@@ -1,0 +1,11 @@
+= provide(:title, 'まめくじ')
+%h1.page-title !!! まめくじ !!!
+%div#content
+  %article#entries
+    %section.entry.omikuji
+      %h1.omikuji-title
+        #{@fortune}
+      %div.entry-content.omikuji-content
+        %h3 ラッキービーンズ
+        %p #{@bean}
+  = link_to '神社にもどる', jinja_path, class: 'button button-horizontal button-primary'

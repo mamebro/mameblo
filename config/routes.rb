@@ -1,5 +1,6 @@
 Mameblog::Application.routes.draw do
 
+  get "jinja/index"
   resources :brothers, except: [:destroy] do
     member do
       get :following, :followers
@@ -20,4 +21,7 @@ Mameblog::Application.routes.draw do
   get '/signin',  to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
   get "/contributors", to: 'contributors#index'
+  get "/jinja/omikuji", to: 'jinja/omikuji#index'
+  get "/jinja", to: 'jinja#index'
+  get "/jinja/osaisen", to: 'jinja/osaisen#index'
 end
