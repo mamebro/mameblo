@@ -1,10 +1,10 @@
 GIT
   remote: git://github.com/Compass/compass-rails.git
-  revision: 32c16cb90f78053310b35199a970c53355bcd300
-  branch: rails4-hack
+  revision: 30ca43b72a1a986a35055f9999a49b62e2257f5c
+  branch: master
   specs:
-    compass-rails (1.0.3)
-      compass (>= 0.12.2, < 0.14)
+    compass-rails (1.1.2)
+      compass (>= 0.12.2)
 
 GEM
   remote: https://rubygems.org/
