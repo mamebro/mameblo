@@ -20,13 +20,14 @@ include Ikachan
 
   def create
     @entry = current_brother.entries.build entry_params
+    @entry.title = Date.today.strftime("%Y/%m/%d") if @entry.title.empty?
     if @entry.save
       flash[:success] = "!!! ぶろぐ投稿できたね !!!"
       ikachan_post "#{current_brother.name} が投稿したよ! #{request.url}/#{@entry.id.to_s}" if Rails.env.production?
       redirect_to @entry.brother
     else
-      @feed_items = []
-      render 'static_pages/home'
+      flash[:error] = "!!! ぶろぐ投稿できませんでした !!!"
+      redirect_to @entry.brother
     end
   end
 

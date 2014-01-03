@@ -31,26 +31,8 @@ $(function() {
     });
   });
 
-  $('.new_entry, .edit_entry').submit(function () {
-    var title = $('#entry-form-title').val();
-    var content = $('#entry-form-content').val();
-    if (!title || !content) {
-      if (!title && !content) {
-        $('#entry-form-title').focus();
-      } else if (!title) {
-        $('#entry-form-title').focus();
-      } else {
-        $('#entry-form-content').focus();
-      }
-      $('#entry-form-submit').removeClass('button-touched');
-      return false;
-    }
-  });
-
-  $('.new_entry .input').bind('keyup', function() {
-    var titleLength = $('#entry-form-title').val().length;
-    var contentLength = $('#entry-form-content').val().length;
-    if (titleLength > 0 && contentLength > 0) {
+  $('#entry-form-content').bind('keyup', function() {
+    if ($('#entry-form-content').val().length > 0) {
       if (!$('#new_entry').hasClass('submitable')) {
         $('#new_entry').addClass('submitable');
         $('#entry-form-submit').fadeIn(250);
