@@ -25,8 +25,8 @@ include Ikachan
       ikachan_post "#{current_brother.name} が投稿したよ! #{request.url}/#{@entry.id.to_s}" if Rails.env.production?
       redirect_to @entry.brother
     else
-      @feed_items = []
-      render 'static_pages/home'
+      flash[:error] = "!!! ぶろぐ投稿できませんでした !!!"
+      redirect_to @entry.brother
     end
   end
 
