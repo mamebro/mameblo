@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # rails 4
-gem 'rails', '4.0.2'
+gem 'rails', '~> 4.1.0.beta1'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'faker'
@@ -21,7 +21,7 @@ group :assets do
   gem 'sprockets-rails'
   gem 'sass-rails'
   gem 'coffee-rails'
-  gem 'compass-rails', github: 'Compass/compass-rails', branch: 'rails4-hack'
+  gem 'compass-rails', github: 'Compass/compass-rails', branch: 'master'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', platforms: :ruby
