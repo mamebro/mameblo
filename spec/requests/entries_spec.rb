@@ -36,4 +36,20 @@ describe "Entries" do
       should have_content '!!! 編集完了したね !!!'
     end
   end
+
+  describe "タイトルを入力しないで日記を投稿するとき" do
+    let(:brother) { FactoryGirl.create(:brother) }
+    before do
+      visit root_path
+      sign_in brother
+      click_link '近況'
+      fill_in 'entry-form-content', with: 'yey! タイトル無しで投稿!!!'
+      click_button '投稿'
+    end
+
+    it 'タイトルが今日の日付になっていること' do
+      should have_content Date.today.strftime("%Y/%m/%d")
+      should have_content 'ぶろぐ投稿できたね'
+    end
+  end
 end
