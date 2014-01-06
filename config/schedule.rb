@@ -19,16 +19,19 @@
 
 # Learn more: http://github.com/javan/whenever
 
+# 出力先のログファイルの指定
+set :output, 'log/cron.log'
+
+# ジョブの実行環境の指定
+set :environment, :production
+
 # Dailyでスコアメールを送信する
 # ブラザー数, エントリー数, サーカスみたいね数
-if Rails.env.production?
-  every 1.day, at: '7:00am' do
-    runner 'ScoreMailer.daily.deliver'
-  end
+every 1.day, at: '7:00am' do
+  runner 'ScoreMailer.daily.deliver'
 end
 
-if Rails.env.production?
-  every 1.days, :at=>'05:00' do
-    rake 'db:backup'
-  end
+# mysqldumpを実行してS3に保存
+every 1.days, :at=>'05:00' do
+  rake 'db:backup'
 end
