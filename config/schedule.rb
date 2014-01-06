@@ -26,3 +26,9 @@ if Rails.env.production?
     runner 'ScoreMailer.daily.deliver'
   end
 end
+
+if Rails.env.production?
+  every 1.days, :at=>'05:00' do
+    rake 'db:backup'
+  end
+end
