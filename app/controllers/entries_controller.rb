@@ -23,7 +23,6 @@ include Ikachan
     @entry.title = Date.today.strftime("%Y/%m/%d") if @entry.title.empty?
     if @entry.save
       flash[:success] = "!!! ぶろぐ投稿できたね !!!"
-      ikachan_post "#{current_brother.name} が投稿したよ! #{request.url}/#{@entry.id.to_s}" if Rails.env.production?
       redirect_to @entry.brother
     else
       flash[:error] = "!!! ぶろぐ投稿できませんでした !!!"
