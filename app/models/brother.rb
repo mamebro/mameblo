@@ -42,7 +42,6 @@ class Brother < ActiveRecord::Base
 
   def follow!(other_brother)
     relationships.create!(followed_id: other_brother.id)
-    ikachan_post "#{self.name} が #{other_brother.name} をブラザーとして認めました"
   end
 
   def unfollow!(other_brother)
