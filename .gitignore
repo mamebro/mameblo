@@ -25,3 +25,4 @@ doc/app
 .DS_Store
 coverage
 .powder
+.secret
