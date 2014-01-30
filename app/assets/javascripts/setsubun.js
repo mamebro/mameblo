@@ -4,6 +4,10 @@ $(function() {
   setBeanFlyingConfig();
   setsubun();
 
+  setInterval(function() {
+    setsubun();
+  }, 500);
+
   $(window).resize(function() {
     setBeanFlyingConfig();
   });
