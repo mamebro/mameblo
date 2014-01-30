@@ -28,7 +28,7 @@ $(function() {
           right: beanFlyingDistance
         },
         1000,
-        'swing'
+        'linear'
       );;
   }
 });
