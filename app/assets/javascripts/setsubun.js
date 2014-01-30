@@ -1,21 +1,24 @@
 $(function() {
-  var beanFlyingDistance;
+  var beanFlyingDistance, beanFlyingHeight, beanFlyingMaxHeight;
 
-  setBeanFlyingDistance();
+  setBeanFlyingConfig();
   setsubun();
 
   $(window).resize(function() {
-    setBeanFlyingDistance();
+    setBeanFlyingConfig();
   });
 
-  function setBeanFlyingDistance() {
+  function setBeanFlyingConfig() {
     beanFlyingDistance = window.innerWidth + 18;
+    beanFlyingMaxHeight = window.innerHeight;
   }
 
   function setsubun() {
+    beanFlyingHeight = Math.floor(Math.random() * beanFlyingMaxHeight);
     $('body')
       .append('<span class="setsubun"></span>')
       .find('.setsubun:last-child')
+      .css('top', beanFlyingHeight)
       .animate(
         {
           right: beanFlyingDistance
