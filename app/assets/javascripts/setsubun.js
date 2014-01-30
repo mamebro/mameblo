@@ -1,5 +1,16 @@
 $(function() {
+  var beanFlyingDistance;
+
+  setBeanFlyingDistance();
   setsubun();
+
+  $(window).resize(function() {
+    setBeanFlyingDistance();
+  });
+
+  function setBeanFlyingDistance() {
+    beanFlyingDistance = window.innerWidth + 18;
+  }
 
   function setsubun() {
     $('body')
@@ -7,7 +18,7 @@ $(function() {
       .find('.setsubun:last-child')
       .animate(
         {
-          right: '2000px'
+          right: beanFlyingDistance
         },
         1000,
         'swing'
