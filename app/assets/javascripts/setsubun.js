@@ -12,9 +12,13 @@ $(function() {
     setBeanFlyingConfig();
   });
 
+  window.onscroll = function() {
+    setBeanFlyingConfig();
+  }
+
   function setBeanFlyingConfig() {
     beanFlyingDistance = window.innerWidth + 18;
-    beanFlyingMaxHeight = window.innerHeight;
+    beanFlyingMaxHeight = window.pageYOffset + window.innerHeight;
   }
 
   function setsubun() {
