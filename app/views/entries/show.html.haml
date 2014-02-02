@@ -24,4 +24,4 @@
         = link_to "Delete", @entry, method: :delete, data: { confirm: "消えちゃうよ?" }, class: 'lsf-icon', title: 'delete'
     - else
       %a{href: "/brothers/#{@entry.brother.name}"}
-        = @entry.brother.name[0,1]
+        = @entry.brother.name[0,1].upcase + '.'
