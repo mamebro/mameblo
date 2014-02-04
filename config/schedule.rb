@@ -31,6 +31,11 @@ every 1.day, at: '7:00am' do
   runner 'ScoreMailer.daily.deliver'
 end
 
+# DailyスコアをIRCに通知する
+every 1.day, at: '10:30am' do
+  rake 'score:daily'
+end
+
 # mysqldumpを実行してS3に保存
 every 1.days, :at=>'05:00' do
   rake 'db:backup'
