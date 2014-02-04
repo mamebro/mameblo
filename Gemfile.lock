@@ -115,7 +115,6 @@ GEM
       spork (>= 0.8.4)
     haml (4.0.4)
       tilt
-    hash-deep-merge (0.1.1)
     hike (1.2.3)
     i18n (0.6.9)
     jquery-rails (3.0.4)
@@ -127,9 +126,6 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.4.2)
       addressable (~> 2.3)
-    lazy_high_charts (1.5.1)
-      bundler (>= 1.0)
-      hash-deep-merge
     libv8 (3.16.14.3)
     listen (2.4.0)
       celluloid (>= 0.15.2)
@@ -274,7 +270,6 @@ DEPENDENCIES
   jquery-rails
   kaminari
   launchy
-  lazy_high_charts
   mysql2
   newrelic_rpm
   pry-rails

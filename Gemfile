@@ -11,7 +11,6 @@ gem 'jquery-rails'
 gem 'whenever', require: false
 gem 'haml'
 gem 'faraday'
-gem 'lazy_high_charts'
 gem 'newrelic_rpm'
 gem 'github-markdown'
 
