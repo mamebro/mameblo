@@ -2,8 +2,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/mamebro/mameblo/badge.png)](https://coveralls.io/r/mamebro/mameblo)
 
-# かわいいブログ。まめぶろ。
-## まめぶろ
+# まめぶろ
 http://www.mameblo.com/
 
 ## Twitter 公式アカウント
