@@ -2,6 +2,7 @@
   = render 'shared/entry_form'
   %div#content{data: {max: {page: @entries.num_pages}}}
     %article#entries
+      %a.entry.entry-pr{href: 'http://www.koukanbook.com/?utm_source=mameblo'} [PR] ともだちと交換日記が書ける、<br> koukanbook に雪が降っているよ。
       - @entries.each do |entry|
         %section.entry
           %h1.entry-title= link_to entry.title, entry
