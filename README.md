@@ -39,7 +39,14 @@
 ```
 
 # かわいいブログ。まめぶろ。
+## まめぶろ
+http://www.mameblo.com/
 
-## ブラザーになろう!!
+## Twitter 公式アカウント
+https://twitter.com/mameblo
 
-### 生きているウェブサービス!!!
+## Facebookページ
+http://www.facebook.com/mameblo
+
+## minne
+http://minne.com/mameblo
