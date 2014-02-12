@@ -1,21 +1,19 @@
 %header#header
+  %h1#brand
+    = image_tag "brand.png", alt: 'まめぶろ'
   %nav#navs
     %ul
       - if signed_in?
-        %li.nav.nav-writes
-          = link_to "近況", root_path, class: 'lsf-icon', title: 'write'
-        %li.nav.nav-entries
-          = link_to current_brother.name, current_brother, class: 'lsf-icon', title: 'home'
         %li.nav.nav-brothers
-          = link_to "ブラザーズ", brothers_path, class: 'lsf-icon', title: 'web'
-        %li.nav
-          = link_to "神社", jinja_path, class: 'lsf-icon', title: 'coffee'
-        %li.nav.nav-settings
-          = link_to "設定", edit_brother_path(current_brother), class: 'lsf-icon', title: 'setting'
+          = link_to "みんな", root_path
+        %li.nav.nav-home
+          = link_to "わたし", current_brother
+        %li.nav.nav-jinja
+          = link_to "神社", jinja_path
+        %li.nav.nav-setting
+          = link_to "設定", edit_brother_path(current_brother)
       - else
         %li.nav.nav-signin
-          = link_to "サインイン", signin_path, class: 'lsf-icon', title: 'in'
+          = link_to "サインイン", signin_path
         %li.nav.nav-signup
-          = link_to "はじめる", signup_path, class: 'lsf-icon', title: 'onsen'
-  %h1#brand
-    = image_tag "brand.png", alt: 'まめぶろ'
+          = link_to "はじめる", signup_path
