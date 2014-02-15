@@ -3,13 +3,11 @@ $(function() {
     $('#entry-form-title').focus();
   }
 
-  $('textarea').each(function() {
-	  $(this).attr('data-rows-original', $(this).attr('rows'));
-  });
+  $('#entry-form-content').attr('data-rows-original', $('#entry-form-content').attr('rows'));
 
-  $('textarea').bind('keyup', function() {
+  $('#entry-form-content').bind('keyup', function() {
 	  var self = this;
-	  var value = $(this).val().split("\n");
+	  var value = $(this).val().split('\n');
 	  var value_row = 0;
 	  $.each(value, function(i, val) {
 	    value_row += Math.max(Math.ceil(val.length/self.cols), 1);
