@@ -34,7 +34,7 @@ $(function() {
   });
 
   function checkSubmitable() {
-    if ($('#entry-form-content').val().length > 0) {
+    if ($('#entry-form-content').val().replace(/\s/g, '').length > 0) {
       if (!$('#new_entry').hasClass('submitable')) {
         $('#new_entry').addClass('submitable');
         $('#entry-form-submit').fadeIn(250);
