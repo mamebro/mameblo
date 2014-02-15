@@ -6,7 +6,7 @@ $(function() {
   $('textarea').each(function() {
 	  $(this).attr('data-rows-original', $(this).attr('rows'));
   });
-  
+
   $('textarea').bind('keyup', function() {
 	  var self = this;
 	  var value = $(this).val().split("\n");
@@ -18,6 +18,7 @@ $(function() {
 	  var original_row = $(this).attr('data-rows-original');
 	  var next_row = (input_row <= value_row) ? value_row + 1 : Math.max(value_row + 1, original_row);
 	  $(this).attr('rows', next_row);
+    checkSubmitable();
   });
 
   $('.new_entry, .edit_entry').find('textarea').focus(function () {
@@ -29,9 +30,10 @@ $(function() {
         $('.new_entry, .edit_entry').submit();
       }
     });
+    checkSubmitable();
   });
 
-  $('#entry-form-content').bind('keyup', function() {
+  function checkSubmitable() {
     if ($('#entry-form-content').val().length > 0) {
       if (!$('#new_entry').hasClass('submitable')) {
         $('#new_entry').addClass('submitable');
@@ -43,5 +45,5 @@ $(function() {
         $('#entry-form-submit').fadeOut(250);
       }
     }
-  });
+  }
 });
