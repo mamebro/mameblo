@@ -32,7 +32,7 @@ every 1.day, at: '7:00am' do
 end
 
 # DailyスコアをIRCに通知する
-every 1.day, at: '10:30am' do
+every 1.day, at: '10:10am' do
   rake 'score:daily'
 end
 
