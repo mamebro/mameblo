@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe ApiAuthentication do
+describe Authentication do
   let(:brother) { FactoryGirl.create(:brother) }
 
   it '保存したときにトークンが生成される' do
-    brother.api_authentications.create
+    brother.authentications.create
     brother.reload
-    expect(brother.api_authentications.first.token).to be_present
+    expect(brother.authentications.first.token).to be_present
   end
 end
