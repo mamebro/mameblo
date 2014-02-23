@@ -42,19 +42,27 @@ describe Api::SessionsController do
   end
 
   describe 'delete' do
-    before do
-      # 事前にサインインしてトークンを取得しておく
+    let(:token) do
+      post :create, {name: brother.name, password: password}
+      response.body
     end
 
     context 'success' do
       it 'status 200' do
 
       end
+
+      it 'api_authenticationsのレコードがひとつ減ること' do
+
+      end
     end
 
     context 'fail' do
-      it 'status 401' do
+      let(:wrong_token) { 'wroooo0ng' }
 
+      it 'status 401' do
+        post :destroy, {name: brother.name, password: wrong_token}
+        expect(response.status).to eq(401)
       end
     end
   end

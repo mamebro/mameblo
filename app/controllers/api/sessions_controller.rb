@@ -17,7 +17,7 @@ module Api
 
     private
     def authenticate
-      api_authentication = api_authentications.find_by token: params[:token]
+      api_authentication = ApiAuthentication.find_by token: params[:token]
       unless api_authentication && api_authentication.brother.name == params[:user]
         render nothing: true, status: 401
       end
