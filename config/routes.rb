@@ -26,7 +26,7 @@ Mameblog::Application.routes.draw do
   get "/jinja/osaisen", to: 'jinja/osaisen#index'
 
   namespace :api do
-    get '/signin', to: 'sessions#new'
+    post '/signin', to: 'sessions#create'
     delete '/signout', to: 'sessions#destroy'
     resources :entries, only: [:show]
   end
