@@ -41,19 +41,22 @@ describe Api::SessionsController do
     end
   end
 
-  describe 'delete' do
-    let(:token) do
+  describe 'destroy' do
+    let!(:token) do
       post :create, {name: brother.name, password: password}
       response.body
     end
 
     context 'success' do
       it 'status 200' do
-
+        post :destroy, {name: brother.name, auth_token: token}
+        expect(response.status).to eq(200)
       end
 
       it 'api_authenticationsのレコードがひとつ減ること' do
-
+        expect {
+          post :destroy, {name: brother.name, auth_token: token}
+        }.to change {ApiAuthentication.all.size}.by(-1)
       end
     end
 
@@ -61,7 +64,7 @@ describe Api::SessionsController do
       let(:wrong_token) { 'wroooo0ng' }
 
       it 'status 401' do
-        post :destroy, {name: brother.name, password: wrong_token}
+        post :destroy, {name: brother.name, auth_token: wrong_token}
         expect(response.status).to eq(401)
       end
     end
