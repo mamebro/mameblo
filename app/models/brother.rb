@@ -15,6 +15,7 @@ class Brother < ActiveRecord::Base
            class_name: "Relationship", dependent: :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
   has_many :circuses
+  has_many :api_authenticates, dependent: :destroy
 
   VALID_EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
