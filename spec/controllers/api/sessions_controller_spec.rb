@@ -53,7 +53,7 @@ describe Api::SessionsController do
         expect(response.status).to eq(200)
       end
 
-      it 'api_authenticationsのレコードがひとつ減ること' do
+      it 'authenticationsのレコードがひとつ減ること' do
         expect {
           post :destroy, {name: brother.name, auth_token: token}
         }.to change {Authentication.all.size}.by(-1)
