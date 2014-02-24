@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131207045510) do
+ActiveRecord::Schema.define(version: 20140223104227) do
+
+  create_table "authentications", force: true do |t|
+    t.integer  "brother_id"
+    t.string   "token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "authentications", ["brother_id"], name: "index_authentications_on_brother_id"
+  add_index "authentications", ["token"], name: "index_authentications_on_token"
 
   create_table "beans", force: true do |t|
     t.integer  "kind",             default: 0
