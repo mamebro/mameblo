@@ -1,11 +1,11 @@
 class EntrySerializer < ActiveModel::Serializer
-  attributes :id, :title, :content, :number_of_beans
+  attributes :id, :title, :content, :beans_count
 
   def content
     object.content_as_markdown
   end
 
-  def number_of_beans
+  def beans_count
     object.bean.count
   end
 

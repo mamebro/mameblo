@@ -6,14 +6,14 @@ describe EntrySerializer do
     FactoryGirl.create(:brother, name: 'kumiko', password: password, password_confirmation: password)
   end
   let(:entry) { FactoryGirl.create(:entry) }
-  let(:number_of_beans) { 3 }
+  let(:beans_count) { 3 }
 
   let(:pattern) do
     {
       id: entry.id,
       title: entry.title,
       content: entry.content_as_markdown,
-      number_of_beans: number_of_beans,
+      beans_count: beans_count,
       brother: {
         id: entry.brother.id,
         name: entry.brother.name
@@ -22,7 +22,7 @@ describe EntrySerializer do
   end
 
   before do
-    number_of_beans.times do
+    beans_count.times do
       FactoryGirl.create(:bean, entry_id: entry.id, throw_brother_id: brother.id)
     end
   end
