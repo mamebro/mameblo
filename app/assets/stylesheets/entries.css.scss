@@ -31,6 +31,19 @@
     box-shadow: 0 1px 0 $concrete;
   }
 
+  &.entry-weddings {
+    text-align: center;
+    .entry-title {
+      color: $turquoise;
+    }
+    .entry-content {
+      .poweredby {
+        @include font(small);
+        margin-top: 2em;
+      }
+    }
+  }
+
   .beans-count {
     position: absolute;
     bottom: $gap/2;
