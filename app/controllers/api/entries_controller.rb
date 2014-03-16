@@ -9,8 +9,8 @@ module Api
       followee = current_brother.followed_brothers
       entries =
         Entry.where(brother_id: followee)
-             .where("id > ?", params[:since_id] || 1)
-             .where("id <= ?", params[:max_id] || Entry.last.try(:id) || 1)
+             .where("id > ?", params[:since_id] || 0)
+             .where("id <= ?", params[:max_id] || Entry.first.try(:id) || 1)
              .limit(params[:count] || 20)
 
       render json: entries, meta: {
@@ -22,8 +22,8 @@ module Api
     def meta_links(entries)
       if entries.present?
         {
-          latest: home_entries_url(since_id: entries.first.id),
-          previous: home_entries_url(max_id: entries.last.id-1)
+          latest: home_api_entries_url(since_id: entries.first.id, format: :json),
+          previous: home_api_entries_url(max_id: entries.last.id-1, format: :json)
         }
       else
         {}
