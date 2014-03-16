@@ -11,7 +11,7 @@
           %h1.entry-title= link_to entry.title, entry
           %div.entry-content
             = sanitize entry.content
-            - if entry.bean.count > 0
+            - if entry.beans.count > 0
               = link_to entry, class: 'beans-count' do
-                = entry.bean.count
+                = entry.beans.count
   = paginate @entries
