@@ -65,4 +65,5 @@ group :test do
   gem 'json_expressions'
   gem 'coveralls', require: false
   gem 'simplecov', require: false
+  gem 'autodoc'
 end
