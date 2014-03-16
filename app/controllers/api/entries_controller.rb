@@ -3,8 +3,8 @@ module Api
     before_action :authenticate
 
     def show
-      @entry = Entry.find(params[:id])
-      render json: @entry
+      entry = Entry.find(params[:id])
+      render json: entry
     end
 
     def home
