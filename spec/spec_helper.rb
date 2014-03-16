@@ -10,6 +10,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 ]
 SimpleCov.start
 Coveralls.wear!
+Autodoc.configuration.path = "doc/api"
 
 require File.expand_path("../../config/environment", __FILE__)
 
