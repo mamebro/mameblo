@@ -36,7 +36,7 @@ describe 'entries api' do
 
     context 'fail' do
       it 'status 401' do
-        get "/api/entries/home.json", {name: brother.name, auth_token: token}
+        get "/api/entries/home.json", {name: brother.name}
         expect(response.status).to eq(401)
       end
     end
