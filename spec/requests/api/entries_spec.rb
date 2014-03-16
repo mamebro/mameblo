@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'entries api' do
+describe 'Entries api' do
   let(:password) { 'nejimakid0ri' }
   let(:kumiko) { FactoryGirl.create(:brother, name: 'kumiko', password: password, password_confirmation: password) }
   let(:entry) { FactoryGirl.create(:entry, brother: kumiko) }
@@ -10,11 +10,16 @@ describe 'entries api' do
     response.body
   end
 
-  describe '/entries/:id' do
+  describe 'GET /entries/:id.json' do
     context 'success' do
       it 'status 200' do
         get "/api/entries/#{entry.id}.json", {name: kumiko.name, auth_token: token}
         expect(response.status).to eq(200)
+      end
+
+      it '投稿を取得する' do
+        get "/api/entries/#{entry.id}.json", {name: kumiko.name, auth_token: token}
+        expect(response.body).to match(/#{entry.title}/)
       end
     end
 
@@ -62,7 +67,7 @@ describe 'entries api' do
         expect(response.status).to eq(200)
       end
 
-      it '自分がフォローしている人の投稿だけ取得する' do
+      it '自分がフォローしている人(フォロイー)の投稿を取得する' do
         followee_ids = followee.map(&:id)
         get "/api/entries/home.json", {name: kumiko.name, auth_token: token}
         response_body["entries"].each do |entry|

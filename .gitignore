@@ -17,7 +17,6 @@ log/*.log
 *.log
 tmp/**/*
 tmp/*
-doc/api
 doc/app
 *.swp
 *~
