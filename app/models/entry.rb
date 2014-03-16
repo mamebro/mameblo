@@ -3,7 +3,7 @@ require 'redcarpet'
 class Entry < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
   belongs_to :brother
-  has_many :bean, dependent: :destroy
+  has_many :beans, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 20000 }
   validates :content, presence: true, length: { maximum: 20000 }
