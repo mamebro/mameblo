@@ -51,7 +51,7 @@ describe 'entries api' do
 
       before do
         brothers.each do |brother|
-          3.times do
+          5.times do
             FactoryGirl.create(:entry, brother: brother)
           end
         end
@@ -67,6 +67,18 @@ describe 'entries api' do
         get "/api/entries/home.json", {name: kumiko.name, auth_token: token}
         response_body["entries"].each do |entry|
           expect(followee_ids).to include(entry["brother"]["id"])
+        end
+      end
+
+      describe '件数' do
+        it 'デフォルト20件' do
+          get "/api/entries/home.json", {name: kumiko.name, auth_token: token}
+          expect(response_body["entries"].size).to eq 20
+        end
+
+        it '指定した件数' do
+          get "/api/entries/home.json", {name: kumiko.name, auth_token: token, count: 10}
+          expect(response_body["entries"].size).to eq 10
         end
       end
 
