@@ -51,7 +51,9 @@ describe 'entries api' do
 
       before do
         brothers.each do |brother|
-          FactoryGirl.create(:entry, brother: brother)
+          3.times do
+            FactoryGirl.create(:entry, brother: brother)
+          end
         end
       end
 
@@ -70,19 +72,35 @@ describe 'entries api' do
 
       describe '最新の投稿を取得するURL' do
         let(:latest_url) { response_body["meta"]["_links"]["latest"] }
+        let(:latest_entry) { response_body["entries"].first }
+
+        before do
+          get "/api/entries/home.json", {name: kumiko.name, auth_token: token}
+        end
 
         it '拡張子はjsonである' do
-          get "/api/entries/home.json", {name: kumiko.name, auth_token: token}
           expect(latest_url).to match(/home\.json/)
+        end
+
+        it 'since_idが含まれている' do
+          expect(latest_url).to match(/since_id\=#{latest_entry["id"]}/)
         end
       end
 
       describe '過去の投稿を取得するURL' do
         let(:previous_url) { response_body["meta"]["_links"]["previous"] }
+        let(:oldest_entry) { response_body["entries"].last }
+
+        before do
+          get "/api/entries/home.json", {name: kumiko.name, auth_token: token}
+        end
 
         it '拡張子はjsonである' do
-          get "/api/entries/home.json", {name: kumiko.name, auth_token: token}
           expect(previous_url).to match(/home\.json/)
+        end
+
+        it 'max_idが含まれている' do
+          expect(previous_url).to match(/max_id\=#{oldest_entry["id"]-1}/)
         end
       end
     end
