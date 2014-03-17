@@ -37,6 +37,18 @@ Content-Type: application/json; charset=utf-8
 GET /api/entries/home.json?name=kumiko&auth_token=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX HTTP/1.1
 ```
 
+##### Option
+```
+since_id  (オプション)
+  指定したidより大きな値のidのentryを取得する (指定したidは取得対象外)
+
+max_id  (オプション)
+  指定したid以下の値のidのentryのみ取得する (指定したidも取得対象内)
+
+count (オプション)
+  指定した数のentryを取得する
+```
+
 #### Response
 ```
 HTTP/1.1 200
