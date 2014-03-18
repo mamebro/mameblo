@@ -13,6 +13,7 @@ gem 'haml'
 gem 'faraday'
 gem 'newrelic_rpm'
 gem 'github-markdown'
+gem 'active_model_serializers'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -61,6 +62,8 @@ group :test do
   gem 'guard-spork'
   gem 'spork'
   gem "timecop"
+  gem 'json_expressions'
   gem 'coveralls', require: false
   gem 'simplecov', require: false
+  gem 'autodoc'
 end

@@ -1,7 +1,6 @@
 module Api
   class SessionsController < Api::ApplicationController
-    before_action :set_authentication, only: [:destroy]
-    before_action :authenticate, only: [:destroy]
+    skip_before_action :authenticate, only: [:create]
 
     def create
       brother = Brother.find_by_name(params[:name])
@@ -16,17 +15,6 @@ module Api
     def destroy
       @authentication.destroy!
       render nothing: true, status: 200
-    end
-
-    private
-    def set_authentication
-      @authentication = Authentication.find_by token: params[:auth_token]
-    end
-
-    def authenticate
-      unless @authentication && @authentication.brother.name == params[:name]
-        render nothing: true, status: 401
-      end
     end
   end
 end
