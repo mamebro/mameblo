@@ -186,12 +186,23 @@
     padding: 0 $gap/2;
     white-space: nowrap;
     display: inline-block;
-    @include font(small);
     font-family: Consolas, 'Liberation Mono', Courier, monospace;
+    font-size: 12px;
     line-height: 1.66;
     background-color: $white;
     border-radius: 3px;
     box-shadow: inset 0 1px 0 $silver;
+  }
+
+  pre code {
+    padding: 0;
+    white-space: pre;
+    display: inline;
+    font-size: 14px;
+    line-height: 1;
+    background-color: inherit;
+    border-radius: 0;
+    box-shadow: none;
   }
 
   blockquote {
