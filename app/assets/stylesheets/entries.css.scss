@@ -176,6 +176,19 @@
     padding: $gap/2 $gap;
     margin-bottom: $gap/2;
     overflow: auto;
+    font-family: Consolas, 'Liberation Mono', Courier, monospace;
+    background-color: $white;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 $silver;
+  }
+
+  code {
+    padding: 0 $gap/2;
+    white-space: nowrap;
+    display: inline-block;
+    @include font(small);
+    font-family: Consolas, 'Liberation Mono', Courier, monospace;
+    line-height: 1.66;
     background-color: $white;
     border-radius: 3px;
     box-shadow: inset 0 1px 0 $silver;
