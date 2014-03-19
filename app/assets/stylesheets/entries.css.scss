@@ -182,6 +182,18 @@
     box-shadow: inset 0 1px 0 $silver;
   }
 
+  code {
+    padding: 0 $gap/2;
+    white-space: nowrap;
+    display: inline-block;
+    @include font(small);
+    font-family: Consolas, 'Liberation Mono', Courier, monospace;
+    line-height: 1.66;
+    background-color: $white;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 $silver;
+  }
+
   blockquote {
     padding: 0 0 0 $gap;
     margin: 0 0 $gap/2 $gap/2;
