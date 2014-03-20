@@ -3,19 +3,47 @@
     %ul
       - if signed_in?
         %li.nav.nav-writes
-          = link_to "近況", root_path, class: 'lsf-icon', title: 'write'
+          = link_to root_path do
+            %i.icon<>
+              &#9998;
+            %span<>
+              近況
         %li.nav.nav-entries
-          = link_to current_brother.name, current_brother, class: 'lsf-icon', title: 'home'
+          = link_to current_brother do
+            %i.icon<>
+              &#8962;
+            %span<>
+              #{current_brother.name}
         %li.nav.nav-brothers
-          = link_to "ブラザーズ", brothers_path, class: 'lsf-icon', title: 'web'
+          = link_to brothers_path do
+            %i.icon<>
+              &#127758;
+            %span<>
+              ブラザーズ
         %li.nav
-          = link_to "神社", jinja_path, class: 'lsf-icon', title: 'coffee'
+          = link_to jinja_path do
+            %i.icon<>
+              &#128640;
+            %span<>
+              神社
         %li.nav.nav-settings
-          = link_to "設定", edit_brother_path(current_brother), class: 'lsf-icon', title: 'setting'
+          = link_to edit_brother_path(current_brother) do
+            %i.icon<>
+              &#9881;
+            %span<>
+              設定
       - else
         %li.nav.nav-signin
-          = link_to "サインイン", signin_path, class: 'lsf-icon', title: 'in'
+          = link_to signin_path do
+            %i.icon<>
+              &#59200;
+            %span<>
+              サインイン
         %li.nav.nav-signup
-          = link_to "はじめる", signup_path, class: 'lsf-icon', title: 'onsen'
+          = link_to signup_path do
+            %i.icon<>
+              &#59136;
+            %span<>
+              はじめる
   %h1#brand
     = image_tag "brand.png", alt: 'まめぶろ'

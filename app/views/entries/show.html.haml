@@ -19,8 +19,16 @@
   %div.control
     - if current_brother?(@entry.brother)
       %span.edit
-        = link_to "Edit", edit_entry_path(@entry), title: '編集する', class: 'lsf-icon', title: 'edit'
+        = link_to edit_entry_path(@entry), title: '編集する' do
+          %i.icon<>
+            &#9998;
+          %span<>
+            Edit
       %span.delete
-        = link_to "Delete", @entry, method: :delete, data: { confirm: "消えちゃうよ?" }, class: 'lsf-icon', title: 'delete'
+        = link_to @entry, method: :delete, data: { confirm: "消えちゃうよ?" } do
+          %i.icon<>
+            &#59177;
+          %span<>
+            Delete
     - else
       = @entry.brother.name[0,1].upcase + '.'
