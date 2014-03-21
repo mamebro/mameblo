@@ -1,5 +1,4 @@
-@charset "UTF-8";
-@import 'vars';
+@import 'import';
 
 .ranking {
   .vote-number {
@@ -8,10 +7,10 @@
 
   &.ranking-high {
     margin-bottom: $gap*2;
-    
+
     .title {
       font-size: 20px;
-      
+
       .vote-number {
         float: right;
       }
@@ -31,11 +30,11 @@
   &.ranking-low {
     float: left;
     margin-bottom: $gap*2;
-    
+
     &:nth-child(odd) {
       margin-right: $gap;
     }
-    
+
     .title {
       text-align: center;
     }
@@ -44,7 +43,7 @@
       width: 145px;
       height: 145px;
       box-shadow: 0 1px 0 $silver;
-    } 
+    }
   }
 }
 

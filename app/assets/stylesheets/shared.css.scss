@@ -1,5 +1,4 @@
-@charset "UTF-8";
-@import 'vars';
+@import 'import';
 
 .stats {
   margin-bottom: $gap;
@@ -11,7 +10,7 @@
     display: block;
     @include font(number);
     font-weight: bold;
-    
+
     .label {
       width: 100%;
       margin-top: $gap/4;

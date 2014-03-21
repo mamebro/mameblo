@@ -1,5 +1,4 @@
-@charset "UTF-8";
-@import 'vars';
+@import 'import';
 
 #page {
   width: 300px;
@@ -23,7 +22,7 @@
 
 #brand.opened {
   background-color: $asbestos;
-} 
+}
 
 #brand img {
   width: 38px;
@@ -56,7 +55,7 @@
   .copyright {
     text-align: center;
     @include font(small);
-    
+
     a {
       color: $black;
     }
