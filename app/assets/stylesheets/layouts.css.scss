@@ -16,7 +16,7 @@
   padding: 10px 0;
   cursor: pointer;
   background-color: $midnightblue;
-  @include mameblo-border-radius(bottom);
+  @extend %border-radius.bottom;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 

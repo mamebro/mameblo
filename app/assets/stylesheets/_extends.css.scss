@@ -36,3 +36,18 @@
     line-height: 1;
   }
 }
+
+%border-radius {
+  &.small {
+    @include border-radius(5px);
+  }
+  &.large {
+    @include border-radius(10px);
+  }
+  &.bottom {
+    @include border-radius(0 0 5px 5px);
+  }
+  &.reset {
+    @include border-radius(0);
+  }
+}

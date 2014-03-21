@@ -75,7 +75,7 @@ body {
   padding: $gap/4;
   @extend %font.input;
   border: 1px solid $gray-light;
-  @include mameblo-border-radius(reset);
+  @extend %border-radius.reset;
   @include mameblo-box-sizing;
   outline: none;
   -webkit-appearance: none;
@@ -96,7 +96,7 @@ body {
   text-shadow: 0 -1px $asbestos;
   border: 0;
   background-color: $concrete;
-  @include mameblo-border-radius(small);
+  @extend %border-radius.small;
   @include mameblo-box-sizing;
   box-shadow: 0 2px 0 $asbestos;
   cursor: pointer;
