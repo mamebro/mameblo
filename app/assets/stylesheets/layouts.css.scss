@@ -46,7 +46,7 @@
   text-shadow: 0 1px $white;
   background-color: $silver;
   border-bottom: 1px solid $white;
-  @include mameblo-box-sizing;
+  @include box-sizing(border-box);
 }
 
 #footer {

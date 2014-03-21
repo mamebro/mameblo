@@ -1,5 +1,0 @@
-@mixin mameblo-box-sizing {
-  @each $prefix in -webkit-, -moz-, '' {
-    #{$prefix}box-sizing: border-box;
-  }
-}

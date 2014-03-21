@@ -76,7 +76,7 @@ body {
   @extend %font.input;
   border: 1px solid $gray-light;
   @extend %border-radius.reset;
-  @include mameblo-box-sizing;
+  @include box-sizing(border-box);
   outline: none;
   -webkit-appearance: none;
 
@@ -97,7 +97,7 @@ body {
   border: 0;
   background-color: $concrete;
   @extend %border-radius.small;
-  @include mameblo-box-sizing;
+  @include box-sizing(border-box);
   box-shadow: 0 2px 0 $asbestos;
   cursor: pointer;
   -webkit-appearance: none;
