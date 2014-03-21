@@ -64,7 +64,7 @@ body {
   padding: $gap;
   margin-bottom: $gap;
   text-align: center;
-  @include font(default);
+  @extend %font.default;
   background-color: $sunflower;
   box-shadow: 0 1px 0 $orange;
 }
@@ -73,7 +73,7 @@ body {
   width: 100%;
   margin-bottom: $gap/2;
   padding: $gap/4;
-  @include font(input);
+  @extend %font.input;
   border: 1px solid $gray-light;
   @include mameblo-border-radius(reset);
   @include mameblo-box-sizing;
@@ -92,7 +92,7 @@ body {
   margin-bottom: $gap/2;
   display: inline-block;
   text-align: center;
-  @include font(button);
+  @extend %font.button;
   text-shadow: 0 -1px $asbestos;
   border: 0;
   background-color: $concrete;
@@ -168,7 +168,7 @@ body {
 .page-title {
   margin-bottom: $gap;
   text-align: center;
-  @include font(title);
+  @extend %font.title;
 }
 
 #entry_form {

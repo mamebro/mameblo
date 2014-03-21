@@ -23,7 +23,7 @@
     }
 
     .comment {
-      @include font(default);
+      @extend %font.default;
     }
   }
 
@@ -50,7 +50,7 @@
 .turnout {
   padding: $gap/2;
   text-align: center;
-  @include font(default);
+  @extend %font.default;
 }
 
 #tshirts-designer {

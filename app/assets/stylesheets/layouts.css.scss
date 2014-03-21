@@ -54,7 +54,7 @@
 
   .copyright {
     text-align: center;
-    @include font(small);
+    @extend %font.small;
 
     a {
       color: $black;

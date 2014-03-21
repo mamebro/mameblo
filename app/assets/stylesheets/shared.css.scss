@@ -8,7 +8,7 @@
     padding: $gap/2 0;
     text-align: center;
     display: block;
-    @include font(number);
+    @extend %font.number;
     font-weight: bold;
 
     .label {
@@ -16,7 +16,7 @@
       margin-top: $gap/4;
       text-align: center;
       display: block;
-      @include font(small);
+      @extend %font.small;
       font-weight: normal;
     }
 
