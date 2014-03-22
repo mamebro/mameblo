@@ -1,6 +1,4 @@
-@charset "UTF-8";
-@import 'vars';
-@import 'compass';
+@import 'import';
 
 /* fonts */
 @import url("//fonts.googleapis.com/css?family=Open+Sans:400,700");
@@ -66,7 +64,7 @@ body {
   padding: $gap;
   margin-bottom: $gap;
   text-align: center;
-  @include font(default);
+  @extend %font.default;
   background-color: $sunflower;
   box-shadow: 0 1px 0 $orange;
 }
@@ -75,10 +73,10 @@ body {
   width: 100%;
   margin-bottom: $gap/2;
   padding: $gap/4;
-  @include font(input);
+  @extend %font.input;
   border: 1px solid $gray-light;
-  @include mameblo-border-radius(reset);
-  @include mameblo-box-sizing;
+  @extend %border-radius.reset;
+  @include box-sizing(border-box);
   outline: none;
   -webkit-appearance: none;
 
@@ -94,12 +92,12 @@ body {
   margin-bottom: $gap/2;
   display: inline-block;
   text-align: center;
-  @include font(button);
+  @extend %font.button;
   text-shadow: 0 -1px $asbestos;
   border: 0;
   background-color: $concrete;
-  @include mameblo-border-radius(small);
-  @include mameblo-box-sizing;
+  @extend %border-radius.small;
+  @include box-sizing(border-box);
   box-shadow: 0 2px 0 $asbestos;
   cursor: pointer;
   -webkit-appearance: none;
@@ -170,7 +168,7 @@ body {
 .page-title {
   margin-bottom: $gap;
   text-align: center;
-  @include font(title);
+  @extend %font.title;
 }
 
 #entry_form {

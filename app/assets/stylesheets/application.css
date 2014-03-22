@@ -1,5 +1,10 @@
 /*
- *= require emojify.min
  *= require_self
- *= require_tree .
+ *= require emojify.min
+ *= require common
+ *= require layouts
+ *= require shared
+ *= require entries
+ *= require jinja
+ *= require votes
 */
