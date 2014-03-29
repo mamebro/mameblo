@@ -51,6 +51,9 @@
 
 .entry-content {
   margin-bottom: $gap;
+  text-align: justify;
+  word-break: normal;
+  word-wrap: break-word;
   @extend %font.default;
 
   p {
