@@ -34,13 +34,13 @@ $(function() {
     return false;
   });
 
-  $('.brand').click(function () {
-    if ($('.navs').hasClass('opened')) {
-      $('.navs').slideUp('fast').removeClass('opened');
-      $('.brand').removeClass('opened');
+  $('.view-phone .brand').click(function () {
+    if ($('.view-phone .navs').hasClass('opened')) {
+      $('.view-phone .navs').slideUp('fast').removeClass('opened');
+      $('.view-phone .brand').removeClass('opened');
     } else {
-      $('.navs').slideDown('fast').addClass('opened');
-      $('.brand').addClass('opened');
+      $('.view-phone .navs').slideDown('fast').addClass('opened');
+      $('.view-phone .brand').addClass('opened');
     }
   });
 
