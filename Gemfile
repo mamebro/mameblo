@@ -22,6 +22,7 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'compass-rails'
+  gem 'susy'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', platforms: :ruby
