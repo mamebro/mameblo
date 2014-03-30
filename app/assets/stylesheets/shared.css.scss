@@ -37,6 +37,7 @@
   li {
     margin: 0 $gap/2 $gap/2 0;
     display: inline-block;
+    @extend %font.name;
     font-weight: bold;
   }
 }

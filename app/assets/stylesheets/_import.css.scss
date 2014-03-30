@@ -67,6 +67,15 @@ $break-desktop: 32em;
       font-size: $px18;
     }
   }
+  &.name {
+    color: $black;
+    font-family: $font-family-sans-serif;
+    font-size: $px16;
+    line-height: 1.22;
+    @include at-breakpoint($break-desktop) {
+      font-size: $px18;
+    }
+  }
 }
 %border-radius {
   &.small {
