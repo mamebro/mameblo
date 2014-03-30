@@ -33,17 +33,17 @@ $(function() {
     $.autopager('load');
     return false;
   });
-  
-  $('#brand').click(function () {
-    if ($('#navs').hasClass('opened')) {
-      $('#navs').slideUp('fast').removeClass('opened');
-      $('#brand').removeClass('opened');
+
+  $('.view-phone .brand').click(function () {
+    if ($('.view-phone .navs').hasClass('opened')) {
+      $('.view-phone .navs').slideUp('fast').removeClass('opened');
+      $('.view-phone .brand').removeClass('opened');
     } else {
-      $('#navs').slideDown('fast').addClass('opened');
-      $('#brand').addClass('opened');
+      $('.view-phone .navs').slideDown('fast').addClass('opened');
+      $('.view-phone .brand').addClass('opened');
     }
   });
-  
+
   $('#beBrother').click(function() {
     $('#beBrother').hide();
     $('#beBrotherAfter').show();
@@ -87,7 +87,7 @@ $(function() {
 
   function setBeanType() {
     var beanTypes = ['bean-a', 'bean-b', 'bean-c', 'bean-d'];
-    var rand = 0 + Math.floor(Math.random() * 4); 
+    var rand = 0 + Math.floor(Math.random() * 4);
     return beanTypes[rand];
   }
 

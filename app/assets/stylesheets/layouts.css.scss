@@ -1,61 +1,115 @@
 @import 'import';
 
-#page {
-  width: 300px;
-  margin: 0 auto;
+.page {
+  @include container;
+  @include at-breakpoint($break-desktop) {
+    padding-bottom: $gap*2;
+  }
 }
 
-#header {
-  width: 100%;
+.header {
   margin-bottom: $gap;
+  @include at-breakpoint($break-desktop) {
+    margin-bottom: 0;
+  }
 }
 
-#brand {
-  width: 100%;
-  hieght: 30px;
-  padding: 10px 0;
-  cursor: pointer;
-  background-color: $midnightblue;
-  @extend %border-radius.bottom;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+.view-desktop {
+  position: absolute;
+  top: $gap;
+  right: $gap;
+  .navs {
+    ul {
+      .nav {
+        a {
+          padding: $gap/2;
+          display: block;
+          @extend %font.default;
+          opacity: 0.5;
+          @include transition-property(opacity);
+          @include transition-duration(0.2s);
+          @include transition-timing-function(ease);
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .brand {
+    width: 38px;
+    height: 30px;
+    padding: $gap;
+    display: block;
+    opacity: 0.5;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    @include transition-property(opacity);
+    @include transition-duration(0.2s);
+    @include transition-timing-function(ease);
+    img {
+      width: 38px;
+      height: 30px;
+      margin: 0 auto;
+      display: block;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
-#brand.opened {
-  background-color: $asbestos;
+.view-phone {
+  .brand {
+    width: 100%;
+    height: 30px;
+    padding: 10px 0;
+    cursor: pointer;
+    background-color: $midnightblue;
+    @extend %border-radius.bottom;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    &.opened {
+      background-color: $asbestos;
+    }
+    img {
+      width: 38px;
+      height: 30px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  .navs {
+    display: none;
+    .nav {
+      a {
+        width: 100%;
+        height: 50px;
+        padding: 0 $gap;
+        display: block;
+        line-height: 50px;
+        color: $black;
+        font-size: 18px;
+        text-shadow: 0 1px $white;
+        background-color: $silver;
+        border-bottom: 1px solid $white;
+        @include box-sizing(border-box);
+      }
+    }
+  }
 }
 
-#brand img {
-  width: 38px;
-  height: 30px;
-  margin: 0 auto;
-  display: block;
+.contents {
+  @include at-breakpoint($break-desktop) {
+    padding-top: $gap*2 - $gap/4;
+    border-top: $gap/4 solid $black;
+  }
 }
 
-#navs {
-  display: none;
-}
-
-.nav a {
-  width: 100%;
-  height: 50px;
-  padding: 0 $gap*2;
-  display: block;
-  line-height: 50px;
-  color: $black;
-  font-size: 18px;
-  text-shadow: 0 1px $white;
-  background-color: $silver;
-  border-bottom: 1px solid $white;
-  @include box-sizing(border-box);
-}
-
-#footer {
+.footer {
   padding: $gap 0 $gap*2;
-
   .copyright {
     text-align: center;
     @extend %font.small;
-
     a {
       color: $black;
     }

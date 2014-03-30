@@ -5,7 +5,6 @@
 }
 
 .omikuji-title {
-  margin-bottom: $gap;
   text-align: center;
   @extend %font.title;
   color: $turquoise;
@@ -14,15 +13,22 @@
 }
 
 .omikuji-content {
+  text-align: center;
   h3 {
     color: $silver;
     border-bottom: 1px solid $clouds;
   }
 }
 
+.circus-tents {
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto $gap;
+  cursor: pointer;
+}
+
 .circus-tent {
-  margin-bottom: $gap;
-  width: 300px;
+  width: 100%;
   height: auto;
 }
 

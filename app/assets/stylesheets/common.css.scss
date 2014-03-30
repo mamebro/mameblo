@@ -49,9 +49,8 @@ a {
 body {
   color: $black;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 13px;
   background-color: $white;
-  @include container;
 }
 
 /* common class */
@@ -59,6 +58,18 @@ body {
 .half { -ms-filter: "alpha(opacity=50)"; filter: alpha( opacity=50 ); opacity: 0.5; }
 .clearfix { zoom: 1; }
 .clearfix:after { content: ""; display: block; clear: both; }
+
+.view-desktop {
+  display: none;
+}
+@include at-breakpoint($break-desktop) {
+  .view-phone {
+    display: none;
+  }
+  .view-desktop {
+    display: block;
+  }
+}
 
 /* module class */
 .alert {
@@ -89,6 +100,9 @@ body {
 
 .button {
   height: 45px;
+  @include at-breakpoint($break-desktop) {
+    height: 54px;
+  }
   padding: 0 20px;
   margin-bottom: $gap/2;
   display: inline-block;
