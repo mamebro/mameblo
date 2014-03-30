@@ -1,97 +1,11 @@
 %header#header.header
   %div.view-desktop
-    %nav.navs
-      %ul
-        - if signed_in?
-          %li.nav.nav-writes
-            = link_to root_path do
-              %i.icon<>
-                &#9998;
-              %span<>
-                近況
-          %li.nav.nav-entries
-            = link_to current_brother do
-              %i.icon<>
-                &#8962;
-              %span<>
-                #{current_brother.name}
-          %li.nav.nav-brothers
-            = link_to brothers_path do
-              %i.icon<>
-                &#127758;
-              %span<>
-                ブラザーズ
-          %li.nav
-            = link_to jinja_path do
-              %i.icon<>
-                &#128640;
-              %span<>
-                神社
-          %li.nav.nav-settings
-            = link_to edit_brother_path(current_brother) do
-              %i.icon<>
-                &#9881;
-              %span<>
-                設定
-        - else
-          %li.nav.nav-signin
-            = link_to signin_path do
-              %i.icon<>
-                &#59200;
-              %span<>
-                サインイン
-          %li.nav.nav-signup
-            = link_to signup_path do
-              %i.icon<>
-                &#59136;
-              %span<>
-                はじめる
+    = render 'layouts/nav'
+    %h1.brand
+      = image_tag "brand-black.png", alt: 'まめぶろ'
+      %span.copyright
+        mameblo
   %div.view-phone.page
-    %nav.navs
-      %ul
-        - if signed_in?
-          %li.nav.nav-writes
-            = link_to root_path do
-              %i.icon<>
-                &#9998;
-              %span<>
-                近況
-          %li.nav.nav-entries
-            = link_to current_brother do
-              %i.icon<>
-                &#8962;
-              %span<>
-                #{current_brother.name}
-          %li.nav.nav-brothers
-            = link_to brothers_path do
-              %i.icon<>
-                &#127758;
-              %span<>
-                ブラザーズ
-          %li.nav
-            = link_to jinja_path do
-              %i.icon<>
-                &#128640;
-              %span<>
-                神社
-          %li.nav.nav-settings
-            = link_to edit_brother_path(current_brother) do
-              %i.icon<>
-                &#9881;
-              %span<>
-                設定
-        - else
-          %li.nav.nav-signin
-            = link_to signin_path do
-              %i.icon<>
-                &#59200;
-              %span<>
-                サインイン
-          %li.nav.nav-signup
-            = link_to signup_path do
-              %i.icon<>
-                &#59136;
-              %span<>
-                はじめる
+    = render 'layouts/nav'
     %h1.brand
       = image_tag "brand.png", alt: 'まめぶろ'
