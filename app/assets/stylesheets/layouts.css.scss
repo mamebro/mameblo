@@ -1,11 +1,7 @@
 @import 'import';
 
-.grid {
-  @include container;
-}
-
 .page {
-  margin: 0 auto;
+  @include container;
 }
 
 .header {
@@ -21,44 +17,41 @@
   background-color: $midnightblue;
   @extend %border-radius.bottom;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
-
-.brand.opened {
-  background-color: $asbestos;
-}
-
-.brand img {
-  width: 38px;
-  height: 30px;
-  margin: 0 auto;
-  display: block;
+  &.opened {
+    background-color: $asbestos;
+  }
+  img {
+    width: 38px;
+    height: 30px;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 .navs {
   display: none;
-}
-
-.nav a {
-  width: 100%;
-  height: 50px;
-  padding: 0 $gap;
-  display: block;
-  line-height: 50px;
-  color: $black;
-  font-size: 18px;
-  text-shadow: 0 1px $white;
-  background-color: $silver;
-  border-bottom: 1px solid $white;
-  @include box-sizing(border-box);
+  .nav {
+    a {
+      width: 100%;
+      height: 50px;
+      padding: 0 $gap;
+      display: block;
+      line-height: 50px;
+      color: $black;
+      font-size: 18px;
+      text-shadow: 0 1px $white;
+      background-color: $silver;
+      border-bottom: 1px solid $white;
+      @include box-sizing(border-box);
+    }
+  }
 }
 
 .footer {
   padding: $gap 0 $gap*2;
-
   .copyright {
     text-align: center;
     @extend %font.small;
-
     a {
       color: $black;
     }
