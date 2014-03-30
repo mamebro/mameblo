@@ -1,15 +1,18 @@
 @import 'import';
 
 .stats {
+  @include clearfix;
   margin-bottom: $gap;
 
   .stat {
-    float: left;
-    padding: $gap/2 0;
+    @include span-columns(1,3);
+    @include nth-omega(last);
     text-align: center;
-    display: block;
-    @extend %font.number;
-    font-weight: bold;
+
+    .number {
+      @extend %font.number;
+      font-weight: bold;
+    }
 
     .label {
       width: 100%;
@@ -17,17 +20,11 @@
       text-align: center;
       display: block;
       @extend %font.small;
-      font-weight: normal;
     }
 
-    &.entries-number,
-    &.following {
-      width: 99px;
-      border-right: 1px dotted $black;
-    }
-
-    &.follower {
-      width: 100px;
+    .separate-border {
+      display: block;
+      border-right: 1px solid rgba($black,0.33);
     }
   }
 }

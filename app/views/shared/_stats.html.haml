@@ -1,11 +1,19 @@
 - @brother ||= current_brother
-%div.stats.clearfix
+%div.stats
   %a.stat.entries-number{href: "/brothers/#{@brother.name}"}
-    = @brother.entries.count
-    %span.label 日記
+    %span.separate-border
+      %span.number
+        = @brother.entries.count
+      %span.label
+        日記
   %a.stat.following{href: "#{following_brother_path(@brother)}"}
-    = @brother.followed_brothers.count + 1
-    %span.label 人兄弟
+    %span.separate-border
+      %span.number
+        = @brother.followed_brothers.count + 1
+      %span.label
+        人兄弟
   %a.stat.follower{href: "#{followers_brother_path(@brother)}"}
-    = @brother.followers.count
-    %span.label 保護者
+    %span.number
+      = @brother.followers.count
+    %span.label
+      保護者
