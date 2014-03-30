@@ -1,19 +1,19 @@
 @import 'import';
 
-#grid {
+.grid {
   @include container;
 }
 
-#page {
+.page {
   margin: 0 auto;
 }
 
-#header {
+.header {
   width: 100%;
   margin-bottom: $gap;
 }
 
-#brand {
+.brand {
   width: 100%;
   hieght: 30px;
   padding: 10px 0;
@@ -23,18 +23,18 @@
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-#brand.opened {
+.brand.opened {
   background-color: $asbestos;
 }
 
-#brand img {
+.brand img {
   width: 38px;
   height: 30px;
   margin: 0 auto;
   display: block;
 }
 
-#navs {
+.navs {
   display: none;
 }
 
@@ -52,7 +52,7 @@
   @include box-sizing(border-box);
 }
 
-#footer {
+.footer {
   padding: $gap 0 $gap*2;
 
   .copyright {
