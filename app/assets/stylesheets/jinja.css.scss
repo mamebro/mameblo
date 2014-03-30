@@ -5,7 +5,6 @@
 }
 
 .omikuji-title {
-  margin-bottom: $gap;
   text-align: center;
   @extend %font.title;
   color: $turquoise;
@@ -14,6 +13,7 @@
 }
 
 .omikuji-content {
+  text-align: center;
   h3 {
     color: $silver;
     border-bottom: 1px solid $clouds;
