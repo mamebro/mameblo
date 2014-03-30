@@ -21,7 +21,7 @@ group :assets do
   gem 'sprockets-rails'
   gem 'sass-rails'
   gem 'coffee-rails'
-  gem 'compass-rails', github: 'Compass/compass-rails', branch: 'master'
+  gem 'compass-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', platforms: :ruby
