@@ -59,6 +59,18 @@ body {
 .clearfix { zoom: 1; }
 .clearfix:after { content: ""; display: block; clear: both; }
 
+.view-desktop {
+  display: none;
+}
+@include at-breakpoint($break-desktop) {
+  .view-phone {
+    display: none;
+  }
+  .view-desktop {
+    display: block;
+  }
+}
+
 /* module class */
 .alert {
   padding: $gap;
