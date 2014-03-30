@@ -1,7 +1,10 @@
 @import 'import';
 
+#grid {
+  @include container;
+}
+
 #page {
-  width: 300px;
   margin: 0 auto;
 }
 

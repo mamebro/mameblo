@@ -4,7 +4,9 @@
 @import 'variables';
 @import 'extends';
 @import 'susy';
-$total-columns: 12;
+$total-columns: 8;
 $column-width: 4em;
-$gutter-width: 1em;
-$grid-padding: $gutter-width;
+$gutter-width: 0em;
+$grid-padding: $gap;
+$container-style: magic;
+$break-desktop: 32em;
