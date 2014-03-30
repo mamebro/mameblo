@@ -88,6 +88,9 @@ body {
 
 .button {
   height: 45px;
+  @include at-breakpoint($break-desktop) {
+    height: 54px;
+  }
   padding: 0 20px;
   margin-bottom: $gap/2;
   display: inline-block;

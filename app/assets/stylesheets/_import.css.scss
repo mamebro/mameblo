@@ -37,6 +37,7 @@ $break-desktop: 32em;
     line-height: 45px;
     @include at-breakpoint($break-desktop) {
       font-size: $px18;
+      line-height: 54px;
     }
   }
   &.title {
