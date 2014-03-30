@@ -4,6 +4,7 @@
   @include container;
   @include at-breakpoint($break-desktop) {
     padding-top: $gap;
+    padding-bottom: $gap*2;
   }
 }
 
