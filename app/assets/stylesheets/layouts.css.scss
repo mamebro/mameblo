@@ -16,7 +16,7 @@
 
 .view-desktop {
   position: absolute;
-  top: $gap;
+  top: $gap + $gap/4;
   right: $gap;
   .navs {
     ul {
@@ -100,7 +100,7 @@
 
 .contents {
   @include at-breakpoint($break-desktop) {
-    padding-top: $gap*2 - $gap/4;
+    padding-top: $gap*2;
     border-top: $gap/4 solid $black;
   }
 }

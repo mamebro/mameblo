@@ -52,7 +52,10 @@
 }
 
 .entry-title {
-  margin-bottom: $gap;
+  margin-bottom: $gap/2;
+  @include at-breakpoint($break-desktop) {
+    margin-bottom: $gap;
+  }
   @extend %font.title;
 }
 
