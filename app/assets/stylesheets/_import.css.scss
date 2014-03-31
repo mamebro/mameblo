@@ -3,12 +3,12 @@
 @import 'compass/css3';
 @import 'variables';
 @import 'susy';
-$total-columns: 8;
+$total-columns: 12;
 $column-width: 4em;
 $gutter-width: 0em;
 $grid-padding: 10px;
 $container-style: magic;
-$break-desktop: 42em;
+$break-desktop: 60em;
 
 // extends
 %font {
@@ -19,6 +19,7 @@ $break-desktop: 42em;
     line-height: 1.66;
     @include at-breakpoint($break-desktop) {
       font-size: $px16;
+      line-height: 1.66*(16/14);
     }
   }
   &.input {

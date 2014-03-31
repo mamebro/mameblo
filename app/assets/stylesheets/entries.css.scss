@@ -11,7 +11,7 @@
   min-height: 100px;
   padding: 10px;
   @include at-breakpoint($break-desktop) {
-    padding: $gap;
+    padding: $gap*2;
   }
   margin-bottom: $gap;
   word-break: break-all;
