@@ -3,12 +3,20 @@
 @import 'compass/css3';
 @import 'variables';
 @import 'susy';
-$total-columns: 8;
+$total-columns: 12;
 $column-width: 4em;
 $gutter-width: 0em;
 $grid-padding: 10px;
 $container-style: magic;
-$break-desktop: 42em;
+$break-desktop: 60em;
+
+// mixins
+@mixin font-expand($expand-size, $original-size, $original-line-height) {
+  @include at-breakpoint($break-desktop) {
+    font-size: $expand-size;
+    line-height: $original-line-height*($expand-size/$original-size);
+  }
+}
 
 // extends
 %font {
@@ -17,18 +25,14 @@ $break-desktop: 42em;
     font-family: $font-family-sans-serif;
     font-size: $px14;
     line-height: 1.66;
-    @include at-breakpoint($break-desktop) {
-      font-size: $px16;
-    }
+    @include font-expand($px16, $px14, 1.66);
   }
   &.input {
     color: $black;
     font-family: $font-family-sans-serif;
     font-size: $px18;
     line-height: 1.5;
-    @include at-breakpoint($break-desktop) {
-      font-size: $px20;
-    }
+    @include font-expand($px20, $px18, 1.5);
   }
   &.button {
     color: $white;
@@ -45,18 +49,14 @@ $break-desktop: 42em;
     font-family: $font-family-sans-serif;
     font-size: $px16;
     line-height: 1.66;
-    @include at-breakpoint($break-desktop) {
-      font-size: $px18;
-    }
+    @include font-expand($px18, $px16, 1.66);
   }
   &.small {
     color: $black;
     font-family: $font-family-sans-serif;
     font-size: $px12;
     line-height: 1.44;
-    @include at-breakpoint($break-desktop) {
-      font-size: $px14;
-    }
+    @include font-expand($px14, $px12, 1.44);
   }
   &.number {
     color: $black;
@@ -72,9 +72,7 @@ $break-desktop: 42em;
     font-family: $font-family-sans-serif;
     font-size: $px16;
     line-height: 1.22;
-    @include at-breakpoint($break-desktop) {
-      font-size: $px18;
-    }
+    @include font-expand($px18, $px16, 1.22);
   }
 }
 %border-radius {
