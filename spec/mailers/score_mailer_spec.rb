@@ -6,8 +6,8 @@ describe ScoreMailer do
 
     it "renders the headers" do
       expect(mail.subject).to match /【まめぶろ】Daily スコアレポート/
-      mail.to.should eq(["dev@mamebro.com"])
-      mail.from.should eq(["score@mamebro.com"])
+      expect(mail.to).to eq(["dev@mamebro.com"])
+      expect(mail.from).to eq(["score@mamebro.com"])
     end
 
     it "renders the body" do

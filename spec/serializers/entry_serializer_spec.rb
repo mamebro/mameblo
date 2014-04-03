@@ -32,6 +32,6 @@ describe EntrySerializer do
   end
 
   it do
-    should match_json_expression(pattern)
+    is_expected.to match_json_expression(pattern)
   end
 end

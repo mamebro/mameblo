@@ -5,13 +5,13 @@ describe Support do
     let(:mail) { Support.are_you_ok("to@example.org") }
 
     it "renders the headers" do
-      mail.subject.should eq("ブラザーからお便りが届きました")
-      mail.to.should eq(["to@example.org"])
-      mail.from.should eq(["info@mamebro.com"])
+      expect(mail.subject).to eq("ブラザーからお便りが届きました")
+      expect(mail.to).to eq(["to@example.org"])
+      expect(mail.from).to eq(["info@mamebro.com"])
     end
 
     it "renders the body" do
-      mail.body.encoded.should match(/\?\?\? 元気かな \?\?\?/)
+      expect(mail.body.encoded).to match(/\?\?\? 元気かな \?\?\?/)
     end
   end
 
