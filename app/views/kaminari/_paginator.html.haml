@@ -6,5 +6,5 @@
 -#    remote:        data-remote
 -#    paginator:     the paginator that renders the pagination tags inside
 = paginator.render do
-  %nav.pagination
+  %nav.pagination.autopager-nav
     = next_page_tag unless current_page.last?

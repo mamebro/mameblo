@@ -1,10 +1,12 @@
 $(function() {
   $('#beBrotherAfter').hide();
 
-  $('#entries').infinitescroll({
-    navSelector: '.pagination',
-    nextSelector: '.pager-next',
-    itemSelector: '#entries .entry'
+  $('.autopager-content').infinitescroll({
+    navSelector: '.autopager-nav',
+    nextSelector: '.autopager-next',
+    itemSelector: '.autopager-item',
+    bufferPx: 200,
+    prefill: true
   });
 
   emojify.setConfig({

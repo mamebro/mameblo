@@ -2,6 +2,6 @@
 %h1.page-title
   ブラザーズ
 %div#content{data: {max: {page: @brothers.num_pages}}}
-  %ul.brothers
+  %ul.brothers.autopager-content
     = render @brothers
 = paginate @brothers
