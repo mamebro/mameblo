@@ -1,0 +1,15 @@
+$(function() {
+  $('.autopager-content').infinitescroll( {
+    loading: {
+      msg: null,
+      msgText: '',
+      img: "<%= asset_path('loading.gif') %>",
+      finishedMsg: null
+    },
+    navSelector: '.autopager-nav',
+    nextSelector: '.autopager-next',
+    itemSelector: '.autopager-item',
+    bufferPx: 200,
+    prefill: true
+  });
+});

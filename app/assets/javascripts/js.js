@@ -12,19 +12,6 @@ $(function() {
   });
   emojify.run();
 
-  $.autopager({
-    content: '#content',
-    autoLoad: false,
-    load: function(current) {
-      if ($(this).attr('data-max-page') == current.page) {
-        $('.pager-next').hide();
-      } else {
-        $('.pager-next').removeClass('button-touched');
-      }
-      emojify.run();
-    }
-  });
-
   $('.button').click(function() {
     $(this).addClass('button-touched');
   });
