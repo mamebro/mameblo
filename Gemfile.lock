@@ -222,7 +222,7 @@ GEM
     simplecov-html (0.8.0)
     slop (3.5.0)
     spork (0.9.2)
-    sprockets (2.12.0)
+    sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -306,6 +306,7 @@ DEPENDENCIES
   sass-rails
   simplecov
   spork
+  sprockets (= 2.11.0)
   sprockets-rails
   sqlite3
   susy
