@@ -1,14 +1,6 @@
 $(function() {
   $('#beBrotherAfter').hide();
 
-  $('.autopager-content').infinitescroll({
-    navSelector: '.autopager-nav',
-    nextSelector: '.autopager-next',
-    itemSelector: '.autopager-item',
-    bufferPx: 200,
-    prefill: true
-  });
-
   emojify.setConfig({
     emojify_tag_type: 'span',
     emoticons_enabled: false,
