@@ -11,7 +11,7 @@ describe "Brother pages" do
       @brother =  FactoryGirl.create(:brother)
       sign_in brother
       visit root_path
-      click_link 'ブラザーズ'
+      visit brothers_path
     end
 
     it 'ブラザーの一覧が表示されること' do
