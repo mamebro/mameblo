@@ -6,7 +6,7 @@ class EntrySerializer < ActiveModel::Serializer
   end
 
   def beans_count
-    object.bean.count
+    object.beans.count
   end
 
   has_one :brother
