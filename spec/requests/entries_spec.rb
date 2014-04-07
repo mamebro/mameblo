@@ -10,7 +10,7 @@ describe "Entries" do
     before do
       visit root_path
       sign_in brother
-      click_link '近況'
+      first(:link, '近況').click
       fill_in 'entry-form-title', with: '日記のタイトル'
       fill_in 'entry-form-content', with: 'こんにちは、本文です。'
       click_button '投稿'
@@ -42,7 +42,7 @@ describe "Entries" do
     before do
       visit root_path
       sign_in brother
-      click_link '近況'
+      first(:link, '近況').click
       fill_in 'entry-form-content', with: 'yey! タイトル無しで投稿!!!'
       click_button '投稿'
     end
