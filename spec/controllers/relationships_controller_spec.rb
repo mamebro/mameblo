@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe RelationshipsController do
 
-  let(:brother) { FactoryGirl.build(:brother) }
-  let(:other_brother) { FactoryGirl.build(:brother) }
+  let(:brother) { FactoryGirl.create(:brother) }
+  let(:other_brother) { FactoryGirl.create(:brother) }
 
   before { sign_in brother }
 
