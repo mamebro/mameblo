@@ -7,7 +7,7 @@ describe Circus do
 
   subject{ @circus }
 
-  it { should respond_to(:brother_id) }
-  it { should respond_to(:participation) }
+  it { is_expected.to respond_to(:brother_id) }
+  it { is_expected.to respond_to(:participation) }
 
 end

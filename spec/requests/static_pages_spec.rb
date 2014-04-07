@@ -15,12 +15,12 @@ describe "mame blog(static_pages)" do
         sign_in brother
         visit root_path
       end
-      it { should have_content('shikakun') }
-      it { should have_content('近況') }
-      it { should have_content('ブラザーズ') }
-      it { should have_content('設定') }
-      it { should have_selector('.field #entry-form-title', 'タイトル') }
-      it { should have_selector('.button', '投稿') }
+      it { is_expected.to have_content('shikakun') }
+      it { is_expected.to have_content('近況') }
+      it { is_expected.to have_content('ブラザーズ') }
+      it { is_expected.to have_content('設定') }
+      it { is_expected.to have_selector('.field #entry-form-title', 'タイトル') }
+      it { is_expected.to have_selector('.button', '投稿') }
 
     end
 
@@ -32,10 +32,10 @@ describe "mame blog(static_pages)" do
           signin_with_failed brother
           visit root_path
         end
-        it { should_not have_content('近況') }
-        it { should_not have_content('shikakun') }
-        it { should_not have_content('ブラザーズ') }
-        it { should have_content("あちゃー、もう一回お願いします!!!") }
+        it { is_expected.not_to have_content('近況') }
+        it { is_expected.not_to have_content('shikakun') }
+        it { is_expected.not_to have_content('ブラザーズ') }
+        it { is_expected.to have_content("あちゃー、もう一回お願いします!!!") }
       end
     end
 
@@ -49,7 +49,7 @@ describe "mame blog(static_pages)" do
           fill_in 'brother_password_confirmation', with: 'password'
           click_on 'ブラザーになる!! (無料)'
         end
-        it { should have_content("そういう名前は名乗れないよ。") }
+        it { is_expected.to have_content("そういう名前は名乗れないよ。") }
       end
     end
   end

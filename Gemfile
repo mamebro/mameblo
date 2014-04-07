@@ -18,6 +18,7 @@ gem 'active_model_serializers'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'sprockets', '2.11.0' # 2.12.0 is broken
   gem 'sprockets-rails'
   gem 'sass-rails'
   gem 'coffee-rails'
@@ -38,7 +39,7 @@ end
 
 group :development, :test do
   gem 'sqlite3'
-  gem "rspec-rails"
+  gem "rspec-rails", '~> 3.0.0.beta2'
   gem "rspec"
   gem "rspec-core"
   gem "rspec-expectations"
