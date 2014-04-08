@@ -24,9 +24,9 @@ build:
     - script:
       name: echo ruby information
       code: |
-      echo "ruby version $(ruby --version) running"
-      echo "from location $(which ruby)"
-      echo -p "gem list: $(gem list)"
+        echo "ruby version $(ruby --version) running"
+        echo "from location $(which ruby)"
+        echo -p "gem list: $(gem list)"
 
     # Run RSpec
     - script:
