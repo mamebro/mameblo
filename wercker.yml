@@ -1,0 +1,45 @@
+box: wercker/rvm
+# Build definition
+# See the Rails section on the wercker devcenter:
+# http://devcenter.wercker.com/articles/languages/ruby/settingup-rails4.html
+# You will want to define your database as follows:
+# services:
+#   - wercker/postgresql
+# See more about services on our devcenter:
+# http://devcenter.wercker.com/articles/services/
+build:
+  steps:
+    # Uncomment this to force RVM to use a specific Ruby version
+    - rvm-use:
+        version: 2.1.1
+
+    # A step that executes `bundle install` command
+    - bundle-install
+
+    # A step that prepares the database.yml using the database in services
+    # - rails-database-yml
+
+    # A custom script step, name value is used in the UI
+    # and the code value contains the command that get executed
+    - script:
+        name: echo ruby information
+        code: |
+          echo "ruby version $(ruby --version) running"
+          echo "from location $(which ruby)"
+          echo -p "gem list: $(gem list)"
+
+    # Run RSpec
+    - script:
+        name: database migration
+        code: RAILS_ENV=test bundle exec rake db:migrate
+
+    - script:
+        name: rspec
+        code: bundle exec rspec
+
+  after-steps:
+    - 2get/ikachan-notify@0.0.2:
+        url: $IRC_HOST
+        channel: "#mameblo"
+        passed-message: "%02[CI]%0f $WERCKER_APPLICATION_NAME: $WERCKER_BUILD_URL build of $WERCKER_GIT_BRANCH %02%0301,03PASSED%0f"
+        failed-message: "%02[CI]%0f $WERCKER_APPLICATION_NAME: $WERCKER_BUILD_URL build of $WERCKER_GIT_BRANCH %02%0301,04FAILED%0f"
