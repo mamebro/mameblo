@@ -30,5 +30,7 @@ namespace :score do
     ikachan_post "投げられた豆の数合計: #{beans_total}"
     ikachan_post "昨日投げられた豆の数: #{beans_yesterday.count} 前日比(#{beans_diff})"
     ikachan_post "---------------------------------------------------"
+    ikachan_post "Google Analyticsをチェック!!! http://www.google.com/analytics/"
+    ikachan_post "New Relicをチェック!!! https://rpm.newrelic.com/accounts/189434/applications"
   end
 end
