@@ -4,6 +4,6 @@
 = render 'shared/stats'
 - if @brothers.any?
   %div#content{data: {max: {page: @brothers.num_pages}}}
-    %ul#content.brothers
+    %ul.brothers.autopager-content
       = render @brothers
   = paginate @brothers
