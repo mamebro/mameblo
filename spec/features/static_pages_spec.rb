@@ -12,10 +12,7 @@ feature "mame blog(static_pages)" do
       before do
         FactoryGirl.create(:entry, brother: brother)
         FactoryGirl.create(:entry, brother: brother)
-        visit signin_path
-        fill_in "session_name", with: brother.name
-        fill_in "session_password", with: brother.password
-        click_button "兄弟元気かな"
+        sign_in brother
       end
 
       scenario { is_expected.to have_content('shikakun') }
@@ -32,10 +29,7 @@ feature "mame blog(static_pages)" do
 
       feature "brother failed login" do
         before do
-          visit signin_path
-          fill_in "session_name", with: brother.name + ":::"
-          fill_in "session_password", with: brother.password + "::"
-          click_button "兄弟元気かな"
+          signin_with_failed(brother)
         end
 
         scenario { is_expected.not_to have_content('近況') }

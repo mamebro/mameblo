@@ -9,10 +9,7 @@ feature "Entries" do
     let(:entry) { FactoryGirl.create(:entry) }
 
     before do
-      visit signin_path
-      fill_in "session_name", with: brother.name
-      fill_in "session_password", with: brother.password
-      click_button "兄弟元気かな"
+      sign_in brother
       first(:link, '近況').click
       fill_in 'entry-form-title', with: '日記のタイトル'
       fill_in 'entry-form-content', with: 'こんにちは、本文です。'
@@ -43,10 +40,7 @@ feature "Entries" do
   feature "タイトルを入力しないで日記を投稿するとき" do
     let(:brother) { FactoryGirl.create(:brother) }
     before do
-      visit signin_path
-      fill_in "session_name", with: brother.name
-      fill_in "session_password", with: brother.password
-      click_button "兄弟元気かな"
+      sign_in brother
       first(:link, '近況').click
       fill_in 'entry-form-content', with: 'yey! タイトル無しで投稿!!!'
       click_button '投稿'

@@ -9,10 +9,7 @@ feature "Brother pages" do
 
     before do
       @brother =  FactoryGirl.create(:brother)
-      visit signin_path
-      fill_in "session_name", with: brother.name
-      fill_in "session_password", with: brother.password
-      click_button "兄弟元気かな"
+      sign_in brother
       visit root_path
       visit brothers_path
     end
