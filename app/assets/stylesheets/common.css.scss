@@ -17,11 +17,18 @@
   font-url('entypo-social/entypo-social.woff') format('woff'),
   font-url('entypo-social/entypo-social.svg') format('svg');
 }
+@font-face {
+  font-family: Mameblo;
+  src: font-url('mameblo/mameblo.eot?') format('oldIE'),
+  font-url('mameblo/mameblo.ttf') format('truetype'),
+  font-url('mameblo/mameblo.woff') format('woff'),
+  font-url('mameblo/mameblo.svg') format('svg');
+}
 .icon {
   margin-right: 0.05em;
   width: 0.65em;
   text-align: center;
-  font-family: EntypoIcon, EntypoSocialIcon;
+  font-family: EntypoIcon, EntypoSocialIcon, Mameblo;
   display: inline-block;
   font-size: 2em;
   font-weight: normal !important;
