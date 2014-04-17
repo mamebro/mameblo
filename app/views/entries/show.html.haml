@@ -3,6 +3,8 @@
   %div.entry-content
     = sanitize @entry.content
     %span.beans-count{data: {beans: {count: @beans.count}}}
+      %i.icon<>
+        &#63235;
       = @beans.count
 - if signed_in? && !current_brother?(@entry.brother)
   = form_tag entry_beans_path(@entry), remote: true, class: 'entry-beans is_throwable clearfix', method: 'post', name: 'beans_name' do
