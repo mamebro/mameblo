@@ -39,8 +39,8 @@ include Ikachan
   end
 
   def update
-    if @brother.update_attributes brother_params
-      flash[:success] = "!!! プロフィール更新しました !!!"
+    if @brother.update brother_params
+      flash[:success] = "!!! パスワード変更しました !!!"
       sign_in @brother
       redirect_to @brother
     else
