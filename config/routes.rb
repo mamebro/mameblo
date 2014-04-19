@@ -1,6 +1,6 @@
 Mameblog::Application.routes.draw do
 
-  resources :password_resets
+  resources :password_resets, only: [:new, :create, :update, :edit]
 
   get "jinja/index"
   resources :brothers, except: [:destroy] do
