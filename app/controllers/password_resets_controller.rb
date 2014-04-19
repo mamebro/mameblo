@@ -7,4 +7,8 @@ class PasswordResetsController < ApplicationController
     brother.send_password_reset if brother
     redirect_to root_url, notice: "パスワード変更のためのメールを送信しました !!!"
   end
+
+  def edit
+    @brother = Brother.find_by!(password_reset_token: params[:id])
+  end
 end
