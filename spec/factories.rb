@@ -4,7 +4,7 @@ FactoryGirl.define do
     sequence(:email) { |n| "shikakun#{n}@example.com" }
     password "shikakun"
     password_confirmation "shikakun"
-    password_reset_token "1234mametest"
+    password_reset_token SecureRandom.urlsafe_base64
   end
 
   factory :entry do
