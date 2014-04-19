@@ -3,9 +3,13 @@ class PasswordResetsController < ApplicationController
   end
 
   def create
-    brother = Brother.find_by_email(params[:email])
-    brother.send_password_reset if brother
-    redirect_to root_url, notice: "パスワード変更のためのメールを送信しました !!!"
+    brother = Brother.find_by(email: params[:email])
+    if brother
+      brother.send_password_reset if brother
+      redirect_to root_url, notice: "!!! パスワード変更のためのメールを送信しました !!!"
+    else
+      redirect_to new_password_reset_url, notice: "!!! メールアドレスが登録されてません !!!"
+    end
   end
 
   def edit
