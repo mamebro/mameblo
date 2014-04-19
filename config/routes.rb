@@ -1,5 +1,7 @@
 Mameblog::Application.routes.draw do
 
+  resources :password_resets
+
   get "jinja/index"
   resources :brothers, except: [:destroy] do
     member do

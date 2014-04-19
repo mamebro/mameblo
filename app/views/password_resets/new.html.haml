@@ -1,0 +1,9 @@
+- provide(:title, "パスワードリセット!")
+%h1 パスワードリセット!
+
+= form_tag password_resets_path, :method => :post do
+  %div.field
+    = label_tag :email
+    = text_field_tag :email, params[:email]
+  %div.actions
+    = submit_tag "Reset Password"
