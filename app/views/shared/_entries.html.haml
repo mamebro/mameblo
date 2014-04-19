@@ -1,0 +1,11 @@
+%div#content{data: {max: {page: @entries.num_pages}}}
+  %article#entries.autopager-content
+    - @entries.each do |entry|
+      %section.entry.autopager-item
+        %h1.entry-title= link_to entry.title, entry
+        %div.entry-content
+          = sanitize entry.content
+          - if entry.beans.count > 0
+            = link_to entry, class: 'beans-count iconmark iconmark-bean' do
+              = entry.beans.count
+= paginate @entries
