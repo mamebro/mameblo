@@ -63,6 +63,7 @@ Mameblog::Application.configure do
     :authentication => :login,
     :enable_starttls_auto => true,
   }
+  config.action_mailer.default_url_options = { host: "www.mameblo.com" }
 
   # Enable threaded mode
   # config.threadsafe!
