@@ -6,8 +6,6 @@
         %div.entry-content
           = sanitize entry.content
           - if entry.beans.count > 0
-            = link_to entry, class: 'beans-count' do
-              %i.icon<>
-                &#63235;
+            = link_to entry, class: 'beans-count iconmark iconmark-bean' do
               = entry.beans.count
 = paginate @entries
