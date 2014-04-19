@@ -8,11 +8,11 @@
     - for message in @brother.errors.full_messages
       %li
       = message
-    %div.field
-      = f.label :password
-      = f.password_field :password
-    %div.field
-      = f.label :password_confirmation
-      = f.password_field :password_confirmation
-    %div.actions
-      = f.submit "パスワード再設定する"
+  %div.field
+  = f.label :password, 'パスワード'
+  = f.password_field :password
+  %div.field
+  = f.label :password_confirmation, '確認パスワード'
+  = f.password_field :password_confirmation
+  %div.actions
+  = f.submit "パスワード再設定する"
