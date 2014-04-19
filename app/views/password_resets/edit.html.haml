@@ -8,11 +8,6 @@
     - for message in @brother.errors.full_messages
       %li
       = message
-  %div.field
-  = f.label :password, 'パスワード'
-  = f.password_field :password
-  %div.field
-  = f.label :password_confirmation, '確認パスワード'
-  = f.password_field :password_confirmation
-  %div.actions
-  = f.submit "パスワード再設定する"
+  = f.password_field :password, class: 'input input-text', placeholder: 'パスワード'
+  = f.password_field :password_confirmation, class: 'input input-text', placeholder: '確認パスワード'
+  = f.submit "パスワード再設定する", class: 'button button-horizontal button-primary', data: { disable_with: '!!! 送信中 !!!' }
