@@ -4,6 +4,7 @@ FactoryGirl.define do
     sequence(:email) { |n| "shikakun#{n}@example.com" }
     password "shikakun"
     password_confirmation "shikakun"
+    password_reset_token "1234mametest"
   end
 
   factory :entry do
