@@ -42,7 +42,7 @@ include Ikachan
     if @brother.update brother_params
       flash[:success] = "!!! パスワード変更しました !!!"
       sign_in @brother
-      redirect_to @brother
+      redirect_to edit_brother_path
     else
       render 'edit'
     end
