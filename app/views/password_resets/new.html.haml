@@ -1,7 +1,9 @@
 - provide(:title, "パスワード再設定")
-%h1 パスワードの再設定
-%h2 まめぶろに登録したメールアドレスを入れてね!
-
-= form_tag password_resets_path, :method => :post do
-  = text_field_tag :email, params[:email], class: 'input input-text', placeholder: 'mameblo@example.com'
-  = submit_tag "パスワードを再設定する", class: 'button button-horizontal button-primary', data: { disable_with: '!!! 送信中 !!!' }
+%div.session
+  %div.session-wrapper
+    %div.session-content
+      %h1 パスワードの再設定
+      %h2 まめぶろに登録したメールアドレスを入れてね!
+      = form_tag password_resets_path, :method => :post do
+        = text_field_tag :email, params[:email], class: 'input input-text', placeholder: 'mameblo@example.com'
+        = submit_tag "パスワードを再設定する", class: 'button button-horizontal button-primary', data: { disable_with: '!!! 送信中 !!!' }

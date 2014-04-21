@@ -1,10 +1,13 @@
 - provide(:title, "さいんいん")
-= form_for(:session, url: sessions_path) do |f|
-  = f.text_field :name, class: 'input input-text', placeholder: 'BrotherName'
-  = f.password_field :password, class: 'input input-text', placeholder: 'Password'
-  = f.submit "兄弟元気かな", class: "button button-horizontal button-primary"
-%p.helpUp
-  まめぶろははじめて?<br>
-  = link_to "いますぐブラザーになろうぜ!", signup_path
-%p
-  = link_to "パスワードを忘れちゃった...!", new_password_reset_path
+%div.session
+  %div.session-wrapper
+    %div.session-content
+      = form_for(:session, url: sessions_path) do |f|
+        = f.text_field :name, class: 'input input-text', placeholder: 'BrotherName'
+        = f.password_field :password, class: 'input input-text', placeholder: 'Password'
+        = f.submit "兄弟元気かな", class: "button button-horizontal button-primary"
+      %p.helpUp
+        まめぶろははじめて?<br>
+        = link_to "いますぐブラザーになろうぜ!", signup_path
+      %p
+        = link_to "パスワードを忘れちゃった...!", new_password_reset_path

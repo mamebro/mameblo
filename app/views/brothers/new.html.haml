@@ -1,20 +1,23 @@
-= form_for(@brother) do |f|
-  = render 'shared/error_messages', object: f.object
-  %p.help
-    ブラザーに仲間入りしよう!!!<br>まずは、まめぶろでの名前を決めてくれよ。<br>
-    %span 英数字で入力してください!
-    = f.text_field :name, class: 'input input-text', placeholder: 'BrotherName'
-  %p.help
-    次にお前のメアドを教えてくれよ。<br>
-    %span 英数字で6文字以上です!<br />たまにメールするときもあります!
-    = f.text_field :email, class: 'input input-text', placeholder: 'MailAddress'
-  %p.help
-    パスワードはどうする?<br />
-    %span 英数字で6文字以上です!
-    = f.password_field :password, class: 'input input-text', placeholder: 'Password'
-  %p.help
-    パスワードもう一回教えてくれる?
-    = f.password_field :password_confirmation, class: 'input input-text', placeholder: 'Confirmation'
-  %p.help
-    ブラザーになるか?
-    = f.submit 'ブラザーになる!! (無料)', class: 'button button-horizontal button-primary'
+%div.session
+  %div.session-wrapper
+    %div.session-content
+      = form_for(@brother) do |f|
+        = render 'shared/error_messages', object: f.object
+        %p.help
+          ブラザーに仲間入りしよう!!!<br>まずは、まめぶろでの名前を決めてくれよ。<br>
+          %span 英数字で入力してください!
+          = f.text_field :name, class: 'input input-text', placeholder: 'BrotherName'
+        %p.help
+          次にお前のメアドを教えてくれよ。<br>
+          %span 英数字で6文字以上です!<br />たまにメールするときもあります!
+          = f.text_field :email, class: 'input input-text', placeholder: 'MailAddress'
+        %p.help
+          パスワードはどうする?<br />
+          %span 英数字で6文字以上です!
+          = f.password_field :password, class: 'input input-text', placeholder: 'Password'
+        %p.help
+          パスワードもう一回教えてくれる?
+          = f.password_field :password_confirmation, class: 'input input-text', placeholder: 'Confirmation'
+        %p.help
+          ブラザーになるか?
+          = f.submit 'ブラザーになる!! (無料)', class: 'button button-horizontal button-primary'

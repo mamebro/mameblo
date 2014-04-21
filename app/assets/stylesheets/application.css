@@ -7,4 +7,5 @@
  *= require entries
  *= require jinja
  *= require votes
+ *= require session
 */
