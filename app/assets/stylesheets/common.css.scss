@@ -92,6 +92,9 @@ body {
   width: 100%;
   margin-bottom: $gap/2;
   padding: $gap/4;
+  @include at-breakpoint($break-desktop) {
+    padding: $gap/2;
+  }
   @extend %font.input;
   border: 1px solid $gray-light;
   @extend %border-radius.reset;
