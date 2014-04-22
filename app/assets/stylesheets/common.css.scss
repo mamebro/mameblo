@@ -80,12 +80,17 @@ body {
 
 /* module class */
 .alert {
+  @include box-sizing(border-box);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: $gap;
-  margin-bottom: $gap;
   text-align: center;
   @extend %font.default;
   background-color: $sunflower;
   box-shadow: 0 1px 0 $orange;
+  z-index: 10000;
 }
 
 .input {
