@@ -1,7 +1,7 @@
 - provide(:title, "パスワード再設定")
 %div.session
   %div.session-wrapper
-    %div.session-content
+    %div.session-content.wow.flash{data:{wow:{iteration: '3', duration: '0.15s'}}}
       %h1 パスワードの再設定
       %h2 まめぶろに登録したメールアドレスを入れてね!
       = form_tag password_resets_path, :method => :post do

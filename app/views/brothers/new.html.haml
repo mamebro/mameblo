@@ -1,6 +1,6 @@
 %div.session
   %div.session-wrapper
-    %div.session-content
+    %div.session-content.wow.flash{data:{wow:{iteration: '3', duration: '0.15s'}}}
       = form_for(@brother) do |f|
         = render 'shared/error_messages', object: f.object
         %p.help
