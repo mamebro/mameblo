@@ -1,7 +1,7 @@
 - provide(:title, "さいんいん")
 %div.session
   %div.session-wrapper
-    %div.session-content
+    %div.session-content.wow.flash{data:{wow:{iteration: '3', duration: '0.15s'}}}
       = form_for(:session, url: sessions_path) do |f|
         = f.text_field :name, class: 'input input-text', placeholder: 'BrotherName'
         = f.password_field :password, class: 'input input-text', placeholder: 'Password'

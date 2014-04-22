@@ -12,6 +12,8 @@ $(function() {
   });
   emojify.run();
 
+  new WOW().init();
+
   $('.button').click(function() {
     $(this).addClass('button-touched');
   });
