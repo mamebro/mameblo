@@ -81,7 +81,7 @@ body {
 /* module class */
 .alert {
   @include box-sizing(border-box);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -91,6 +91,7 @@ body {
   background-color: $sunflower;
   box-shadow: 0 1px 0 $orange;
   z-index: 10000;
+  cursor: pointer;
 }
 
 .input {

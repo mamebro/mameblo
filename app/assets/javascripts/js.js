@@ -14,8 +14,11 @@ $(function() {
 
   new WOW().init();
 
-  $('.alert').delay(3000).queue(function() {
+  $('.alert').delay(5000).queue(function() {
     $(this).addClass('flipOutX').dequeue();
+  });
+  $('.alert').click(function() {
+    $(this).addClass('flipOutX');
   });
 
   $('.button').click(function() {

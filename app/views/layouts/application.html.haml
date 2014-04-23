@@ -51,7 +51,7 @@
     = render 'layouts/header'
     %div.page
       - flash.each do |key, value|
-        %div(class = "alert alert-#{key} wow flipInX"){data:{wow:{iteration: '1', duration: '0.15s'}}}
+        %div(class = "alert alert-#{key} wow flipInX"){data:{wow:{iteration: '3', duration: '0.1s'}}}
           %p= value
       %article.contents
         = yield
