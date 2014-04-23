@@ -5,10 +5,11 @@
       = render 'shared/session_header'
       = form_for(:session, url: sessions_path) do |f|
         = f.text_field :name, class: 'input input-text', placeholder: 'BrotherName'
-        = f.password_field :password, class: 'input input-text', placeholder: 'Password'
+        %div.password-field-wrapper
+          = link_to new_password_reset_path, class: 'icon password-forget' do
+            &#59140;
+          = f.password_field :password, class: 'input input-text', placeholder: 'Password'
         = f.submit "兄弟元気かな", class: "button button-horizontal button-primary"
       %p.helpUp
         まめぶろははじめて?<br>
         = link_to "いますぐブラザーになろうぜ!", signup_path
-      %p
-        = link_to "パスワードを忘れちゃった...!", new_password_reset_path

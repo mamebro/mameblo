@@ -31,3 +31,16 @@
     display: block;
   }
 }
+
+.session {
+  .password-field-wrapper {
+    position: relative;
+    .password-forget {
+      position: absolute;
+      top: 2px;
+      right: 0;
+      color: $black;
+      font-size: 40px;
+    }
+  }
+}
