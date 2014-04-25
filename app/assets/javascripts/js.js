@@ -12,6 +12,15 @@ $(function() {
   });
   emojify.run();
 
+  new WOW().init();
+
+  $('.alert').delay(5000).queue(function() {
+    $(this).addClass('flipOutX').dequeue();
+  });
+  $('.alert').click(function() {
+    $(this).addClass('flipOutX');
+  });
+
   $('.button').click(function() {
     $(this).addClass('button-touched');
   });

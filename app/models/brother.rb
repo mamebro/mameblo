@@ -57,9 +57,22 @@ class Brother < ActiveRecord::Base
     find_by_name(arg) || find(arg)
   end
 
+  def send_password_reset
+    generate_token(:password_reset_token)
+    self.password_reset_sent_at = Time.zone.now
+    save! validate: false
+    BrotherMailer.password_reset(self).deliver
+  end
+
   private
 
   def create_remember_token
     self.remember_token = SecureRandom.urlsafe_base64
+  end
+
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while Brother.exists?(column => self[column])
   end
 end

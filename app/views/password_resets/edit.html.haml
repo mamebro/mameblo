@@ -1,0 +1,17 @@
+- provide(:title, "パスワード再設定")
+%div.session
+  %div.session-wrapper
+    %div.session-content.wow.flash{data:{wow:{iteration: '3', duration: '0.15s'}}}
+      = render 'shared/session_header'
+      %h1 パスワード再設定
+      = form_for @brother, url: password_reset_path(params[:id]) do |f|
+        - if @brother.errors.any?
+          %div.error_messages
+            %h2 Form is invalid
+            %ul
+          - for message in @brother.errors.full_messages
+            %li
+            = message
+        = f.password_field :password, class: 'input input-text', placeholder: 'パスワード'
+        = f.password_field :password_confirmation, class: 'input input-text', placeholder: '確認パスワード'
+        = f.submit "パスワード再設定する", class: 'button button-horizontal button-primary', data: { disable_with: '!!! 送信中 !!!' }

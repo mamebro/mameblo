@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140223104227) do
+ActiveRecord::Schema.define(version: 20140419014041) do
 
   create_table "authentications", force: true do |t|
     t.integer  "brother_id"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20140223104227) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   add_index "brothers", ["email"], name: "index_brothers_on_email", unique: true
