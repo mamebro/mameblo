@@ -10,7 +10,7 @@ feature 'password resets' do
     before do
       visit root_path
       first(:link, 'サインイン').click
-      click_link 'パスワードを忘れちゃった...!'
+      find(".icon.password-forget").click
     end
 
     scenario 'メールアドレスを入力する画面が表示される' do
