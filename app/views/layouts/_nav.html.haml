@@ -31,6 +31,12 @@
             &#9881;
           %span<>
             設定
+      %li.nav.nav-settings
+        = link_to signout_path, method: "delete" do
+          %i.icon<>
+            &#59201;
+          %span<>
+            サインアウト
     - else
       %li.nav.nav-signin
         = link_to signin_path do
