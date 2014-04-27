@@ -6,19 +6,19 @@
           %i.icon<>
             &#9998;
           %span<>
-            近況
+            兄弟
       %li.nav.nav-entries
         = link_to current_brother do
           %i.icon<>
             &#8962;
           %span<>
-            #{current_brother.name}
+            わたし
       %li.nav.nav-brothers
         = link_to brothers_path do
           %i.icon<>
             &#127758;
           %span<>
-            ブラザーズ
+            みんな
       %li.nav
         = link_to jinja_path do
           %i.icon<>
@@ -32,11 +32,11 @@
           %span<>
             設定
       %li.nav.nav-settings
-        = link_to signout_path, method: "delete" do
+        = link_to signout_path, method: "delete", data: { confirm: "帰宅しますか?" } do
           %i.icon<>
             &#59201;
           %span<>
-            サインアウト
+            帰宅
     - else
       %li.nav.nav-signin
         = link_to signin_path do
