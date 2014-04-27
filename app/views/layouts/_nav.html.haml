@@ -32,7 +32,7 @@
           %span<>
             設定
       %li.nav.nav-settings
-        = link_to signout_path, method: "delete" do
+        = link_to signout_path, method: "delete", data: { confirm: "帰宅しますか?" } do
           %i.icon<>
             &#59201;
           %span<>
