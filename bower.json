@@ -1,0 +1,11 @@
+{
+  "name": "mameblo vendor assets",
+  "dependencies": {
+    "jquery": "1.10.2",
+    "emojify": "*",
+    "infinite-scroll": "*",
+    "jquery-touchswipe": "*",
+    "WOW": "*",
+    "animate.css": "*"
+  }
+}
