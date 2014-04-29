@@ -20,7 +20,6 @@ include Ikachan
 
   def create
     @entry = current_brother.entries.build entry_params
-    @entry.title = Date.today.strftime("%Y/%m/%d") if @entry.title.empty?
     if @entry.save
       flash[:success] = "!!! ぶろぐ投稿できたね !!!"
       redirect_to @entry.brother
