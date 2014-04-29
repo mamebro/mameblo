@@ -15,7 +15,7 @@ feature "Brother pages" do
     end
 
     scenario 'ブラザーの一覧が表示されること' do
-      is_expected.to have_content('ブラザーズ')
+      is_expected.to have_content('みんな')
       is_expected.to have_content brother.name
       is_expected.to have_content @brother.name
     end
