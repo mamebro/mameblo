@@ -1,6 +1,8 @@
-//= require jquery/dist/jquery
-//= require jquery-touchswipe/jquery.touchSwipe
-//= require infinite-scroll/jquery.infinitescroll
-//= require emojify/emojify
-//= require WOW/dist/wow
+//= require jquery
+//= require jquery_ujs
+//= require jquery.autopager
+//= require jquery.touchSwipe
+//= require jquery.infinitescroll.min
+//= require emojify.min
+//= require wow.min
 //= require_tree .
