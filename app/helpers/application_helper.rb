@@ -14,4 +14,10 @@ module ApplicationHelper
     target = html_escape(target)
     target.gsub(/\r\n|\r|\n/, "<br />")
   end
+
+  # ランダムに一人称を表示する
+  def random_myself
+    myself_labels = ['わたし', 'あたし', 'ぼく', 'おれ', 'じぶん', 'あちき']
+    myself_labels.sample
+  end
 end
