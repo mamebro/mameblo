@@ -1,0 +1,13 @@
+{
+  "name": "emojify",
+  "homepage": "https://github.com/hassankhan/emojify.js",
+  "_release": "e606387337",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e606387337a7cfb2a78d69bf230f5544b39dbe2a"
+  },
+  "_source": "git://github.com/hassankhan/emojify.js.git",
+  "_target": "*",
+  "_originalSource": "emojify"
+}
