@@ -31,8 +31,6 @@ include Ikachan
   end
 
   def update
-    @entry = Entry.find(params[:id])
-
     respond_to do |format|
       if @entry.update_attributes entry_params
         format.html { redirect_to @entry.brother, notice: '!!! 編集完了したね !!!' }
