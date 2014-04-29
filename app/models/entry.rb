@@ -26,6 +26,7 @@ class Entry < ActiveRecord::Base
           followed_brother_ids: followed_brother_ids, brother_id: brother)   
   end
 
+  private
   def set_title_date
     self.title = Date.today.strftime("%Y/%m/%d") if self.title.blank?
   end
