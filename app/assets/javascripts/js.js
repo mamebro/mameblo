@@ -1,17 +1,6 @@
 $(function() {
   $('#beBrotherAfter').hide();
 
-  emojify.setConfig({
-    emojify_tag_type: 'span',
-    emoticons_enabled: false,
-    people_enabled: true,
-    nature_enabled: true,
-    objects_enabled: true,
-    places_enabled: true,
-    symbols_enabled: true
-  });
-  emojify.run();
-
   new WOW().init();
 
   $('.alert').delay(5000).queue(function() {
