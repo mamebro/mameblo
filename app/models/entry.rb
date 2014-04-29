@@ -12,6 +12,8 @@ class Entry < ActiveRecord::Base
   default_scope { order('created_at DESC') }
   paginates_per 5
 
+  before_validation :set_title_date
+
   # http://rubygems.org/gems/github-markdown
   # GitHub-Markdownで出力
   def content_as_markdown
@@ -22,5 +24,10 @@ class Entry < ActiveRecord::Base
     followed_brother_ids = brother.followed_brother_ids
     where("brother_id IN (:followed_brother_ids) OR brother_id = :brother_id",
           followed_brother_ids: followed_brother_ids, brother_id: brother)   
+  end
+
+  private
+  def set_title_date
+    self.title = Date.today.strftime("%Y/%m/%d") if self.title.blank?
   end
 end

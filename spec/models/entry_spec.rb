@@ -37,4 +37,33 @@ describe Entry do
     before { @entry.title = "a" * 100000 }
     it { is_expected.not_to be_valid }
   end
+
+  describe "before validation" do
+    describe "when blank title" do
+      before { @entry.title = "" }
+      it "insert today's title" do
+        expect(@entry.save).to be_truthy
+        entry = Entry.find @entry.id
+        expect(entry.title).to eq(Date.today.strftime("%Y/%m/%d"))
+      end
+    end
+
+    describe "when white space title" do
+      before { @entry.title = "   " }
+      it "insert today's title" do
+        expect(@entry.save).to be_truthy
+        entry = Entry.find @entry.id
+        expect(entry.title).to eq(Date.today.strftime("%Y/%m/%d"))
+      end
+    end
+
+    describe "when title is characters" do
+      before { @entry.title = "YO! BRO!" }
+      it "doesn't insert today's title" do
+        expect(@entry.save).to be_truthy
+        entry = Entry.find @entry.id
+        expect(entry.title).to eq("YO! BRO!")
+      end
+    end
+  end
 end
