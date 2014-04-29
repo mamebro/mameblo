@@ -1,6 +1,7 @@
 /*
  *= require_self
- *= require animate.css/animate
+ *= require animate.min
+ *= require emojify.min
  *= require common
  *= require layouts
  *= require shared
