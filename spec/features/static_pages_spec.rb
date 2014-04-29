@@ -15,9 +15,9 @@ feature "mame blog(static_pages)" do
         sign_in brother
       end
 
-      scenario { is_expected.to have_content('shikakun') }
-      scenario { is_expected.to have_content('近況') }
-      scenario { is_expected.to have_content('ブラザーズ') }
+      scenario { is_expected.to have_content('わたし') }
+      scenario { is_expected.to have_content('兄弟') }
+      scenario { is_expected.to have_content('みんな') }
       scenario { is_expected.to have_content('設定') }
       scenario { is_expected.to have_selector('.field #entry-form-title', 'タイトル') }
       scenario { is_expected.to have_selector('.button', '投稿') }
@@ -32,9 +32,9 @@ feature "mame blog(static_pages)" do
           signin_with_failed(brother)
         end
 
-        scenario { is_expected.not_to have_content('近況') }
-        scenario { is_expected.not_to have_content('shikakun') }
-        scenario { is_expected.not_to have_content('ブラザーズ') }
+        scenario { is_expected.not_to have_content('兄弟') }
+        scenario { is_expected.not_to have_content('わたし') }
+        scenario { is_expected.not_to have_content('みんな') }
         scenario { is_expected.to have_content("あちゃー、もう一回お願いします!!!") }
       end
     end
