@@ -2,6 +2,7 @@
   "name": "mameblo vendor assets",
   "dependencies": {
     "jquery": "1.11.0",
+    "jquery-ujs": "*",
     "emojify": "*",
     "infinite-scroll": "*",
     "jquery-touchswipe": "*",
