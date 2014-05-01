@@ -14,4 +14,9 @@ module ApplicationHelper
     target = html_escape(target)
     target.gsub(/\r\n|\r|\n/, "<br />")
   end
+
+  # 一人称
+  def myself
+    I18n.t(:myself)
+  end
 end
