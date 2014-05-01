@@ -10,7 +10,7 @@ vendor/bundle
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
-# Ignore files 
+# Ignore files
 .bundle
 db/*.sqlite3*
 log/*.log
