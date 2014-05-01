@@ -16,8 +16,7 @@ module ApplicationHelper
   end
 
   # ランダムに一人称を表示する
-  def random_myself
-    myself_labels = ['わたし', 'あたし', 'ぼく', 'おれ', 'じぶん', 'あちき']
-    myself_labels.sample
+  def myself_labels
+    ['わたし', 'あたし', 'ぼく', 'おれ', 'じぶん', 'あちき']
   end
 end
