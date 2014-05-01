@@ -15,7 +15,7 @@ module ApplicationHelper
     target.gsub(/\r\n|\r|\n/, "<br />")
   end
 
-  # ランダムに一人称を表示する
+  # 一人称
   def myself
     I18n.t(:myself)
   end
