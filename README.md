@@ -11,3 +11,6 @@ http://www.facebook.com/mameblo
 
 ## minne
 http://minne.com/mameblo
+
+## SUZURI
+https://suzuri.jp/mameblo
