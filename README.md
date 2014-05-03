@@ -3,6 +3,9 @@
 
 http://www.mameblo.com/
 
+## まめぶろのキャッチコピー
+日本の豊かなブログサービスです。
+
 ## Twitter 公式アカウント
 https://twitter.com/mameblo
 
