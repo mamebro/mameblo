@@ -27,7 +27,7 @@ include Ikachan
     @brother = Brother.new brother_params
     if @brother.save
       sign_in @brother
-      Ikachan.notice "おめでとう! #{@brother.name} がブラザーになったよ。 #{@brother.name} は #{@brother.id} 番目の弟です。" if Rails.env.production?
+      ikachan_post "おめでとう! #{@brother.name} がブラザーになったよ。 #{@brother.name} は #{@brother.id} 番目の弟です。" if Rails.env.production?
       flash[:success] = "!!! まめぶろにようこそ !!!"
       redirect_to root_path
     else

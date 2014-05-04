@@ -14,7 +14,6 @@ gem 'faraday'
 gem 'newrelic_rpm'
 gem 'github-markdown'
 gem 'active_model_serializers'
-gem 'ikachan'
 
 # Gems used only for assets and not required
 # in production environments by default.

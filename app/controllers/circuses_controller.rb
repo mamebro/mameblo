@@ -13,7 +13,7 @@ include Ikachan
   def create
     circus = Circus.new(brother_id: current_brother.id, participation: true)
     circus.save
-    Ikachan.notice 'サーカスみたい!' if Rails.env.production?
+    ikachan_post 'サーカスみたい!' if Rails.env.production?
     flash[:notice] = "サーカス楽しみだね!!!"
     redirect_to root_path
   end
