@@ -122,6 +122,8 @@ GEM
       tilt
     hike (1.2.3)
     i18n (0.6.9)
+    ikachan (0.0.1)
+      activesupport
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -288,6 +290,7 @@ DEPENDENCIES
   guard-rspec
   guard-spork
   haml
+  ikachan
   jquery-rails
   json_expressions
   kaminari
