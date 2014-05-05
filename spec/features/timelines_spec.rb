@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "mame blog(static_pages)" do
+feature "mame blog(timelines)" do
 
   subject { page }
 
