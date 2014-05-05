@@ -78,43 +78,38 @@
 
   h1 {
     padding-bottom: $gap/4;
-    font-size: 16px;
+    font-size: $px16;
     border-bottom: 2px solid $black;
+    @include font-expand($px18, $px16, 1.66);
   }
 
   h2 {
     padding-bottom: $gap/6;
-    font-size: 15px;
+    font-size: $px16;
     border-bottom: 1px solid $black;
+    @include font-expand($px18, $px16, 1.66);
   }
 
   h3 {
     padding-bottom: $gap/8;
-    font-size: 14px;
+    font-size: $px14;
     border-bottom: 1px solid $silver;
+    @include font-expand($px16, $px14, 1.66);
   }
 
   h4 {
     padding-bottom: $gap/8;
-    font-size: 14px;
-    font-weight: normal;
-    border-bottom: 1px solid $silver;
+    font-size: $px14;
+    @include font-expand($px16, $px14, 1.66);
   }
 
   h5 {
     padding-bottom: $gap/8;
-    color: $silver;
-    font-size: 14px;
-    font-weight: normal;
-    border-bottom: 1px solid $white;
   }
 
   h6 {
     padding-bottom: $gap/8;
-    color: $white;
-    font-size: 14px;
     font-weight: normal;
-    border-bottom: 1px solid $white;
   }
 
   ul,
