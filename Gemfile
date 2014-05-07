@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # rails 4
-gem 'rails'
+gem 'rails', '~> 4.1.1'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'faker'
@@ -18,7 +18,7 @@ gem 'active_model_serializers'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sprockets', '2.11.0' # 2.12.0 is broken
+  gem 'sprockets'
   gem 'sprockets-rails'
   gem 'sass-rails'
   gem 'coffee-rails'
