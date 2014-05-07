@@ -17,7 +17,7 @@ Mameblog::Application.routes.draw do
   resources :circuses, only: [:index]
   resources :votes, only: [:index]
 
-  root 'static_pages#home'
+  root 'timelines#index'
 
   get '/signup',  to: 'brothers#new'
   get '/signin',  to: 'sessions#new'

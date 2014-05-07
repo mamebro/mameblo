@@ -1,5 +1,5 @@
-class StaticPagesController < ApplicationController
-  def home
+class TimelinesController < ApplicationController
+  def index
     if signed_in?
       @entry  = current_brother.entries.build
       followed_ids = []
