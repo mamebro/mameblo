@@ -25,7 +25,7 @@ class ScoreMailer < ActionMailer::Base
     @beans_diff                   = @beans_yesterday.count - @beans_day_before_yesterday.count
     @beans_total                  = Bean.count
 
-    @url  = Rails.env.production? ? 'http://www.mameblo.com/' : 'http://mameblo.dev/'
+    @url  = Rails.env.production? ? 'http://mameblo.com/' : 'http://mameblo.dev/'
     @date = Time.now.yesterday.strftime('%Y年%m月%d日')
 
     mail(to: staff_mail_list,

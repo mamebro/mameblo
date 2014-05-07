@@ -119,8 +119,8 @@ Content-Type: application/json; charset=utf-8
   ],
   "meta": {
     "_links": {
-      "latest": "https://www.mameblo.com/api/entries/home.json?since_id=50",
-      "previous": "https://www.mameblo.com/api/entries/home.json?max_id=39"
+      "latest": "https://mameblo.com/api/entries/home.json?since_id=50",
+      "previous": "https://mameblo.com/api/entries/home.json?max_id=39"
     }
   }
 }
