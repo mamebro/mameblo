@@ -1,7 +1,7 @@
 # まめぶろ
 [![wercker status](https://app.wercker.com/status/45082c121a2c48462f421487be8e5178/s/ "wercker status")](https://app.wercker.com/project/bykey/45082c121a2c48462f421487be8e5178) [![Build Status](https://travis-ci.org/mamebro/mameblo.png?branch=master)](https://travis-ci.org/mamebro/mameblo) [![Coverage Status](https://coveralls.io/repos/mamebro/mameblo/badge.png)](https://coveralls.io/r/mamebro/mameblo)
 
-http://www.mameblo.com/
+http://mameblo.com/
 
 ## まめぶろのキャッチコピー
 日本の豊かなブログサービスです。
