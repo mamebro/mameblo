@@ -47,6 +47,7 @@ include Ikachan
       sign_in @brother
       redirect_to edit_brother_path
     else
+      @entry  = current_brother.entries.build
       render 'edit'
     end
   end
