@@ -1,4 +1,5 @@
 = provide(:title, '神社')
+= render 'shared/entry_form' if signed_in?
 %h1.page-title
   神社
 %div#content

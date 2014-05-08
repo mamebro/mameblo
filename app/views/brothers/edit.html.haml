@@ -1,4 +1,5 @@
 - provide(:title, "設定")
+= render 'shared/entry_form' if signed_in?
 %h1.brother-name
   = @brother.name
 = form_for(@brother) do |f|
