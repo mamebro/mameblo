@@ -17,20 +17,18 @@ gem 'active_model_serializers'
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
-  gem 'sprockets'
-  gem 'sprockets-rails'
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'compass-rails'
-  gem 'susy'
+gem 'sprockets'
+gem 'sprockets-rails'
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'compass-rails'
+gem 'susy'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', platforms: :ruby
-  gem 'execjs'
-  gem 'therubyracer'
-  gem 'uglifier'
-end
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
+gem 'execjs'
+gem 'therubyracer'
+gem 'uglifier'
 
 group :production do
   gem 'mysql2'
