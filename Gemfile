@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # rails 4
-gem 'rails'
+gem 'rails', '~> 4.1.1'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'faker'
@@ -17,20 +17,18 @@ gem 'active_model_serializers'
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
-  gem 'sprockets', '2.11.0' # 2.12.0 is broken
-  gem 'sprockets-rails'
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'compass-rails'
-  gem 'susy'
+gem 'sprockets'
+gem 'sprockets-rails'
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'compass-rails'
+gem 'susy'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', platforms: :ruby
-  gem 'execjs'
-  gem 'therubyracer'
-  gem 'uglifier'
-end
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
+gem 'execjs'
+gem 'therubyracer'
+gem 'uglifier'
 
 group :production do
   gem 'mysql2'
