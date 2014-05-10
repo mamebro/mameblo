@@ -54,5 +54,6 @@
         %div(class = "alert alert-#{key} wow flipInX"){data:{wow:{iteration: '3', duration: '0.1s'}}}
           %p= value
       %article.contents
+        = render 'shared/entry_form' if signed_in?
         = yield
       = render 'layouts/footer'
