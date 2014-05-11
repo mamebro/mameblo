@@ -16,10 +16,6 @@ feature "mame blog(timelines)" do
       end
 
       scenario { is_expected.to have_content('兄弟') }
-      scenario {
-        pending('一人称をランダムに表示することに対応するまで pending')
-        is_expected.to have_content('わたし')
-      }
       scenario { is_expected.to have_content('みんな') }
       scenario { is_expected.to have_content('設定') }
       scenario { is_expected.to have_selector('.field #entry-form-title', 'タイトル') }
