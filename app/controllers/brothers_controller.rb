@@ -8,13 +8,11 @@ include Ikachan
   respond_to :html, :json
 
   def index
-    @entry  = current_brother.entries.build
     @brothers = Brother.order(:name).page params[:page]
     respond_with(@brothers, :only => [:id, :name, :created_at])
   end
 
   def show
-    @entry  = current_brother.entries.build
     @entries = @brother.entries.page params[:page]
     @entries.each_with_index do |entry, index|
       @entries[index].content = entry.content_as_markdown
@@ -38,7 +36,6 @@ include Ikachan
   end
 
   def edit
-    @entry  = current_brother.entries.build
   end
 
   def update
