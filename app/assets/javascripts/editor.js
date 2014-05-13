@@ -1,7 +1,7 @@
 $(function() {
-  if ($('#entry-form-title').size() > 0) {
-    $('#entry-form-title').focus();
-  }
+  $('.editor-open').click(function() {
+    $('body').addClass('is-editor');
+  });
 
   $('#entry-form-content').attr('data-rows-original', $('#entry-form-content').attr('rows'));
 

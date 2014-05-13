@@ -1,51 +1,57 @@
 %nav.navs
   %ul
     - if signed_in?
+      %li.nav.nav-writes.editor-open
+        %span.nav-label
+          %i.icon<>
+            &#9998;
+          %span<>
+            書く
       %li.nav.nav-writes
-        = link_to root_path do
+        = link_to root_path, class: 'nav-label' do
           %i.icon<>
             &#9998;
           %span<>
             兄弟
       %li.nav.nav-entries
-        = link_to current_brother do
+        = link_to current_brother, class: 'nav-label' do
           %i.icon<>
             &#8962;
           %span<>
             #{myself.sample}
       %li.nav.nav-brothers
-        = link_to brothers_path do
+        = link_to brothers_path, class: 'nav-label' do
           %i.icon<>
             &#127758;
           %span<>
             みんな
       %li.nav
-        = link_to jinja_path do
+        = link_to jinja_path, class: 'nav-label' do
           %i.icon<>
             &#63234;
           %span<>
             神社
       %li.nav.nav-settings
-        = link_to edit_brother_path(current_brother) do
+        = link_to edit_brother_path(current_brother), class: 'nav-label' do
           %i.icon<>
             &#9881;
           %span<>
             設定
       %li.nav.nav-settings
-        = link_to signout_path, method: "delete", data: { confirm: "帰宅しますか?" } do
+        = link_to signout_path, class: 'nav-label', method: "delete", data: { confirm: "帰宅しますか?" } do
           %i.icon<>
             &#59201;
           %span<>
             帰宅
     - else
       %li.nav.nav-signin
-        = link_to signin_path do
+        = link_to signin_path, class: 'nav-label' do
           %i.icon<>
             &#59200;
           %span<>
             サインイン
       %li.nav.nav-signup
-        = link_to signup_path do
+        = link_to signup_path, class: 'nav-label' do
           %i.icon<>
             &#59136;
           %span<>
