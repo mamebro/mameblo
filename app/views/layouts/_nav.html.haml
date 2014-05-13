@@ -1,12 +1,6 @@
 %nav.navs
   %ul
     - if signed_in?
-      %li.nav.nav-writes.editor-open
-        %span.nav-label
-          %i.icon<>
-            &#9998;
-          %span<>
-            書く
       %li.nav.nav-writes
         = link_to root_path, class: 'nav-label' do
           %i.icon<>
@@ -56,3 +50,6 @@
             &#59136;
           %span<>
             はじめる
+%nav.nav-editor.editor-open
+  %i.icon<>
+    &#9998;
