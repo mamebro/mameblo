@@ -11,8 +11,7 @@
   position: fixed;
   width: 100%;
   height: 44px;
-  margin-bottom: 10px;
-  z-index: 123;
+  z-index: 123456;
   .brand {
     position: absolute;
     top: 7px;
@@ -64,7 +63,7 @@
 }
 
 .contents {
-  padding-top: 60px;
+  padding-top: 54px;
 }
 
 .footer {

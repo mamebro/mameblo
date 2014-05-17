@@ -1,12 +1,13 @@
 $(function() {
   $('.nav-menu-control').click(function() {
-    var $body = $('body');
+    var $body = $('body'),
+        $navMenuContent = $('.nav-menu-content');
     if ($body.hasClass('is-menu')) {
-      $('body').removeClass('is-menu');
-      $('.nav-menu-content').hide();
+      $body.removeClass('is-menu');
+      $navMenuContent.hide();
     } else {
-      $('body').addClass('is-menu');
-      $('.nav-menu-content').show();
+      $body.addClass('is-menu');
+      $navMenuContent.show();
     }
   });
 });

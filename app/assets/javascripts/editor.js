@@ -1,6 +1,11 @@
 $(function() {
-  $('.editor-open').click(function() {
-    $('body').addClass('is-editor');
+  $('.nav-editor-control').click(function() {
+    var $body = $('body');
+    if ($body.hasClass('is-editor')) {
+      $body.removeClass('is-editor');
+    } else {
+      $body.addClass('is-editor');
+    }
   });
 
   $('#entry-form-content').attr('data-rows-original', $('#entry-form-content').attr('rows'));
