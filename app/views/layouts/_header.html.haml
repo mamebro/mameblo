@@ -1,11 +1,5 @@
 %header#header.header
-  %div.view-desktop
-    = render 'layouts/nav'
-    %h1.brand
+  %h1.brand
+    = link_to root_path do
       = image_tag "brand-black.png", alt: 'まめぶろ'
-      %span.copyright
-        mameblo
-  %div.view-phone.page
-    = render 'layouts/nav'
-    %h1.brand
-      mameblo
+  = render 'layouts/nav'

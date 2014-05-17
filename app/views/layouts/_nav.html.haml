@@ -1,55 +1,57 @@
-%nav.navs
-  %ul
+%nav.nav-menu
+  %i.iconbutton<>
+    &#9776;
+  %ul.nav-menu-content
     - if signed_in?
       %li.nav.nav-writes
         = link_to root_path, class: 'nav-label' do
-          %i.icon<>
+          %i.iconbutton<>
             &#9998;
           %span<>
             兄弟
       %li.nav.nav-entries
         = link_to current_brother, class: 'nav-label' do
-          %i.icon<>
+          %i.iconbutton<>
             &#8962;
           %span<>
             #{myself.sample}
       %li.nav.nav-brothers
         = link_to brothers_path, class: 'nav-label' do
-          %i.icon<>
+          %i.iconbutton<>
             &#127758;
           %span<>
             みんな
       %li.nav
         = link_to jinja_path, class: 'nav-label' do
-          %i.icon<>
+          %i.iconbutton<>
             &#63234;
           %span<>
             神社
       %li.nav.nav-settings
         = link_to edit_brother_path(current_brother), class: 'nav-label' do
-          %i.icon<>
+          %i.iconbutton<>
             &#9881;
           %span<>
             設定
       %li.nav.nav-settings
         = link_to signout_path, class: 'nav-label', method: "delete", data: { confirm: "帰宅しますか?" } do
-          %i.icon<>
+          %i.iconbutton<>
             &#59201;
           %span<>
             帰宅
     - else
       %li.nav.nav-signin
         = link_to signin_path, class: 'nav-label' do
-          %i.icon<>
+          %i.iconbutton<>
             &#59200;
           %span<>
             サインイン
       %li.nav.nav-signup
         = link_to signup_path, class: 'nav-label' do
-          %i.icon<>
+          %i.iconbutton<>
             &#59136;
           %span<>
             はじめる
 %nav.nav-editor.editor-open
-  %i.icon<>
+  %i.iconbutton<>
     &#9998;
