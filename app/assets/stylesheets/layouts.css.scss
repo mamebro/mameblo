@@ -37,8 +37,9 @@
           a {
             height: 30px;
             display: inline-block;
+            color: $midnightblue;
             .iconbutton {
-              background-color: $turquoise;
+              background-color: $midnightblue;
             }
             span {
               margin-left: $gap/2;
