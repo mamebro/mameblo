@@ -68,6 +68,11 @@
       right: 7px;
     }
   }
+  .is-menu {
+    .nav-menu-control {
+      opacity: 0.22;
+    }
+  }
   .nav-close {
     position: absolute;
     top: 7px;
