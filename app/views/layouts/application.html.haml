@@ -49,6 +49,7 @@
     = analytics_init if Rails.env.production?
   %body
     = render 'layouts/header'
+    = render 'shared/entry_form' if signed_in?
     %div.page
       - flash.each do |key, value|
         %div(class = "alert alert-#{key} wow flipInX"){data:{wow:{iteration: '3', duration: '0.1s'}}}

@@ -50,6 +50,16 @@
     content: '\f703';
   }
 }
+.iconbutton {
+  @extend .icon;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: $white;
+  line-height: 30px;
+  background-color: $midnightblue;
+  border-radius: 30px;
+}
 .emoji {
   width: 24px;
   height: 24px;
@@ -215,10 +225,6 @@ body {
   margin-bottom: $gap;
   text-align: center;
   @extend %font.title;
-}
-
-#entry_form {
-  margin-bottom: $gap/2;
 }
 
 /* hidden */

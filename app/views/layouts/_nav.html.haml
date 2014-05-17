@@ -1,52 +1,60 @@
-%nav.navs
-  %ul
+%nav.nav-menu
+  %i.iconbutton.nav-menu-control.view-phone<>
+    &#9776;
+  %ul.nav-menu-content
     - if signed_in?
       %li.nav.nav-writes
-        = link_to root_path do
-          %i.icon<>
-            &#9998;
+        = link_to root_path, class: 'nav-label' do
+          %i.iconbutton<>
+            &#128246;
           %span<>
             兄弟
       %li.nav.nav-entries
-        = link_to current_brother do
-          %i.icon<>
-            &#8962;
+        = link_to current_brother, class: 'nav-label' do
+          %i.iconbutton<>
+            &#128100;
           %span<>
             #{myself.sample}
       %li.nav.nav-brothers
-        = link_to brothers_path do
-          %i.icon<>
+        = link_to brothers_path, class: 'nav-label' do
+          %i.iconbutton<>
             &#127758;
           %span<>
             みんな
       %li.nav
-        = link_to jinja_path do
-          %i.icon<>
+        = link_to jinja_path, class: 'nav-label' do
+          %i.iconbutton<>
             &#63234;
           %span<>
             神社
       %li.nav.nav-settings
-        = link_to edit_brother_path(current_brother) do
-          %i.icon<>
+        = link_to edit_brother_path(current_brother), class: 'nav-label' do
+          %i.iconbutton<>
             &#9881;
           %span<>
             設定
       %li.nav.nav-settings
-        = link_to signout_path, method: "delete", data: { confirm: "帰宅しますか?" } do
-          %i.icon<>
-            &#59201;
+        = link_to signout_path, class: 'nav-label', method: "delete", data: { confirm: "帰宅しますか?" } do
+          %i.iconbutton<>
+            &#8962;
           %span<>
             帰宅
     - else
       %li.nav.nav-signin
-        = link_to signin_path do
-          %i.icon<>
+        = link_to signin_path, class: 'nav-label' do
+          %i.iconbutton<>
             &#59200;
           %span<>
             サインイン
       %li.nav.nav-signup
-        = link_to signup_path do
-          %i.icon<>
+        = link_to signup_path, class: 'nav-label' do
+          %i.iconbutton<>
             &#59136;
           %span<>
             はじめる
+- if signed_in?
+  %nav.nav-editor.nav-editor-control
+    %i.iconbutton<>
+      &#9998;
+    %span.view-desktop<>
+      書く

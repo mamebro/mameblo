@@ -1,7 +1,18 @@
 $(function() {
-  if ($('#entry-form-title').size() > 0) {
-    $('#entry-form-title').focus();
-  }
+  $('.nav-editor-control').click(function() {
+    var $body = $('body');
+    if ($body.hasClass('is-editor')) {
+      if ($('#new_entry').hasClass('submitable')) {
+        if (window.confirm('投稿しなくて大丈夫？')) {
+          $body.removeClass('is-editor');
+        }
+      } else {
+        $body.removeClass('is-editor');
+      }
+    } else {
+      $body.addClass('is-editor');
+    }
+  });
 
   $('#entry-form-content').attr('data-rows-original', $('#entry-form-content').attr('rows'));
 

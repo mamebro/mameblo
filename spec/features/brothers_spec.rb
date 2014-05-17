@@ -25,5 +25,12 @@ feature "Brother pages" do
       is_expected.to have_content @brother.name
       is_expected.to have_selector('#beBrother', 'ブラザーになる')
     end
+
+    scenario '日記を投稿できること' do
+      fill_in 'entry-form-title', with: '日記のタイトル'
+      fill_in 'entry-form-content', with: 'こんにちは、本文です。'
+      click_button '投稿'
+      is_expected.to have_content 'ぶろぐ投稿できたね'
+    end
   end
 end

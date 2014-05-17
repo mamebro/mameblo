@@ -32,7 +32,7 @@ feature "Entries" do
     scenario '日記を編集できること' do
       click_link '日記のタイトル'
       click_link 'Edit'
-      click_button '投稿'
+      click_button '編集'
       is_expected.to have_content '!!! 編集完了したね !!!'
     end
   end
