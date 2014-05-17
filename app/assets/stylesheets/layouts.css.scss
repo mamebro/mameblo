@@ -7,7 +7,7 @@
   }
 }
 
-@include at-breakpoint(0 $break-desktop) {
+@include at-breakpoint($break-phone) {
   .header {
     position: fixed;
     width: 100%;
