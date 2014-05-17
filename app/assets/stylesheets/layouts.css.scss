@@ -37,8 +37,9 @@
           a {
             height: 30px;
             display: inline-block;
+            color: $midnightblue;
             .iconbutton {
-              background-color: $turquoise;
+              background-color: $midnightblue;
             }
             span {
               margin-left: $gap/2;
@@ -66,6 +67,11 @@
       position: absolute;
       top: 7px;
       right: 7px;
+    }
+  }
+  .is-menu {
+    .nav-menu-control {
+      opacity: 0.22;
     }
   }
   .nav-close {
