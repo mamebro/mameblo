@@ -52,8 +52,9 @@
             &#59136;
           %span<>
             はじめる
-%nav.nav-editor.nav-editor-control
-  %i.iconbutton<>
-    &#9998;
-  %span.view-desktop<>
-    書く
+- if signed_in?
+  %nav.nav-editor.nav-editor-control
+    %i.iconbutton<>
+      &#9998;
+    %span.view-desktop<>
+      書く
