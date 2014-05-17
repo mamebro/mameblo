@@ -6,13 +6,13 @@
       %li.nav.nav-writes
         = link_to root_path, class: 'nav-label' do
           %i.iconbutton<>
-            &#9998;
+            &#128246;
           %span<>
             兄弟
       %li.nav.nav-entries
         = link_to current_brother, class: 'nav-label' do
           %i.iconbutton<>
-            &#8962;
+            &#128100;
           %span<>
             #{myself.sample}
       %li.nav.nav-brothers
@@ -36,7 +36,7 @@
       %li.nav.nav-settings
         = link_to signout_path, class: 'nav-label', method: "delete", data: { confirm: "帰宅しますか?" } do
           %i.iconbutton<>
-            &#59201;
+            &#8962;
           %span<>
             帰宅
     - else
@@ -55,5 +55,5 @@
 %nav.nav-editor.nav-editor-control
   %i.iconbutton<>
     &#9998;
-  %span<>
+  %span.view-desktop<>
     書く
