@@ -10,4 +10,12 @@ $(function() {
       $navMenuContent.show();
     }
   });
+
+  $('.brand').click(function() {
+    if (0 < window.pageYOffset) {
+      $('body,html').animate({scrollTop: 0}, 250, 'swing');
+    } else {
+      location.href = '/';
+    }
+  });
 });
