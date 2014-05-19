@@ -4,8 +4,8 @@ $(function() {
         $navMenuContent = $('.nav-menu-content'),
         $nav = $navMenuContent.find('.nav'),
         animationDelay = 50,
-        positionLeft = 5,
-        rotateDegree = -10;
+        rotateDegree = -10,
+        positionLeft = 5;
     if ($body.hasClass('is-menu')) {
       $body.removeClass('is-menu');
       $navMenuContent.hide();
@@ -13,20 +13,28 @@ $(function() {
       $body.addClass('is-menu');
       $navMenuContent.show();
       $nav.each(function(index) {
+        var rotateDegreeProperty = rotateDegree * (index + 1),
+            positionLeftProperty = positionLeft * ((index + 1) * (index + 1));
         $(this)
+          .css({
+            'transform': 'rotate(' + rotateDegreeProperty + 'deg)'
+          })
           .animate({
             'opacity': 0,
-            'margin-top': '40px'
+            'margin-top': '-10px',
+            'margin-left': (positionLeftProperty - 10) + 'px'
           }, 0)
           .delay(animationDelay * index)
           .animate({
             'opacity': 1,
-            'margin-top': '0'
-          }, 100, 'swing')
-          .css({
-            'margin-left': positionLeft * ((index + 1) * (index + 1)) + 'px',
-            'transform': 'rotate(' + rotateDegree * (index + 1) + 'deg)'
-          });
+            'margin-top': '10px',
+            'margin-left': (positionLeftProperty + 10) + 'px'
+          }, 100)
+          .animate({
+            'opacity': 1,
+            'margin-top': '0',
+            'margin-left': positionLeftProperty + 'px'
+          }, 100);
       });
     }
   });
