@@ -16,6 +16,8 @@ class TimelinesController < ApplicationController
       end
       @entries = Entry.where(brother_id: followed_ids).page params[:page]
       @entries.map{|e| e.content_as_markdown}
+    else
+      redirect_to root_path
     end
   end
 end

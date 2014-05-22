@@ -51,4 +51,12 @@ feature "Entries" do
       is_expected.to have_content 'ぶろぐ投稿できたね'
     end
   end
+
+  feature 'サインインしていない時' do
+    scenario 'トップにリダイレクトされること' do
+      visit timelines_brothers_path
+      is_expected.to have_content 'サインイン'
+      is_expected.to have_content 'はじめる'
+    end
+  end
 end
