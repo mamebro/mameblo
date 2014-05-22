@@ -6,8 +6,6 @@ class TimelinesController < ApplicationController
     else
       @entries = Entry.page params[:page]
     end
-    @entries.each_with_index do |entry, index|
-      @entries[index].content = entry.content_as_markdown
-    end
+    @entries.map{|e| e.content_as_markdown}
   end
 end
