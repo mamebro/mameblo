@@ -8,4 +8,5 @@
  *= require jinja
  *= require votes
  *= require session
+ *= require timelines
 */

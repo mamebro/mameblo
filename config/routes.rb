@@ -19,6 +19,7 @@ Mameblog::Application.routes.draw do
 
   root 'timelines#index'
 
+  get '/timelines/brothers', to: 'timelines#brothers'
   get '/signup',  to: 'brothers#new'
   get '/signin',  to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
