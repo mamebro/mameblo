@@ -5,7 +5,7 @@ class TimelinesController < ApplicationController
     else
       @entries = Entry.page params[:page]
     end
-    @entries.map{|e| e.content_as_markdown}
+    @entries.map{|e| e.content = e.content_as_markdown}
   end
 
   def brothers
@@ -15,7 +15,7 @@ class TimelinesController < ApplicationController
         followed_ids << rel.followed_id
       end
       @entries = Entry.where(brother_id: followed_ids).page params[:page]
-      @entries.map{|e| e.content_as_markdown}
+      @entries.map{|e| e.content = e.content_as_markdown}
     else
       redirect_to root_path
     end
