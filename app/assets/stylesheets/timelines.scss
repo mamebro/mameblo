@@ -1,0 +1,37 @@
+@import 'import';
+
+.nav-pills {
+  width: 100%;
+  margin-bottom: $gap*2;
+  display: table;
+  background: #eee;
+  border: 1px solid $orange;
+  border-radius: 5px;
+  .nav-pill-wrapper {
+    display: table-row;
+    .nav-pill {
+      width: 1%;
+      text-align: center;
+      vertical-align: center;
+      display: table-cell;
+      a {
+        height: 3em;
+        display: block;
+        color: $orange;
+        font-size: $px14;
+        line-height: 3em;
+      }
+    }
+  }
+}
+
+.nav-pill-active {
+  a {
+    color: $white !important;
+    font-weight: bold;
+    background-color: $orange;
+  }
+}
+
+.current-index { .nav-pill-index { @extend .nav-pill-active; } }
+.current-following { .nav-pill-following { @extend .nav-pill-active; } }
