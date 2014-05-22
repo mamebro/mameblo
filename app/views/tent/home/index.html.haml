@@ -1,0 +1,83 @@
+%h1.page-title
+  まめぶろテント(顧客管理)
+%div#content
+%h2
+  まめぶろ Daily スコアレポート
+  = @date
+
+%br
+%h3
+  累計
+  %table
+    %tr
+      %tdブラザー数(累計)
+      %tdエントリー数(累計)
+      %td豆の数(累計)
+    %tr
+      %td
+        = @brothers.count
+      %td
+        = @entries.count
+      %td
+        = @beans_total
+%br
+%h3
+  Brother
+%ul
+  %liブラザー数合計:
+  = @brother_total
+  %li昨日兄弟になったブラザー:
+  = @brother_yesterday.count
+  %li前日比
+  = @brother_diff
+
+%br
+%h3
+  Entry
+%ul
+  %liエントリー数合計:
+  = @entry_total
+  %li昨日のエントリー数:
+  = @entry_yesterday.count
+  %li前日比
+  = @entry_diff
+
+※  合計: まめぶろ開始から昨日の終わりまでの累計
+※  前日比: (昨日の合計) - (おとといの合計)
+
+%li昨日のエントリー一覧
+%ul
+- @entry_yesterday.each do |entry|
+  %li
+  = entry.title
+  = @url + "entries/#{entry.id}"
+
+%h3
+  Bean
+%ul
+  %li投げられた豆の数合計:
+  = @beans_total
+  %li昨日投げられた豆の数:
+  = @beans_yesterday.count
+  %li前日比
+  = @beans_diff
+
+%h3昨日生まれたブラザー
+%ul
+- @brother_yesterday.each do |brother|
+  %li
+  = brother.name
+  = @url + "brothers/#{brother.id}"
+
+%h3関連Link
+%ul
+  %li
+  かわいいブログ。まめぶろ http://mameblo.com/
+  %li
+  GitHub リポジトリ https://github.com/mamebro/mameblo
+  %li
+  minne http://minne.com/mameblo
+  %li
+  Twitter 公式アカウント https://twitter.com/mameblo
+  %li
+  Facebookページ http://www.facebook.com/mameblo

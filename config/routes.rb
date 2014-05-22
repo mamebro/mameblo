@@ -37,4 +37,6 @@ Mameblog::Application.routes.draw do
       end
     end
   end
+
+  get 'tent/home', to: 'tent/home#index'
 end
