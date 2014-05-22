@@ -1,8 +1,10 @@
 @import 'import';
 
 .nav-pills {
+  @include box-sizing(border-box);
   width: 100%;
-  margin-bottom: $gap*2;
+  height: 44px;
+  margin-bottom: $gap;
   display: table;
   background: #eee;
   border: 1px solid $orange;
@@ -15,11 +17,11 @@
       vertical-align: center;
       display: table-cell;
       a {
-        height: 3em;
+        height: 44px;
         display: block;
         color: $orange;
-        font-size: $px14;
-        line-height: 3em;
+        font-size: $px13;
+        line-height: 44px;
       }
     }
   }
