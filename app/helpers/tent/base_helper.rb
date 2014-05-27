@@ -1,0 +1,2 @@
+module Tent::BaseHelper
+end
