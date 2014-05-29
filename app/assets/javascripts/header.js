@@ -6,8 +6,12 @@ $(function() {
   $('.brand').click(function() {
     if (0 < window.pageYOffset) {
       $('body,html').animate({scrollTop: 0}, 250, 'swing');
-    } else {
+    } else if (window.innerWidth < 960) {
+      // スマホ表示のときはメニューを開閉する
       controlMenu();
+    } else {
+      // PC 表示のときはトップページへ遷移する
+      location.href = '/';
     }
   });
 
