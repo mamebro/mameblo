@@ -1,5 +1,17 @@
 $(function() {
   $('.nav-menu-control').click(function() {
+    controlMenu();
+  });
+
+  $('.brand').click(function() {
+    if (0 < window.pageYOffset) {
+      $('body,html').animate({scrollTop: 0}, 250, 'swing');
+    } else {
+      new Audio('/voices/song.wav').play();
+    }
+  });
+
+  function controlMenu() {
     var $body = $('body'),
         $navMenuContent = $('.nav-menu-content'),
         $nav = $navMenuContent.find('.nav'),
@@ -37,13 +49,5 @@ $(function() {
           }, 100);
       });
     }
-  });
-
-  $('.brand').click(function() {
-    if (0 < window.pageYOffset) {
-      $('body,html').animate({scrollTop: 0}, 250, 'swing');
-    } else {
-      new Audio('/voices/song.wav').play();
-    }
-  });
+  }
 });
