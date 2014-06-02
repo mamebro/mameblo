@@ -1,8 +1,8 @@
 class BrothersController < ApplicationController
 include Ikachan
-  before_action :signed_in_brother, only: [:index, :edit, :update, :destroy, :following, :followers]
-  before_action :load_brother,      only: [:show, :edit, :update, :destroy, :following, :followers]
-  before_action :correct_brother,   only: [:edit, :update]
+  before_action :signed_in_brother, only: [:index, :edit, :update, :destroy, :following, :followers, :edit_email]
+  before_action :load_brother,      only: [:show, :edit, :update, :destroy, :following, :followers, :edit_email]
+  before_action :correct_brother,   only: [:edit, :update, :update_email]
   before_action :admin_brother,     only: :destroy
 
   respond_to :html, :json
@@ -46,6 +46,19 @@ include Ikachan
     else
       @entry  = current_brother.entries.build
       render 'edit'
+    end
+  end
+
+  def edit_email
+  end
+
+  def update_email
+    if @brother.update brother_params
+      flash[:success] = "!!! メールアドレスを変更しました !!!"
+      sign_in @brother
+      redirect_to edit_email_brother_path
+    else
+      render 'edit_email'
     end
   end
 
