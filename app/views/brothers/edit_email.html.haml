@@ -1,0 +1,10 @@
+- provide(:title, "メールアドレスの設定")
+%h1.brother-name
+  = @brother.name
+  = @brother.email
+= form_for(@brother, url: update_email_brother_path(@brother)) do |f|
+  = render 'shared/error_messages', object: f.object
+  = f.email_field :email, class: 'input input-text', placeholder: 'Email'
+  = f.password_field :password, class: 'input input-text', placeholder: 'Password'
+  = f.password_field :password_confirmation, class: 'input input-text', placeholder: 'Passwordもう一回お願いします !!'
+  = f.submit "メールアドレスの変更", class: "button button-horizontal button-primary"
