@@ -74,6 +74,9 @@
   h6 {
     margin: $gap 0 $gap/2;
     font-weight: bold;
+    @include at-breakpoint($break-desktop) {
+      font-weight: normal;
+    }
   }
 
   h1 {

@@ -75,6 +75,9 @@ h4,
 h5,
 h6 {
   font-weight: bold;
+  @include at-breakpoint($break-desktop) {
+    font-weight: normal;
+  }
 }
 
 a {
