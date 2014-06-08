@@ -1,8 +1,8 @@
 class BrothersController < ApplicationController
 include Ikachan
-  before_action :signed_in_brother, only: [:index, :edit, :update, :destroy, :following, :followers, :edit_email]
-  before_action :load_brother,      only: [:show, :edit, :update, :destroy, :following, :followers, :edit_email]
-  before_action :correct_brother,   only: [:edit, :update, :update_email]
+  before_action :signed_in_brother, only: [:index, :edit, :update, :destroy, :following, :followers]
+  before_action :load_brother,      only: [:show, :edit, :update, :destroy, :following, :followers]
+  before_action :correct_brother,   only: [:edit, :update]
   before_action :admin_brother,     only: :destroy
 
   respond_to :html, :json
@@ -47,9 +47,6 @@ include Ikachan
       @entry  = current_brother.entries.build
       render 'edit'
     end
-  end
-
-  def edit_email
   end
 
   def deliver_alter_email

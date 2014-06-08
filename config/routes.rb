@@ -5,7 +5,7 @@ Mameblog::Application.routes.draw do
   get "jinja/index"
   resources :brothers, except: [:destroy] do
     member do
-      get :following, :followers, :edit_email
+      get :following, :followers
       post :deliver_alter_email
       patch :cancel_alter_email
     end
