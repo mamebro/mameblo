@@ -6,4 +6,12 @@ class BrotherMailer < ActionMailer::Base
     mail to: brother.email,
          subject: "【まめぶろ】パスワード再設定"
   end
+
+  def verify_alter_email(brother)
+    @brother = brother
+    @url = "http://localhost:3000/brothers/verify_email/#{brother.alter_email_token}"
+
+    mail to: brother.alter_email,
+         subject: "【まめぶろ】メールアドレス変更"
+  end
 end

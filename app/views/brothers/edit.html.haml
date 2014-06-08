@@ -6,3 +6,8 @@
   = f.password_field :password, class: 'input input-text', placeholder: 'Password'
   = f.password_field :password_confirmation, class: 'input input-text', placeholder: 'Passwordもう一回お願いします !!'
   = f.submit "パスワードの変更", class: "button button-horizontal button-primary"
+
+- if @brother.alter_email.present?
+  = render 'form_for_verify_alter_email'
+- else
+  = render 'form_for_alter_email'

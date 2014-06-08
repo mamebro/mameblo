@@ -52,14 +52,30 @@ include Ikachan
   def edit_email
   end
 
-  def update_email
-    if @brother.update brother_params
-      flash[:success] = "!!! メールアドレスを変更しました !!!"
-      sign_in @brother
-      redirect_to edit_email_brother_path
+  def deliver_alter_email
+    unless current_brother.authenticate(params[:brother][:current_password])
+      redirect_to edit_brother_path, notice: "!!! パスワードが間違ってます !!!"
     else
-      render 'edit_email'
+      alter_email = params[:brother][:alter_email]
+      token = SecureRandom.urlsafe_base64
+      current_brother.update_columns(alter_email: alter_email,
+                                     alter_email_token: token)
+      BrotherMailer.verify_alter_email(current_brother).deliver
+      redirect_to edit_brother_path, notice: "!!! 変更後のメールアドレスに確認メールを送信しました !!!"
     end
+  end
+
+  def verify_email
+    @brother = Brother.find_by!(alter_email_token: params[:id])
+    current_brother.update_columns(email: @brother.alter_email,
+                                   alter_email: nil,
+                                   alter_email_token: nil)
+    redirect_to edit_brother_path(current_brother), notice: "!!! メールアドレス変更しました !!!"
+  end
+
+  def cancel_alter_email
+    current_brother.update_columns(alter_email: nil, alter_email_token: nil)
+    redirect_to edit_brother_path, notice: "!!! メールアドレス変更キャンセルしました !!!"
   end
 
   def following

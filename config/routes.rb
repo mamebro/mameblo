@@ -6,9 +6,11 @@ Mameblog::Application.routes.draw do
   resources :brothers, except: [:destroy] do
     member do
       get :following, :followers, :edit_email
-      patch :update_email
+      post :deliver_alter_email
+      patch :cancel_alter_email
     end
   end
+  get '/brothers/verify_email/:id', to: 'brothers#verify_email'
 
   resources :sessions, only: [:create, :destroy]
   resources :entries, only: [:create, :destroy, :show, :update, :edit] do
