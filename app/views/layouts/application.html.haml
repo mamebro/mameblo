@@ -49,6 +49,7 @@
     = analytics_init if Rails.env.production?
   %body
     = render 'layouts/header'
+    = render 'shared/email_nil_brother_notice' if signed_in?
     = render 'shared/entry_form' if signed_in?
     %div.page
       - flash.each do |key, value|
