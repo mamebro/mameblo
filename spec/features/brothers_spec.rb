@@ -32,5 +32,35 @@ feature "Brother pages" do
       click_button '投稿'
       is_expected.to have_content 'ぶろぐ投稿できたね'
     end
+
+    feature '設定ページ' do
+      before do
+        click_link '設定'
+      end
+
+      scenario 'パスワードを変更できること' do
+        fill_in 'brother[present_password]', with: 'shikakun'
+        fill_in 'brother[password]', with: 'password'
+        fill_in 'brother[password_confirmation]', with: 'password'
+        click_button 'パスワードの変更'
+        is_expected.to have_content 'パスワード変更しました'
+      end
+
+      scenario '現在のパスワードを間違えた時はパスワード変更できない' do
+        fill_in 'brother[present_password]', with: 'kunshika'
+        fill_in 'brother[password]', with: 'password'
+        fill_in 'brother[password_confirmation]', with: 'password'
+        click_button 'パスワードの変更'
+        is_expected.to have_content '!!! 現在のパスワードが間違ってます !!!'
+      end
+
+      scenario '確認用パスワードを間違えた時はパスワード変更できない' do
+        fill_in 'brother[present_password]', with: 'shikakun'
+        fill_in 'brother[password]', with: 'password'
+        fill_in 'brother[password_confirmation]', with: 'passwooo'
+        click_button 'パスワードの変更'
+        is_expected.to have_content 'Password confirmationと確認の入力が一致しません'
+      end
+    end
   end
 end

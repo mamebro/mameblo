@@ -5,7 +5,7 @@
   = "パスワードの変更"
 = form_for(@brother) do |f|
   = render 'shared/error_messages', object: f.object
-  = f.password_field :current_password, class: 'input input-text', placeholder: '現在のパスワード'
+  = f.password_field :present_password, class: 'input input-text', placeholder: '現在のパスワード'
   = f.password_field :password, class: 'input input-text', placeholder: '新しいパスワード'
   = f.password_field :password_confirmation, class: 'input input-text', placeholder: '新しいパスワードもう一回お願いします !!'
   = f.submit "パスワードの変更", class: "button button-horizontal button-primary"
