@@ -1,7 +1,7 @@
 $(function() {
-  $('.entry-beans.is_throwable').swipe( {
+  $('.entry').swipe( {
     swipeLeft:function(event, direction, distance, duration, fingerCount) {
-      $(this).submit();
+      $(this).find('.entry-beans.is_throwable').submit();
     },
     threshold: 5
   });
