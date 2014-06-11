@@ -6,11 +6,11 @@
         %div.entry-content
           = sanitize entry.content
           - if signed_in? && !current_brother?(entry.brother)
-            = form_tag entry_beans_path(entry), remote: true, class: 'entry-beans is_throwable clearfix', method: 'post', name: 'beans_name' do
+            = form_tag entry_beans_path(entry), remote: true, class: 'entry-beans is_throwable', method: 'post', name: 'beans_name' do
               %span.beans-count.iconmark.iconmark-bean{data: {beans: {count: entry.beans.count}}}<>
                 = entry.beans.count
           - else
-            %div.entry-beans.clearfix
+            %div.entry-beans
               %span.beans-count.iconmark.iconmark-bean{data: {beans: {count: entry.beans.count}}}<>
                 = entry.beans.count
 = paginate @entries
