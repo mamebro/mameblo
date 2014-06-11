@@ -5,16 +5,12 @@
         %h1.entry-title= link_to entry.title, entry
         %div.entry-content
           = sanitize entry.content
-          - if entry.beans.count > 0
-            = link_to entry, class: 'beans-count iconmark iconmark-bean' do
-              = entry.beans.count
-        - if signed_in? && !current_brother?(entry.brother)
-          = form_tag entry_beans_path(entry), remote: true, class: 'entry-beans is_throwable clearfix', method: 'post', name: 'beans_name' do
-            %button.bean-throw
-            - entry.beans.each do |bean|
-              %span.bean
-        - else
-          %div.entry-beans.clearfix
-            - entry.beans.each do |bean|
-              %span.bean
+          - if signed_in? && !current_brother?(entry.brother)
+            = form_tag entry_beans_path(entry), remote: true, class: 'entry-beans is_throwable clearfix', method: 'post', name: 'beans_name' do
+              %span.beans-count.iconmark.iconmark-bean{data: {beans: {count: entry.beans.count}}}<>
+                = entry.beans.count
+          - else
+            %div.entry-beans.clearfix
+              %span.beans-count.iconmark.iconmark-bean{data: {beans: {count: entry.beans.count}}}<>
+                = entry.beans.count
 = paginate @entries
