@@ -8,12 +8,19 @@ $(function() {
 
   $('.entry-beans.is_throwable').click(function() {
     $(this).submit();
-    var beanFlyingDistance = window.innerWidth,
+  });
+
+  $('.entry-beans.is_throwable').submit(function() {
+    var $entry = $(this).parents('.entry'),
+        currentBeans = Number($entry.attr('data-beans-count')) + 1,
+        beanFlyingDistance = window.innerWidth,
         beanFlyingScope = {
           'start' : window.pageYOffset,
           'end'   : window.pageYOffset + window.innerHeight
         },
         beanFlyingPosition = beanFlyingScope['start'] + Math.floor(Math.random() * (beanFlyingScope['end'] - beanFlyingScope['start']));
+    $entry.attr('data-beans-count', currentBeans);
+    $(this).find('.beans-count').html(currentBeans);
     $('body')
       .append('<span class="bean" />')
       .find('.bean:last-child')
@@ -25,12 +32,5 @@ $(function() {
         1000,
         'linear'
       );
-  });
-
-  $('.entry-beans.is_throwable').submit(function() {
-    var $entry = $(this).parents('.entry'),
-        currentBeans = Number($entry.attr('data-beans-count')) + 1;
-    $entry.attr('data-beans-count', currentBeans);
-    $(this).find('.beans-count').html(currentBeans);
   });
 });
