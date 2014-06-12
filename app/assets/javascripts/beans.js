@@ -29,18 +29,6 @@ $(function() {
         );
     })
     .on('touchstart', '.entry', function(e) {
-      touchStartX = e.originalEvent.touches[0].pageX;
-      touchStartY = e.originalEvent.touches[0].pageY;
-    })
-    .on('touchmove', '.entry', function(e) {
-      touchEndX = e.originalEvent.touches[0].pageX;
-      touchEndY = e.originalEvent.touches[0].pageY;
-    })
-    .on('touchend', '.entry', function(e) {
-      var touchDistanceX = touchStartX - touchEndX,
-          touchDistanceY = touchEndY - touchStartY;
-      if (10 < touchDistanceX && touchDistanceY < 10) {
-        $(this).find('.entry-beans.is_throwable').submit();
-      }
+      $(this).find('.entry-beans.is_throwable').submit();
     });
 });
