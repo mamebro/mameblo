@@ -1,10 +1,5 @@
 $(function() {
-  $('.entry').swipe( {
-    swipeLeft:function(event, direction, distance, duration, fingerCount) {
-      $(this).find('.entry-beans.is_throwable').submit();
-    },
-    threshold: 5
-  });
+  var gestureModeSwitch = 0;
 
   $(document.documentElement)
     .on('click', '.entry-beans.is_throwable', function(e) {
@@ -32,5 +27,18 @@ $(function() {
           1000,
           'linear'
         );
+    })
+    .on('touchstart', '.entry', function(e) {
+      console.log('# touchstart');
+      console.log('##### touchstart-x: ' + e.originalEvent.touches[0].pageX);
+      console.log('##### touchstart-y: ' + e.originalEvent.touches[0].pageY);
+    })
+    .on('touchmove', '.entry', function(e) {
+      console.log('# touchmove');
+      console.log('##### touchmove-x: ' + e.originalEvent.touches[0].pageX);
+      console.log('##### touchmove-y: ' + e.originalEvent.touches[0].pageY);
+    })
+    .on('touchend', '.entry', function(e) {
+      console.log('# touchend');
     });
 });
