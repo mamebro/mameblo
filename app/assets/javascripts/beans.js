@@ -24,7 +24,7 @@ $(function() {
           {
             right: beanFlyingDistance
           },
-          1000,
+          500,
           'linear'
         );
     })
