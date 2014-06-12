@@ -1,5 +1,5 @@
 $(function() {
-  var gestureModeSwitch = 0;
+  var touchStart, touchEnd;
 
   $(document.documentElement)
     .on('click', '.entry-beans.is_throwable', function(e) {
@@ -29,16 +29,15 @@ $(function() {
         );
     })
     .on('touchstart', '.entry', function(e) {
-      console.log('# touchstart');
-      console.log('##### touchstart-x: ' + e.originalEvent.touches[0].pageX);
-      console.log('##### touchstart-y: ' + e.originalEvent.touches[0].pageY);
+      touchStart = e.originalEvent.touches[0].pageX;
     })
     .on('touchmove', '.entry', function(e) {
-      console.log('# touchmove');
-      console.log('##### touchmove-x: ' + e.originalEvent.touches[0].pageX);
-      console.log('##### touchmove-y: ' + e.originalEvent.touches[0].pageY);
+      touchEnd = e.originalEvent.touches[0].pageX;
     })
     .on('touchend', '.entry', function(e) {
-      console.log('# touchend');
+      var touchDistance = touchStart - touchEnd;
+      if (10 < touchDistance) {
+        $(this).find('.entry-beans.is_throwable').submit();
+      }
     });
 });
