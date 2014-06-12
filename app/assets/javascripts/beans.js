@@ -29,14 +29,17 @@ $(function() {
         );
     })
     .on('touchstart', '.entry', function(e) {
-      touchStart = e.originalEvent.touches[0].pageX;
+      touchStartX = e.originalEvent.touches[0].pageX;
+      touchStartY = e.originalEvent.touches[0].pageY;
     })
     .on('touchmove', '.entry', function(e) {
-      touchEnd = e.originalEvent.touches[0].pageX;
+      touchEndX = e.originalEvent.touches[0].pageX;
+      touchEndY = e.originalEvent.touches[0].pageY;
     })
     .on('touchend', '.entry', function(e) {
-      var touchDistance = touchStart - touchEnd;
-      if (10 < touchDistance) {
+      var touchDistanceX = touchStartX - touchEndX,
+          touchDistanceY = touchEndY - touchStartY;
+      if (10 < touchDistanceX && touchDistanceY < 10) {
         $(this).find('.entry-beans.is_throwable').submit();
       }
     });
