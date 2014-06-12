@@ -1,11 +1,16 @@
 %div#content{data: {max: {page: @entries.num_pages}}}
   %article#entries.autopager-content
     - @entries.each do |entry|
-      %section.entry.autopager-item
+      %section.entry.autopager-item{data: {beans: {count: entry.beans.count}}}
         %h1.entry-title= link_to entry.title, entry
         %div.entry-content
           = sanitize entry.content
-          - if entry.beans.count > 0
-            = link_to entry, class: 'beans-count iconmark iconmark-bean' do
-              = entry.beans.count
+          - if signed_in? && !current_brother?(entry.brother)
+            = form_tag entry_beans_path(entry), remote: true, class: 'entry-beans is_throwable', method: 'post', name: 'beans_name' do
+              %span.beans-count.iconmark.iconmark-bean<>
+                = entry.beans.count
+          - else
+            %div.entry-beans
+              %span.beans-count.iconmark.iconmark-bean<>
+                = entry.beans.count
 = paginate @entries
