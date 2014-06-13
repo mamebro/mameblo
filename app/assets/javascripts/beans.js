@@ -17,9 +17,8 @@ $(function() {
     .on('touchend', '.entry', function(e) {
       var touchDistanceX = touchStartX - touchEndX,
           touchDistanceY = touchEndY - touchStartY;
-      if (100 < touchDistanceX && touchDistanceY < 30) {
-        console.log('touchDistanceX: ' + touchDistanceX);
-        console.log('touchDistanceY: ' + touchDistanceY);
+      if (100 < touchDistanceX && -30 < touchDistanceY && touchDistanceY < 30) {
+        throwUnidirectionalBean();
         $(this).find('.entry-beans.is_throwable').submit();
       }
     })
@@ -53,5 +52,17 @@ $(function() {
 
   function throwUnidirectionalBean() {
     // 指向性のある豆
+    var beanFlyingDistance = window.innerWidth;
+    $('body')
+      .append('<span class="bean" />')
+      .find('.bean:last-child')
+      .css('top', touchEndY)
+      .animate(
+        {
+          right: beanFlyingDistance
+        },
+        500,
+        'linear'
+      );
   }
 });
