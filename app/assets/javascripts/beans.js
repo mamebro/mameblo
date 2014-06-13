@@ -1,19 +1,33 @@
 $(function() {
-  var touchStart, touchEnd;
+  var touchStartX, touchStartY, touchEndX, touchEndY;
 
   $(document.documentElement)
     .on('click', '.entry-beans.is_throwable', function(e) {
       throwOmnidirectionalBean();
       $(this).submit();
     })
+    .on('touchstart', '.entry', function(e) {
+      touchStartX = e.originalEvent.touches[0].pageX;
+      touchStartY = e.originalEvent.touches[0].pageY;
+    })
+    .on('touchmove', '.entry', function(e) {
+      touchEndX = e.originalEvent.touches[0].pageX;
+      touchEndY = e.originalEvent.touches[0].pageY;
+    })
+    .on('touchend', '.entry', function(e) {
+      var touchDistanceX = touchStartX - touchEndX,
+          touchDistanceY = touchEndY - touchStartY;
+      if (100 < touchDistanceX && touchDistanceY < 30) {
+        console.log('touchDistanceX: ' + touchDistanceX);
+        console.log('touchDistanceY: ' + touchDistanceY);
+        $(this).find('.entry-beans.is_throwable').submit();
+      }
+    })
     .on('submit', '.entry-beans.is_throwable', function(e) {
       var $entry = $(this).parents('.entry'),
           currentBeans = Number($entry.attr('data-beans-count')) + 1;
       $entry.attr('data-beans-count', currentBeans);
       $(this).find('.beans-count').html(currentBeans);
-    })
-    .on('touchstart', '.entry', function(e) {
-      $(this).find('.entry-beans.is_throwable').submit();
     });
 
   function throwOmnidirectionalBean() {
