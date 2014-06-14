@@ -25,33 +25,10 @@
   font-url('mameblo/mameblo.svg') format('svg');
 }
 .icon {
-  margin-right: 0.05em;
-  width: 0.65em;
-  text-align: center;
-  font-family: EntypoIcon, EntypoSocialIcon, Mameblo;
-  display: inline-block;
-  font-size: 2em;
-  font-weight: normal !important;
-  font-style: normal;
-  line-height: 0.7em;
-  vertical-align: -0.06em;
-  text-decoration: none;
-  speak: none;
-  -webkit-font-smoothing: antialiased;
-}
-.iconmark {
-  &:before {
-    @extend .icon;
-    margin-right: 0;
-  }
-}
-.iconmark-bean {
-  &:before {
-    content: '\f703';
-  }
+  @extend %icon;
 }
 .iconbutton {
-  @extend .icon;
+  @extend %icon;
   width: 30px;
   height: 30px;
   text-align: center;

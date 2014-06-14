@@ -35,14 +35,43 @@
   .beans-count {
     position: absolute;
     bottom: 5px;
-    right: 10px;
+    right: 5px;
+    padding: 0 $gap/3 0 $gap/4;
     display: block;
-    color: $concrete;
-    font-size: 12px;
+    color: $silver;
+    font-size: $px10;
+    line-height: 1 !important;
+    background-color: $white;
+    box-shadow: inset 0 1px 0 $silver;
+    border-radius: 3px;
+    @include transition-property(background-color);
+    @include transition-duration(0.2s);
+    @include transition-timing-function(ease);
     @include at-breakpoint($break-desktop) {
       bottom: $gap/2;
-      right: $gap;
-      font-size: 14px;
+      right: $gap/2 + $gap/8;
+      font-size: $px12;
+    }
+    &:before {
+      @extend %icon;
+      content: '\f703';
+      margin-right: 0;
+    }
+  }
+  .entry-beans {
+    cursor: default;
+  }
+  .entry-beans.is_throwable {
+    cursor: pointer;
+    .beans-count {
+      color: $true-white;
+      background-color: $silver;
+      box-shadow: inset 0 0 0, 0 1px 0 $concrete;
+      &:hover,
+      &.threw {
+        background-color: $turquoise;
+        box-shadow: 0 1px 0 $greensea;
+      }
     }
   }
 }
@@ -215,14 +244,6 @@
     margin: 0 0 $gap/2 $gap/2;
     color: $concrete;
     border-left: 3px solid $silver;
-  }
-}
-
-.entry-beans {
-  &.is_throwable {
-    .beans-count {
-      cursor: pointer;
-    }
   }
 }
 

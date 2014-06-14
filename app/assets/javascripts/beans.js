@@ -26,7 +26,7 @@ $(function() {
       var $entry = $(this).parents('.entry'),
           currentBeans = Number($entry.attr('data-beans-count')) + 1;
       $entry.attr('data-beans-count', currentBeans);
-      $(this).find('.beans-count').html(currentBeans);
+      $(this).find('.beans-count').html(currentBeans).addClass('threw');
     });
 
   function throwOmnidirectionalBean() {
