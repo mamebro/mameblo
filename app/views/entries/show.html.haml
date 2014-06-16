@@ -6,7 +6,7 @@
       = form_tag entry_beans_path(@entry), remote: true, class: 'entry-beans is_throwable clearfix', method: 'post', name: 'beans_name' do
         %span.beans-count<>
           = @beans.count
-    - else
+    - elsif 0 < @entry.beans.count
       %div.entry-beans.clearfix
         %span.beans-count<>
           = @beans.count

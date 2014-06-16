@@ -9,7 +9,7 @@
             = form_tag entry_beans_path(entry), remote: true, class: 'entry-beans is_throwable', method: 'post', name: 'beans_name' do
               %span.beans-count<>
                 = entry.beans.count
-          - else
+          - elsif 0 < entry.beans.count
             %div.entry-beans
               %span.beans-count<>
                 = entry.beans.count
