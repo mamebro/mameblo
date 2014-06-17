@@ -39,7 +39,11 @@ include Ikachan
   end
 
   def update
-    if @brother.update brother_params
+    unless @brother.authenticate(params[:brother][:present_password])
+      return redirect_to edit_brother_path, notice: "!!! 現在のパスワードが間違ってます !!!"
+    end
+
+    if @brother.update(brother_params)
       flash[:success] = "!!! パスワード変更しました !!!"
       sign_in @brother
       redirect_to edit_brother_path
