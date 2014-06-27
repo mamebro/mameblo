@@ -32,13 +32,17 @@ $(function() {
     });
 
   function submitBean(target, attr) {
+    var throwDelay = 0;
     for (var i = 0; i < throwBeanNumber(); i++) {
-      target.submit();
-      if (attr === 'omni') {
-        throwOmnidirectionalBean();
-      } else if (attr === 'uni') {
-        throwUnidirectionalBean();
-      }
+      setTimeout(function() {
+        target.submit();
+        if (attr === 'omni') {
+          throwOmnidirectionalBean();
+        } else if (attr === 'uni') {
+          throwUnidirectionalBean();
+        }
+      }, throwDelay);
+      throwDelay = throwDelay + 66;
     }
   }
 
