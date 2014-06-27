@@ -7,7 +7,7 @@ $(function() {
 
   $(document.documentElement)
     .on('click', '.entry-beans.is_throwable', function(e) {
-      throwOmnidirectionalBean($(this));
+      submitBean($(this), 'omni');
     })
     .on('touchstart', '.entry', function(e) {
       touchStartX = e.originalEvent.touches[0].pageX;
@@ -21,7 +21,7 @@ $(function() {
       var touchDistanceX = touchStartX - touchEndX,
           touchDistanceY = touchEndY - touchStartY;
       if (100 < touchDistanceX && -30 < touchDistanceY && touchDistanceY < 30) {
-        throwUnidirectionalBean($(this).find('.entry-beans.is_throwable'));
+        submitBean($(this).find('.entry-beans.is_throwable'), 'uni');
       }
     })
     .on('submit', '.entry-beans.is_throwable', function(e) {
@@ -31,7 +31,18 @@ $(function() {
       $(this).find('.beans-count').html(currentBeans).addClass('threw');
     });
 
-  function throwOmnidirectionalBean(target) {
+  function submitBean(target, attr) {
+    for (var i = 0; i < throwBeanNumber(); i++) {
+      target.submit();
+      if (attr === 'omni') {
+        throwOmnidirectionalBean();
+      } else if (attr === 'uni') {
+        throwUnidirectionalBean();
+      }
+    }
+  }
+
+  function throwOmnidirectionalBean() {
     // 無指向性の豆
     var beanFlyingDistance = window.innerWidth,
         beanFlyingScope = {
@@ -50,10 +61,9 @@ $(function() {
         500,
         'linear'
       );
-    submitBean(target);
   }
 
-  function throwUnidirectionalBean(target) {
+  function throwUnidirectionalBean() {
     // 指向性のある豆
     var beanFlyingDistance = window.innerWidth;
     $('body')
@@ -67,15 +77,9 @@ $(function() {
         500,
         'linear'
       );
-    submitBean(target);
   }
 
   function throwBeanNumber() {
     return beanNumbers[Math.floor(Math.random() * beanNumbers.length)];
-  }
-
-  function submitBean(target) {
-    console.log(throwBeanNumber());
-    target.submit();
   }
 });
