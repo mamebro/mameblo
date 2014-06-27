@@ -1,5 +1,9 @@
 $(function() {
-  var touchStartX, touchStartY, touchEndX, touchEndY;
+  var touchStartX,
+      touchStartY,
+      touchEndX,
+      touchEndY,
+      beanNumbers = [1, 1, 1, 3, 3, 5, 7, 11];
 
   $(document.documentElement)
     .on('click', '.entry-beans.is_throwable', function(e) {
@@ -66,7 +70,12 @@ $(function() {
     submitBean(target);
   }
 
+  function throwBeanNumber() {
+    return beanNumbers[Math.floor(Math.random() * beanNumbers.length)];
+  }
+
   function submitBean(target) {
+    console.log(throwBeanNumber());
     target.submit();
   }
 });
