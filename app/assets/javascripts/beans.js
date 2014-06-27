@@ -1,10 +1,13 @@
 $(function() {
-  var touchStartX, touchStartY, touchEndX, touchEndY;
+  var touchStartX,
+      touchStartY,
+      touchEndX,
+      touchEndY,
+      beanNumbers = [1, 1, 1, 3, 3, 5, 7, 11];
 
   $(document.documentElement)
     .on('click', '.entry-beans.is_throwable', function(e) {
-      throwOmnidirectionalBean();
-      $(this).submit();
+      submitBean($(this), 'omni');
     })
     .on('touchstart', '.entry', function(e) {
       touchStartX = e.originalEvent.touches[0].pageX;
@@ -18,8 +21,7 @@ $(function() {
       var touchDistanceX = touchStartX - touchEndX,
           touchDistanceY = touchEndY - touchStartY;
       if (100 < touchDistanceX && -30 < touchDistanceY && touchDistanceY < 30) {
-        throwUnidirectionalBean();
-        $(this).find('.entry-beans.is_throwable').submit();
+        submitBean($(this).find('.entry-beans.is_throwable'), 'uni');
       }
     })
     .on('submit', '.entry-beans.is_throwable', function(e) {
@@ -28,6 +30,21 @@ $(function() {
       $entry.attr('data-beans-count', currentBeans);
       $(this).find('.beans-count').html(currentBeans).addClass('threw');
     });
+
+  function submitBean(target, attr) {
+    var throwDelay = 0;
+    for (var i = 0; i < throwBeanNumber(); i++) {
+      setTimeout(function() {
+        target.submit();
+        if (attr === 'omni') {
+          throwOmnidirectionalBean();
+        } else if (attr === 'uni') {
+          throwUnidirectionalBean();
+        }
+      }, throwDelay);
+      throwDelay = throwDelay + 66;
+    }
+  }
 
   function throwOmnidirectionalBean() {
     // 無指向性の豆
@@ -64,5 +81,9 @@ $(function() {
         500,
         'linear'
       );
+  }
+
+  function throwBeanNumber() {
+    return beanNumbers[Math.floor(Math.random() * beanNumbers.length)];
   }
 });
