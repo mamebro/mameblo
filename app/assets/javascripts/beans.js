@@ -3,8 +3,7 @@ $(function() {
 
   $(document.documentElement)
     .on('click', '.entry-beans.is_throwable', function(e) {
-      throwOmnidirectionalBean();
-      $(this).submit();
+      throwOmnidirectionalBean($(this));
     })
     .on('touchstart', '.entry', function(e) {
       touchStartX = e.originalEvent.touches[0].pageX;
@@ -18,8 +17,7 @@ $(function() {
       var touchDistanceX = touchStartX - touchEndX,
           touchDistanceY = touchEndY - touchStartY;
       if (100 < touchDistanceX && -30 < touchDistanceY && touchDistanceY < 30) {
-        throwUnidirectionalBean();
-        $(this).find('.entry-beans.is_throwable').submit();
+        throwUnidirectionalBean($(this).find('.entry-beans.is_throwable'));
       }
     })
     .on('submit', '.entry-beans.is_throwable', function(e) {
@@ -29,7 +27,7 @@ $(function() {
       $(this).find('.beans-count').html(currentBeans).addClass('threw');
     });
 
-  function throwOmnidirectionalBean() {
+  function throwOmnidirectionalBean(target) {
     // 無指向性の豆
     var beanFlyingDistance = window.innerWidth,
         beanFlyingScope = {
@@ -48,9 +46,10 @@ $(function() {
         500,
         'linear'
       );
+    submitBean(target);
   }
 
-  function throwUnidirectionalBean() {
+  function throwUnidirectionalBean(target) {
     // 指向性のある豆
     var beanFlyingDistance = window.innerWidth;
     $('body')
@@ -64,5 +63,10 @@ $(function() {
         500,
         'linear'
       );
+    submitBean(target);
+  }
+
+  function submitBean(target) {
+    target.submit();
   }
 });
