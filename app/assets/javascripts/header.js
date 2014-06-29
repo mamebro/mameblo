@@ -20,7 +20,6 @@ $(function() {
         $navMenuContent = $('.nav-menu-content'),
         $nav = $navMenuContent.find('.nav'),
         animationDelay = 50,
-        rotateDegree = -10,
         positionLeft = 5;
     if ($body.hasClass('is-menu')) {
       $body.removeClass('is-menu');
@@ -29,12 +28,8 @@ $(function() {
       $body.addClass('is-menu');
       $navMenuContent.show();
       $nav.each(function(index) {
-        var rotateDegreeProperty = rotateDegree * (index + 1),
-            positionLeftProperty = positionLeft * ((index + 1) * (index + 1));
+        var positionLeftProperty = positionLeft * ((index + 1) * (index + 1));
         $(this)
-          .css({
-            'transform': 'rotate(' + rotateDegreeProperty + 'deg)'
-          })
           .animate({
             'opacity': 0,
             'margin-top': '-10px',

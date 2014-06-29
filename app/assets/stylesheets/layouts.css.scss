@@ -7,6 +7,10 @@
   }
 }
 
+$animationDelay: 50px;
+$rotateDegree: -10deg;
+$positionLeft: 5px;
+
 @include at-breakpoint($break-phone) {
   .header {
     position: fixed;
@@ -34,6 +38,11 @@
           padding-top: $gap;
           height: 30px;
           line-height: 30px;
+          @for $i from 1 through 6 {
+            &:nth-child(#{$i}) {
+              transform: rotate($rotateDegree * $i);
+            }
+          }
           a {
             height: 30px;
             display: inline-block;
