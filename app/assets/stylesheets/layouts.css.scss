@@ -33,7 +33,7 @@ $positionLeft: 4px;
     0% {
       opacity: 0;
       margin-left: $positionLeftProperty - 10;
-      -webkit-transform: rotate(0deg);
+      -webkit-transform: rotate($rotateDegreeProperty + 10);
     }
     100% {
       opacity: 1;
@@ -45,7 +45,7 @@ $positionLeft: 4px;
     0% {
       opacity: 0;
       margin-left: $positionLeftProperty - 10;
-      transform: rotate(0deg);
+      transform: rotate($rotateDegreeProperty + 10);
     }
     100% {
       opacity: 1;
