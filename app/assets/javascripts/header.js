@@ -17,10 +17,7 @@ $(function() {
 
   function controlMenu() {
     var $body = $('body'),
-        $navMenuContent = $('.nav-menu-content'),
-        $nav = $navMenuContent.find('.nav'),
-        animationDelay = 50,
-        positionLeft = 5;
+        $navMenuContent = $('.nav-menu-content');
     if ($body.hasClass('is-menu')) {
       $body.removeClass('is-menu');
       $navMenuContent.removeClass('nav-menu-content-opened');
