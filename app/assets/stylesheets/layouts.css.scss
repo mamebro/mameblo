@@ -12,39 +12,31 @@ $rotateDegree: -10deg;
 $positionLeft: 4px;
 
 @for $i from 1 through 6 {
-  $positionLeftProperty: $positionLeft * (($i + 1) * ($i + 1));
+  $positionLeftProperty: $positionLeft * (($i + 1) * ($i + 1)) - 10;
   $rotateDegreeProperty: $rotateDegree * $i;
   .nav-menu-content-opened .nav:nth-child(#{$i}) {
     opacity: 0;
-    margin-top: 0;
-    margin-left: $positionLeftProperty;
     -webkit-transform: rotate($rotateDegreeProperty);
     transform: rotate($rotateDegreeProperty);
     -webkit-animation: menu-open-keyframes-#{$i} 100ms infinite;
     animation: menu-open-keyframes-#{$i} 100ms infinite;
-    -webkit-animation-delay: 50ms * $i;
-    animation-delay: 50ms * $i;
+    -webkit-animation-delay: 50ms * ($i - 1);
+    animation-delay: 50ms * ($i - 1);
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
   @-webkit-keyframes menu-open-keyframes-#{$i} {
     0% {
       opacity: 0;
-      margin-top: -10px;
       margin-left: $positionLeftProperty - 10;
-      -webkit-transform: rotate($rotateDegreeProperty);
-    }
-    80% {
-      opacity: 1;
-      margin-top: 10px;
-      margin-left: $positionLeftProperty + 10;
-      -webkit-transform: rotate($rotateDegreeProperty);
+      -webkit-transform: rotate(0deg);
     }
     100% {
       opacity: 1;
-      margin-top: 0;
       margin-left: $positionLeftProperty;
       -webkit-transform: rotate($rotateDegreeProperty);
     }
@@ -52,19 +44,11 @@ $positionLeft: 4px;
   @keyframes menu-open-keyframes-#{$i} {
     0% {
       opacity: 0;
-      margin-top: -10px;
       margin-left: $positionLeftProperty - 10;
-      transform: rotate($rotateDegreeProperty);
-    }
-    80% {
-      opacity: 1;
-      margin-top: 10px;
-      margin-left: $positionLeftProperty + 10;
-      transform: rotate($rotateDegreeProperty);
+      transform: rotate(0deg);
     }
     100% {
       opacity: 1;
-      margin-top: 0;
       margin-left: $positionLeftProperty;
       transform: rotate($rotateDegreeProperty);
     }
