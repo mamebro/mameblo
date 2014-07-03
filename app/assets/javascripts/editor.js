@@ -1,5 +1,6 @@
 $(function() {
-  var $entryFormTitle = $('#entry-form-title'),
+  var $entryForm = $('.new_entry, .edit_entry'),
+      $entryFormTitle = $('#entry-form-title'),
       $entryFormContent = $('#entry-form-content');
 
   $entryFormTitle
@@ -50,13 +51,13 @@ $(function() {
     }
   });
 
-  $('.new_entry, .edit_entry').find('textarea').focus(function () {
+  $entryForm.find('textarea').focus(function () {
     if (!$(this).hasClass('focus')) {
       $(this).addClass('focus');
     }
     $(window).keydown(function (e) {
       if (e.metaKey && e.keyCode === 13) {
-        $('.new_entry, .edit_entry').submit();
+        $entryForm.submit();
       }
     });
     checkSubmitable();
