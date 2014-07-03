@@ -1,5 +1,6 @@
 $(function() {
-  var $entryFormContent = $('#entry-form-content');
+  var $entryFormTitle = $('#entry-form-title'),
+      $entryFormContent = $('#entry-form-content');
 
   $('.nav-editor-control').click(function() {
     var $body = $('body');
