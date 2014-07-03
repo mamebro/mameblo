@@ -45,6 +45,9 @@ $(function() {
     if ($body.hasClass('is-editor')) {
       if ($entryForm.hasClass('submitable')) {
         if (window.confirm('投稿しなくて大丈夫？')) {
+          localStorage.clear();
+          $entryFormTitle.val('');
+          $entryFormContent.val('');
           $body.removeClass('is-editor');
         }
       } else {
