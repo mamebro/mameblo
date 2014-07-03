@@ -19,6 +19,11 @@ $(function() {
 
   $entryFormContent.attr('data-rows-original', $entryFormContent.attr('rows'));
 
+  $entryFormTitle.bind('keyup', function() {
+    // 入力した文字を保存する
+    localStorage.setItem('mamebloInputTitle', $(this).val());
+  }
+
   $entryFormContent.bind('keyup', function() {
     var inputText = $(this).val();
 
