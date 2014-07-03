@@ -1,18 +1,15 @@
-%section.entry
+%section.entry{data: {beans: {count: @beans.count}}}
   %h1.entry-title= link_to @entry.title
   %div.entry-content
     = sanitize @entry.content
-    %span.beans-count.iconmark.iconmark-bean{data: {beans: {count: @beans.count}}}<>
-      = @beans.count
-- if signed_in? && !current_brother?(@entry.brother)
-  = form_tag entry_beans_path(@entry), remote: true, class: 'entry-beans is_throwable clearfix', method: 'post', name: 'beans_name' do
-    %button.bean-throw
-    - @beans.each do |bean|
-      %span.bean
-- else
-  %div.entry-beans.clearfix
-    - @beans.each do |bean|
-      %span.bean
+    - if signed_in? && !current_brother?(@entry.brother)
+      = form_tag entry_beans_path(@entry), remote: true, class: 'entry-beans is_throwable clearfix', method: 'post', name: 'beans_name' do
+        %span.beans-count<>
+          = @beans.count
+    - elsif 0 < @entry.beans.count
+      %div.entry-beans.clearfix
+        %span.beans-count<>
+          = @beans.count
 %div.entry-footer
   %time.time
     = link_to time_ago_in_words(@entry.created_at) + '前'

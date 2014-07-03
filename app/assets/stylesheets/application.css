@@ -3,6 +3,7 @@
  *= require animate.css/animate
  *= require common
  *= require layouts
+ *= require beans
  *= require shared
  *= require entries
  *= require jinja

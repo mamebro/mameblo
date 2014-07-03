@@ -50,6 +50,9 @@
     .number {
       @extend %font.number;
       font-weight: bold;
+      @include at-breakpoint($break-desktop) {
+        font-weight: normal;
+      }
     }
 
     .label {
@@ -77,5 +80,8 @@
     display: inline-block;
     @extend %font.name;
     font-weight: bold;
+    @include at-breakpoint($break-desktop) {
+      font-weight: normal;
+    }
   }
 }
