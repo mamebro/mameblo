@@ -2,6 +2,39 @@ $(function() {
   var $entryFormTitle = $('#entry-form-title'),
       $entryFormContent = $('#entry-form-content');
 
+  $entryFormTitle
+    .val(localStorage.getItem('mamebloInputTitle'));
+  $entryFormContent
+    .val(localStorage.getItem('mamebloInputContent'))
+    .attr('data-rows-original', $entryFormContent.attr('rows'));
+
+  $entryFormTitle.bind('keyup', function() {
+    // 入力した文字を保存する
+    localStorage.setItem('mamebloInputTitle', $(this).val());
+  });
+
+  $entryFormContent.bind('keyup', function() {
+    var inputText = $(this).val();
+
+    // 入力した文字数にあわせて textarea を広げる
+    var self = this;
+    var value = inputText.split('\n');
+    var value_row = 0;
+    $.each(value, function(i, val) {
+      value_row += Math.max(Math.ceil(val.length/self.cols), 1);
+    });
+    var input_row = $(this).attr('rows');
+    var original_row = $(this).attr('data-rows-original');
+    var next_row = (input_row <= value_row) ? value_row + 1 : Math.max(value_row + 1, original_row);
+    $(this).attr('rows', next_row);
+
+    // 入力した文字を保存する
+    localStorage.setItem('mamebloInputContent', inputText);
+
+    // 日記を投稿できるかどうか調べる
+    checkSubmitable();
+  });
+
   $('.nav-editor-control').click(function() {
     var $body = $('body');
     if ($body.hasClass('is-editor')) {
@@ -15,35 +48,6 @@ $(function() {
     } else {
       $body.addClass('is-editor');
     }
-  });
-
-  $entryFormContent.attr('data-rows-original', $entryFormContent.attr('rows'));
-
-  $entryFormTitle.bind('keyup', function() {
-    // 入力した文字を保存する
-    localStorage.setItem('mamebloInputTitle', $(this).val());
-  }
-
-  $entryFormContent.bind('keyup', function() {
-    var inputText = $(this).val();
-
-    // 入力した文字数にあわせて textarea を広げる
-	  var self = this;
-	  var value = inputText.split('\n');
-	  var value_row = 0;
-	  $.each(value, function(i, val) {
-	    value_row += Math.max(Math.ceil(val.length/self.cols), 1);
-	  });
-	  var input_row = $(this).attr('rows');
-	  var original_row = $(this).attr('data-rows-original');
-	  var next_row = (input_row <= value_row) ? value_row + 1 : Math.max(value_row + 1, original_row);
-	  $(this).attr('rows', next_row);
-
-    // 入力した文字を保存する
-    localStorage.setItem('mamebloInputContent', inputText);
-
-    // 日記を投稿できるかどうか調べる
-    checkSubmitable();
   });
 
   $('.new_entry, .edit_entry').find('textarea').focus(function () {
