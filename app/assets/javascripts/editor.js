@@ -1,4 +1,6 @@
 $(function() {
+  var $entryFormContent = $('#entry-form-content');
+
   $('.nav-editor-control').click(function() {
     var $body = $('body');
     if ($body.hasClass('is-editor')) {
@@ -14,9 +16,9 @@ $(function() {
     }
   });
 
-  $('#entry-form-content').attr('data-rows-original', $('#entry-form-content').attr('rows'));
+  $entryFormContent.attr('data-rows-original', $entryFormContent.attr('rows'));
 
-  $('#entry-form-content').bind('keyup', function() {
+  $entryFormContent.bind('keyup', function() {
 	  var self = this;
 	  var value = $(this).val().split('\n');
 	  var value_row = 0;
@@ -43,7 +45,7 @@ $(function() {
   });
 
   function checkSubmitable() {
-    if ($('#entry-form-content').val().replace(/\s/g, '').length > 0) {
+    if ($entryFormContent.val().replace(/\s/g, '').length > 0) {
       if (!$('#new_entry').hasClass('submitable')) {
         $('#new_entry').addClass('submitable');
         $('#entry-form-submit').fadeIn(250);
