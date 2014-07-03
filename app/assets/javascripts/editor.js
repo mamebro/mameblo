@@ -1,7 +1,7 @@
 $(function() {
   var $entryForm = $('#new_entry'),
-      $entryFormTitle = $('#entry-form-title'),
-      $entryFormContent = $('#entry-form-content');
+      $entryFormTitle = $entryForm.find('#entry-form-title'),
+      $entryFormContent = $entryForm.find('#entry-form-content');
 
   $entryFormTitle
     .val(localStorage.getItem('mamebloInputTitle'));
