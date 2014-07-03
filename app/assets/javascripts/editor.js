@@ -36,6 +36,10 @@ $(function() {
     checkSubmitable();
   });
 
+  $entryForm.submit(function() {
+    localStorage.clear();
+  });
+
   $('.nav-editor-control').click(function() {
     var $body = $('body');
     if ($body.hasClass('is-editor')) {
