@@ -48,6 +48,8 @@ $(function() {
       if ($entryForm.hasClass('submittable')) {
         if (window.confirm('投稿しなくて大丈夫？')) {
           clearDraft();
+          $entryFormTitle.val('');
+          $entryFormContent.val('');
           $body.removeClass('is-editor');
         }
       } else {
@@ -73,8 +75,6 @@ $(function() {
   function clearDraft() {
     localStorage.clear('entryFormTitle');
     localStorage.clear('entryFormContent');
-    $entryFormTitle.val('');
-    $entryFormContent.val('');
   }
 
   function checkSubmittable() {
