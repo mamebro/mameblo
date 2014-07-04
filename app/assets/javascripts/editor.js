@@ -33,7 +33,7 @@ $(function() {
     localStorage.setItem('mamebloInputContent', inputText);
 
     // 日記を投稿できるかどうか調べる
-    checkSubmitable();
+    checkSubmittable();
   });
 
   $entryForm.submit(function() {
@@ -43,7 +43,7 @@ $(function() {
   $('.nav-editor-control').click(function() {
     var $body = $('body');
     if ($body.hasClass('is-editor')) {
-      if ($entryForm.hasClass('submitable')) {
+      if ($entryForm.hasClass('submittable')) {
         if (window.confirm('投稿しなくて大丈夫？')) {
           localStorage.clear();
           $entryFormTitle.val('');
@@ -67,18 +67,18 @@ $(function() {
         $entryForm.submit();
       }
     });
-    checkSubmitable();
+    checkSubmittable();
   });
 
-  function checkSubmitable() {
+  function checkSubmittable() {
     if ($entryFormContent.val().replace(/\s/g, '').length > 0) {
-      if (!$entryForm.hasClass('submitable')) {
-        $entryForm.addClass('submitable');
+      if (!$entryForm.hasClass('submittable')) {
+        $entryForm.addClass('submittable');
         $('#entry-form-submit').fadeIn(250);
       }
     } else {
-      if ($entryForm.hasClass('submitable')) {
-        $entryForm.removeClass('submitable');
+      if ($entryForm.hasClass('submittable')) {
+        $entryForm.removeClass('submittable');
         $('#entry-form-submit').fadeOut(250);
       }
     }
