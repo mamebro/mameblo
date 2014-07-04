@@ -4,14 +4,14 @@ $(function() {
       $entryFormContent = $entryForm.find('#entry-form-content');
 
   $entryFormTitle
-    .val(localStorage.getItem('mamebloInputTitle'));
+    .val(localStorage.getItem('entryFormTitle'));
   $entryFormContent
-    .val(localStorage.getItem('mamebloInputContent'))
+    .val(localStorage.getItem('entryFormContent'))
     .attr('data-rows-original', $entryFormContent.attr('rows'));
 
   $entryFormTitle.bind('keyup', function() {
     // 入力した文字を保存する
-    localStorage.setItem('mamebloInputTitle', $(this).val());
+    localStorage.setItem('entryFormTitle', $(this).val());
   });
 
   $entryFormContent.bind('keyup', function() {
@@ -30,14 +30,14 @@ $(function() {
     $(this).attr('rows', next_row);
 
     // 入力した文字を保存する
-    localStorage.setItem('mamebloInputContent', inputText);
+    localStorage.setItem('entryFormContent', inputText);
 
     // 日記を投稿できるかどうか調べる
     checkSubmittable();
   });
 
   $entryForm.submit(function() {
-    localStorage.clear();
+    clearLocalStorage();
   });
 
   $('.nav-editor-control').click(function() {
@@ -45,9 +45,7 @@ $(function() {
     if ($body.hasClass('is-editor')) {
       if ($entryForm.hasClass('submittable')) {
         if (window.confirm('投稿しなくて大丈夫？')) {
-          localStorage.clear();
-          $entryFormTitle.val('');
-          $entryFormContent.val('');
+          clearLocalStorage();
           $body.removeClass('is-editor');
         }
       } else {
@@ -69,6 +67,13 @@ $(function() {
     });
     checkSubmittable();
   });
+
+  function clearLocalStorage() {
+    localStorage.clear('entryFormTitle');
+    localStorage.clear('entryFormContent');
+    $entryFormTitle.val('');
+    $entryFormContent.val('');
+  }
 
   function checkSubmittable() {
     if ($entryFormContent.val().replace(/\s/g, '').length > 0) {
