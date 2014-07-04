@@ -39,7 +39,7 @@ $(function() {
   });
 
   $entryForm.submit(function() {
-    clearLocalStorage();
+    clearDraft();
   });
 
   $('.nav-editor-control').click(function() {
@@ -47,7 +47,7 @@ $(function() {
     if ($body.hasClass('is-editor')) {
       if ($entryForm.hasClass('submittable')) {
         if (window.confirm('投稿しなくて大丈夫？')) {
-          clearLocalStorage();
+          clearDraft();
           $body.removeClass('is-editor');
         }
       } else {
@@ -70,7 +70,7 @@ $(function() {
     checkSubmittable();
   });
 
-  function clearLocalStorage() {
+  function clearDraft() {
     localStorage.clear('entryFormTitle');
     localStorage.clear('entryFormContent');
     $entryFormTitle.val('');
