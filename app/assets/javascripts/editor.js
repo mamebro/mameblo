@@ -9,6 +9,8 @@ $(function() {
     .val(localStorage.getItem('entryFormContent'))
     .attr('data-rows-original', $entryFormContent.attr('rows'));
 
+  checkSubmittable();
+
   $entryFormTitle.bind('keyup', function() {
     // 入力した文字を保存する
     localStorage.setItem('entryFormTitle', $(this).val());
