@@ -5,4 +5,5 @@
 //= require emojify/emojify
 //= require WOW/dist/wow
 //= require fastclick/lib/fastclick
+//= require jquery-autosize/jquery.autosize
 //= require_tree .
