@@ -3,6 +3,8 @@ $(function() {
       $entryFormTitle = $entryForm.find('#entry-form-title'),
       $entryFormContent = $entryForm.find('#entry-form-content');
 
+  if ($entryForm.size() <= 0) { return; }
+
   $entryFormTitle
     .val(localStorage.getItem('entryFormTitle'));
   $entryFormContent
