@@ -36,9 +36,13 @@ class SettingsController < ApplicationController
   end
 
   def verify_email
-    @brother = Brother.find_by!(alter_email_token: params[:id])
-    current_brother.update_columns(email: @brother.alter_email, alter_email: nil, alter_email_token: nil)
-    redirect_to email_settings_path, notice: "!!! メールアドレス変更しました !!!"
+    @brother = Brother.find_by(alter_email_token: params[:id])
+    if @brother
+      current_brother.update_columns(email: @brother.alter_email, alter_email: nil, alter_email_token: nil)
+      redirect_to email_settings_path, notice: "!!! メールアドレス変更しました !!!"
+    else
+      redirect_to email_settings_path, notice: "!!! メールアドレスの変更できませんでした。メールアドレス変更に記載されているURLをご確認下さい !!!"
+    end
   end
 
   def cancel_alter_email
