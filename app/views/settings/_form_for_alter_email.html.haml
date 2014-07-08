@@ -1,0 +1,7 @@
+= form_for @brother, url: deliver_alter_email_settings_path, method: "post" do |f|
+  = f.label :alter_email, '変更後のメールアドレス'
+  = f.text_field :alter_email, placeholder: 'メールアドレス'
+
+  = f.label :password, '現在のパスワード'
+  = f.password_field :current_password, placeholder: '現在のパスワード'
+  = f.submit 'メールアドレスの変更', disable_with: '送信中...'

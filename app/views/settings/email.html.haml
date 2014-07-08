@@ -1,0 +1,9 @@
+- provide(:title, "メールアドレスの設定")
+%h1.brother-name
+  = @brother.name + " (#{@brother.email})"
+%h2
+  = "メールアドレスの変更"
+- if @brother.alter_email.present?
+  = render 'form_for_verify_alter_email'
+- else
+  = render 'form_for_alter_email'
