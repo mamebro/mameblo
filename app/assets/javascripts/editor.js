@@ -3,17 +3,17 @@ $(function() {
       $entryFormTitle = $entryForm.find('#entry-form-title'),
       $entryFormContent = $entryForm.find('#entry-form-content');
 
-  if (0 < $entryForm.size()) {
-    $entryFormTitle
-      .val(localStorage.getItem('entryFormTitle'));
-    $entryFormContent
-      .val(localStorage.getItem('entryFormContent'))
-      .attr('data-rows-original', $entryFormContent.attr('rows'));
+  if ($entryForm.size() <= 0) { return; }
 
-    checkSubmittable();
+  $entryFormTitle
+    .val(localStorage.getItem('entryFormTitle'));
+  $entryFormContent
+    .val(localStorage.getItem('entryFormContent'))
+    .attr('data-rows-original', $entryFormContent.attr('rows'));
 
-    $('textarea').autosize();
-  }
+  checkSubmittable();
+
+  $('textarea').autosize();
 
   $entryFormTitle.bind('keyup', function() {
     // 入力した文字を保存する
