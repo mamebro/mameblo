@@ -8,7 +8,7 @@ class SettingsController < ApplicationController
   def update_password
     @brother = current_brother
     unless @brother.authenticate(params[:brother][:present_password])
-      return redirect_to password_settings_path, notice: "!!! 現在のパスワードが間違ってます !!!"
+      return redirect_to password_settings_path, notice: "!!! 現在のパスワードが間違っています !!!"
     end
 
     if @brother.update(brother_params)
@@ -16,7 +16,7 @@ class SettingsController < ApplicationController
       sign_in @brother
       redirect_to settings_path
     else
-      redirect_to password_settings_path, notice: "!!! 新しいパスワードが間違ってます !!!"
+      redirect_to password_settings_path, notice: "!!! 新しいパスワードが間違っています !!!"
     end
   end
 
@@ -26,7 +26,7 @@ class SettingsController < ApplicationController
 
   def deliver_alter_email
     unless current_brother.authenticate(params[:brother][:current_password])
-      redirect_to email_settings_path, notice: "!!! パスワードが間違ってます !!!"
+      redirect_to email_settings_path, notice: "!!! パスワードが間違っています !!!"
     else
       alter_email = params[:brother][:alter_email]
       token = SecureRandom.urlsafe_base64
