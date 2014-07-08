@@ -1,21 +1,22 @@
 class SettingsController < ApplicationController
   before_action :signed_in_brother
 
-  def edit_password
+  def password
+    @brother = current_brother
   end
 
   def update_password
+    @brother = current_brother
     unless @brother.authenticate(params[:brother][:present_password])
-      return redirect_to edit_brother_path, notice: "!!! 現在のパスワードが間違ってます !!!"
+      return redirect_to password_settings_path, notice: "!!! 現在のパスワードが間違ってます !!!"
     end
 
     if @brother.update(brother_params)
       flash[:success] = "!!! パスワード変更しました !!!"
       sign_in @brother
-      redirect_to edit_brother_path
+      redirect_to settings_path
     else
-      @entry  = current_brother.entries.build
-      render 'edit'
+      redirect_to password_settings_path, notice: "!!! 新しいパスワードが間違ってます !!!"
     end
   end
 
@@ -51,6 +52,9 @@ class SettingsController < ApplicationController
   end
 
   private
+  def brother_params
+    params.require(:brother).permit(:name, :email, :password, :password_confirmation)
+  end
 
   def signed_in_brother
     unless signed_in?

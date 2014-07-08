@@ -1,8 +1,7 @@
 class BrothersController < ApplicationController
 include Ikachan
-  before_action :signed_in_brother, only: [:index, :edit, :update, :destroy, :following, :followers]
-  before_action :load_brother,      only: [:show, :edit, :update, :destroy, :following, :followers]
-  before_action :correct_brother,   only: [:edit, :update]
+  before_action :signed_in_brother, only: [:index, :destroy, :following, :followers]
+  before_action :load_brother,      only: [:show, :destroy, :following, :followers]
   before_action :admin_brother,     only: :destroy
 
   respond_to :html, :json
@@ -32,24 +31,6 @@ include Ikachan
       redirect_to root_path
     else
       render 'new'
-    end
-  end
-
-  def edit
-  end
-
-  def update
-    unless @brother.authenticate(params[:brother][:present_password])
-      return redirect_to edit_brother_path, notice: "!!! 現在のパスワードが間違ってます !!!"
-    end
-
-    if @brother.update(brother_params)
-      flash[:success] = "!!! パスワード変更しました !!!"
-      sign_in @brother
-      redirect_to edit_brother_path
-    else
-      @entry  = current_brother.entries.build
-      render 'edit'
     end
   end
 
@@ -83,11 +64,6 @@ include Ikachan
 
   def load_brother
     @brother = Brother.find_by_name_or_id(params[:id])
-  end
-
-  def correct_brother
-    @brother = Brother.find_by_name_or_id(params[:id])
-    redirect_to(root_path) unless current_brother?(@brother)
   end
 
   def admin_brother

@@ -12,6 +12,8 @@ Mameblog::Application.routes.draw do
   resource :settings, except: [:destroy] do
     member do
       get :index
+      get :password
+      post :update_password
       get :email
       post :deliver_alter_email
       patch :cancel_alter_email
