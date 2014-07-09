@@ -30,9 +30,12 @@ class SettingsController < ApplicationController
     else
       alter_email = params[:brother][:alter_email]
       token = SecureRandom.urlsafe_base64
-      current_brother.update_columns(alter_email: alter_email, alter_email_token: token)
-      BrotherMailer.verify_alter_email(current_brother).deliver
-      redirect_to email_settings_path, notice: "!!! 変更後のメールアドレスに確認メールを送信しました !!!"
+      if current_brother.update_columns(alter_email: alter_email, alter_email_token: token)
+        BrotherMailer.verify_alter_email(current_brother).deliver
+        redirect_to email_settings_path, notice: "!!! 変更後のメールアドレスに確認メールを送信しました !!!"
+      else
+        redirect_to email_settings_path, notice: "!!! メールアドレス変更の確認メール送信ができませんでした !!!"
+      end
     end
   end
 
