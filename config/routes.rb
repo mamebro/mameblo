@@ -1,5 +1,7 @@
 Mameblog::Application.routes.draw do
 
+  get 'farms/index'
+
   resources :password_resets, only: [:new, :create, :update, :edit]
 
   get "jinja/index"
