@@ -6,6 +6,6 @@
 
 以下のURLをクリックするとメールアドレス変更完了となります。
 
-<%= @url %>
+<%= verify_email_url(@brother.alter_email_token) %>
 
 メールアドレス変更のキャンセルは「設定」ページより行うことができます。

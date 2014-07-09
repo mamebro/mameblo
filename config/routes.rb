@@ -19,7 +19,7 @@ Mameblog::Application.routes.draw do
       patch :cancel_alter_email
     end
   end
-  get '/verify_email/:id', to: 'settings#verify_email'
+  get '/verify_email/:id', to: 'settings#verify_email', as: 'verify_email'
 
   resources :sessions, only: [:create, :destroy]
   resources :entries, only: [:create, :destroy, :show, :update, :edit] do
