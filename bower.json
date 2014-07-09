@@ -8,6 +8,7 @@
     "jquery-touchswipe": "*",
     "WOW": "*",
     "animate.css": "*",
-    "fastclick": "*"
+    "fastclick": "*",
+    "jquery-autosize": "*"
   }
 }
