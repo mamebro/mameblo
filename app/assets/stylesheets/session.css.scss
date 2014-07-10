@@ -1,6 +1,6 @@
 @import 'import';
 
-.session {
+.modal {
   position: absolute;
   top: 0;
   right: 0;
@@ -10,13 +10,13 @@
   height: 100%;
   background-color: $midnightblue;
   z-index: 123456;
-  .session-wrapper {
+  .modal-wrapper {
     width: 100%;
     height: 100%;
     @include display-box;
     @include box-pack(center);
     @include box-align(center);
-    .session-content {
+    .modal-content {
       width: 260px;
       max-height: 88%;
       padding: 2em 0;
@@ -37,7 +37,7 @@
   }
 }
 
-.session {
+.modal {
   .password-field-wrapper {
     position: relative;
     .password-forget {
