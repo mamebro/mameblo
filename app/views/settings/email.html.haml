@@ -1,9 +1,13 @@
-- provide(:title, "メールアドレスの設定")
-%h1.brother-name
-  = @brother.name + " (#{@brother.email})"
-%h2
-  = "メールアドレスの変更"
-- if @brother.alter_email.present?
-  = render 'form_for_verify_alter_email'
-- else
-  = render 'form_for_alter_email'
+- provide(:title, "メールアドレス変更")
+%div.modal
+  %div.modal-wrapper
+    %div.modal-content.wow.flash{data:{wow:{iteration: '3', duration: '0.15s'}}}
+      %h1.modal-title
+        メールアドレス変更
+      - if @brother.alter_email.present?
+        = render 'form_for_verify_alter_email'
+      - else
+        = render 'form_for_alter_email'
+        = link_to settings_path, class: 'nav-close' do
+          %i.iconbutton.nav-editor-control<>
+            &#10060;

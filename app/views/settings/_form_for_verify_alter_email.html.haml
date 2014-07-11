@@ -1,5 +1,3 @@
-現在のメールアドレス:
-= @brother.email
-変更後のメールアドレス:
-= @brother.alter_email
-= link_to '変更をキャンセルする', cancel_alter_email_settings_path, method: :patch, class: "btn"
+%div.modal-body
+  おめでとう！メールアドレスを #{@brother.email} から #{@brother.alter_email} に変更したよ。
+= link_to '変更をキャンセルする', class: 'button button-horizontal button-danger', cancel_alter_email_settings_path, method: :patch
