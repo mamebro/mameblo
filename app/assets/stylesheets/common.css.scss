@@ -232,6 +232,17 @@ textarea {
       display: block;
       overflow-y: scroll;
       color: $white;
+      .modal-title {
+        @extend %font.title;
+        padding: $gap $gap/2;
+        margin-bottom: $gap/2;
+        text-align: center;
+        display: block;
+        color: $clouds;
+        line-height: 1 !important;
+        background-color: $wetasphalt;
+        box-shadow: inset 0 1px 0 $midnightblue;
+      }
     }
   }
 }
