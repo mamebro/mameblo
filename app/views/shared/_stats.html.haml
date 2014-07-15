@@ -13,7 +13,13 @@
       %span.label
         人兄弟
   %a.stat.follower{href: "#{followers_brother_path(@brother)}"}
+    %span.separate-border
+      %span.number
+        = @brother.followers.count
+      %span.label
+        保護者
+  %span.stat.beans-count
     %span.number
-      = @brother.followers.count
+      = @beans.count
     %span.label
-      保護者
+      まめ

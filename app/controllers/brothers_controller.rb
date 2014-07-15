@@ -17,6 +17,7 @@ include Ikachan
     @entries.each_with_index do |entry, index|
       @entries[index].content = entry.content_as_markdown
     end
+    @beans = Bean.where(entry_id: @brother.entries)
   end
 
   def new
