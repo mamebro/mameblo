@@ -52,12 +52,14 @@ include Ikachan
   def following
     @title = "ブラザー"
     @brothers = @brother.followed_brothers.order(:name).page params[:page]
+    @beans = Bean.where(entry_id: @brother.entries)
     render 'show_follow'
   end
 
   def followers
     @title = "見守っているブラザー"
     @brothers = @brother.followers.order(:name).page params[:page]
+    @beans = Bean.where(entry_id: @brother.entries)
     render 'show_follow'
   end
 

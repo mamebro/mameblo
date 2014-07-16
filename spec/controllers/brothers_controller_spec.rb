@@ -9,4 +9,21 @@ describe BrothersController do
     end
   end
 
+  describe "GET 'following'" do
+    it "returns success" do
+      brother = FactoryGirl.create(:brother)
+      sign_in brother
+      get 'following', id: brother.id
+      expect(response).to be_success
+    end
+  end
+
+  describe "GET 'follower'" do
+    it "returns success" do
+      brother = FactoryGirl.create(:brother)
+      sign_in brother
+      get 'followers', id: brother.id
+      expect(response).to be_success
+    end
+  end
 end
