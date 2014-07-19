@@ -23,7 +23,7 @@ feature "settings" do
         fill_in 'brother[present_password]', with: 'shikakun'
         fill_in 'brother[password]', with: 'password'
         fill_in 'brother[password_confirmation]', with: 'password'
-        click_button 'パスワードの変更'
+        click_button '変更する'
         is_expected.to have_content 'パスワード変更しました'
       end
 
@@ -31,7 +31,7 @@ feature "settings" do
         fill_in 'brother[present_password]', with: 'kunshika'
         fill_in 'brother[password]', with: 'password'
         fill_in 'brother[password_confirmation]', with: 'password'
-        click_button 'パスワードの変更'
+        click_button '変更する'
         is_expected.to have_content '!!! 現在のパスワードが間違っています !!!'
       end
 
@@ -39,7 +39,7 @@ feature "settings" do
         fill_in 'brother[present_password]', with: 'shikakun'
         fill_in 'brother[password]', with: 'password'
         fill_in 'brother[password_confirmation]', with: 'passwooo'
-        click_button 'パスワードの変更'
+        click_button '変更する'
         is_expected.to have_content '!!! 新しいパスワードが間違っています !!!'
       end
     end
@@ -52,14 +52,21 @@ feature "settings" do
       scenario '現在のパスワードを間違えた時はメールアドレス変更できない' do
         fill_in 'brother[alter_email]', with: 'dev@mamebro.com'
         fill_in 'brother[current_password]', with: 'kunshika'
-        click_button 'メールアドレスの変更'
+        click_button '変更する'
         is_expected.to have_content '!!! パスワードが間違っています !!!'
+      end
+
+      scenario 'メールアドレスの形式が間違っていたら変更できないこと' do
+        fill_in 'brother[alter_email]', with: 'mamebrocom'
+        fill_in 'brother[current_password]', with: 'shikakun'
+        click_button '変更する'
+        is_expected.to have_content '!!! メールアドレスの形式が間違っています !!!'
       end
 
       scenario 'メールアドレス変更のメールが送信されること' do
         fill_in 'brother[alter_email]', with: 'dev@mamebro.com'
         fill_in 'brother[current_password]', with: 'shikakun'
-        click_button 'メールアドレスの変更'
+        click_button '変更する'
         is_expected.to have_content '!!! 変更後のメールアドレスに確認メールを送信しました !!!'
       end
     end

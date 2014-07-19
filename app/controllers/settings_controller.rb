@@ -1,5 +1,6 @@
 class SettingsController < ApplicationController
   before_action :signed_in_brother
+  before_action :alter_email_validator, only: [:deliver_alter_email]
 
   def password
     @brother = current_brother
@@ -66,4 +67,9 @@ class SettingsController < ApplicationController
     end
   end
 
+  def alter_email_validator
+    unless params[:brother][:alter_email] =~ Brother::VALID_EMAIL_REGEX
+      redirect_to email_settings_path, notice: "!!! メールアドレスの形式が間違っています !!!"
+    end
+  end
 end
