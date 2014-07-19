@@ -32,5 +32,6 @@ feature "Brother pages" do
       click_button '投稿'
       is_expected.to have_content 'ぶろぐ投稿できたね'
     end
+
   end
 end

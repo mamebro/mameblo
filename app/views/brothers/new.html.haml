@@ -1,6 +1,6 @@
-%div.session
-  %div.session-wrapper
-    %div.session-content.wow.flash{data:{wow:{iteration: '3', duration: '0.15s'}}}
+%div.modal
+  %div.modal-wrapper
+    %div.modal-content.wow.flash{data:{wow:{iteration: '3', duration: '0.15s'}}}
       = render 'shared/session_header'
       = form_for(@brother) do |f|
         = render 'shared/error_messages', object: f.object

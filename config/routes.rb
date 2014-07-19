@@ -9,6 +9,18 @@ Mameblog::Application.routes.draw do
     end
   end
 
+  resource :settings, except: [:destroy] do
+    member do
+      get :index
+      get :password
+      post :update_password
+      get :email
+      post :deliver_alter_email
+      patch :cancel_alter_email
+    end
+  end
+  get '/verify_email/:id', to: 'settings#verify_email', as: 'verify_email'
+
   resources :sessions, only: [:create, :destroy]
   resources :entries, only: [:create, :destroy, :show, :update, :edit] do
     resources :beans, only: [:create, :destroy]

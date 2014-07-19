@@ -1,43 +1,15 @@
 @import 'import';
 
-.session {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: $midnightblue;
-  z-index: 123456;
-  .session-wrapper {
-    width: 100%;
-    height: 100%;
-    @include display-box;
-    @include box-pack(center);
-    @include box-align(center);
-    .session-content {
-      width: 260px;
-      max-height: 88%;
-      padding: 2em 0;
+.modal {
+  .session-header {
+    margin-bottom: 1em;
+    .brand {
+      width: 54px;
+      height: 54px;
+      margin: 0 auto;
       display: block;
-      overflow-y: scroll;
-      color: $white;
     }
   }
-}
-
-.session-header {
-  margin-bottom: 1em;
-  .brand {
-    width: 54px;
-    height: 54px;
-    margin: 0 auto;
-    display: block;
-  }
-}
-
-.session {
   .password-field-wrapper {
     position: relative;
     .password-forget {

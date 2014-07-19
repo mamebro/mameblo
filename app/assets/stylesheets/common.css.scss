@@ -209,6 +209,52 @@ textarea {
   }
 }
 
+.modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $midnightblue;
+  z-index: 123456;
+  .modal-wrapper {
+    width: 100%;
+    height: 100%;
+    @include display-box;
+    @include box-pack(center);
+    @include box-align(center);
+    .modal-content {
+      width: 260px;
+      max-height: 88%;
+      padding: 2em 0;
+      display: block;
+      overflow-y: scroll;
+      color: $white;
+      .modal-title {
+        @extend %font.title;
+        padding: $gap $gap/2;
+        margin-bottom: $gap/2;
+        text-align: center;
+        display: block;
+        color: $clouds;
+        line-height: 1 !important;
+        background-color: $wetasphalt;
+        box-shadow: inset 0 1px 0 $midnightblue;
+      }
+      .modal-body {
+        @extend %font.default;
+        padding: $gap;
+        margin-bottom: $gap/2;
+        color: $clouds;
+        background-color: $wetasphalt;
+        box-shadow: inset 0 1px 0 $midnightblue;
+      }
+    }
+  }
+}
+
 .page-title {
   margin-bottom: $gap;
   text-align: center;

@@ -5,6 +5,7 @@ FactoryGirl.define do
     password "shikakun"
     password_confirmation "shikakun"
     password_reset_token SecureRandom.urlsafe_base64
+    alter_email nil
   end
 
   factory :entry do
