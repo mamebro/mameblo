@@ -16,6 +16,7 @@ include Ikachan
     @entries.each_with_index do |entry, index|
       @entries[index].content = entry.content_as_markdown
     end
+    @beans = Bean.where(entry_id: @brother.entries)
   end
 
   def new
@@ -37,12 +38,14 @@ include Ikachan
   def following
     @title = "ブラザー"
     @brothers = @brother.followed_brothers.order(:name).page params[:page]
+    @beans = Bean.where(entry_id: @brother.entries)
     render 'show_follow'
   end
 
   def followers
     @title = "見守っているブラザー"
     @brothers = @brother.followers.order(:name).page params[:page]
+    @beans = Bean.where(entry_id: @brother.entries)
     render 'show_follow'
   end
 
