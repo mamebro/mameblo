@@ -8,7 +8,7 @@ include Ikachan
   respond_to :html, :json
 
   def index
-    @brothers = Brother.order(:name).page params[:page]
+    @brothers = Brother.all.sample(3)
     respond_with(@brothers, :only => [:id, :name, :created_at])
   end
 
