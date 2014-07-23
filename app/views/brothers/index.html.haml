@@ -1,6 +1,11 @@
 = provide(:title, 'みんな')
 %h1.page-title
-  もしかして兄弟かも???
+  ??? 兄弟かも ???
 %div#content
-  %ul.brothers.autopager-content
-    = render @brothers
+  %ul.cards.autopager-content
+    - @brothers.each do |brother|
+      %section.card.autopager-item
+        %div.card-content
+          %h1.card-title
+            %a{href: "/brothers/#{brother.name}"}
+              = brother.name

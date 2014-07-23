@@ -209,6 +209,41 @@ textarea {
   }
 }
 
+.cards {
+  @include clearfix;
+  .card {
+    @include box-sizing(border-box);
+    @include span-columns(1,1);
+    margin-bottom: $gap;
+    @include at-breakpoint($break-desktop) {
+      @include span-columns(1,2);
+      &:nth-child(1n) {
+        padding: 0 $gap/2 0 0;
+      }
+      &:nth-child(2n) {
+        padding: 0 0 0 $gap/2;
+      }
+    }
+    .card-content {
+      min-height: 100px;
+      padding: $gap;
+      @include at-breakpoint($break-desktop) {
+        padding: $gap*2;
+      }
+      word-break: break-all;
+      background-color: $true-white;
+      box-shadow: 0 1px 0 $silver;
+      .card-title {
+        margin-bottom: $gap/2;
+        @include at-breakpoint($break-desktop) {
+          margin-bottom: $gap;
+        }
+        @extend %font.title;
+      }
+    }
+  }
+}
+
 .page-title {
   margin-bottom: $gap;
   text-align: center;
