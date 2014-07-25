@@ -4,8 +4,6 @@
 %div#content
   %ul.cards.autopager-content
     - @brothers.each do |brother|
-      %section.card.autopager-item
-        %div.card-content
-          %h1.card-title
-            %a{href: "/brothers/#{brother.name}"}
-              = brother.name
+      %div.card
+        %a.card-content{href: "/brothers/#{brother.name}"}
+          = brother.name
