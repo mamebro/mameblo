@@ -8,7 +8,7 @@ include Ikachan
   respond_to :html, :json
 
   def index
-    @brothers = Brother.all.sample(3)
+    @brothers = Brother.all.sample(6)
     respond_with(@brothers, :only => [:id, :name, :created_at])
   end
 
