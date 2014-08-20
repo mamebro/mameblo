@@ -27,7 +27,7 @@ class Entry < ActiveRecord::Base
   end
 
   def convert_bro(content)
-    content.gsub(/:bro_(.+?):/, '<img src="http://localhost:3000/\1.svg">')
+    content.gsub(/:bro_(.+?):/, '<img src="' + Rails.application.secrets.host + '\1.svg">')
   end
 
   private
