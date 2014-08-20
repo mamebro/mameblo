@@ -17,17 +17,13 @@ class Entry < ActiveRecord::Base
   # http://rubygems.org/gems/github-markdown
   # GitHub-Markdownで出力
   def content_as_markdown
-    GitHub::Markdown.render_gfm(convert_bro(content))
+    GitHub::Markdown.render_gfm(content)
   end
 
   def self.from_brothers_followed_by(brother)
     followed_brother_ids = brother.followed_brother_ids
     where("brother_id IN (:followed_brother_ids) OR brother_id = :brother_id",
           followed_brother_ids: followed_brother_ids, brother_id: brother)   
-  end
-
-  def convert_bro(content)
-    content.gsub(/:bro_(.+?):/, '<img src="' + Rails.application.secrets.host + '\1.svg">')
   end
 
   private
