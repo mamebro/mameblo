@@ -19,4 +19,10 @@ module ApplicationHelper
   def myself
     I18n.t(:myself)
   end
+
+  # カウントダウン
+  def countdown(year, month, day)
+    target = Time.mktime(year, month, day, 0, 0, 0)
+    ((target - Time.now) / (60 * 60 * 24) + 1).floor
+  end
 end
