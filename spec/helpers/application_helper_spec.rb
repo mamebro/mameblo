@@ -10,6 +10,6 @@ describe ApplicationHelper do
   end
 
   it 'カウントダウンの日付を取得できる' do
-    expect(countdown(Date.tomorrow.strftime('%Y'), Date.tomorrow.strftime('%m'), Date.tomorrow.strftime('%d'))).to have_content '1'
+    expect(countdown(Date.tomorrow)).to eq 1
   end
 end

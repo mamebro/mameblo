@@ -26,8 +26,7 @@ module ApplicationHelper
   end
 
   # カウントダウン
-  def countdown(year, month, day)
-    target = Time.mktime(year, month, day, 0, 0, 0)
-    ((target - Time.now) / (60 * 60 * 24) + 1).floor
+  def countdown(date)
+    (date - Date.current).to_i
   end
 end
