@@ -20,6 +20,11 @@ module ApplicationHelper
     I18n.t(:myself)
   end
 
+  # 結婚式
+  def wedding_party
+    I18n.t(:wedding_party)
+  end
+
   # カウントダウン
   def countdown(year, month, day)
     target = Time.mktime(year, month, day, 0, 0, 0)
