@@ -2,3 +2,13 @@
   %h1.brand
     = image_tag "brand-black.png", alt: 'まめぶろ'
   = render 'layouts/nav'
+%div.countdown
+  %span.countdown-content.countdown-label<>
+    結婚式まで
+  %span.countdown-content.countdown-num<>
+    %span<>
+      あと
+    %span.animated.flash<>
+      #{countdown(2014,9,20)}
+    %span<>
+      日
