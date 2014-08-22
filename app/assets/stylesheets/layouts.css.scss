@@ -234,6 +234,54 @@ $positionLeft: 4px;
   }
 }
 
+.countdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  @include at-breakpoint($break-desktop) {
+    left: auto;
+    right: 60px;
+    width: auto;
+  }
+  .countdown-content {
+    position: absolute;
+    top: 0;
+    height: 44px;
+    display: block;
+    color: $midnightblue;
+    font-size: $px12;
+    line-height: 44px;
+    @include at-breakpoint($break-desktop) {
+      position: relative;
+      height: 50px;
+      display: inline-block;
+      color: $asbestos;
+      font-size: $px14;
+      line-height: 50px;
+    }
+    &.countdown-label {
+      right: 50%;
+      padding-right: 22px;
+      text-align: right;
+      @include at-breakpoint($break-desktop) {
+        right: auto;
+        padding-right: 0;
+      }
+    }
+    &.countdown-num {
+      left: 50%;
+      padding-left: 22px;
+      text-align: left;
+      @include at-breakpoint($break-desktop) {
+        left: auto;
+        padding-left: 0;
+        text-align: right;
+      }
+    }
+  }
+}
+
 .footer {
   padding: $gap 0 $gap*2;
   .copyright {

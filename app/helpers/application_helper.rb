@@ -19,4 +19,14 @@ module ApplicationHelper
   def myself
     I18n.t(:myself)
   end
+
+  # 結婚式
+  def wedding_party
+    I18n.t(:wedding_party)
+  end
+
+  # カウントダウン
+  def countdown(date)
+    (date - Date.current).to_i
+  end
 end
