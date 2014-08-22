@@ -4,4 +4,8 @@ describe ApplicationHelper do
   it '一人称を配列で取得できる' do
     expect(myself).to be_a(Array)
   end
+
+  it 'カウントダウンの日付を取得できる' do
+    expect(countdown(Date.tomorrow.strftime('%Y'), Date.tomorrow.strftime('%m'), Date.tomorrow.strftime('%d'))).to have_content '1'
+  end
 end
