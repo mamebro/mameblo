@@ -48,6 +48,8 @@
     = favicon_link_tag "/apple-touch-icon.png", rel: 'apple-touch-icon', type: 'image/png', sizes: '114x114'
     = analytics_init if Rails.env.production?
   %body
+    :javascript
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//suzuri.jp/thirdparty/widgets.js";js.charset="utf-8";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","suzuri-widget-script");
     = render 'layouts/header'
     = render 'shared/entry_form' if signed_in?
     %div.page
