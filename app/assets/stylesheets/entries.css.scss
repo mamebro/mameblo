@@ -20,7 +20,7 @@
 
   &.entry-pr {
     min-height: 0;
-    padding-left: 60px;
+    padding: $gap/2 $gap/2 $gap/2 60px;
     display: block;
     @extend %font.default;
     color: #fff;
