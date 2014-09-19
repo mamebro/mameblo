@@ -245,6 +245,12 @@
     color: $concrete;
     border-left: 3px solid $silver;
   }
+
+  .stamp {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 }
 
 .entry-footer {
