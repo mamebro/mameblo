@@ -31,5 +31,14 @@ module ApplicationHelper
     .gsub(/:bro_smile:/, image_tag('stamps/smile.svg'))
     .gsub(/:bro_cry:/, image_tag('stamps/cry.svg'))
     .gsub(/:bro_cheers:/, image_tag('stamps/cheers.svg'))
+
+  # 結婚式
+  def wedding_party
+    I18n.t(:wedding_party)
+  end
+
+  # カウントダウン
+  def countdown(date)
+    (date - Date.current).to_i
   end
 end
