@@ -15,24 +15,24 @@ describe ApplicationHelper do
 
   context 'スタンプの記述がされている時' do
     it 'スタンプへのパスに変換されること' do
-      expect(convert_bro(':bro_cheers:')).to eq '<img alt="Cheers" src="/images/stamps/cheers.svg" />'
+      expect(convert_bro(':brocheers:')).to eq '<img alt="Cheers" class="stamp" src="/images/stamps/cheers.svg" />'
     end
 
     it '複数存在する時も変換されること' do
 content =<<'EOS'
 hi this is test!
 
-:bro_cheers:
+:brocheers:
 
-:bro_ok:
+:brook:
 EOS
 
 converted_content =<<'EOS'
 hi this is test!
 
-<img alt="Cheers" src="/images/stamps/cheers.svg" />
+<img alt="Cheers" class="stamp" src="/images/stamps/cheers.svg" />
 
-<img alt="Ok" src="/images/stamps/ok.svg" />
+<img alt="Ok" class="stamp" src="/images/stamps/ok.svg" />
 EOS
       expect(convert_bro(content)).to eq converted_content
     end
