@@ -26,22 +26,4 @@ $(function() {
       $navMenuContent.addClass('nav-menu-content-opened');
     }
   }
-
-  var weddingContents = ['.header-wedding-day-part1', '.header-wedding-day-part2'],
-      weddingCurrentStatus = 0;
-  function changeWeddingContent() {
-    $('.header-wedding-day-content').hide();
-    $(weddingContents[weddingCurrentStatus]).show();
-    weddingCurrentStatus++;
-    if(weddingContents.length <= weddingCurrentStatus) {
-      weddingCurrentStatus = 0;
-    }
-  }
-
-  if (window.innerWidth < 960) {
-    changeWeddingContent();
-    setInterval(function() {
-      changeWeddingContent();
-    }, 2000);
-  }
 });
