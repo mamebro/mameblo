@@ -9,6 +9,10 @@ describe ApplicationHelper do
     expect(wedding_party).to be_a(Array)
   end
 
+  it 'Tips を配列で取得できる' do
+    expect(tips).to be_a(Array)
+  end
+
   it 'カウントダウンの日付を取得できる' do
     expect(countdown(Date.tomorrow)).to eq 1
   end
