@@ -31,6 +31,7 @@ module ApplicationHelper
     .gsub(/:bro_smile:/, image_tag('stamps/smile.svg'))
     .gsub(/:bro_cry:/, image_tag('stamps/cry.svg'))
     .gsub(/:bro_cheers:/, image_tag('stamps/cheers.svg'))
+  end
 
   # 結婚式
   def wedding_party
