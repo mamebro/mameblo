@@ -3,10 +3,16 @@
     = image_tag "brand-heart.png", alt: 'まめぶろ'
   = render 'layouts/nav'
 %div.header-wedding-day
-  %span.header-wedding-day-content.header-wedding-day-boy.animated.flash<>
+  %span.header-wedding-day-content.header-wedding-day-part1.header-wedding-day-boy.animated.rubberBand<>
     glover
-  %span.header-wedding-day-content.header-wedding-day-girl.animated.flash<>
+  %span.header-wedding-day-content.header-wedding-day-part1.header-wedding-day-girl.animated.rubberBand<>
     %span.header-wedding-day-heart<>
       ♡
     %span<>
       nicokuki
+  %span.header-wedding-day-content.header-wedding-day-part2.header-wedding-day-boy.animated.bounceIn<>
+    :erb
+      !!! おめでとう
+  %span.header-wedding-day-content.header-wedding-day-part2.header-wedding-day-girl.animated.bounceIn<>
+    :erb
+      ございます !!!

@@ -286,6 +286,11 @@ $positionLeft: 4px;
       }
     }
   }
+  @include at-breakpoint($break-desktop) {
+    .header-wedding-day-part1.header-wedding-day-girl {
+      margin-right: $gap;
+    }
+  }
 }
 
 .footer {
