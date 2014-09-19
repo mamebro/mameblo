@@ -33,6 +33,11 @@ module ApplicationHelper
     .gsub(/:brocheers:/, image_tag('stamps/cheers.svg', class: 'stamp'))
   end
 
+  # Tips
+  def tips
+    I18n.t(:tips)
+  end
+
   # 結婚式
   def wedding_party
     I18n.t(:wedding_party)
