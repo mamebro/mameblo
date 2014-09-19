@@ -2,13 +2,11 @@
   %h1.brand
     = image_tag "brand-heart.png", alt: 'まめぶろ'
   = render 'layouts/nav'
-%div.countdown
-  %span.countdown-content.countdown-label<>
-    #{wedding_party.sample}まで
-  %span.countdown-content.countdown-num<>
+%div.header-wedding-day
+  %span.header-wedding-day-content.header-wedding-day-boy.animated.flash<>
+    glover
+  %span.header-wedding-day-content.header-wedding-day-girl.animated.flash<>
+    %span.header-wedding-day-heart<>
+      ♡
     %span<>
-      あと
-    %span.animated.flash<>
-      #{countdown(Date.new(2014,9,20))}
-    %span<>
-      日
+      nicokuki
