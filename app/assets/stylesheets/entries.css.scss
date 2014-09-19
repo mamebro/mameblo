@@ -30,6 +30,7 @@
     background-position: 10px center;
     background-color: $silver;
     box-shadow: 0 1px 0 $concrete;
+    cursor: pointer;
   }
 
   .beans-count {
@@ -244,6 +245,12 @@
     margin: 0 0 $gap/2 $gap/2;
     color: $concrete;
     border-left: 3px solid $silver;
+  }
+
+  .stamp {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 }
 

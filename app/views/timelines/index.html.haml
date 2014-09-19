@@ -1,5 +1,5 @@
 ﻿- if signed_in?
   = render 'navs', current_page: 'index'
-%a.entry.entry-pr{href: 'http://www.yurugp.jp/vote/detail.php?id=00002515', target: '_blank'}
-  [PR] ゆるキャラグランプリでロリポおじさんに投票してGMOペパボ株式会社を盛り上げる !!!
+  %div.entry.entry-pr.nav-editor-control
+    #{tips.sample}
 = render 'shared/entries'
