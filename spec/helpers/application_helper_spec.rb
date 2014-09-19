@@ -12,4 +12,29 @@ describe ApplicationHelper do
   it 'カウントダウンの日付を取得できる' do
     expect(countdown(Date.tomorrow)).to eq 1
   end
+
+  context 'スタンプの記述がされている時' do
+    it 'スタンプへのパスに変換されること' do
+      expect(convert_bro(':bro_cheers:')).to eq '<img alt="Cheers" src="/images/stamps/cheers.svg" />'
+    end
+
+    it '複数存在する時も変換されること' do
+content =<<'EOS'
+hi this is test!
+
+:bro_cheers:
+
+:bro_ok:
+EOS
+
+converted_content =<<'EOS'
+hi this is test!
+
+<img alt="Cheers" src="/images/stamps/cheers.svg" />
+
+<img alt="Ok" src="/images/stamps/ok.svg" />
+EOS
+      expect(convert_bro(content)).to eq converted_content
+    end
+  end
 end
