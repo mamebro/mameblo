@@ -5,10 +5,6 @@ describe ApplicationHelper do
     expect(myself).to be_a(Array)
   end
 
-  it '結婚式を配列で取得できる' do
-    expect(wedding_party).to be_a(Array)
-  end
-
   it 'Tips を配列で取得できる' do
     expect(tips).to be_a(Array)
   end
