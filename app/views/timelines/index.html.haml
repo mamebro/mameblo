@@ -1,5 +1,4 @@
 ﻿- if signed_in?
   = render 'navs', current_page: 'index'
-  %div.entry.entry-pr.nav-editor-control
-    #{tips.sample}
+  = render 'tips'
 = render 'shared/entries'
