@@ -1,2 +1,0 @@
-module Tent::HomeHelper
-end

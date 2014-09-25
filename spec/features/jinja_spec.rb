@@ -15,7 +15,7 @@ feature 'Jinja' do
     end
 
     scenario '神社ページが表示されること' do
-      is_expected.to have_content '夏祭り'
+      is_expected.to have_content '神社'
       is_expected.to have_content '屋台'
       is_expected.to have_content 'まめくじ'
     end
