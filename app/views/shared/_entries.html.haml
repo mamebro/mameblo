@@ -1,8 +1,7 @@
 %div#content{data: {max: {page: @entries.num_pages}}}
   %article#entries.autopager-content
     - if controller.controller_path == 'timelines' && @entries.current_page % 2 != 1
-      %a.entry.entry-pr.autopager-item{href: 'http://www.yurugp.jp/vote/detail.php?id=00002515', target: '_blank'}
-        [PR] ゆるキャラグランプリでロリポおじさんに投票してGMOペパボ株式会社を盛り上げる !!!
+      = render 'shared/tips'
     - @entries.each do |entry|
       %section.entry.autopager-item{data: {beans: {count: entry.beans.count}}}
         %h1.entry-title= link_to entry.title, entry
