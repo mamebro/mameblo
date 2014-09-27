@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe BeansController do
+describe BeansController, type: :controller do
 
   pending "POST 'create'" do
     it "returns http success" do

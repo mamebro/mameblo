@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.1.1'
+gem 'rails', '4.1.6'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'faker'
@@ -16,9 +16,9 @@ gem 'active_model_serializers'
 
 # Gems used only for assets and not required
 # in production environments by default.
-gem 'sprockets'
-gem 'sprockets-rails'
-gem 'sass-rails'
+gem 'sprockets', '~> 2.11.0'
+gem 'sprockets-rails', '~> 2.0.0'
+gem 'sass-rails', '4.0.3'
 gem 'coffee-rails'
 gem 'compass-rails'
 gem 'susy'

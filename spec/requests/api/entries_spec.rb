@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Entries api' do
+describe 'Entries api', type: :request do
   let(:password) { 'nejimakid0ri' }
   let(:kumiko) { FactoryGirl.create(:brother, name: 'kumiko', password: password, password_confirmation: password) }
   let(:entry) { FactoryGirl.create(:entry, brother: kumiko) }
