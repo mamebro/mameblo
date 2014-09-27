@@ -33,9 +33,9 @@ module ApplicationHelper
     .gsub(/:brocheers:/, image_tag('stamps/cheers.svg', class: 'stamp'))
   end
 
-  # Tips
-  def tips
-    I18n.t(:tips)
+  # まめぶろ広告
+  def ad
+    I18n.t(:ad)
   end
 
   # 結婚式
