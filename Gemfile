@@ -18,7 +18,7 @@ gem 'active_model_serializers'
 # in production environments by default.
 gem 'sprockets', '~> 2.11.0'
 gem 'sprockets-rails', '~> 2.0.0'
-gem 'sass-rails', '4.0.3'
+gem 'sass-rails'
 gem 'coffee-rails'
 gem 'compass-rails'
 gem 'susy'
