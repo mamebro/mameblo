@@ -1,6 +1,5 @@
 = provide(:title, 'みんな')
-%h1.page-title
-  みんな
+= render 'navs', current_page: 'brothers-index'
 %div#content
   %ul.brothers.autopager-content
     = render @brothers

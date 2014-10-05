@@ -1,6 +1,5 @@
-= provide(:title, 'みんな')
-%h1.page-title
-  もしかして、兄弟？
+= provide(:title, 'もしかして、兄弟？')
+= render 'navs', current_page: 'brothers-discover'
 %div#content
   %ul.cards.autopager-content
     - @brothers.each do |brother|
