@@ -1,9 +1,7 @@
 = provide(:title, 'みんな')
 %h1.page-title
-  もしかして、兄弟？
+  みんな
 %div#content
-  %ul.cards.autopager-content
-    - @brothers.each do |brother|
-      %div.card
-        %a.card-content{href: "/brothers/#{brother.name}"}
-          = brother.name
+  %ul.brothers.autopager-content
+    = render @brothers
+= paginate @brothers

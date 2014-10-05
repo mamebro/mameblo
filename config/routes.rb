@@ -2,12 +2,12 @@ Mameblog::Application.routes.draw do
 
   resources :password_resets, only: [:new, :create, :update, :edit]
 
-  get "jinja/index"
   resources :brothers, except: [:destroy] do
     member do
       get :following, :followers
     end
   end
+  get '/discover', to: 'brothers#discover'
 
   resources :sessions, only: [:create, :destroy]
   resources :entries, only: [:create, :destroy, :show, :update, :edit] do
@@ -24,8 +24,8 @@ Mameblog::Application.routes.draw do
   get '/signin',  to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
   get "/contributors", to: 'contributors#index'
-  get "/jinja/omikuji", to: 'jinja/omikuji#index'
   get "/jinja", to: 'jinja#index'
+  get "/jinja/omikuji", to: 'jinja/omikuji#index'
   get "/jinja/osaisen", to: 'jinja/osaisen#index'
 
   namespace :api do
