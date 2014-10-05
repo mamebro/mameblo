@@ -1,0 +1,8 @@
+= provide(:title, 'もしかして、兄弟？')
+= render 'navs', current_page: 'brothers-discover'
+%div#content
+  %ul.cards.autopager-content
+    - @brothers.each do |brother|
+      %div.card
+        %a.card-content{href: "/brothers/#{brother.name}"}
+          = brother.name

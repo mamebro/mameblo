@@ -4,6 +4,9 @@
 = render 'shared/stats'
 - if @brothers.any?
   %div#content{data: {max: {page: @brothers.num_pages}}}
-    %ul.brothers.autopager-content
-      = render @brothers
+    %ul.cards.autopager-content
+      - @brothers.each do |brother|
+        %div.card
+          %a.card-content{href: "/brothers/#{brother.name}"}
+            = brother.name
   = paginate @brothers

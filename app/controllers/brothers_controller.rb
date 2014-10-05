@@ -12,6 +12,11 @@ include Ikachan
     respond_with(@brothers, :only => [:id, :name, :created_at])
   end
 
+  def discover
+    @brothers = Brother.all.sample(6)
+    respond_with(@brothers, :only => [:id, :name, :created_at])
+  end
+
   def show
     @entries = @brother.entries.page params[:page]
     @entries.each_with_index do |entry, index|
