@@ -13,7 +13,8 @@ include Ikachan
   end
 
   def discover
-    @brothers = Brother.all.sample(6)
+    followed_brother_ids = Relationship.where(follower_id: current_brother.id).pluck(:followed_id)
+    @brothers = Brother.where.not(id: followed_brother_ids).sample(6)
     respond_with(@brothers, :only => [:id, :name, :created_at])
   end
 
