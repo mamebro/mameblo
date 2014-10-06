@@ -1,8 +1,5 @@
 %div#content{data: {max: {page: @entries.num_pages}}}
   %article#entries.autopager-content
-    -# 近況の偶数ページにまめぶろ広告を挿入する
-    - if controller.controller_path == 'timelines' && @entries.current_page.even?
-      = render 'shared/ad'
     - @entries.each do |entry|
       %section.entry.autopager-item{data: {beans: {count: entry.beans.count}}}
         %h1.entry-title= link_to entry.title, entry
