@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Jinja::OsaisenController do
+describe Jinja::OsaisenController, type: :controller do
 
   describe "GET 'index'" do
     it "returns http success" do

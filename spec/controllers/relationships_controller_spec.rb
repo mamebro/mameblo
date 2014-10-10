@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe RelationshipsController do
+describe RelationshipsController, type: :controller do
 
   let(:brother) { FactoryGirl.create(:brother) }
   let(:other_brother) { FactoryGirl.create(:brother) }

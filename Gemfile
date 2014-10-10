@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-# rails 4
-gem 'rails', '~> 4.1.1'
+gem 'rails', '4.1.6'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'faker'
@@ -14,18 +13,12 @@ gem 'faraday'
 gem 'newrelic_rpm'
 gem 'github-markdown'
 gem 'active_model_serializers'
-
-# Gems used only for assets and not required
-# in production environments by default.
-gem 'sprockets'
-gem 'sprockets-rails'
-gem 'sass-rails'
+gem 'sprockets', '~> 2.11.0'
+gem 'sprockets-rails', '~> 2.0.0'
+gem 'sass-rails', '4.0.3'
 gem 'coffee-rails'
 gem 'compass-rails'
 gem 'susy'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 gem 'execjs'
 gem 'therubyracer'
 gem 'uglifier'
@@ -37,11 +30,11 @@ end
 
 group :development, :test do
   gem 'sqlite3'
-  gem "rspec-rails", '~> 3.0.0.beta2'
-  gem "rspec"
-  gem "rspec-core"
-  gem "rspec-expectations"
-  gem "rspec-mocks"
+  gem 'rspec-rails'
+  gem 'rspec'
+  gem 'rspec-core'
+  gem 'rspec-expectations'
+  gem 'rspec-mocks'
   gem 'guard-rspec'
   gem 'annotate'
   gem 'factory_girl_rails'
@@ -50,8 +43,8 @@ group :development, :test do
 end
 
 group :development do
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do
@@ -61,9 +54,7 @@ group :test do
   gem 'rb-fsevent'
   gem 'guard-spork'
   gem 'spork'
-  gem "timecop"
+  gem 'timecop'
   gem 'json_expressions'
-  gem 'coveralls', require: false
-  gem 'simplecov', require: false
   gem 'autodoc'
 end

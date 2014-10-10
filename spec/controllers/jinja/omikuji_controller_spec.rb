@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Jinja::OmikujiController do
+describe Jinja::OmikujiController, type: :controller do
 
   describe "GET 'index'" do
     it "returns http success" do
