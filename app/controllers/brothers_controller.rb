@@ -12,6 +12,12 @@ include Ikachan
     respond_with(@brothers, :only => [:id, :name, :created_at])
   end
 
+  def discover
+    followed_brother_ids = Relationship.where(follower_id: current_brother.id).pluck(:followed_id)
+    @brothers = Brother.where.not(id: followed_brother_ids).sample(6)
+    respond_with(@brothers, :only => [:id, :name, :created_at])
+  end
+
   def show
     @entries = @brother.entries.page params[:page]
     @entries.each_with_index do |entry, index|

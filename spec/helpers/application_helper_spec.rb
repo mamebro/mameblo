@@ -5,8 +5,8 @@ describe ApplicationHelper, type: :helper do
     expect(myself).to be_a(Array)
   end
 
-  it 'Tips を配列で取得できる' do
-    expect(tips).to be_a(Array)
+  it 'まめぶろ広告を配列で取得できる' do
+    expect(ad).to be_a(Array)
   end
 
   it 'カウントダウンの日付を取得できる' do

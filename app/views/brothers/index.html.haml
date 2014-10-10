@@ -1,7 +1,6 @@
 = provide(:title, 'みんな')
-%h1.page-title
-  みんな
-%div#content{data: {max: {page: @brothers.num_pages}}}
+= render 'navs', current_page: 'brothers-index'
+%div#content
   %ul.brothers.autopager-content
     = render @brothers
 = paginate @brothers

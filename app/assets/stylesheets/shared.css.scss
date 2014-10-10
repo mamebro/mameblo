@@ -85,3 +85,21 @@
     }
   }
 }
+
+.ad {
+  padding: $gap/1.5 $gap/2 $gap/1.5 60px;
+  @include at-breakpoint($break-desktop) {
+    padding: $gap/2 $gap/2 $gap/2 60px;
+  }
+  margin-bottom: $gap;
+  word-break: break-all;
+  display: block;
+  @extend %font.default;
+  color: #fff;
+  background-image: image-url('pr_brothers.png');
+  @include background-size(40px);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-color: $silver;
+  box-shadow: 0 1px 0 $concrete;
+}
