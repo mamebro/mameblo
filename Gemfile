@@ -41,6 +41,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'tapp'
   gem 'pry-rails'
+  gem 'spring'
+  gem 'spring-commands-rspec'
 end
 
 group :development do
