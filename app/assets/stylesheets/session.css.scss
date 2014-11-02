@@ -13,9 +13,9 @@
   .session-wrapper {
     width: 100%;
     height: 100%;
-    @include display-box;
-    @include box-pack(center);
-    @include box-align(center);
+    // @include display-box;
+    // @include box-pack(center);
+    // @include box-align(center);
     .session-content {
       width: 260px;
       max-height: 88%;

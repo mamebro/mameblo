@@ -271,7 +271,13 @@ textarea {
           height: 30px;
           display: block;
           color: $orange;
-          @extend %font.default;
+          // @extend %font.default;
+          // see: http://thesassway.com/intermediate/understanding-placeholder-selectors
+          color: $black;
+          font-family: $font-family-sans-serif;
+          font-size: $px14;
+          line-height: 1.66;
+          @include font-expand($px16, $px14, 1.66);
           line-height: 30px;
         }
       }
@@ -304,7 +310,14 @@ textarea {
           height: 44px;
           display: block;
           color: $black;
-          @extend %font.default;
+          // @extend %font.default;
+          // see: http://thesassway.com/intermediate/understanding-placeholder-selectors
+          color: $black;
+          font-family: $font-family-sans-serif;
+          font-size: $px14;
+          line-height: 1.66;
+          @include font-expand($px16, $px14, 1.66);
+          line-height: 30px;
           line-height: 44px;
           border-width: 0 0 1px 0;
           border-style: solid;
