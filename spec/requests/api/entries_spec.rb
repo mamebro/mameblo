@@ -31,7 +31,7 @@ describe 'Entries api', type: :request do
     end
   end
 
-  pending '/entiries/home' do
+  describe '/entiries/home' do
     context 'success' do
       let(:brothers) do
         brothers = []
@@ -67,7 +67,7 @@ describe 'Entries api', type: :request do
         expect(response.status).to eq(200)
       end
 
-      it '自分がフォローしている人(フォロイー)の投稿を取得する' do
+      pending '自分がフォローしている人(フォロイー)の投稿を取得する' do
         followee_ids = followee.map(&:id)
         get "/api/entries/home.json", {name: kumiko.name, auth_token: token}
         response_body["entries"].each do |entry|
