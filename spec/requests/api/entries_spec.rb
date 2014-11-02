@@ -31,7 +31,7 @@ describe 'Entries api', type: :request do
     end
   end
 
-  describe '/entiries/home' do
+  pending '/entiries/home' do
     context 'success' do
       let(:brothers) do
         brothers = []
@@ -75,7 +75,7 @@ describe 'Entries api', type: :request do
         end
       end
 
-      describe '件数' do
+      pending '件数' do
         it 'デフォルト20件' do
           get "/api/entries/home.json", {name: kumiko.name, auth_token: token}
           expect(response_body["entries"].size).to eq 20
@@ -87,7 +87,7 @@ describe 'Entries api', type: :request do
         end
       end
 
-      describe '最新の投稿を取得するURL' do
+      pending '最新の投稿を取得するURL' do
         let(:latest_url) { response_body["meta"]["_links"]["latest"] }
         let(:latest_entry) { response_body["entries"].first }
 
@@ -104,7 +104,7 @@ describe 'Entries api', type: :request do
         end
       end
 
-      describe '過去の投稿を取得するURL' do
+      pending '過去の投稿を取得するURL' do
         let(:previous_url) { response_body["meta"]["_links"]["previous"] }
         let(:oldest_entry) { response_body["entries"].last }
 
