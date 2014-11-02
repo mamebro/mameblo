@@ -5,7 +5,7 @@ describe RelationshipsController, type: :controller do
   let(:brother) { FactoryGirl.create(:brother) }
   let(:other_brother) { FactoryGirl.create(:brother) }
 
-  before { sign_in brother }
+  before { sign_in_for_controller brother }
 
   describe "creating a relationship with Ajax" do
 
