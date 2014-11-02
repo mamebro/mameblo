@@ -4,7 +4,7 @@ describe BeansController, type: :controller do
   describe "POST 'create'" do
     it "returns http success" do
       bro = FactoryGirl.create(:brother)
-      sign_in bro
+      sign_in_for_controller bro
       expect do
         xhr :post, :create, entry_id: 1
       end.to change(Bean, :count).by(1)

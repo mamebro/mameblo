@@ -5,7 +5,13 @@ def sign_in(brother)
   fill_in "session_name", with: brother.name
   fill_in "session_password", with: brother.password
   click_button "兄弟元気かな"
-  # Sign in when not using Capybara as well.
+end
+
+def sign_in_for_controller(brother)
+  visit signin_path
+  fill_in "session_name", with: brother.name
+  fill_in "session_password", with: brother.password
+  click_button "兄弟元気かな"
   cookies[:remember_token] = brother.remember_token
 end
 
@@ -14,5 +20,5 @@ def signin_with_failed(brother)
   fill_in "session_name", with: brother.name + ":::"
   fill_in "session_password", with: brother.password + "::"
   click_button "兄弟元気かな"
-  cookies[:remember_token] = nil
+  # cookies[:remember_token] = nil
 end

@@ -12,7 +12,7 @@ describe BrothersController, type: :controller do
   describe "GET 'following'" do
     it "returns success" do
       brother = FactoryGirl.create(:brother)
-      sign_in brother
+      sign_in_for_controller brother
       get 'following', id: brother.id
       expect(response).to be_success
     end
@@ -21,7 +21,7 @@ describe BrothersController, type: :controller do
   describe "GET 'follower'" do
     it "returns success" do
       brother = FactoryGirl.create(:brother)
-      sign_in brother
+      sign_in_for_controller brother
       get 'followers', id: brother.id
       expect(response).to be_success
     end
