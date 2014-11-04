@@ -237,8 +237,8 @@ $positionLeft: 4px;
 .footer {
   padding: $gap 0 $gap*2;
   .copyright {
+    @include font(small);
     text-align: center;
-    @extend %font.small;
     a {
       color: $black;
     }
