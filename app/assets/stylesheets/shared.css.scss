@@ -48,7 +48,7 @@
     text-align: center;
 
     .number {
-      @extend %font.number;
+      @include font(number);
       font-weight: bold;
       @include at-breakpoint($break-desktop) {
         font-weight: normal;
@@ -56,11 +56,11 @@
     }
 
     .label {
+      @include font(small);
       width: 100%;
       margin-top: $gap/4;
       text-align: center;
       display: block;
-      @extend %font.small;
     }
 
     .separate-border {
@@ -76,9 +76,9 @@
 
 .brothers {
   li {
+    @include font(name);
     margin: 0 $gap/2 $gap/2 0;
     display: inline-block;
-    @extend %font.name;
     font-weight: bold;
     @include at-breakpoint($break-desktop) {
       font-weight: normal;
@@ -87,6 +87,7 @@
 }
 
 .ad {
+  @include font(default);
   padding: $gap/1.5 $gap/2 $gap/1.5 60px;
   @include at-breakpoint($break-desktop) {
     padding: $gap/2 $gap/2 $gap/2 60px;
@@ -94,7 +95,6 @@
   margin-bottom: $gap;
   word-break: break-all;
   display: block;
-  @extend %font.default;
   color: #fff;
   background-image: image-url('pr_brothers.png');
   @include background-size(40px);

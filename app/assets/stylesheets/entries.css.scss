@@ -1,9 +1,9 @@
 @import 'import';
 
 .brother-name {
+  @include font(title);
   margin-bottom: $gap;
   text-align: center;
-  @extend %font.title;
 }
 
 .entry {
@@ -63,19 +63,19 @@
 }
 
 .entry-title {
+  @include font(title);
   margin-bottom: $gap/2;
   @include at-breakpoint($break-desktop) {
     margin-bottom: $gap;
   }
-  @extend %font.title;
 }
 
 .entry-content {
+  @include font(default);
   margin-bottom: $gap;
   text-align: justify;
   word-break: normal;
   word-wrap: break-word;
-  @extend %font.default;
 
   p {
     margin-bottom: $gap/2;
@@ -240,8 +240,8 @@
 }
 
 .entry-footer {
+  @include font(small);
   margin-bottom: $gap/2;
-  @extend %font.small;
 
   a {
     color: $black;

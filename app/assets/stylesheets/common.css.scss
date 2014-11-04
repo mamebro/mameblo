@@ -94,13 +94,13 @@ textarea {
 /* module class */
 .alert {
   @include box-sizing(border-box);
+  @include font(default);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: $gap;
   text-align: center;
-  @extend %font.default;
   background-color: $sunflower;
   box-shadow: 0 1px 0 $orange;
   z-index: 10000;
@@ -108,13 +108,13 @@ textarea {
 }
 
 .input {
+  @include font(input);
   width: 100%;
   margin-bottom: $gap/2;
   padding: $gap/4;
   @include at-breakpoint($break-desktop) {
     padding: $gap/2;
   }
-  @extend %font.input;
   border: 1px solid $gray-light;
   @extend %border-radius.reset;
   @include box-sizing(border-box);
@@ -128,6 +128,7 @@ textarea {
 }
 
 .button {
+  @include font(button);
   height: 45px;
   @include at-breakpoint($break-desktop) {
     height: 54px;
@@ -136,7 +137,6 @@ textarea {
   margin-bottom: $gap/2;
   display: inline-block;
   text-align: center;
-  @extend %font.button;
   text-shadow: 0 -1px $asbestos;
   border: 0;
   background-color: $concrete;
@@ -233,7 +233,7 @@ textarea {
     }
     .card-content {
       @include box-sizing(border-box);
-      @extend %font.title;
+      @include font(title);
       width: 100%;
       height: 80px;
       padding: 0 $gap;
@@ -268,11 +268,10 @@ textarea {
         vertical-align: center;
         display: table-cell;
         a {
+          @include font(default);
           height: 30px;
           display: block;
           color: $orange;
-          // @extend %font.default;
-          // see: http://thesassway.com/intermediate/understanding-placeholder-selectors
           color: $black;
           font-family: $font-family-sans-serif;
           font-size: $px14;
@@ -307,11 +306,10 @@ textarea {
         vertical-align: center;
         display: table-cell;
         a {
+          @include font(default);
           height: 44px;
           display: block;
           color: $black;
-          // @extend %font.default;
-          // see: http://thesassway.com/intermediate/understanding-placeholder-selectors
           color: $black;
           font-family: $font-family-sans-serif;
           font-size: $px14;
@@ -347,9 +345,9 @@ textarea {
 .current-brothers-discover { .nav-pill-brothers-discover { @extend .nav-pill-active; } }
 
 .page-title {
+  @include font(title);
   margin-bottom: $gap;
   text-align: center;
-  @extend %font.title;
 }
 
 /* hidden */
