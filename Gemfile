@@ -23,10 +23,10 @@ gem 'susy', '1.0.9'
 gem 'execjs'
 gem 'therubyracer'
 gem 'uglifier'
+gem 'rack-google-analytics'
 
 group :production do
   gem 'mysql2'
-  gem 'google-analytics-rails'
 end
 
 group :development, :test do
