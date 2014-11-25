@@ -111,7 +111,6 @@ GEM
     github-markdown (0.6.7)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
-    google-analytics-rails (0.0.6)
     growl (1.0.3)
     guard (2.7.0)
       formatador (>= 0.2.4)
@@ -168,6 +167,9 @@ GEM
     pry-rails (0.3.2)
       pry (>= 0.9.10)
     rack (1.6.0.beta)
+    rack-google-analytics (1.2.0)
+      actionpack
+      activesupport
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.2.0.beta3)
@@ -286,7 +288,6 @@ DEPENDENCIES
   faker
   faraday
   github-markdown
-  google-analytics-rails
   growl
   guard-rspec
   guard-spork
@@ -298,6 +299,7 @@ DEPENDENCIES
   mysql2
   newrelic_rpm
   pry-rails
+  rack-google-analytics
   rails (= 4.2.0.beta3)
   rb-fsevent
   redcarpet
