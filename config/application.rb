@@ -60,5 +60,8 @@ module Mameblog
     config.assets.enabled = true
     config.assets.version = '1.0'
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+
+    # Google Analytics
+    config.middleware.use Rack::GoogleAnalytics, :tracker => 'UA-34081631-1'
   end
 end
