@@ -67,7 +67,9 @@ describe 'Entries api', type: :request do
         expect(response.status).to eq(200)
       end
 
-      pending '自分がフォローしている人(フォロイー)の投稿を取得する' do
+      it '自分がフォローしている人(フォロイー)の投稿を取得する' do
+        pending('データ構造が変わったので一旦ペンディング')
+        fail
         followee_ids = followee.map(&:id)
         get "/api/entries/home.json", {name: kumiko.name, auth_token: token}
         response_body["entries"].each do |entry|
