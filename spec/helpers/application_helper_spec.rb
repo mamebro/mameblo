@@ -15,7 +15,7 @@ describe ApplicationHelper, type: :helper do
 
   context 'スタンプの記述がされている時' do
     it 'スタンプへのパスに変換されること' do
-      expect(convert_bro(':brocheers:')).to eq '<img alt="Cheers" class="stamp" src="/images/stamps/cheers.svg" />'
+      expect(convert_bro(':brocheers:')).to match %r{src="/images/stamps/cheers.svg"}
     end
 
     it '複数存在する時も変換されること' do
@@ -34,7 +34,9 @@ hi this is test!
 
 <img alt="Ok" class="stamp" src="/images/stamps/ok.svg" />
 EOS
-      expect(convert_bro(content)).to eq converted_content
+      expect(convert_bro(content)).to match %r{hi this is test!}
+      expect(convert_bro(content)).to match %r{src="/images/stamps/cheers.svg"}
+      expect(convert_bro(content)).to match %r{src="/images/stamps/ok.svg"}
     end
   end
 end
