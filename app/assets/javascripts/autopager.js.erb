@@ -1,4 +1,13 @@
 $(function() {
+  function xmas() {
+    $('.entry').each(function () {
+      if ($(this).text().replace(/(\r\n|\s+)/g, '').match(/(xmas|Xmas|XMAS|christmas|Christmas|CHRISTMAS|クリスマス|サンタ|トナカイ)/)) {
+        $(this).addClass('xmas');
+      }
+    });
+  }
+  xmas();
+
   $('.autopager-content').infinitescroll( {
     loading: {
       msg: null,
@@ -13,5 +22,6 @@ $(function() {
     prefill: true
   }, function() {
     emojify.run();
+    xmas();
   });
 });
