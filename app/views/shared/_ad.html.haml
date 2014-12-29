@@ -1,5 +1,5 @@
 - if signed_in?
-  %p.ad.nav-editor-control
+  %p.ad.nav-editor-control{onclick: "ga('send', 'event', 'ad_write', 'click');"}
     #{ad.sample}
 - else
   = link_to root_path, class: 'ad', onclick: "ga('send', 'event', 'ad_welcome', 'click');" do
