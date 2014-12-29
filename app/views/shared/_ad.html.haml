@@ -2,8 +2,11 @@
   %p.ad.nav-editor-control
     #{ad.sample}
 - else
-  = link_to root_path, class: 'ad' do
-    %span
-      はじめまして。#{myself.sample}は日本の豊かなブログサービスです。ブラザーたちの近況を
+  = link_to root_path, class: 'ad', onclick: "ga('send', 'event', 'ad_welcome', 'click');" do
+    %span<>
+      はじめまして。#{myself.sample}は日本の豊かなブログサービスです。
+    %br.view-desktop<>
+    %span<
+      ブラザーたちの近況を
     %u
       今すぐ読む
