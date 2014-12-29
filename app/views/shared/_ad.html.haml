@@ -1,2 +1,12 @@
-%a.ad{href: 'http://ad.apps.fm/eby5phtraWjg-nYP5Mz-ivE7og6fuV2oOMeOQdRqrE3NYIj_jK6kJg_NBsb6N2ea1tTkdSNI6XEpopE74OwJe6BM8pawSfeHGJ9OplhYMEM', target: '_blank', onclick: "ga('send', 'event', 'ad_lolipotouchplus', 'click');"}
-  こんにちは。まめぶろの競合 iPhone アプリ、ロリポタッチ+です。1分でシャレオツ Web サイトが作れます。
+- if signed_in?
+  %p.ad.nav-editor-control{onclick: "ga('send', 'event', 'ad_write', 'click');"}
+    #{ad.sample}
+- else
+  = link_to root_path, class: 'ad', onclick: "ga('send', 'event', 'ad_welcome', 'click');" do
+    %span<>
+      はじめまして。#{myself.sample}は日本の豊かなブログサービスです。
+    %br.view-desktop<>
+    %span<
+      ブラザーたちの近況を
+    %u
+      今すぐ読む
