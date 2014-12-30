@@ -1,5 +1,7 @@
 Mameblog::Application.routes.draw do
 
+  resources :hashtag, only: [:show]
+
   resources :password_resets, only: [:new, :create, :update, :edit]
 
   resources :brothers, except: [:destroy] do
