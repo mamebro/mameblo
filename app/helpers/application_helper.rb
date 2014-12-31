@@ -31,6 +31,7 @@ module ApplicationHelper
     .gsub(/:brosmile:/, image_tag('stamps/smile.svg', class: 'stamp'))
     .gsub(/:brocry:/, image_tag('stamps/cry.svg', class: 'stamp'))
     .gsub(/:brocheers:/, image_tag('stamps/cheers.svg', class: 'stamp'))
+    .gsub(/[#＃]([Ａ-Ｚａ-ｚA-Za-z一-鿆0-9０-９ぁ-ヶｦ-ﾟー]+)/, link_to('#\1', '/hashtag/\1'))
   end
 
   # まめぶろ広告
