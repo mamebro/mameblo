@@ -4,6 +4,8 @@ class Entry < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
   belongs_to :brother
   has_many :beans, dependent: :destroy
+  has_many :entry_has_hashtags
+  has_many :hashtags, through: :entry_has_hashtags
 
   validates :title, presence: true, length: { maximum: 20000 }
   validates :content, presence: true, length: { maximum: 20000 }
