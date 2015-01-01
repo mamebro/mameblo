@@ -234,7 +234,7 @@ $positionLeft: 4px;
   }
 }
 
-.header-happynewyear2015 {
+.subtexts {
   position: absolute;
   top: 0;
   left: 0;
@@ -244,22 +244,23 @@ $positionLeft: 4px;
     right: 60px;
     width: auto;
   }
-  .header-happynewyear2015-content {
+  .subtext {
     position: absolute;
     top: 0;
     height: 44px;
     display: block;
-    color: $true-white;
+    color: $black;
     font-size: $px12;
     line-height: 44px;
     @include at-breakpoint($break-desktop) {
       position: relative;
       height: 50px;
       display: inline-block;
+      color: $asbestos;
       font-size: $px14;
       line-height: 50px;
     }
-    &.header-happynewyear2015-content-akemashite {
+    &.subtext-before {
       right: 50%;
       padding-right: 22px;
       text-align: right;
@@ -268,7 +269,7 @@ $positionLeft: 4px;
         padding-right: 0;
       }
     }
-    &.header-happynewyear2015-content-omedetou {
+    &.subtext-after {
       left: 50%;
       padding-left: 22px;
       text-align: left;

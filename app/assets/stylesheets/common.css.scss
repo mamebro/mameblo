@@ -67,12 +67,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 13px;
   background-color: $white;
-  &.is-kouhaku {
-    background-image: asset-url('kouhaku.gif');
-    @include background-size(2px 1px);
-    background-repeat: repeat;
-    background-position: top center;
-  }
 }
 
 textarea {
