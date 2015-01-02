@@ -5,7 +5,6 @@ feature 'ハッシュタグ検索' do
   let(:brother) { FactoryGirl.create(:brother) }
 
   before do
-    brother =  FactoryGirl.create(:brother)
     FactoryGirl.create(:entry, title: '!!!foo!!!', content: '!!!foo!!!! #foo ')
     sign_in brother
   end
