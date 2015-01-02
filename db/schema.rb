@@ -43,8 +43,6 @@ ActiveRecord::Schema.define(version: 20150101085544) do
     t.boolean  "admin"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
-    t.string   "alter_email"
-    t.string   "alter_email_token"
   end
 
   add_index "brothers", ["email"], name: "index_brothers_on_email", unique: true
