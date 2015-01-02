@@ -85,6 +85,7 @@ GEM
       sass (~> 3.2.19)
     compass-rails (2.0.0)
       compass (>= 0.12.2)
+    database_rewinder (0.4.1)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     erubis (2.7.0)
@@ -282,6 +283,7 @@ DEPENDENCIES
   capybara
   coffee-rails
   compass-rails
+  database_rewinder
   execjs
   factory_girl_rails
   faker

@@ -43,6 +43,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'spring'
   gem 'spring-commands-rspec'
+  gem 'database_rewinder'
 end
 
 group :development do
