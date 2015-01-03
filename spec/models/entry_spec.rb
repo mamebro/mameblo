@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Entry do
 
   let(:brother) { FactoryGirl.create(:brother) }
+
   before do
     @entry = brother.entries.build(title: "まめぶろ最高",
                                    content: "ここに本文を書いてるよブラザー！")
@@ -12,6 +13,12 @@ describe Entry do
   it { is_expected.to respond_to(:content) }
   it { is_expected.to respond_to(:brother_id) }
   it { is_expected.to respond_to(:brother) }
+
+  it "#hashtag_names" do
+    @entry = brother.entries.build(title: "まめぶろ最高",
+                                   content: 'foo barハッシュタグのテスト #foo #bar')
+    expect(@entry.hashtag_names).to match_array(['foo', 'bar'])
+  end
 
   describe "when brother_id is not present" do
     before { @entry.brother_id = nil }

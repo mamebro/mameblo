@@ -1,7 +1,9 @@
-FactoryGirl.define do  factory :entry_has_hashtag do
+FactoryGirl.define do
+  factory :entry_has_hashtag do
     entry nil
-hashtag nil
+    hashtag nil
   end
+
   factory :hashtag do
     name "MyString"
   end
