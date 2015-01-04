@@ -39,7 +39,7 @@ include Ikachan
 
   def update
     respond_to do |format|
-      if @entry.update_attributes entry_params
+      if @entry.update entry_params
         format.html { redirect_to @entry.brother, notice: '!!! 編集完了したね !!!' }
         format.json { head :no_content }
       else
