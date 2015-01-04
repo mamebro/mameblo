@@ -21,7 +21,7 @@ describe Entry do
       expect(@entry.hashtag_names).to match_array(['foo', 'bar'])
     end
 
-    it "returns nothing when combine foo and bar" do
+    it "returns 2 hashtags when combine #foo and #bar" do
       @entry = brother.entries.build(title: "まめぶろ最高",
                                      content: 'foo barハッシュタグのテスト #foo#bar')
       expect(@entry.hashtag_names).to match_array(['foo', 'bar'])
@@ -39,6 +39,18 @@ describe Entry do
                                                ## bar
                                                foo barハッシュタグのテスト')
       expect(@entry.hashtag_names).to match_array([])
+    end
+
+    it "returns nothing when symbol" do
+      @entry = brother.entries.build(title: "まめぶろ最高",
+                                     content: 'foo barハッシュタグのテスト #$$$')
+      expect(@entry.hashtag_names).to match_array([])
+    end
+
+    it "returns nothing when symbol" do
+      @entry = brother.entries.build(title: "まめぶろ最高",
+                                     content: 'foo barハッシュタグのテスト #テスト #２０１４')
+      expect(@entry.hashtag_names).to match_array(['テスト', '２０１４'])
     end
   end
 
