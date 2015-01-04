@@ -29,6 +29,7 @@ class Entry < ActiveRecord::Base
   end
 
   def hashtag_names
+    self.content.scan(/[#][Ａ-Ｚａ-ｚA-Za-z一-鿆0-9０-９ぁ-ヶｦ-ﾟー]+/).map(&:strip).map{|c| c.slice(1..-1)}
   end
 
   private
