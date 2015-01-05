@@ -1,4 +1,13 @@
 FactoryGirl.define do
+  factory :entry_has_hashtag do
+    entry nil
+    hashtag nil
+  end
+
+  factory :hashtag do
+    name "MyString"
+  end
+
   factory :brother do
     sequence(:name)  { |n| "shikakun#{n}" }
     sequence(:email) { |n| "shikakun#{n}@example.com" }

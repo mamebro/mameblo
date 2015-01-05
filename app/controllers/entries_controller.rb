@@ -21,6 +21,14 @@ include Ikachan
   def create
     @entry = current_brother.entries.build entry_params
     if @entry.save
+      @entry.hashtag_names.each do |name|
+        if hashtag = Hashtag.find_by(name: name)
+          EntryHasHashtag.create(hashtag_id: hashtag.id, entry_id: @entry.id)
+        else
+          hashtag = Hashtag.create(name: name)
+          EntryHasHashtag.create(hashtag_id: hashtag.id, entry_id: @entry.id)
+        end
+      end
       flash[:success] = "!!! ぶろぐ投稿できたね !!!"
       redirect_to @entry.brother
     else
@@ -31,7 +39,16 @@ include Ikachan
 
   def update
     respond_to do |format|
-      if @entry.update_attributes entry_params
+      if @entry.update entry_params
+        EntryHasHashtag.destroy_all(entry_id: @entry.id)
+        @entry.hashtag_names.each do |name|
+          if hashtag = Hashtag.find_by(name: name)
+            EntryHasHashtag.create(hashtag_id: hashtag.id, entry_id: @entry.id)
+          else
+            hashtag = Hashtag.create(name: name)
+            EntryHasHashtag.create(hashtag_id: hashtag.id, entry_id: @entry.id)
+          end
+        end
         format.html { redirect_to @entry.brother, notice: '!!! 編集完了したね !!!' }
         format.json { head :no_content }
       else
@@ -43,6 +60,7 @@ include Ikachan
 
   def destroy
     @entry.destroy
+    EntryHasHashtag.destroy_all(entry_id: @entry.id)
     flash[:success] = "!!! 日記を消したぜブラザー !!!"
     redirect_to root_path
   end

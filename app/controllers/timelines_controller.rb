@@ -9,13 +9,13 @@ class TimelinesController < ApplicationController
     else
       @entries = Entry.page params[:page]
     end
-    @entries.map{|e| e.content = e.content_as_markdown}
+    @entries.map{|entry| entry.content = entry.content_as_markdown}
   end
 
   def brothers
     if signed_in?
       @entries = Entry.where.not(brother_id: current_brother.id).page params[:page]
-      @entries.map{|e| e.content = e.content_as_markdown}
+      @entries.map{|entry| entry.content = entry.content_as_markdown}
     else
       redirect_to root_path
     end

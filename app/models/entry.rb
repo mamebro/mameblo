@@ -4,6 +4,8 @@ class Entry < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
   belongs_to :brother
   has_many :beans, dependent: :destroy
+  has_many :entry_has_hashtags
+  has_many :hashtags, through: :entry_has_hashtags
 
   validates :title, presence: true, length: { maximum: 20000 }
   validates :content, presence: true, length: { maximum: 20000 }
@@ -24,6 +26,10 @@ class Entry < ActiveRecord::Base
     followed_brother_ids = brother.followed_brother_ids
     where("brother_id IN (:followed_brother_ids) OR brother_id = :brother_id",
           followed_brother_ids: followed_brother_ids, brother_id: brother)   
+  end
+
+  def hashtag_names
+    self.content.scan(/[#][Ａ-Ｚａ-ｚA-Za-z一-鿆0-9０-９ぁ-ヶｦ-ﾟー]+/).map(&:strip).map{|c| c.slice(1..-1)}
   end
 
   private
