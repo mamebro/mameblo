@@ -63,13 +63,14 @@ ActiveRecord::Schema.define(version: 20150101085544) do
     t.datetime "updated_at"
   end
 
-  create_table "entry_has_hashtags", force: :cascade do |t|
+  create_table "entry_has_hashtags", id: false, force: :cascade do |t|
     t.integer  "entry_id"
     t.integer  "hashtag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "entry_has_hashtags", ["entry_id", "hashtag_id"], name: "index_entry_has_hashtags_on_entry_id_and_hashtag_id", unique: true
   add_index "entry_has_hashtags", ["entry_id"], name: "index_entry_has_hashtags_on_entry_id"
   add_index "entry_has_hashtags", ["hashtag_id"], name: "index_entry_has_hashtags_on_hashtag_id"
 
