@@ -38,5 +38,11 @@ feature 'ハッシュタグ検索' do
     expect(has_content?('テスト #test')).to be_truthy
   end
 
-  scenario '削除'
+  scenario '削除した時エントリーとタグの関連が消えること' do
+    expect{
+      click_link('test title')
+      click_link('Delete')
+    }.to change{EntryHasHashtag.count}.by(-2)
+    expect(has_content?('!!! 日記を消したぜブラザー !!!')).to be_truthy
+  end
 end
