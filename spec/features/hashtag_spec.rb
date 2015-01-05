@@ -34,7 +34,7 @@ feature 'ハッシュタグ検索' do
         fill_in 'entry-form-content', with: 'テスト #test'
       end
       click_on '!!! 編集 !!!'
-    }.to change{EntryHasHashtag.count}.by(-1)
+    }.to change{ EntryHasHashtag.count }.by(-1)
     expect(has_content?('テスト #test')).to be_truthy
   end
 
@@ -42,7 +42,7 @@ feature 'ハッシュタグ検索' do
     expect{
       click_link('test title')
       click_link('Delete')
-    }.to change{EntryHasHashtag.count}.by(-2)
+    }.to change{ EntryHasHashtag.count }.by(-2)
     expect(has_content?('!!! 日記を消したぜブラザー !!!')).to be_truthy
   end
 end
