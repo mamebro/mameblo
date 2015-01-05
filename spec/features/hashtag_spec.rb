@@ -26,7 +26,7 @@ feature 'ハッシュタグ検索' do
     expect(has_content?('!!!foo!!!! #foo')).to be_falsey
   end
 
-  scenario '編集してハッシュタグを削除した時、関連の数が減ること' do
+  skip '編集してハッシュタグを削除した時、関連の数が減ること' do
     expect{
       click_link('test title')
       click_link('Edit')
@@ -38,7 +38,7 @@ feature 'ハッシュタグ検索' do
     expect(has_content?('テスト #test')).to be_truthy
   end
 
-  scenario '削除した時エントリーとタグの関連が消えること' do
+  skip '削除した時エントリーとタグの関連が消えること' do
     expect{
       click_link('test title')
       click_link('Delete')
