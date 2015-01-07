@@ -1,12 +1,12 @@
 - if signed_in?
-  %p.ad.nav-editor-control{onclick: "ga('send', 'event', 'ad_write', 'click');"}
-    #{ad.sample}
+  %a.ad{href: 'http://oyakusoku.com/?utm_source=mameblo', target:'_blank', onclick: "ga('send', 'event', 'ad_write', 'click');"}
+    せり なずな ごぎょう はこべら ほとけのざ すずな すずしろ おやくそくちゃん!
 - else
-  = link_to root_path, class: 'ad', onclick: "ga('send', 'event', 'ad_welcome', 'click');" do
+  = link_to signup_path, class: 'ad', onclick: "ga('send', 'event', 'ad_welcome', 'click');" do
     %span<>
       はじめまして。#{myself.sample}は日本の豊かなブログサービスです。
     %br.view-desktop<>
     %span<
-      ブラザーたちの近況を
+      ブラザーに
     %u
-      今すぐ読む
+      今すぐなる
