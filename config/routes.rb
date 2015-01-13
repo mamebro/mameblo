@@ -1,5 +1,9 @@
 Mameblog::Application.routes.draw do
 
+  get 'onsen/index'
+
+  get 'onsen/update'
+
   resources :hashtag, only: [:show]
 
   resources :password_resets, only: [:new, :create, :update, :edit]

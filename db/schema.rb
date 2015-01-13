@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150101085544) do
+ActiveRecord::Schema.define(version: 20150113105406) do
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "brother_id"
@@ -76,6 +76,13 @@ ActiveRecord::Schema.define(version: 20150101085544) do
 
   create_table "hashtags", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "onsens", force: :cascade do |t|
+    t.integer  "brother_id"
+    t.integer  "bathing"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
