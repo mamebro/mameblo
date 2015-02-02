@@ -24,8 +24,8 @@ $(function() {
   function setsubun() {
     beanFlyingHeight = Math.floor(Math.random() * beanFlyingMaxHeight);
     $('body')
-      .append('<span class="setsubun"></span>')
-      .find('.setsubun:last-child')
+      .append('<span class="bean bean-setsubun"></span>')
+      .find('.bean-setsubun:last-child')
       .css('top', beanFlyingHeight)
       .animate(
         {
