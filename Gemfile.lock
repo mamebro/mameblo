@@ -311,7 +311,7 @@ DEPENDENCIES
   newrelic_rpm
   pry-rails
   rack-google-analytics
-  rails (~> 4.2.0)
+  rails
   rb-fsevent
   redcarpet
   responders
@@ -320,14 +320,14 @@ DEPENDENCIES
   rspec-expectations
   rspec-mocks
   rspec-rails
-  sass-rails (~> 4.0.5)
+  sass-rails
   spork
   spring
   spring-commands-rspec
   sprockets
   sprockets-rails
   sqlite3
-  susy (= 1.0.9)
+  susy
   tapp
   therubyracer
   timecop
