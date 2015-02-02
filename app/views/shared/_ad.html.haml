@@ -1,6 +1,6 @@
 - if signed_in?
-  %a.ad{href: 'http://oyakusoku.com/?utm_source=mameblo', target:'_blank', onclick: "ga('send', 'event', 'ad_write', 'click');"}
-    せり なずな ごぎょう はこべら ほとけのざ すずな すずしろ おやくそくちゃん!
+  %a.ad{href: 'http://sqale.jp/?utm_source=mameblo', target:'_blank', onclick: "ga('send', 'event', 'ad_sqale', 'click');"}
+    お疲れ様です。君も Sqale を使って、まめぶろみたいなアプリケーションを作ってみよう!
 - else
   = link_to signup_path, class: 'ad', onclick: "ga('send', 'event', 'ad_welcome', 'click');" do
     %span<>
