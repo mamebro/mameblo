@@ -6,7 +6,7 @@ $(function() {
 
   setInterval(function() {
     setsubun();
-  }, 128);
+  }, 64);
 
   $(window).resize(function() {
     setBeanFlyingConfig();
