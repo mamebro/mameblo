@@ -84,7 +84,6 @@ $(function() {
   }
 
   function throwBeanNumber() {
-    // 節分のため投げる豆の数が10倍になるキャンペーン
-    return beanNumbers[Math.floor(Math.random() * beanNumbers.length)] * 10;
+    return beanNumbers[Math.floor(Math.random() * beanNumbers.length)];
   }
 });
