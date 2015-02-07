@@ -243,7 +243,7 @@ textarea {
       display: block;
       overflow: hidden;
       color: $turquoise;
-      line-height: 80px;
+      line-height: 80px !important;
       background-color: $true-white;
       box-shadow: 0 1px 0 $silver;
     }

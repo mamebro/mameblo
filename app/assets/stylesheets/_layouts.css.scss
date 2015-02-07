@@ -1,8 +1,9 @@
 .page {
   max-width: 640px;
+  padding: 0 $gap;
   margin: 0 auto;
   @include if-desktop {
-    padding-bottom: $gap*2;
+    padding: 0 0 $gap*2;
   }
 }
 

@@ -1,10 +1,4 @@
 // mixins
-@mixin font-expand($expand-size, $original-size, $original-line-height) {
-  @include if-desktop {
-    font-size: $expand-size;
-    line-height: $original-line-height*($expand-size/$original-size);
-  }
-}
 @mixin if-phone {
   @media screen and (max-width: 960px) {
     @content;
@@ -13,6 +7,12 @@
 @mixin if-desktop {
   @media screen and (min-width: 960px) {
     @content;
+  }
+}
+@mixin font-expand($expand-size, $original-size, $original-line-height) {
+  @include if-desktop {
+    font-size: $expand-size;
+    line-height: $original-line-height*($expand-size/$original-size);
   }
 }
 @mixin typography($type: default) {
