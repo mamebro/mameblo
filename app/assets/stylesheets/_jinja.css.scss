@@ -1,12 +1,10 @@
-@import 'import';
-
 .omikuji {
   text-align: center;
 }
 
 .omikuji-title {
   text-align: center;
-  @extend %font.title;
+  @include typography(title);
   color: $turquoise;
   font-family: serif;
   font-size: 60px;

@@ -1,5 +1,3 @@
-@import 'import';
-
 .editor {
   display: none;
 }
@@ -26,7 +24,7 @@
         overflow-y: scroll;
         .page {
           padding: 54px 10px;
-          @include at-breakpoint($break-desktop) {
+          @include if-desktop {
             padding: $gap*2 0;
           }
         }
@@ -43,14 +41,14 @@
   margin-bottom: $gap;
 
   .stat {
-    @include span-columns(1,4);
-    @include nth-omega(last);
+    float: left;
+    width: 25%;
     text-align: center;
 
     .number {
-      @extend %font.number;
+      @include typography(number);
       font-weight: bold;
-      @include at-breakpoint($break-desktop) {
+      @include if-desktop {
         font-weight: normal;
       }
     }
@@ -60,7 +58,7 @@
       margin-top: $gap/4;
       text-align: center;
       display: block;
-      @extend %font.small;
+      @include typography(small);
     }
 
     .separate-border {
@@ -78,9 +76,9 @@
   li {
     margin: 0 $gap/2 $gap/2 0;
     display: inline-block;
-    @extend %font.name;
+    @include typography(name);
     font-weight: bold;
-    @include at-breakpoint($break-desktop) {
+    @include if-desktop {
       font-weight: normal;
     }
   }
@@ -88,13 +86,13 @@
 
 .ad {
   padding: $gap/1.5 0 $gap/1.5 50px;
-  @include at-breakpoint($break-desktop) {
+  @include if-desktop {
     padding: $gap/2 0 $gap/2 50px;
   }
   margin-bottom: $gap;
   word-break: break-all;
   display: block;
-  @extend %font.default;
+  @include typography(default);
   color: $asbestos;
   background-image: image-url('pr_brothers.png');
   @include background-size(40px);

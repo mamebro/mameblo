@@ -1,5 +1,3 @@
-@import 'import';
-
 /* fonts */
 @import url("//fonts.googleapis.com/css?family=Open+Sans:400,700");
 
@@ -52,7 +50,7 @@ h4,
 h5,
 h6 {
   font-weight: bold;
-  @include at-breakpoint($break-desktop) {
+  @include if-desktop {
     font-weight: normal;
   }
 }
@@ -82,7 +80,7 @@ textarea {
 .view-desktop {
   display: none;
 }
-@include at-breakpoint($break-desktop) {
+@include if-desktop {
   .view-phone {
     display: none;
   }
@@ -100,7 +98,7 @@ textarea {
   width: 100%;
   padding: $gap;
   text-align: center;
-  @extend %font.default;
+  @include typography(default);
   background-color: $sunflower;
   box-shadow: 0 1px 0 $orange;
   z-index: 10000;
@@ -111,10 +109,10 @@ textarea {
   width: 100%;
   margin-bottom: $gap/2;
   padding: $gap/4;
-  @include at-breakpoint($break-desktop) {
+  @include if-desktop {
     padding: $gap/2;
   }
-  @extend %font.input;
+  @include typography(input);
   border: 1px solid $gray-light;
   @extend %border-radius.reset;
   @include box-sizing(border-box);
@@ -129,14 +127,14 @@ textarea {
 
 .button {
   height: 45px;
-  @include at-breakpoint($break-desktop) {
+  @include if-desktop {
     height: 54px;
   }
   padding: 0 20px;
   margin-bottom: $gap/2;
   display: inline-block;
   text-align: center;
-  @extend %font.button;
+  @include typography(button);
   text-shadow: 0 -1px $asbestos;
   border: 0;
   background-color: $concrete;
@@ -213,27 +211,29 @@ textarea {
   @include clearfix;
   .card {
     @include box-sizing(border-box);
+    float: left;
     margin-bottom: $gap/2;
-    @include at-breakpoint($break-phone) {
-      @include span-columns(1,2);
+    @include if-phone {
+      width: 50%;
       padding: 0 $gap/4 0 0;
       &:nth-child(2n) {
         padding: 0 0 0 $gap/4;
       }
     }
-    @include at-breakpoint($break-desktop) {
-      @include span-columns(1,3);
+    @include if-desktop {
+      width: 33%;
       padding: 0 $gap/4 0 0;
       &:nth-child(3n+2) {
         padding: 0 $gap/4;
       }
       &:nth-child(3n+3) {
+        width: 34%;
         padding: 0 0 0 $gap/4;
       }
     }
     .card-content {
       @include box-sizing(border-box);
-      @extend %font.title;
+      @include typography(title);
       width: 100%;
       height: 80px;
       padding: 0 $gap;
@@ -243,14 +243,14 @@ textarea {
       display: block;
       overflow: hidden;
       color: $turquoise;
-      line-height: 80px;
+      line-height: 80px !important;
       background-color: $true-white;
       box-shadow: 0 1px 0 $silver;
     }
   }
 }
 
-@include at-breakpoint($break-phone) {
+@include if-phone {
   .nav-pills {
     @include box-sizing(border-box);
     width: 100%;
@@ -271,7 +271,7 @@ textarea {
           height: 30px;
           display: block;
           color: $orange;
-          // @extend %font.default;
+          // @include typography(default);
           // see: http://thesassway.com/intermediate/understanding-placeholder-selectors
           color: $black;
           font-family: $font-family-sans-serif;
@@ -291,7 +291,7 @@ textarea {
     }
   }
 }
-@include at-breakpoint($break-desktop) {
+@include if-desktop {
   .nav-pills {
     @include box-sizing(border-box);
     width: 100%;
@@ -310,7 +310,7 @@ textarea {
           height: 44px;
           display: block;
           color: $black;
-          // @extend %font.default;
+          // @include typography(default);
           // see: http://thesassway.com/intermediate/understanding-placeholder-selectors
           color: $black;
           font-family: $font-family-sans-serif;
@@ -349,7 +349,7 @@ textarea {
 .page-title {
   margin-bottom: $gap;
   text-align: center;
-  @extend %font.title;
+  @include typography(title);
 }
 
 /* hidden */
