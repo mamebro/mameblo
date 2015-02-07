@@ -1,7 +1,4 @@
 // remove susy
-@mixin span-columns($var1, $var2) {
-  @content;
-}
 @mixin nth-omega($var1) {
   @content;
 }

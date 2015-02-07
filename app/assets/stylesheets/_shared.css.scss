@@ -41,8 +41,9 @@
   margin-bottom: $gap;
 
   .stat {
-    @include span-columns(1,4);
     @include nth-omega(last);
+    float: left;
+    width: 25%;
     text-align: center;
 
     .number {
