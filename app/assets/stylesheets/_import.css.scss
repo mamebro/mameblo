@@ -1,9 +1,4 @@
 // remove susy
-$break-desktop: 60em;
-$break-phone: 0 $break-desktop;
-@mixin at-breakpoint($var1) {
-  @content;
-}
 @mixin span-columns($var1, $var2) {
   @content;
 }
@@ -13,9 +8,19 @@ $break-phone: 0 $break-desktop;
 
 // mixins
 @mixin font-expand($expand-size, $original-size, $original-line-height) {
-  @include at-breakpoint($break-desktop) {
+  @include if-desktop {
     font-size: $expand-size;
     line-height: $original-line-height*($expand-size/$original-size);
+  }
+}
+@mixin if-phone {
+  @media screen and (max-width: 960px) {
+    @content;
+  }
+}
+@mixin if-desktop {
+  @media screen and (min-width: 960px) {
+    @content;
   }
 }
 
@@ -40,7 +45,7 @@ $break-phone: 0 $break-desktop;
     font-family: $font-family-sans-serif;
     font-size: $px16;
     line-height: 45px;
-    @include at-breakpoint($break-desktop) {
+    @include if-desktop {
       font-size: $px18;
       line-height: 54px;
     }
@@ -64,7 +69,7 @@ $break-phone: 0 $break-desktop;
     font-family: $font-family-sans-serif;
     font-size: $px16;
     line-height: 1;
-    @include at-breakpoint($break-desktop) {
+    @include if-desktop {
       font-size: $px18;
     }
   }

@@ -8,7 +8,7 @@
   position: relative;
   min-height: 100px;
   padding: 10px;
-  @include at-breakpoint($break-desktop) {
+  @include if-desktop {
     padding: $gap*2;
   }
   margin-bottom: $gap;
@@ -31,7 +31,7 @@
     @include transition-property(background-color);
     @include transition-duration(0.2s);
     @include transition-timing-function(ease);
-    @include at-breakpoint($break-desktop) {
+    @include if-desktop {
       bottom: $gap/2;
       right: $gap/2 + $gap/8;
       font-size: $px12;
@@ -62,7 +62,7 @@
 
 .entry-title {
   margin-bottom: $gap/2;
-  @include at-breakpoint($break-desktop) {
+  @include if-desktop {
     margin-bottom: $gap;
   }
   @extend %font.title;
@@ -87,7 +87,7 @@
   h6 {
     margin: $gap 0 $gap/2;
     font-weight: bold;
-    @include at-breakpoint($break-desktop) {
+    @include if-desktop {
       font-weight: normal;
     }
   }

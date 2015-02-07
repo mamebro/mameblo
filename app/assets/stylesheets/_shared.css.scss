@@ -24,7 +24,7 @@
         overflow-y: scroll;
         .page {
           padding: 54px 10px;
-          @include at-breakpoint($break-desktop) {
+          @include if-desktop {
             padding: $gap*2 0;
           }
         }
@@ -48,7 +48,7 @@
     .number {
       @extend %font.number;
       font-weight: bold;
-      @include at-breakpoint($break-desktop) {
+      @include if-desktop {
         font-weight: normal;
       }
     }
@@ -78,7 +78,7 @@
     display: inline-block;
     @extend %font.name;
     font-weight: bold;
-    @include at-breakpoint($break-desktop) {
+    @include if-desktop {
       font-weight: normal;
     }
   }
@@ -86,7 +86,7 @@
 
 .ad {
   padding: $gap/1.5 0 $gap/1.5 50px;
-  @include at-breakpoint($break-desktop) {
+  @include if-desktop {
     padding: $gap/2 0 $gap/2 50px;
   }
   margin-bottom: $gap;
