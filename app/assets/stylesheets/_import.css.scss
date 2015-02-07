@@ -1,11 +1,18 @@
-@import 'susy';
-$total-columns: 12;
-$column-width: 4em;
-$gutter-width: 0em;
-$grid-padding: 10px;
-$container-style: magic;
+// remove susy
 $break-desktop: 60em;
 $break-phone: 0 $break-desktop;
+@mixin at-breakpoint($var1) {
+  @content;
+}
+@mixin span-columns($var1, $var2) {
+  @content;
+}
+@mixin container {
+  @content;
+}
+@mixin nth-omega($var1) {
+  @content;
+}
 
 // mixins
 @mixin font-expand($expand-size, $original-size, $original-line-height) {
