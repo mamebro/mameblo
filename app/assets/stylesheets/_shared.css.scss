@@ -41,7 +41,6 @@
   margin-bottom: $gap;
 
   .stat {
-    @include nth-omega(last);
     float: left;
     width: 25%;
     text-align: center;
