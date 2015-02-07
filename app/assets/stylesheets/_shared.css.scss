@@ -46,7 +46,7 @@
     text-align: center;
 
     .number {
-      @extend %font.number;
+      @include typography(number);
       font-weight: bold;
       @include if-desktop {
         font-weight: normal;
@@ -58,7 +58,7 @@
       margin-top: $gap/4;
       text-align: center;
       display: block;
-      @extend %font.small;
+      @include typography(small);
     }
 
     .separate-border {
@@ -76,7 +76,7 @@
   li {
     margin: 0 $gap/2 $gap/2 0;
     display: inline-block;
-    @extend %font.name;
+    @include typography(name);
     font-weight: bold;
     @include if-desktop {
       font-weight: normal;
@@ -92,7 +92,7 @@
   margin-bottom: $gap;
   word-break: break-all;
   display: block;
-  @extend %font.default;
+  @include typography(default);
   color: $asbestos;
   background-image: image-url('pr_brothers.png');
   @include background-size(40px);

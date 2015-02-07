@@ -1,7 +1,7 @@
 .brother-name {
   margin-bottom: $gap;
   text-align: center;
-  @extend %font.title;
+  @include typography(title);
 }
 
 .entry {
@@ -65,7 +65,7 @@
   @include if-desktop {
     margin-bottom: $gap;
   }
-  @extend %font.title;
+  @include typography(title);
 }
 
 .entry-content {
@@ -73,7 +73,7 @@
   text-align: justify;
   word-break: normal;
   word-wrap: break-word;
-  @extend %font.default;
+  @include typography(default);
 
   p {
     margin-bottom: $gap/2;
@@ -239,7 +239,7 @@
 
 .entry-footer {
   margin-bottom: $gap;
-  @extend %font.small;
+  @include typography(small);
 
   a {
     color: $black;

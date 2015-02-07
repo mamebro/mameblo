@@ -15,24 +15,20 @@
     @content;
   }
 }
-
-// extends
-%font {
-  &.default {
+@mixin typography($type: default) {
+  @if $type == default {
     color: $black;
     font-family: $font-family-sans-serif;
     font-size: $px14;
     line-height: 1.66;
     @include font-expand($px16, $px14, 1.66);
-  }
-  &.input {
+  } @else if $type == input {
     color: $black;
     font-family: $font-family-sans-serif;
     font-size: $px18;
     line-height: 1.5;
     @include font-expand($px20, $px18, 1.5);
-  }
-  &.button {
+  } @else if $type == button {
     color: $white;
     font-family: $font-family-sans-serif;
     font-size: $px16;
@@ -41,22 +37,19 @@
       font-size: $px18;
       line-height: 54px;
     }
-  }
-  &.title {
+  } @else if $type == title {
     color: $black;
     font-family: $font-family-sans-serif;
     font-size: $px16;
     line-height: 1.66;
     @include font-expand($px18, $px16, 1.66);
-  }
-  &.small {
+  } @else if $type == small {
     color: $black;
     font-family: $font-family-sans-serif;
     font-size: $px12;
     line-height: 1.44;
     @include font-expand($px14, $px12, 1.44);
-  }
-  &.number {
+  } @else if $type == number {
     color: $black;
     font-family: $font-family-sans-serif;
     font-size: $px16;
@@ -64,8 +57,7 @@
     @include if-desktop {
       font-size: $px18;
     }
-  }
-  &.name {
+  } @else if $type == name {
     color: $black;
     font-family: $font-family-sans-serif;
     font-size: $px16;
@@ -73,6 +65,8 @@
     @include font-expand($px18, $px16, 1.22);
   }
 }
+
+// extends
 %border-radius {
   &.small {
     @include border-radius(5px);
