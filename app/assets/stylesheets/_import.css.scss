@@ -7,9 +7,6 @@ $break-phone: 0 $break-desktop;
 @mixin span-columns($var1, $var2) {
   @content;
 }
-@mixin container {
-  @content;
-}
 @mixin nth-omega($var1) {
   @content;
 }
