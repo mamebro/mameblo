@@ -1,5 +1,3 @@
-@import 'import';
-
 .page {
   @include container;
   @include at-breakpoint($break-desktop) {
