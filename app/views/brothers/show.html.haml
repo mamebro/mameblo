@@ -1,6 +1,4 @@
 = provide(:title, @brother.name)
-%h1.brother-name
-  = @brother.name
 = render 'shared/profile'
 = render 'follow_form' if signed_in?
 - if @brother.entries.any?

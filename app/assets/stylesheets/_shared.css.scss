@@ -36,6 +36,53 @@
   }
 }
 
+.profile {
+  width: 100%;
+  padding: $gap 0;
+  display: table;
+  .profile-name {
+    @include typography(name);
+    width: 50%;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+  }
+  .stats {
+    width: 50%;
+    display: table-cell;
+    .stats-list {
+      border-bottom: 1px solid rgba($black,0.33);
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+    .stats-content {
+      @include box-sizing(border-box);
+      width: 100%;
+      padding: $gap;
+      display: table;
+    }
+    .stats-label {
+      @include typography(small);
+      width: ($gap * 4);
+      text-align: center;
+      vertical-align: middle;
+      display: table-cell;
+    }
+    .stats-number {
+      @include typography(number);
+      text-align: right;
+      display: table-cell;
+    }
+    .stats-beans {
+      margin-left: ($gap / 2);
+      display: inline-block;
+      color: $concrete;
+      font-size: $px12;
+    }
+  }
+}
+
 .stats {
   @include clearfix;
   margin-bottom: $gap;

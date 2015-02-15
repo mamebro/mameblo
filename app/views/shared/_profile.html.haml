@@ -1,25 +1,27 @@
-- @brother ||= current_brother
-%div.stats
-  %a.stat.entries-number{href: "/brothers/#{@brother.name}"}
-    %span.separate-border
-      %span.number
-        = @brother.entries.count
-      %span.label
-        日記
-  %a.stat.following{href: "#{following_brother_path(@brother)}"}
-    %span.separate-border
-      %span.number
-        = @brother.followed_brothers.count + 1
-      %span.label
-        人兄弟
-  %a.stat.follower{href: "#{followers_brother_path(@brother)}"}
-    %span.separate-border
-      %span.number
-        = @brother.followers.count
-      %span.label
-        保護者
-  %span.stat.beans-count
-    %span.number
-      = @beans.count
-    %span.label
-      まめ
+%div.profile
+  %h1.profile-name
+    = @brother.name[0,1].upcase + '.'
+  %ul.stats
+    %li.stats-list
+      %a.stats-content{href: "/brothers/#{@brother.name}"}
+        %span.stats-label
+          日記
+        %span.stats-number
+          #{@brother.entries.count}
+          %span.stats-beans<>
+            %i.icon<>
+              &#63235;
+            %span<>
+              #{@beans.count}
+    %li.stats-list
+      %a.stats-content{href: "#{following_brother_path(@brother)}"}
+        %span.stats-label
+          兄弟
+        %span.stats-number
+          = @brother.followed_brothers.count + 1
+    %li.stats-list
+      %a.stats-content{href: "#{followers_brother_path(@brother)}"}
+        %span.stats-label
+          保護者
+        %span.stats-number
+          = @brother.followers.count
