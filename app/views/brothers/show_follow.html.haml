@@ -1,7 +1,7 @@
 = provide(:title, @brother.name)
 %h1.brother-name
   = @brother.name
-= render 'shared/stats'
+= render 'shared/profile'
 - if @brothers.any?
   %div#content{data: {max: {page: @brothers.num_pages}}}
     %ul.cards.autopager-content
