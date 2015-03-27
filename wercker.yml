@@ -38,5 +38,5 @@ build:
         code: bundle exec rspec
   after-steps:
     - linyows/slack_notification:
-      token: $SLACK_TOKEN
-      channel: C03QJ3WNL
+        token: $SLACK_TOKEN
+        channel: C03QJ3WNL
