@@ -29,6 +29,7 @@ Mameblog::Application.routes.draw do
   get "/jinja", to: 'jinja#index'
   get "/jinja/omikuji", to: 'jinja/omikuji#index'
   get "/jinja/osaisen", to: 'jinja/osaisen#index'
+  get "/jinja/meetup", to: 'jinja/meetup#index'
 
   namespace :api do
     post '/signin', to: 'sessions#create'
