@@ -1,22 +1,4 @@
-- if signed_in?
-  %a.entry.entry--beanholdersmeeting.wow.flash.infinite{href: 'http://peatix.com/event/80298/', target: '_blank', data:{wow:{duration: '0.15s'}}}
-    %h1.entry-title
-      第1回 豆主総会
-    %div.entry-content
-      %p
-        日時: 4月11日(土曜日) 12:00
-      %p
-        場所: 東急田園都市線 二子新地駅 改札前
-      %p
-        晴天時: 多摩川を見ながらビール
-        %br<>
-        荒天時: カレーを食べます
-        %br<>
-        飛び入り豆歓迎です
-      %span.beans-count<>
-        1
-
-- else
+- if !signed_in?
   = link_to signup_path, class: 'ad', onclick: "ga('send', 'event', 'ad_welcome', 'click');" do
     %span<>
       はじめまして。#{myself.sample}は日本の豊かなブログサービスです。
