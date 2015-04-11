@@ -16,16 +16,6 @@
   background-color: $true-white;
   box-shadow: 0 1px 0 $silver;
 
-  &.entry--beanholdersmeeting {
-    display: block;
-    .entry-title {
-      color: $turquoise;
-    }
-    .beans-count:before {
-      content: '\f702';
-    }
-  }
-
   .beans-count {
     position: absolute;
     bottom: 5px;
