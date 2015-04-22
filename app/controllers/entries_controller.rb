@@ -64,6 +64,17 @@ class EntriesController < ApplicationController
     redirect_to root_path
   end
 
+  def directs
+    @entry = current_brother.entries.build entry_params
+    if @entry.save
+      flash[:success] = "!!! D豆送信できたね !!!"
+      redirect_to @entry.brother
+    else
+      flash[:error] = "!!! D豆送信できませんでした !!!"
+      redirect_to @entry.brother
+    end
+  end
+
   private
 
   def entry_params

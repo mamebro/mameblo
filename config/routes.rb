@@ -15,6 +15,7 @@ Mameblog::Application.routes.draw do
   resources :entries, only: [:create, :destroy, :show, :update, :edit] do
     resources :beans, only: [:create, :destroy]
   end
+  post 'entries/directs', to: 'entries#directs'
   resources :relationships, only: [:create, :destroy]
   resources :circuses, only: [:index]
   resources :votes, only: [:index]

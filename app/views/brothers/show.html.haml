@@ -3,5 +3,7 @@
   = @brother.name
 = render 'shared/stats'
 = render 'follow_form' if signed_in?
+- if signed_in? and !current_brother?(@brother)
+  = render 'direct_beans_form'
 - if @brother.entries.any?
   = render 'shared/entries'
