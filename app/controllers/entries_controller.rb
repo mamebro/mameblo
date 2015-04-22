@@ -66,7 +66,7 @@ class EntriesController < ApplicationController
 
   def directs
     @entry = current_brother.entries.build direct_bean_params
-    @entry.direct = 1
+    @entry.direct!
     if @entry.save
       flash[:success] = "!!! D豆送信できたね !!!"
       redirect_to @entry.brother

@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20150422131930) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "direct"
+    t.integer  "role"
   end
 
   create_table "entry_has_hashtags", id: false, force: :cascade do |t|
