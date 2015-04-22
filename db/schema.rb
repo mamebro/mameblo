@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150422131930) do
+ActiveRecord::Schema.define(version: 20150422135830) do
 
   create_table "authentications", force: :cascade do |t|
     t.integer  "brother_id"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20150422131930) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "role"
+    t.integer  "role",       default: 0, null: false
   end
 
   create_table "entry_has_hashtags", id: false, force: :cascade do |t|

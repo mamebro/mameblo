@@ -5,7 +5,7 @@ class TimelinesController < ApplicationController
       Relationship.where(follower_id: current_brother.id).each do |rel|
         followed_ids << rel.followed_id
       end
-      @entries = Entry.where(brother_id: followed_ids).page params[:page]
+      @entries = Entry.where.not(brother_id: current_brother.id, role: 0).page params[:page]
     else
       @entries = Entry.page params[:page]
     end
