@@ -95,7 +95,7 @@
   @include typography(default);
   color: $asbestos;
   background-image: image-url('pr_brothers.png');
-  @include background-size(40px);
+  background-size: 40px;
   background-repeat: no-repeat;
   background-position: 0 center;
   cursor: pointer;

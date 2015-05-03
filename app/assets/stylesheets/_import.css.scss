@@ -69,16 +69,16 @@
 // extends
 %border-radius {
   &.small {
-    @include border-radius(5px);
+    border-radius: 5px;
   }
   &.large {
-    @include border-radius(10px);
+    border-radius: 10px;
   }
   &.bottom {
-    @include border-radius(0 0 5px 5px);
+    border-radius: 0 0 5px 5px;
   }
   &.reset {
-    @include border-radius(0);
+    border-radius: 0;
   }
 }
 %icon {

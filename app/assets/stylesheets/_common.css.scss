@@ -91,7 +91,7 @@ textarea {
 
 /* module class */
 .alert {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 0;
@@ -115,7 +115,7 @@ textarea {
   @include typography(input);
   border: 1px solid $gray-light;
   @extend %border-radius.reset;
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   outline: none;
   -webkit-appearance: none;
 
@@ -139,7 +139,7 @@ textarea {
   border: 0;
   background-color: $concrete;
   @extend %border-radius.small;
-  @include box-sizing(border-box);
+  box-sizing: border-box;
   box-shadow: 0 2px 0 $asbestos;
   cursor: pointer;
   -webkit-appearance: none;
@@ -201,16 +201,16 @@ textarea {
   &.button-touched {
     opacity: 0.33 !important;
     cursor: default !important;
-    @include transition-property(opacity);
-    @include transition-duration(0.2s);
-    @include transition-timing-function(ease);
+    transition-property: opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
   }
 }
 
 .cards {
   @include clearfix;
   .card {
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     float: left;
     margin-bottom: $gap/2;
     @include if-phone {
@@ -232,7 +232,7 @@ textarea {
       }
     }
     .card-content {
-      @include box-sizing(border-box);
+      box-sizing: border-box;
       @include typography(title);
       width: 100%;
       height: 80px;
@@ -252,7 +252,7 @@ textarea {
 
 @include if-phone {
   .nav-pills {
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     width: 100%;
     height: 30px;
     margin: 0 auto $gap;
@@ -293,7 +293,7 @@ textarea {
 }
 @include if-desktop {
   .nav-pills {
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     width: 100%;
     height: 30px;
     margin: 0 auto $gap;
@@ -323,9 +323,9 @@ textarea {
           border-style: solid;
           border-color: transparent;
           opacity: 0.22;
-          @include transition-property(opacity);
-          @include transition-duration(0.2s);
-          @include transition-timing-function(ease);
+          transition-property: opacity;
+          transition-duration: 0.2s;
+          transition-timing-function: ease;
           &:hover {
             opacity: 1;
           }
