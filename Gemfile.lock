@@ -284,6 +284,7 @@ DEPENDENCIES
   active_model_serializers
   annotate
   autodoc
+  autoprefixer-rails
   bcrypt-ruby
   better_errors
   binding_of_caller
