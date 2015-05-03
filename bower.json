@@ -7,8 +7,9 @@
     "infinite-scroll": "*",
     "jquery-touchswipe": "*",
     "WOW": "*",
-    "animate.css": "*",
     "fastclick": "*",
-    "jquery-autosize": "*"
+    "jquery-autosize": "*",
+    "normalize.css": "*",
+    "animate.css": "*"
   }
 }
