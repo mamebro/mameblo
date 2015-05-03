@@ -13,6 +13,10 @@ describe ApplicationHelper, type: :helper do
     expect(countdown(Date.tomorrow)).to eq 1
   end
 
+  it 'ブラザー名のイニシャルを取得できる' do
+    expect(initial('kurotaky')).to eq 'K.'
+  end
+
   context 'スタンプの記述がされている時' do
     it 'スタンプへのパスに変換されること' do
       expect(convert_bro(':brocheers:')).to match %r{src="/images/stamps/cheers.svg"}

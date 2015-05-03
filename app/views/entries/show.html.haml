@@ -28,4 +28,4 @@
           %span<>
             Delete
     - else
-      = @entry.brother.name[0,1].upcase + '.'
+      = initial(@entry.brother.name)
