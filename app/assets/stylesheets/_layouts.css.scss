@@ -250,14 +250,14 @@ $positionLeft: 4px;
     height: 44px;
     display: block;
     color: $black;
-    font-size: $px12;
+    font-size: $font-size-12px;
     line-height: 44px;
     @include if-desktop {
       position: relative;
       height: 50px;
       display: inline-block;
       color: $asbestos;
-      font-size: $px14;
+      font-size: $font-size-14px;
       line-height: 50px;
     }
     &.subtext-before {
