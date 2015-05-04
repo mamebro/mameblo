@@ -3,10 +3,11 @@
 @import 'animate.css/animate';
 
 // mameblo framework
+@import 'foundation/variable';
+@import 'foundation/typography';
 @import 'foundation/mixin/clearfix';
 
 // application
-@import 'variables';
 @import 'import';
 @import 'common';
 @import 'layouts';
