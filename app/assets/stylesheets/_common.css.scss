@@ -7,7 +7,6 @@
   width: 100%;
   padding: $gap;
   text-align: center;
-  @include typography(default);
   background-color: $sunflower;
   box-shadow: 0 1px 0 $orange;
   z-index: 10000;
@@ -21,7 +20,6 @@
   @include if-desktop {
     padding: $gap/2;
   }
-  @include typography(input);
   border: 1px solid $gray-light;
   border-radius: 0;
   box-sizing: border-box;
@@ -43,7 +41,6 @@
   margin-bottom: $gap/2;
   display: inline-block;
   text-align: center;
-  @include typography(button);
   text-shadow: 0 -1px $asbestos;
   border: 0;
   background-color: $concrete;
@@ -142,7 +139,6 @@
     }
     .card-content {
       box-sizing: border-box;
-      @include typography(title);
       width: 100%;
       height: 80px;
       padding: 0 $gap;
@@ -180,13 +176,9 @@
           height: 30px;
           display: block;
           color: $orange;
-          // @include typography(default);
-          // see: http://thesassway.com/intermediate/understanding-placeholder-selectors
           color: $black;
           font-family: $font-family-sans-serif;
           font-size: $px14;
-          line-height: 1.66;
-          @include font-expand($px16, $px14, 1.66);
           line-height: 30px;
         }
       }
@@ -219,14 +211,9 @@
           height: 44px;
           display: block;
           color: $black;
-          // @include typography(default);
-          // see: http://thesassway.com/intermediate/understanding-placeholder-selectors
-          color: $black;
           font-family: $font-family-sans-serif;
           font-size: $px14;
           line-height: 1.66;
-          @include font-expand($px16, $px14, 1.66);
-          line-height: 30px;
           line-height: 44px;
           border-width: 0 0 1px 0;
           border-style: solid;
@@ -258,7 +245,6 @@
 .page-title {
   margin-bottom: $gap;
   text-align: center;
-  @include typography(title);
 }
 
 /* hidden */

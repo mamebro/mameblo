@@ -1,7 +1,6 @@
 .brother-name {
   margin-bottom: $gap;
   text-align: center;
-  @include typography(title);
 }
 
 .entry {
@@ -65,7 +64,6 @@
   @include if-desktop {
     margin-bottom: $gap;
   }
-  @include typography(title);
 }
 
 .entry-content {
@@ -73,7 +71,6 @@
   text-align: justify;
   word-break: normal;
   word-wrap: break-word;
-  @include typography(default);
 
   p {
     margin-bottom: $gap/2;
@@ -96,27 +93,23 @@
     padding-bottom: $gap/4;
     font-size: $px16;
     border-bottom: 2px solid $black;
-    @include font-expand($px18, $px16, 1.66);
   }
 
   h2 {
     padding-bottom: $gap/6;
     font-size: $px16;
     border-bottom: 1px solid $black;
-    @include font-expand($px18, $px16, 1.66);
   }
 
   h3 {
     padding-bottom: $gap/8;
     font-size: $px14;
     border-bottom: 1px solid $silver;
-    @include font-expand($px16, $px14, 1.66);
   }
 
   h4 {
     padding-bottom: $gap/8;
     font-size: $px14;
-    @include font-expand($px16, $px14, 1.66);
   }
 
   h5 {
@@ -239,7 +232,6 @@
 
 .entry-footer {
   margin-bottom: $gap;
-  @include typography(small);
 
   a {
     color: $black;

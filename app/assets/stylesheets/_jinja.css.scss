@@ -4,7 +4,6 @@
 
 .omikuji-title {
   text-align: center;
-  @include typography(title);
   color: $turquoise;
   font-family: serif;
   font-size: 60px;

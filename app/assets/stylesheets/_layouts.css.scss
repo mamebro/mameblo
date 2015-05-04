@@ -286,7 +286,6 @@ $positionLeft: 4px;
   padding: $gap 0 $gap*2;
   .copyright {
     text-align: center;
-    @include typography(small);
     a {
       color: $black;
     }
