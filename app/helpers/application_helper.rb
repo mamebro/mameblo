@@ -48,4 +48,9 @@ module ApplicationHelper
   def countdown(date)
     (date - Date.current).to_i
   end
+
+  # イニシャル
+  def initial(name)
+    name[0,1].upcase + '.'
+  end
 end
