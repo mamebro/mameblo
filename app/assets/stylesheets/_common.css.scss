@@ -72,7 +72,7 @@ textarea {
   }
   @include typography(input);
   border: 1px solid $gray-light;
-  @extend %border-radius.reset;
+  border-radius: 0;
   box-sizing: border-box;
   outline: none;
   -webkit-appearance: none;
@@ -96,7 +96,7 @@ textarea {
   text-shadow: 0 -1px $asbestos;
   border: 0;
   background-color: $concrete;
-  @extend %border-radius.small;
+  border-radius: 5px;
   box-sizing: border-box;
   box-shadow: 0 2px 0 $asbestos;
   cursor: pointer;
