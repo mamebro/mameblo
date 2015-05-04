@@ -1,0 +1,70 @@
+/*
+
+normalize.css によってブラウザごとの差異を整えたあと、さらにリセットしたいブラウザのデフォルトのスタイルだけリセットするスタイルシートです。
+
+*/
+
+
+
+/*
+
+body に padding はつけません。
+
+*/
+body {
+  padding: 0;
+}
+
+
+
+/*
+
+リンクに下線は引きません。
+
+*/
+a {
+  text-decoration: none;
+}
+
+
+
+/*
+
+カートで使用するリストでは・マークを必要としないので、padding とともに無効にしています。
+
+*/
+ol, ul {
+  padding: 0;
+  list-style: none;
+}
+
+
+
+/*
+
+見出しは太字にしません。
+
+*/
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+
+
+/*
+
+Internet Explorer 10 以上で提供されている機能やブラウザのデフォルトスタイルを非表示にしています。
+
+* ::-ms-clear
+  * テキスト入力フォームに入力した内容を削除するボタン
+* ::-ms-reveal
+  * パスワード入力フォームで入力したパスワードの文字列を表示するボタン
+* ::-ms-expand
+  * select 要素の矢印アイコン
+
+*/
+input::-ms-clear,
+input::-ms-reveal,
+select::-ms-expand {
+  display: none;
+}
