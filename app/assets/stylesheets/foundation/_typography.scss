@@ -53,3 +53,27 @@
   width: 24px;
   height: 24px;
 }
+
+body {
+  color: $black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  background-color: $white;
+}
+
+a {
+  color: $turquoise;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  @include if-desktop {
+    font-weight: normal;
+  }
+}
