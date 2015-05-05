@@ -1,7 +1,6 @@
-#encoding: utf-8
-
 class EntriesController < ApplicationController
-include Ikachan
+  include Ikachan
+
   before_action :signed_in_brother, only: [:create, :destroy]
   before_action :correct_brother, only: [:destroy, :update]
 
@@ -65,9 +64,25 @@ include Ikachan
     redirect_to root_path
   end
 
+  def directs
+    @entry = current_brother.entries.build direct_bean_params
+    @entry.direct!
+    if @entry.save
+      flash[:success] = "!!! D豆送信できたね !!!"
+      redirect_to @entry.brother
+    else
+      flash[:error] = "!!! D豆送信できませんでした !!!"
+      redirect_to @entry.brother
+    end
+  end
+
   private
 
   def entry_params
+    params.require(:entry).permit(:content, :title)
+  end
+
+  def direct_bean_params
     params.require(:entry).permit(:content, :title)
   end
 

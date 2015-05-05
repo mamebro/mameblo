@@ -16,6 +16,8 @@ class Entry < ActiveRecord::Base
 
   before_validation :set_title_date
 
+  enum role: {default: 0, direct: 1}
+
   # http://rubygems.org/gems/github-markdown
   # GitHub-Markdownで出力
   def content_as_markdown

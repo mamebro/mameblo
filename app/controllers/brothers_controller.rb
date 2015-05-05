@@ -19,7 +19,7 @@ include Ikachan
   end
 
   def show
-    @entries = @brother.entries.page params[:page]
+    @entries = @brother.entries.default.page params[:page]
     @entries.each_with_index do |entry, index|
       @entries[index].content = entry.content_as_markdown
     end
