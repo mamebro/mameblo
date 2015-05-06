@@ -4,10 +4,9 @@
 
 .omikuji-title {
   text-align: center;
-  @include typography(title);
   color: $turquoise;
   font-family: serif;
-  font-size: 60px;
+  font-size: $font-size-60px;
 }
 
 .omikuji-content {

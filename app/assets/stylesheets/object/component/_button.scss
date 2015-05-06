@@ -1,0 +1,80 @@
+.button {
+  height: 45px;
+  @include if-desktop {
+    height: 54px;
+  }
+  padding: 0 20px;
+  margin-bottom: $gap/2;
+  display: inline-block;
+  text-align: center;
+  text-shadow: 0 -1px $asbestos;
+  border: 0;
+  background-color: $concrete;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 0 $asbestos;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  &.button-horizontal {
+    width: 100%;
+  }
+
+  &.button-default {
+    text-shadow: 0 -1px $asbestos;
+    background-color: $concrete;
+    box-shadow: 0 2px 0 $asbestos;
+  }
+
+  &.button-primary {
+    text-shadow: 0 -1px $greensea;
+    background-color: $turquoise;
+    box-shadow: 0 2px 0 $greensea;
+  }
+
+  &.button-success {
+    text-shadow: 0 -1px $pumpkin;
+    background-color: $carrot;
+    box-shadow: 0 2px 0 $pumpkin;
+  }
+
+  &.button-info {
+    text-shadow: 0 -1px $belizehole;
+    background-color: $peterriver;
+    box-shadow: 0 2px 0 $belizehole;
+  }
+
+  &.button-warning {
+    text-shadow: 0 -1px $orange;
+    background-color: $sunflower;
+    box-shadow: 0 2px 0 $orange;
+  }
+
+  &.button-danger {
+    text-shadow: 0 -1px $pomegranate;
+    background-color: $alizarin;
+    box-shadow: 0 2px 0 $pomegranate;
+  }
+
+  &.button-inverse {
+    text-shadow: 0 -1px $greensea;
+    background-color: $turquoise;
+    box-shadow: 0 2px 0 $greensea;
+  }
+
+  &.button-disabled {
+    text-shadow: 0 -1px $asbestos;
+    background-color: $silver;
+    box-shadow: 0 2px 0 $asbestos;
+    cursor: default;
+  }
+
+  &.button-touched {
+    opacity: 0.33 !important;
+    cursor: default !important;
+    transition-property: opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+  }
+}

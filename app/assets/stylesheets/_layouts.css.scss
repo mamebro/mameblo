@@ -143,7 +143,7 @@ $positionLeft: 4px;
     z-index: 1000;
     .brand {
       float: left;
-      @include box-sizing(border-box);
+      box-sizing: border-box;
       height: 50px;
       padding: 10px;
       cursor: pointer;
@@ -155,7 +155,7 @@ $positionLeft: 4px;
     }
     .nav-menu {
       float: left;
-      @include box-sizing(border-box);
+      box-sizing: border-box;
       height: 50px;
       padding: 10px;
       .nav-menu-content {
@@ -171,9 +171,9 @@ $positionLeft: 4px;
             display: block;
             color: $black;
             opacity: 0.22;
-            @include transition-property(opacity);
-            @include transition-duration(0.2s);
-            @include transition-timing-function(ease);
+            transition-property: opacity;
+            transition-duration: 0.2s;
+            transition-timing-function: ease;
             span {
               position: absolute;
               top: 32px;
@@ -197,14 +197,14 @@ $positionLeft: 4px;
     .nav-editor {
       position: relative;
       float: right;
-      @include box-sizing(border-box);
+      box-sizing: border-box;
       height: 50px;
       padding: 10px;
       opacity: 0.22;
       cursor: pointer;
-      @include transition-property(opacity);
-      @include transition-duration(0.2s);
-      @include transition-timing-function(ease);
+      transition-property: opacity;
+      transition-duration: 0.2s;
+      transition-timing-function: ease;
       span {
         position: absolute;
         top: 42px;
@@ -250,14 +250,14 @@ $positionLeft: 4px;
     height: 44px;
     display: block;
     color: $black;
-    font-size: $px12;
+    font-size: $font-size-12px;
     line-height: 44px;
     @include if-desktop {
       position: relative;
       height: 50px;
       display: inline-block;
       color: $asbestos;
-      font-size: $px14;
+      font-size: $font-size-14px;
       line-height: 50px;
     }
     &.subtext-before {
@@ -286,7 +286,6 @@ $positionLeft: 4px;
   padding: $gap 0 $gap*2;
   .copyright {
     text-align: center;
-    @include typography(small);
     a {
       color: $black;
     }

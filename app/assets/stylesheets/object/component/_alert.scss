@@ -1,0 +1,13 @@
+.alert {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: $gap;
+  text-align: center;
+  background-color: $sunflower;
+  box-shadow: 0 1px 0 $orange;
+  z-index: 10000;
+  cursor: pointer;
+}

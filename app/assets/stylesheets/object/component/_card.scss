@@ -1,0 +1,41 @@
+.cards {
+  @include clearfix;
+  .card {
+    box-sizing: border-box;
+    float: left;
+    margin-bottom: $gap/2;
+    @include if-phone {
+      width: 50%;
+      padding: 0 $gap/4 0 0;
+      &:nth-child(2n) {
+        padding: 0 0 0 $gap/4;
+      }
+    }
+    @include if-desktop {
+      width: 33%;
+      padding: 0 $gap/4 0 0;
+      &:nth-child(3n+2) {
+        padding: 0 $gap/4;
+      }
+      &:nth-child(3n+3) {
+        width: 34%;
+        padding: 0 0 0 $gap/4;
+      }
+    }
+    .card-content {
+      box-sizing: border-box;
+      width: 100%;
+      height: 80px;
+      padding: 0 $gap;
+      text-align: center;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      display: block;
+      overflow: hidden;
+      color: $turquoise;
+      line-height: 80px !important;
+      background-color: $true-white;
+      box-shadow: 0 1px 0 $silver;
+    }
+  }
+}

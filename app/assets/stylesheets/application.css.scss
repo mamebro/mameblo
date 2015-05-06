@@ -1,14 +1,23 @@
 // vendor
+@import 'normalize.css/normalize';
 @import 'animate.css/animate';
 
-// compass
-@import 'compass';
-@import 'compass/css3/box';
+// mameblo framework
+@import 'foundation/reset';
+@import 'foundation/variable';
+@import 'foundation/mixin/clearfix';
+@import 'foundation/mixin/mediaquery';
+@import 'foundation/typography';
+@import 'layout/javascript';
+@import 'object/component/alert';
+@import 'object/component/button';
+@import 'object/component/card';
+@import 'object/component/heading';
+@import 'object/component/tab';
+@import 'object/component/textfield';
+@import 'object/utility/mediaquery';
 
 // application
-@import 'variables';
-@import 'import';
-@import 'common';
 @import 'layouts';
 @import 'beans';
 @import 'shared';

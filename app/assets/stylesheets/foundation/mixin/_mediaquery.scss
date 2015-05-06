@@ -1,0 +1,10 @@
+@mixin if-phone {
+  @media screen and (max-width: 959px) {
+    @content;
+  }
+}
+@mixin if-desktop {
+  @media screen and (min-width: 960px) {
+    @content;
+  }
+}

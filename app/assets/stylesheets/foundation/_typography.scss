@@ -1,0 +1,152 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,700);
+$font-family: 'Open Sans', sans-serif;
+body {
+  color: $black;
+  font-family: $font-family;
+}
+
+$font-size-origin: 14;
+$font-size-10px: (10 / $font-size-origin) * 1rem;
+$font-size-11px: (11 / $font-size-origin) * 1rem;
+$font-size-12px: (12 / $font-size-origin) * 1rem;
+$font-size-13px: (13 / $font-size-origin) * 1rem;
+$font-size-14px: (14 / $font-size-origin) * 1rem;
+$font-size-15px: (15 / $font-size-origin) * 1rem;
+$font-size-16px: (16 / $font-size-origin) * 1rem;
+$font-size-17px: (17 / $font-size-origin) * 1rem;
+$font-size-18px: (18 / $font-size-origin) * 1rem;
+$font-size-19px: (19 / $font-size-origin) * 1rem;
+$font-size-20px: (20 / $font-size-origin) * 1rem;
+$font-size-21px: (21 / $font-size-origin) * 1rem;
+$font-size-22px: (22 / $font-size-origin) * 1rem;
+$font-size-23px: (23 / $font-size-origin) * 1rem;
+$font-size-24px: (24 / $font-size-origin) * 1rem;
+$font-size-25px: (25 / $font-size-origin) * 1rem;
+$font-size-26px: (26 / $font-size-origin) * 1rem;
+$font-size-27px: (27 / $font-size-origin) * 1rem;
+$font-size-28px: (28 / $font-size-origin) * 1rem;
+$font-size-29px: (29 / $font-size-origin) * 1rem;
+$font-size-30px: (30 / $font-size-origin) * 1rem;
+$font-size-31px: (31 / $font-size-origin) * 1rem;
+$font-size-32px: (32 / $font-size-origin) * 1rem;
+$font-size-33px: (33 / $font-size-origin) * 1rem;
+$font-size-34px: (34 / $font-size-origin) * 1rem;
+$font-size-35px: (35 / $font-size-origin) * 1rem;
+$font-size-36px: (36 / $font-size-origin) * 1rem;
+$font-size-37px: (37 / $font-size-origin) * 1rem;
+$font-size-38px: (38 / $font-size-origin) * 1rem;
+$font-size-39px: (39 / $font-size-origin) * 1rem;
+$font-size-40px: (40 / $font-size-origin) * 1rem;
+$font-size-41px: (41 / $font-size-origin) * 1rem;
+$font-size-42px: (42 / $font-size-origin) * 1rem;
+$font-size-43px: (43 / $font-size-origin) * 1rem;
+$font-size-44px: (44 / $font-size-origin) * 1rem;
+$font-size-45px: (45 / $font-size-origin) * 1rem;
+$font-size-46px: (46 / $font-size-origin) * 1rem;
+$font-size-47px: (47 / $font-size-origin) * 1rem;
+$font-size-48px: (48 / $font-size-origin) * 1rem;
+$font-size-49px: (49 / $font-size-origin) * 1rem;
+$font-size-50px: (50 / $font-size-origin) * 1rem;
+$font-size-51px: (51 / $font-size-origin) * 1rem;
+$font-size-52px: (52 / $font-size-origin) * 1rem;
+$font-size-53px: (53 / $font-size-origin) * 1rem;
+$font-size-54px: (54 / $font-size-origin) * 1rem;
+$font-size-55px: (55 / $font-size-origin) * 1rem;
+$font-size-56px: (56 / $font-size-origin) * 1rem;
+$font-size-57px: (57 / $font-size-origin) * 1rem;
+$font-size-58px: (58 / $font-size-origin) * 1rem;
+$font-size-59px: (59 / $font-size-origin) * 1rem;
+$font-size-60px: (60 / $font-size-origin) * 1rem;
+$font-size-61px: (61 / $font-size-origin) * 1rem;
+$font-size-62px: (62 / $font-size-origin) * 1rem;
+$font-size-63px: (63 / $font-size-origin) * 1rem;
+$font-size-64px: (64 / $font-size-origin) * 1rem;
+$font-size-65px: (65 / $font-size-origin) * 1rem;
+$font-size-66px: (66 / $font-size-origin) * 1rem;
+$font-size-67px: (67 / $font-size-origin) * 1rem;
+$font-size-68px: (68 / $font-size-origin) * 1rem;
+$font-size-69px: (69 / $font-size-origin) * 1rem;
+$font-size-70px: (70 / $font-size-origin) * 1rem;
+$font-size-71px: (71 / $font-size-origin) * 1rem;
+$font-size-72px: (72 / $font-size-origin) * 1rem;
+html {
+  font-size: $font-size-origin + px;
+}
+body {
+  font-size: $font-size-14px;
+}
+
+@font-face {
+  font-family: EntypoIcon;
+  src: font-url('entypo/entypo.eot') format('oldIE'),
+  font-url('entypo/entypo.ttf') format('truetype'),
+  font-url('entypo/entypo.woff') format('woff'),
+  font-url('entypo/entypo.svg') format('svg');
+}
+@font-face {
+  font-family: EntypoSocialIcon;
+  src: font-url('entypo-social/entypo-social.eot') format('oldIE'),
+  font-url('entypo-social/entypo-social.ttf') format('truetype'),
+  font-url('entypo-social/entypo-social.woff') format('woff'),
+  font-url('entypo-social/entypo-social.svg') format('svg');
+}
+@font-face {
+  font-family: Mameblo;
+  src: font-url('mameblo/mameblo.eot') format('oldIE'),
+  font-url('mameblo/mameblo.ttf') format('truetype'),
+  font-url('mameblo/mameblo.woff') format('woff'),
+  font-url('mameblo/mameblo.svg') format('svg');
+}
+%icon {
+  margin-right: 0.05em;
+  width: 0.65em;
+  text-align: center;
+  font-family: EntypoIcon, EntypoSocialIcon, Mameblo;
+  display: inline-block;
+  font-size: 2em;
+  font-weight: normal !important;
+  font-style: normal;
+  line-height: 0.7em;
+  vertical-align: -0.06em;
+  text-decoration: none;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+}
+.icon {
+  @extend %icon;
+}
+.iconbutton {
+  @extend %icon;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: $white;
+  line-height: 30px;
+  background-color: $midnightblue;
+  border-radius: 30px;
+}
+.emoji {
+  width: 24px;
+  height: 24px;
+}
+
+body {
+  background-color: $white;
+}
+
+a {
+  color: $turquoise;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  @include if-desktop {
+    font-weight: normal;
+  }
+}

@@ -1,0 +1,11 @@
+.view-desktop {
+  display: none;
+}
+@include if-desktop {
+  .view-phone {
+    display: none;
+  }
+  .view-desktop {
+    display: block;
+  }
+}
