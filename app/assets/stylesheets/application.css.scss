@@ -8,6 +8,7 @@
 @import 'foundation/mixin/clearfix';
 @import 'foundation/mixin/mediaquery';
 @import 'foundation/typography';
+@import 'layout/javascript';
 @import 'object/component/alert';
 @import 'object/component/button';
 @import 'object/component/card';
@@ -17,7 +18,6 @@
 @import 'object/utility/mediaquery';
 
 // application
-@import 'common';
 @import 'layouts';
 @import 'beans';
 @import 'shared';
