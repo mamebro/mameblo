@@ -1,4 +1,4 @@
 %li.autopager-item
-  = link_to brother.name, brother
+  = link_to brother.name, brothers_name_path(brother.name)
   - if current_brother.admin? && !current_brother?(brother)
     = link_to "!!! 消す !!!", brother, method: :delete, confirm: "本当に消えるよ!!!!!!?"

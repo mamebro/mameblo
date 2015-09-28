@@ -42,5 +42,7 @@ Mameblog::Application.routes.draw do
 
   get 'tent/home', to: 'tent/home#index'
 
-  get '/:name', to: 'brothers#show'
+  get '/:name', to: 'brothers#show', as: 'brothers_name'
+  get '/:name/following', to: 'brothers#following', as: 'following'
+  get '/:name/followers', to: 'brothers#followers', as: 'followers'
 end
