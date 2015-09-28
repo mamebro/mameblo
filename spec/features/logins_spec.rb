@@ -6,7 +6,7 @@ feature "Logins" do
 
   feature "サインインしていない時" do
     scenario "メニューからログイン画面へ移動してサインインできること" do
-      brother = FactoryGirl.create(:brother)
+      brother = create(:brother)
       visit root_path
       click_link 'サインイン'
       fill_in "session_name", with: brother.name

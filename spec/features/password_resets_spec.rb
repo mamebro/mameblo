@@ -5,7 +5,7 @@ feature 'password resets' do
   subject { page }
 
   feature 'パスワード再設定画面へ移動' do
-    let(:brother) { FactoryGirl.create(:brother) }
+    let(:brother) { create(:brother) }
 
     before do
       visit root_path

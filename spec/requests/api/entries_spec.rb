@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe 'Entries api', type: :request do
   let(:password) { 'nejimakid0ri' }
-  let(:kumiko) { FactoryGirl.create(:brother, name: 'kumiko', password: password, password_confirmation: password) }
-  let(:entry) { FactoryGirl.create(:entry, brother: kumiko) }
+  let(:kumiko) { create(:brother, name: 'kumiko', password: password, password_confirmation: password) }
+  let(:entry) { create(:entry, brother: kumiko) }
 
   let(:token) do
     post '/api/signin', {name: kumiko.name, password: password}
@@ -36,7 +36,7 @@ describe 'Entries api', type: :request do
       let(:brothers) do
         brothers = []
         10.times do
-          brothers << FactoryGirl.create(:brother)
+          brothers << create(:brother)
         end
         brothers
       end
@@ -57,7 +57,7 @@ describe 'Entries api', type: :request do
       before do
         brothers.each do |brother|
           5.times do
-            FactoryGirl.create(:entry, brother: brother)
+            create(:entry, brother: brother)
           end
         end
       end

@@ -3,9 +3,9 @@ require 'spec_helper'
 describe EntrySerializer do
   let(:brother) do
     password = 'nejimakid0ri'
-    FactoryGirl.create(:brother, name: 'kumiko', password: password, password_confirmation: password)
+    create(:brother, name: 'kumiko', password: password, password_confirmation: password)
   end
-  let(:entry) { FactoryGirl.create(:entry) }
+  let(:entry) { create(:entry) }
   let(:beans_count) { 3 }
 
   let(:pattern) do
@@ -23,7 +23,7 @@ describe EntrySerializer do
 
   before do
     beans_count.times do
-      FactoryGirl.create(:bean, entry_id: entry.id, throw_brother_id: brother.id)
+      create(:bean, entry_id: entry.id, throw_brother_id: brother.id)
     end
   end
 

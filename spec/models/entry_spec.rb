@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Entry do
 
-  let(:brother) { FactoryGirl.create(:brother) }
+  let(:brother) { create(:brother) }
 
   before do
     @entry = brother.entries.build(title: "まめぶろ最高",
@@ -63,7 +63,7 @@ describe Entry do
     before { @entry.content = " " }
     it { is_expected.not_to be_valid }
   end
-  
+
   describe "with content that is too long" do
     before { @entry.content = "a" * 100000 }
     it { is_expected.not_to be_valid }
@@ -73,7 +73,7 @@ describe Entry do
     before { @entry.title = " " }
     it { is_expected.not_to be_valid }
   end
-  
+
   describe "with content that is too long" do
     before { @entry.title = "a" * 100000 }
     it { is_expected.not_to be_valid }

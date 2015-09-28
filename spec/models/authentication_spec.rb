@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Authentication do
-  let(:brother) { FactoryGirl.create(:brother) }
+  let(:brother) { create(:brother) }
 
   it '保存したときにトークンが生成される' do
     brother.authentications.create

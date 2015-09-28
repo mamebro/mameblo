@@ -8,10 +8,11 @@ feature "mame blog(timelines)" do
     before{ visit root_path }
 
     feature "サインイン成功すること" do
-      let(:brother) { FactoryGirl.create(:brother) }
+      let(:brother) { create(:brother) }
+
       before do
-        FactoryGirl.create(:entry, brother: brother)
-        FactoryGirl.create(:entry, brother: brother)
+        create(:entry, brother: brother)
+        create(:entry, brother: brother)
         sign_in brother
       end
 
@@ -30,7 +31,7 @@ feature "mame blog(timelines)" do
     end
 
     feature "サインイン失敗すること" do
-      let(:brother) { FactoryGirl.create(:brother) }
+      let(:brother) { create(:brother) }
 
       feature "brother failed login" do
         before do
