@@ -4,9 +4,28 @@ feature "Brother pages" do
 
   subject { page }
 
-  feature "サインインした時" do
-    let(:brother) { create(:brother) }
+  let(:brother) { create(:brother) }
 
+  feature '/ブラザー名でアクセス' do
+    scenario 'ブラザーが存在するとき' do
+      visit '/' + brother.name
+      expect(page.has_content?(brother.name)).to be_truthy
+      expect(page.has_title?("まめぶろ | #{brother.name}")).to be_truthy
+    end
+
+    scenario 'ブラザーが存在しないとき' do
+      visit '/' + 'sister'
+      expect(page.has_content?(brother.name)).to be_falsey
+      expect(page.has_title?('まめぶろ')).to be_truthy
+    end
+
+    scenario '/signin のとき' do
+      visit '/' + 'signin'
+      expect(page.has_content?('サインイン')).to be_truthy
+    end
+  end
+
+  feature "サインインした時" do
     before do
       @brother = create(:brother)
       sign_in brother

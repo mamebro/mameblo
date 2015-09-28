@@ -87,7 +87,13 @@ include Ikachan
   end
 
   def load_brother
-    @brother = Brother.find_by_name_or_id(params[:id])
+    if params[:id].present?
+      @brother = Brother.find_by_name_or_id(params[:id])
+    elsif params[:name].present?
+      @brother = Brother.find_by(name: params[:name])
+      redirect_to root_path if @brother.nil?
+    else
+    end
   end
 
   def correct_brother
