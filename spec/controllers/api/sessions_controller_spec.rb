@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Api::SessionsController, type: :controller do
   let(:password) { 'nejimakid0ri' }
-  let(:brother) { FactoryGirl.create(:brother, name: 'kumiko', password: password, password_confirmation: password) }
+  let(:brother) { create(:brother, name: 'kumiko', password: password, password_confirmation: password) }
 
   describe 'create' do
     context 'success' do

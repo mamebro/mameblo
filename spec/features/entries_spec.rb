@@ -5,8 +5,8 @@ feature "Entries" do
   subject { page }
 
   feature "サインインして日記を投稿するとき" do
-    let(:brother) { FactoryGirl.create(:brother) }
-    let(:entry) { FactoryGirl.create(:entry) }
+    let(:brother) { create(:brother) }
+    let(:entry) { create(:entry) }
 
     before do
       sign_in brother
@@ -38,7 +38,7 @@ feature "Entries" do
   end
 
   feature "タイトルを入力しないで日記を投稿するとき" do
-    let(:brother) { FactoryGirl.create(:brother) }
+    let(:brother) { create(:brother) }
     before do
       sign_in brother
       first(:link, '兄弟').click

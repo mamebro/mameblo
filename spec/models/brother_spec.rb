@@ -136,10 +136,10 @@ describe Brother do
 
     before { @brother.save }
     let!(:older_entry) do
-      FactoryGirl.create(:entry, brother: @brother, created_at: 1.day.ago)
+      create(:entry, brother: @brother, created_at: 1.day.ago)
     end
     let!(:newer_entry) do
-      FactoryGirl.create(:entry, brother: @brother, created_at: 1.hour.ago)
+      create(:entry, brother: @brother, created_at: 1.hour.ago)
     end
 
     it "should have the right entries in the right order" do

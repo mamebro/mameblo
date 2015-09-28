@@ -5,10 +5,10 @@ feature 'Jinja' do
   subject { page }
 
   feature "サインインしている時" do
-    let(:brother) { FactoryGirl.create(:brother) }
+    let(:brother) { create(:brother) }
 
     before do
-      @brother =  FactoryGirl.create(:brother)
+      @brother = create(:brother)
       sign_in brother
       visit root_path
       visit jinja_path

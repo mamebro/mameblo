@@ -3,7 +3,7 @@ require 'spec_helper'
 describe BeansController, type: :controller do
   describe "POST 'create'" do
     it "returns http success" do
-      bro = FactoryGirl.create(:brother)
+      bro = create(:brother)
       sign_in_for_controller bro
       expect do
         xhr :post, :create, entry_id: 1

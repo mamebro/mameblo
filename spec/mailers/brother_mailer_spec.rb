@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe BrotherMailer do
   describe "password_reset" do
-    let(:brother) { FactoryGirl.create(:brother) }
+    let(:brother) { create(:brother) }
     let(:mail) { BrotherMailer.password_reset(brother) }
 
     it "renders the headers" do

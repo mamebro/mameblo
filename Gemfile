@@ -23,6 +23,7 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'uglifier'
 gem 'rack-google-analytics'
+gem 'awesome_print'
 
 group :production do
   gem 'mysql2'

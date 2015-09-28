@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'ハッシュタグ検索' do
 
-  let(:brother) { FactoryGirl.create(:brother) }
+  let(:brother) { create(:brother) }
 
   before do
     sign_in brother
