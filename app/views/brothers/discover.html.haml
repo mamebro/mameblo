@@ -4,5 +4,5 @@
   %ul.cards.autopager-content
     - @brothers.each do |brother|
       %div.card
-        %a.card-content{href: "/brothers/#{brother.name}"}
+        %a.card-content{href: "/#{brother.name}"}
           = brother.name
