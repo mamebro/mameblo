@@ -5,7 +5,6 @@
 [![Code Climate](https://codeclimate.com/github/mamebro/mameblo.png)](https://codeclimate.com/github/mamebro/mameblo)
 
 http://mameblo.com/
-
 日本の豊かなブログサービスです。
 
 ## Twitter 公式アカウント
