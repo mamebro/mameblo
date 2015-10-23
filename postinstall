@@ -1,7 +1,5 @@
 #!/bin/sh
 
-curl -F channel=\#mameblo -F message=":bro: $HOSTNAME のデプロイが完了しました!" http://irc.paperboy.co.jp:4980/notice
-
 set -e
-ln -s /home/sqale/etc/irc.yml /home/sqale/current/config/irc.yml
-ln -s /home/sqale/etc/staff_mail.yml /home/sqale/current/config/staff_mail.yml
+
+curl -F channel=\#mameblo -F message=":bro: $HOSTNAME のデプロイが完了しました!" http://irc.paperboy.co.jp:4980/notice

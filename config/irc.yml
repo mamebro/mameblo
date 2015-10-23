@@ -1,0 +1,1 @@
+host: <%= ENV['IKACHAN_HOST'] %>

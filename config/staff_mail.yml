@@ -1,0 +1,3 @@
+- <%= ENV['KUROTAKY_MAIL'] %>
+- <%= ENV['SHIKAKUN_MAIL'] %>
+- <%= ENV['SUSHIYAMA_MAIL'] %>
