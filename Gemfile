@@ -26,7 +26,7 @@ gem 'rack-google-analytics'
 gem 'awesome_print'
 
 group :production do
-  gem 'mysql2'
+  gem 'mysql2', '~> 0.3.20'
 end
 
 group :development, :test do
