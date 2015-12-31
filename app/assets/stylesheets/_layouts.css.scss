@@ -249,14 +249,13 @@ $positionLeft: 4px;
     top: 0;
     height: 44px;
     display: block;
-    color: $black;
+    color: $true-white;
     font-size: $px12;
     line-height: 44px;
     @include if-desktop {
       position: relative;
       height: 50px;
       display: inline-block;
-      color: $asbestos;
       font-size: $px14;
       line-height: 50px;
     }
