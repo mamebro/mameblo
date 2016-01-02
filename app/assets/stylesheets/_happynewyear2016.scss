@@ -1,9 +1,0 @@
-body {
-  @include background-size(2px 1px);
-  background-image: asset-url('kouhaku.gif');
-  background-repeat: repeat;
-  background-position: top center;
-  a {
-    color: $alizarin;
-  }
-}
