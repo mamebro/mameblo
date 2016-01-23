@@ -40,7 +40,7 @@ include Ikachan
   def update
     respond_to do |format|
       if @entry.update entry_params
-        EntryHasHashtag.destroy_all(entry_id: @entry.id)
+        EntryHasHashtag.where(entry_id: @entry.id).destroy_all
         @entry.hashtag_names.each do |name|
           if hashtag = Hashtag.find_by(name: name)
             EntryHasHashtag.create(hashtag_id: hashtag.id, entry_id: @entry.id)
@@ -60,7 +60,7 @@ include Ikachan
 
   def destroy
     @entry.destroy
-    EntryHasHashtag.destroy_all(entry_id: @entry.id)
+    EntryHasHashtag.where(entry_id: @entry.id).destroy_all
     flash[:success] = "!!! 日記を消したぜブラザー !!!"
     redirect_to root_path
   end
