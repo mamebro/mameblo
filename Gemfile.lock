@@ -8,6 +8,15 @@ GIT
       sprockets (< 4.0)
 
 GIT
+  remote: git://github.com/amatsuda/kaminari.git
+  revision: 282b2125292d8f4c721dba89510ee4360c071eb0
+  branch: master
+  specs:
+    kaminari (1.0.0.alpha)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+
+GIT
   remote: git://github.com/guard/guard-rspec.git
   revision: 7b775662e3fa782e170a4665f8e50bb602be32dc
   specs:
@@ -217,9 +226,6 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     json_expressions (0.8.3)
-    kaminari (0.16.3)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     libv8 (3.16.14.13)
@@ -362,7 +368,7 @@ DEPENDENCIES
   haml
   jquery-rails
   json_expressions
-  kaminari
+  kaminari!
   launchy
   mysql2 (~> 0.3.20)
   pry-rails

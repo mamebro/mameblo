@@ -5,7 +5,7 @@ gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'faker'
 gem 'redcarpet'
-gem 'kaminari'
+gem 'kaminari', github: 'amatsuda/kaminari', branch: 'master'
 gem 'jquery-rails'
 gem 'whenever', require: false
 gem 'haml'
