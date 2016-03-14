@@ -47,6 +47,11 @@ describe Brother do
     it { is_expected.not_to be_valid }
   end
 
+  describe "resource name is not defined" do
+    before { @brother.name = "discove" }
+    it { is_expected.to be_valid }
+  end
+
   describe "when name format is invalid" do
     it "should be invalid" do
       brothername = %w[@@@, #, ||, ---, www.nakaotakashi.com]

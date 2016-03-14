@@ -28,6 +28,8 @@ gem 'uglifier'
 gem 'rack-google-analytics'
 gem 'awesome_print'
 
+gem 'resource_name_validator'
+
 group :production do
   gem 'mysql2', '~> 0.3.20'
 end
