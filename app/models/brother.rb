@@ -26,6 +26,7 @@ class Brother < ActiveRecord::Base
     length: {within: 3..20},
     format: { with: VALID_NAME_REGEX },
     uniqueness: true,
+    resource_name: true,
     exclusion: { in: RESERVED_NAMES, message: "そういう名前は名乗れないよ。" }
 
   validates :password, presence: true, length: { minimum: 6 }
