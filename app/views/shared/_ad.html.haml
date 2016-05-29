@@ -1,4 +1,4 @@
-- if !signed_in?
+- unless signed_in?
   = link_to signup_path, class: 'ad', onclick: "ga('send', 'event', 'ad_welcome', 'click');" do
     %span<>
       はじめまして。#{myself.sample}は日本の豊かなブログサービスです。
@@ -7,7 +7,3 @@
       ブラザーに
     %u
       今すぐなる
-- else
-  = link_to 'https://atnd.org/events/77396', target: '_blank', class: 'ad', onclick: "ga('send', 'event', 'ad_tamagawa_beer', 'click');" do
-    %span<>
-      5/28(土) 多摩川ビールします
