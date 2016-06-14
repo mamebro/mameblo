@@ -2,3 +2,9 @@
   %h1.brand
     = image_tag "brand/brand-black.svg", alt: 'まめぶろ'
   = render 'layouts/nav'
+%div.subtexts
+  %span.subtext.subtext-before<>
+    - lyric = ['まめぶろ', 'おかけさまで', '愛されて', '豆の上にも']
+    = lyric.sample
+  %span.subtext.subtext-after<>
+    4周年
