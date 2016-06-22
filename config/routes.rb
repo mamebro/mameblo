@@ -33,7 +33,7 @@ Mameblog::Application.routes.draw do
   namespace :api do
     post '/signin', to: 'sessions#create'
     delete '/signout', to: 'sessions#destroy'
-    resources :entries, only: [:show] do
+    resources :entries, only: [:index, :show] do
       collection do
         get :home
       end

@@ -258,6 +258,7 @@ GEM
       pry (>= 0.9.10)
     rack (2.0.0.alpha)
       json
+    rack-cors (0.4.0)
     rack-google-analytics (1.2.0)
       actionpack
       activesupport
@@ -372,6 +373,7 @@ DEPENDENCIES
   launchy
   mysql2 (~> 0.3.20)
   pry-rails
+  rack-cors
   rack-google-analytics
   rails (~> 5.0.0.beta3)
   rb-fsevent

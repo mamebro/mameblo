@@ -2,7 +2,7 @@ module Api
   class ApplicationController < ActionController::Base
     protect_from_forgery with: :null_session
     before_action :set_authentication
-    before_action :authenticate
+    before_action :authenticate, except: [:index]
     before_action :current_brother
 
     private

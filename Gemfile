@@ -30,6 +30,8 @@ gem 'awesome_print'
 
 gem 'resource_name_validator'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 group :production do
   gem 'mysql2', '~> 0.3.20'
 end
