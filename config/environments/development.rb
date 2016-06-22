@@ -43,4 +43,10 @@ Mameblog::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
+    allow do
+      origins '*'
+      resource '*', :headers => :any, :methods => [:get]
+    end
+  end
 end
