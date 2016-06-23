@@ -18,10 +18,9 @@ ActiveRecord::Schema.define(version: 20150101085544) do
     t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["brother_id"], name: "index_authentications_on_brother_id"
+    t.index ["token"], name: "index_authentications_on_token"
   end
-
-  add_index "authentications", ["brother_id"], name: "index_authentications_on_brother_id"
-  add_index "authentications", ["token"], name: "index_authentications_on_token"
 
   create_table "beans", force: :cascade do |t|
     t.integer  "kind",             default: 0
@@ -29,9 +28,8 @@ ActiveRecord::Schema.define(version: 20150101085544) do
     t.integer  "throw_brother_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["entry_id"], name: "index_beans_on_entry_id"
   end
-
-  add_index "beans", ["entry_id"], name: "index_beans_on_entry_id"
 
   create_table "brothers", force: :cascade do |t|
     t.string   "name"
@@ -43,10 +41,9 @@ ActiveRecord::Schema.define(version: 20150101085544) do
     t.boolean  "admin"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.index ["email"], name: "index_brothers_on_email", unique: true
+    t.index ["remember_token"], name: "index_brothers_on_remember_token"
   end
-
-  add_index "brothers", ["email"], name: "index_brothers_on_email", unique: true
-  add_index "brothers", ["remember_token"], name: "index_brothers_on_remember_token"
 
   create_table "circuses", force: :cascade do |t|
     t.integer  "brother_id"
@@ -68,11 +65,10 @@ ActiveRecord::Schema.define(version: 20150101085544) do
     t.integer  "hashtag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["entry_id", "hashtag_id"], name: "index_entry_has_hashtags_on_entry_id_and_hashtag_id", unique: true
+    t.index ["entry_id"], name: "index_entry_has_hashtags_on_entry_id"
+    t.index ["hashtag_id"], name: "index_entry_has_hashtags_on_hashtag_id"
   end
-
-  add_index "entry_has_hashtags", ["entry_id", "hashtag_id"], name: "index_entry_has_hashtags_on_entry_id_and_hashtag_id", unique: true
-  add_index "entry_has_hashtags", ["entry_id"], name: "index_entry_has_hashtags_on_entry_id"
-  add_index "entry_has_hashtags", ["hashtag_id"], name: "index_entry_has_hashtags_on_hashtag_id"
 
   create_table "hashtags", force: :cascade do |t|
     t.string   "name"
@@ -85,11 +81,10 @@ ActiveRecord::Schema.define(version: 20150101085544) do
     t.integer  "followed_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
-
-  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
-  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
-  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
   create_table "votes", force: :cascade do |t|
     t.integer  "brother_id"
