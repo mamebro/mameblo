@@ -3,7 +3,7 @@
   = @brother.name
 = render 'shared/stats'
 - if @brothers.any?
-  %div#content{data: {max: {page: @brothers.num_pages}}}
+  %div#content{data: {max: {page: @brothers.total_pages}}}
     %ul.cards.autopager-content
       - @brothers.each do |brother|
         %div.card
