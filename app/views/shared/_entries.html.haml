@@ -1,4 +1,4 @@
-%div#content{data: {max: {page: @entries.num_pages}}}
+%div#content{data: {max: {page: @entries.total_pages}}}
   %article#entries.autopager-content
     - @entries.each do |entry|
       %section.entry.autopager-item{data: {beans: {count: entry.beans.count}}}
