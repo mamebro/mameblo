@@ -1,8 +1,9 @@
 module Api
   class EntriesController < Api::ApplicationController
     def index
-      entries = Entry.last(100)
-      render json: entries
+      #entries = Entry.last(100)
+      #render json: entries
+      render template: "400", status: 400, layout: 'application'
     end
 
     def show
