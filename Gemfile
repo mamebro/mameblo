@@ -32,8 +32,6 @@ gem 'resource_name_validator'
 
 gem 'rack-cors', :require => 'rack/cors'
 
-gem 'puma'
-
 group :production do
   gem 'mysql2', '~> 0.3.20'
 end
