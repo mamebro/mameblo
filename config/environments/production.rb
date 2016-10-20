@@ -78,10 +78,12 @@ Mameblog::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
-  config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
-    allow do
-      origins '*'
-      resource '*', :headers => :any, :methods => [:get]
-    end
-  end
+
+  # No such middleware to insert before: ActionDispatch::Static が出る
+  #config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
+  #  allow do
+  #    origins '*'
+  #    resource '*', :headers => :any, :methods => [:get]
+  #  end
+  #end
 end
