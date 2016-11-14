@@ -11,10 +11,10 @@ http://mameblo.com/
 https://twitter.com/mameblo
 
 ## Facebookページ
-http://www.facebook.com/mameblo
+https://www.facebook.com/mameblo
 
 ## minne
-http://minne.com/mameblo
+https://minne.com/mameblo
 
 ## SUZURI
 https://suzuri.jp/mameblo
