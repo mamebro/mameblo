@@ -1,4 +1,8 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :onsen do
+    brother_id 1
+bathing 1
+  end
+
   factory :entry_has_hashtag do
     entry nil
     hashtag nil
