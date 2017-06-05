@@ -27,6 +27,7 @@ gem 'therubyracer'
 gem 'uglifier'
 gem 'rack-google-analytics'
 gem 'awesome_print'
+gem 'yaml_db'
 
 gem 'resource_name_validator'
 
