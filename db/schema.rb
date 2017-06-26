@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150101085544) do
+ActiveRecord::Schema.define(version: 20170626132218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,13 +45,6 @@ ActiveRecord::Schema.define(version: 20150101085544) do
     t.datetime "password_reset_sent_at"
     t.index ["email"], name: "index_brothers_on_email", unique: true
     t.index ["remember_token"], name: "index_brothers_on_remember_token"
-  end
-
-  create_table "circuses", id: :serial, force: :cascade do |t|
-    t.integer "brother_id"
-    t.boolean "participation"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "entries", id: :serial, force: :cascade do |t|
