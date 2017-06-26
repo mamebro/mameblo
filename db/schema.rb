@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170626132218) do
+ActiveRecord::Schema.define(version: 20170626132453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,14 +79,6 @@ ActiveRecord::Schema.define(version: 20170626132218) do
     t.index ["followed_id"], name: "index_relationships_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
-  end
-
-  create_table "votes", id: :serial, force: :cascade do |t|
-    t.integer "brother_id"
-    t.integer "tshirt_id"
-    t.integer "score"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   add_foreign_key "entry_has_hashtags", "entries"
