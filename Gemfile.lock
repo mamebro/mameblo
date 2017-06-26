@@ -260,7 +260,6 @@ GEM
     minitest (5.10.2)
     multi_json (1.12.1)
     multipart-post (2.0.0)
-    mysql2 (0.3.21)
     nenv (0.3.0)
     nio4r (2.1.0)
     nokogiri (1.8.0)
@@ -268,6 +267,7 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    pg (0.21.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -309,6 +309,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    rb-readline (0.5.4)
     redcarpet (3.4.0)
     ref (2.0.0)
     resource_name_validator (0.1.0)
@@ -393,12 +394,13 @@ DEPENDENCIES
   json_expressions
   kaminari!
   launchy
-  mysql2 (~> 0.3.20)
+  pg
   pry-rails
   rack-cors
   rack-google-analytics
   rails
   rb-fsevent
+  rb-readline
   redcarpet
   resource_name_validator
   responders

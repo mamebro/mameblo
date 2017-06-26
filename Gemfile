@@ -28,13 +28,14 @@ gem 'uglifier'
 gem 'rack-google-analytics'
 gem 'awesome_print'
 gem 'yaml_db'
+gem 'rb-readline'
 
 gem 'resource_name_validator'
 
 gem 'rack-cors', :require => 'rack/cors'
+gem 'pg'
 
 group :production do
-  gem 'mysql2', '~> 0.3.20'
 end
 
 group :development, :test do
