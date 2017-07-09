@@ -23,10 +23,6 @@ test:
   timeout: 5000
 
 production:
-  adapter: mysql2
+  production:
   encoding: utf8
-  username: <%= ENV['SQALE_USERNAME'] %>
-  password: <%= ENV['SQALE_PASSWORD'] %>
-  database: <%= ENV['SQALE_DATABASE'] %>
-  host: <%= ENV['SQALE_HOST'] %>
-  pool: 5
+  pool: 15
