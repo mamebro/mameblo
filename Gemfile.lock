@@ -275,6 +275,7 @@ GEM
     pry-rails (0.3.6)
       pry (>= 0.10.4)
     public_suffix (2.0.5)
+    puma (3.6.0)
     rack (2.0.3)
     rack-cors (0.4.1)
     rack-google-analytics (1.2.0)
@@ -396,6 +397,7 @@ DEPENDENCIES
   launchy
   pg
   pry-rails
+  puma
   rack-cors
   rack-google-analytics
   rails
