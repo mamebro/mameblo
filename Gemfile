@@ -35,9 +35,6 @@ gem 'resource_name_validator'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'pg'
 
-group :production do
-end
-
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', github: 'rspec/rspec-rails'
