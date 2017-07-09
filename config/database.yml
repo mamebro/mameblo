@@ -4,10 +4,14 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
+  adapter: postgresql
+  database: mameblo_development
   pool: 5
   timeout: 5000
+  encoding: utf8
+  password:
+  username: postgres
+  host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -19,10 +23,6 @@ test:
   timeout: 5000
 
 production:
-  adapter: mysql2
+  adapter: postgres
   encoding: utf8
-  username: <%= ENV['SQALE_USERNAME'] %>
-  password: <%= ENV['SQALE_PASSWORD'] %>
-  database: <%= ENV['SQALE_DATABASE'] %>
-  host: <%= ENV['SQALE_HOST'] %>
-  pool: 5
+  pool: 15

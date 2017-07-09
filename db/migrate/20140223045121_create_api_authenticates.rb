@@ -1,4 +1,4 @@
-class CreateApiAuthenticates < ActiveRecord::Migration
+class CreateApiAuthenticates < ActiveRecord::Migration[4.2]
   def change
     create_table :api_authenticates do |t|
       t.integer :brother_id

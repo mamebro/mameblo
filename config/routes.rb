@@ -16,8 +16,6 @@ Mameblog::Application.routes.draw do
     resources :beans, only: [:create, :destroy]
   end
   resources :relationships, only: [:create, :destroy]
-  resources :circuses, only: [:index]
-  resources :votes, only: [:index]
 
   root 'timelines#index'
 

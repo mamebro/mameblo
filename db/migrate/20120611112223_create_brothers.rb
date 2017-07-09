@@ -1,4 +1,4 @@
-class CreateBrothers < ActiveRecord::Migration
+class CreateBrothers < ActiveRecord::Migration[4.2]
   def change
     create_table :brothers do |t|
       t.string :name

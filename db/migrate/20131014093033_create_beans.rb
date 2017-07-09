@@ -1,4 +1,4 @@
-class CreateBeans < ActiveRecord::Migration
+class CreateBeans < ActiveRecord::Migration[4.2]
   def change
     create_table :beans do |t|
       t.integer :kind, default: 0
