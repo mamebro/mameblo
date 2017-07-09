@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+# ref: https://github.com/rails/rails/commit/12d5c21031446686898d5bac924ff3e9e34b6a7d
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
+
 gem 'rails'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
