@@ -23,6 +23,6 @@ test:
   timeout: 5000
 
 production:
-  production:
+  adapter: postgres
   encoding: utf8
   pool: 15
