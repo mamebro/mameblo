@@ -31,8 +31,7 @@ Mameblog::Application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # sqaleではまだssl対応していないのでhttpで接続するようにする。
-  config.force_ssl = false
+  config.force_ssl = true
 
   config.log_level = :info
 
