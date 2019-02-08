@@ -1,7 +1,7 @@
 class BrothersController < ApplicationController
 include Ikachan
   before_action :signed_in_brother, only: [:index, :edit, :update, :destroy, :following, :followers]
-  before_action :load_brother,      only: [:show, :edit, :update, :destroy, :following, :followers]
+  before_action :load_brother,      only: [:show, :edit, :update, :destroy, :following, :followers, :rss]
   before_action :correct_brother,   only: [:edit, :update]
   before_action :admin_brother,     only: :destroy
 
@@ -24,6 +24,14 @@ include Ikachan
       @entries[index].content = entry.content_as_markdown
     end
     @beans = Bean.where(entry_id: @brother.entries)
+  end
+
+  def rss
+    @entries = @brother.entries.page params[:page]
+    respond_to do |format|
+      format.rss
+      format.atom
+    end
   end
 
   def new
