@@ -10,7 +10,7 @@ development:
   timeout: 5000
   encoding: utf8
   password:
-  username: postgres
+  username:
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
