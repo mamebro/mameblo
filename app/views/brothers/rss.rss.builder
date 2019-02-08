@@ -18,11 +18,11 @@ xml.rss(
     xml.atom :link, "href" => "https://mameblo.com/#{@brother.name}/feed", "rel" => "self", "type" => "application/rss+xml"
     @entries.each do |entry|
       xml.item do
-        xml.title entry.title #タイトル
+        xml.title entry.title
         xml.description do
-          xml.cdata! strip_tags(entry.content)[0..110] #本文
+          xml.cdata! strip_tags(entry.content)[0..110]
         end
-        xml.pubDate entry.created_at #公開日
+        xml.pubDate entry.created_at
         xml.guid "https://mameblo.com/entries/#{entry.id}"
         xml.link "https://mameblo.com/entries/#{entry.id}"
       end
