@@ -15,7 +15,7 @@ xml.rss(
     xml.language "ja-ja"
     xml.ttl "40"
     xml.pubDate(Time.now.strftime("%a, %d %b %Y %H:%M:%S %Z"))
-    xml.atom :link, "href" => "https://mameblo.com/#{entry.brother.name}/feed", "rel" => "self", "type" => "application/rss+xml"
+    xml.atom :link, "href" => "https://mameblo.com/#{@brother.name}/feed", "rel" => "self", "type" => "application/rss+xml"
     @entries.each do |entry|
       xml.item do
         xml.title entry.title #タイトル
