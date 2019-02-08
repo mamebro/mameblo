@@ -17,7 +17,8 @@ Mameblog::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = true
+  # https://blog.heroku.com/rails-asset-pipeline-vulnerability
+  config.assets.compile = false
 
   # Generate digests for assets URLs
   config.assets.digest = true
