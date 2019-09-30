@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Circus do
+describe Circus, type: :model do
   before do
     @circus = Circus.new(brother_id: 1, participation: true)
   end

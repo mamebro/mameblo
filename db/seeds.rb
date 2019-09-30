@@ -3,5 +3,5 @@ require 'factory_girl'
 Brother.delete_all
 Entry.delete_all
 
-FactoryGirl.create_list(:brother, 200)
-FactoryGirl.create_list(:entry, 100)
+FactoryBot.create_list(:brother, 200)
+FactoryBot.create_list(:entry, 100)

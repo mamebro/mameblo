@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :entry_has_hashtag do
     entry nil
     hashtag nil

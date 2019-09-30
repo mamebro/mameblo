@@ -1,6 +1,6 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :bean do
     kind 1
     entry_id 1
