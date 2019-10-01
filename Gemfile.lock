@@ -7,88 +7,6 @@ GIT
       sass-rails (< 5.1)
       sprockets (< 4.0)
 
-GIT
-  remote: https://github.com/amatsuda/kaminari.git
-  revision: 8d4670ce004896167837b4bed0849c8368a2fc37
-  branch: master
-  specs:
-    kaminari (1.1.1)
-      activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.1.1)
-      kaminari-activerecord (= 1.1.1)
-      kaminari-core (= 1.1.1)
-    kaminari-actionview (1.1.1)
-      actionview
-      kaminari-core (= 1.1.1)
-    kaminari-activerecord (1.1.1)
-      activerecord
-      kaminari-core (= 1.1.1)
-    kaminari-core (1.1.1)
-
-GIT
-  remote: https://github.com/guard/guard-rspec.git
-  revision: 1cf25c7127112c246b6e1a38208c32a6aee8a6c7
-  specs:
-    guard-rspec (4.7.3)
-      guard (~> 2.1)
-      guard-compat (~> 1.1)
-      rspec (>= 2.99.0, < 4.0)
-
-GIT
-  remote: https://github.com/rspec/rspec-core.git
-  revision: b2df62e42ad8cc8d1710f4f47f39880d4bf9dfd2
-  branch: master
-  specs:
-    rspec-core (3.9.0.pre)
-      rspec-support (= 3.9.0.pre)
-
-GIT
-  remote: https://github.com/rspec/rspec-expectations.git
-  revision: fc0bcb59e4db5d620429b418e91978f3ea9f0f8b
-  branch: master
-  specs:
-    rspec-expectations (3.9.0.pre)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (= 3.9.0.pre)
-
-GIT
-  remote: https://github.com/rspec/rspec-mocks.git
-  revision: ac5fcb36e0db570e6c7d4122953b9f71dd66917c
-  branch: master
-  specs:
-    rspec-mocks (3.9.0.pre)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (= 3.9.0.pre)
-
-GIT
-  remote: https://github.com/rspec/rspec-rails.git
-  revision: d527eb2f0fe59b44d3194431f913769960276cde
-  specs:
-    rspec-rails (3.9.0.pre)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec-core (= 3.9.0.pre)
-      rspec-expectations (= 3.9.0.pre)
-      rspec-mocks (= 3.9.0.pre)
-      rspec-support (= 3.9.0.pre)
-
-GIT
-  remote: https://github.com/rspec/rspec-support.git
-  revision: c69a231d7369dd165ad7ce4742e1a2e21e3462b5
-  branch: master
-  specs:
-    rspec-support (3.9.0.pre)
-
-GIT
-  remote: https://github.com/rspec/rspec.git
-  revision: afd67e30946543fb71889cf60d332c28291878b8
-  specs:
-    rspec (3.9.0.pre)
-      rspec-core (= 3.9.0.pre)
-      rspec-expectations (= 3.9.0.pre)
-      rspec-mocks (= 3.9.0.pre)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -242,6 +160,10 @@ GEM
       shellany (~> 0.0)
       thor (>= 0.18.1)
     guard-compat (1.2.1)
+    guard-rspec (4.7.3)
+      guard (~> 2.1)
+      guard-compat (~> 1.1)
+      rspec (>= 2.99.0, < 4.0)
     guard-spork (2.1.0)
       childprocess (>= 0.2.3)
       guard (~> 2.0)
@@ -258,6 +180,18 @@ GEM
       thor (>= 0.14, < 2.0)
     json_expressions (0.9.0)
     jsonapi-renderer (0.2.2)
+    kaminari (1.1.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.1.1)
+      kaminari-activerecord (= 1.1.1)
+      kaminari-core (= 1.1.1)
+    kaminari-actionview (1.1.1)
+      actionview
+      kaminari-core (= 1.1.1)
+    kaminari-activerecord (1.1.1)
+      activerecord
+      kaminari-core (= 1.1.1)
+    kaminari-core (1.1.1)
     launchy (2.4.3)
       addressable (~> 2.3)
     libv8 (3.16.14.19)
@@ -342,6 +276,27 @@ GEM
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rspec (3.8.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
+    rspec-core (3.8.2)
+      rspec-support (~> 3.8.0)
+    rspec-expectations (3.8.4)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-mocks (3.8.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-rails (3.8.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
+      rspec-support (~> 3.8.0)
+    rspec-support (3.8.2)
     ruby_dep (1.5.0)
     sass (3.4.25)
     sass-rails (5.0.8)
@@ -413,12 +368,12 @@ DEPENDENCIES
   faraday
   github-markdown
   growl
-  guard-rspec!
+  guard-rspec
   guard-spork
   haml
   jquery-rails
   json_expressions
-  kaminari!
+  kaminari
   launchy
   pg
   pry-rails
@@ -431,12 +386,12 @@ DEPENDENCIES
   redcarpet
   resource_name_validator
   responders
-  rspec!
-  rspec-core!
-  rspec-expectations!
-  rspec-mocks!
-  rspec-rails!
-  rspec-support!
+  rspec
+  rspec-core
+  rspec-expectations
+  rspec-mocks
+  rspec-rails
+  rspec-support
   sass-rails
   spork
   spring
