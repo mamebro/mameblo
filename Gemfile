@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.5.3'
+ruby '2.6.3'
 
 # ref: https://github.com/rails/rails/commit/12d5c21031446686898d5bac924ff3e9e34b6a7d
 git_source(:github) do |repo_name|
@@ -54,7 +54,7 @@ group :development, :test do
   gem "rspec-mocks", git: "https://github.com/rspec/rspec-mocks.git", branch: "master"
   gem 'guard-rspec', github: 'guard/guard-rspec'
   gem 'annotate'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'tapp'
   gem 'pry-rails'
   gem 'spring'
