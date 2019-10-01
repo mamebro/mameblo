@@ -7,6 +7,19 @@
 http://mameblo.com/
 日本の豊かなブログサービスです。
 
+## 開発
+### 開発環境構築
+```
+docker-compose build
+docker-compose run --rm web rails db:setup
+docker-compose up
+```
+
+### テスト
+```
+docker-compose run --rm web bundle exec rspec
+```
+
 ## Twitter 公式アカウント
 https://twitter.com/mameblo
 
