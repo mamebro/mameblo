@@ -45,14 +45,13 @@ gem 'pg'
 gem 'puma'
 
 group :development, :test do
+  # (requires master-branch versions of all related RSpec libraries)
+  %w[rspec-core rspec-expectations rspec-mocks rspec-support].each do |lib|
+    gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
+  end
+  gem 'rspec-rails', :git => "https://github.com/rspec/rspec-rails.git", :branch => '4-0-dev'
+
   gem 'sqlite3'
-  gem 'rspec-rails'
-  gem "rspec-support"
-  gem 'rspec'
-  gem "rspec-core"
-  gem "rspec-expectations"
-  gem "rspec-mocks"
-  gem 'guard-rspec'
   gem 'annotate'
   gem 'factory_bot_rails'
   gem 'tapp'
@@ -72,7 +71,6 @@ group :test do
   gem 'capybara'
   gem 'growl'
   gem 'rb-fsevent'
-  gem 'guard-spork'
   gem 'spork'
   gem 'timecop'
   gem 'json_expressions'

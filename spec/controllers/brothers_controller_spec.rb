@@ -6,23 +6,23 @@ describe BrothersController, type: :controller do
   describe "GET 'new'" do
     it "returns http success" do
       get 'new'
-      expect(response).to be_success
+      expect(response.response_code).to eq 200
     end
   end
 
   describe "GET 'following'" do
     it "returns success" do
       sign_in_for_controller brother
-      get 'following', id: brother.id
-      expect(response).to be_success
+      get 'following', params: { id: brother.id }
+      expect(response.response_code).to eq 200
     end
   end
 
   describe "GET 'follower'" do
     it "returns success" do
       sign_in_for_controller brother
-      get 'followers', id: brother.id
-      expect(response).to be_success
+      get 'followers', params: { id: brother.id }
+      expect(response.response_code).to eq 200
     end
   end
 end
