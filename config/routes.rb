@@ -28,16 +28,6 @@ Mameblog::Application.routes.draw do
   get "/jinja/omikuji", to: 'jinja/omikuji#index'
   get "/jinja/osaisen", to: 'jinja/osaisen#index'
 
-  namespace :api do
-    post '/signin', to: 'sessions#create'
-    delete '/signout', to: 'sessions#destroy'
-    resources :entries, only: [:index, :show] do
-      collection do
-        get :home
-      end
-    end
-  end
-
   get 'tent/home', to: 'tent/home#index'
 
   get '/:name', to: 'brothers#show', as: 'brothers_name'

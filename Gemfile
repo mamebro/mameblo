@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.5.3'
+ruby '2.6.3'
 
 # ref: https://github.com/rails/rails/commit/12d5c21031446686898d5bac924ff3e9e34b6a7d
 git_source(:github) do |repo_name|
@@ -12,7 +12,7 @@ gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 gem 'faker'
 gem 'redcarpet'
-gem 'kaminari', github: 'amatsuda/kaminari', branch: 'master'
+gem 'kaminari'
 gem 'jquery-rails'
 gem 'whenever', require: false
 gem 'haml'
@@ -45,16 +45,15 @@ gem 'pg'
 gem 'puma'
 
 group :development, :test do
+  # (requires master-branch versions of all related RSpec libraries)
+  %w[rspec-core rspec-expectations rspec-mocks rspec-support].each do |lib|
+    gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
+  end
+  gem 'rspec-rails', :git => "https://github.com/rspec/rspec-rails.git", :branch => '4-0-dev'
+
   gem 'sqlite3'
-  gem 'rspec-rails', github: 'rspec/rspec-rails'
-  gem "rspec-support", git: "https://github.com/rspec/rspec-support.git", branch: "master"
-  gem 'rspec', github: 'rspec/rspec'
-  gem "rspec-core", git: "https://github.com/rspec/rspec-core.git", branch: "master"
-  gem "rspec-expectations", git: "https://github.com/rspec/rspec-expectations.git", branch: "master"
-  gem "rspec-mocks", git: "https://github.com/rspec/rspec-mocks.git", branch: "master"
-  gem 'guard-rspec', github: 'guard/guard-rspec'
   gem 'annotate'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'tapp'
   gem 'pry-rails'
   gem 'spring'
@@ -72,7 +71,6 @@ group :test do
   gem 'capybara'
   gem 'growl'
   gem 'rb-fsevent'
-  gem 'guard-spork'
   gem 'spork'
   gem 'timecop'
   gem 'json_expressions'

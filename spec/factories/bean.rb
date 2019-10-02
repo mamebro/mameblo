@@ -1,9 +1,9 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
+# Read about factories at https://github.com/thoughtbot/factory_bot
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :bean do
-    kind 1
-    entry_id 1
-    throw_brother_id 1
+    kind { 1 }
+    entry_id { 1 }
+    throw_brother_id { 1 }
   end
 end

@@ -1,0 +1,19 @@
+version: '3'
+services:
+  db:
+    image: postgres
+  web:
+    build: .
+    command: bash -c "rm /myapp/tmp/pids/server.pid 2>/dev/null; bundle exec rails s -p 3003 -b '0.0.0.0'"
+    volumes:
+      - bundle-volume:/usr/local/bundle
+      - .:/myapp
+    ports:
+      - "3003:3003"
+    depends_on:
+      - db
+    tty: true
+    stdin_open: true
+volumes:
+  bundle-volume:
+    driver: local

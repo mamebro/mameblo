@@ -11,7 +11,7 @@ describe RelationshipsController, type: :controller do
 
     it "should increment the Relationship count" do
       expect do
-        xhr :post, :create, relationship: { followed_id: other_brother.id }
+        post :create, xhr: true, params: { relationship: { followed_id: other_brother.id } }
       end.to change(Relationship, :count).by(1)
     end
   end
@@ -23,7 +23,7 @@ describe RelationshipsController, type: :controller do
 
     it "should decrement the Relationship count" do
       expect do
-        xhr :delete, :destroy, id: relationship.id
+        delete :destroy, xhr: true, params: { id: relationship.id }
       end.to change(Relationship, :count).by(-1)
     end
   end
