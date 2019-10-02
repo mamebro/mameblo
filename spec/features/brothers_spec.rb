@@ -42,7 +42,6 @@ feature "Brother pages" do
     scenario 'ブラザー名をクリックしてブラザー詳細に移動できること' do
       click_link @brother.name
       is_expected.to have_content @brother.name
-      is_expected.to have_selector('#beBrother', 'ブラザーになる')
     end
 
     scenario '日記を投稿できること' do
