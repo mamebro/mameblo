@@ -314,7 +314,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.1)
     tapp (1.5.1)
       thor
     temple (0.8.2)
@@ -390,7 +389,6 @@ DEPENDENCIES
   spring-commands-rspec
   sprockets
   sprockets-rails
-  sqlite3
   tapp
   therubyracer
   timecop

@@ -50,8 +50,6 @@ group :development, :test do
     gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
   end
   gem 'rspec-rails', :git => "https://github.com/rspec/rspec-rails.git", :branch => '4-0-dev'
-
-  gem 'sqlite3'
   gem 'annotate'
   gem 'factory_bot_rails'
   gem 'tapp'
