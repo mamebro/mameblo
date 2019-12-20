@@ -15,8 +15,14 @@ development:
   <<: *default
   database: mameblo_development
 test:
+  <% if ENV.fetch("GITHUB_ACTIONS") { false } %>
+  <<: *default
+  username: <%= ENV["PGUSER"] %>
+  host: <%= ENV["PGHOST"] %>
+  <% else %>
   <<: *default
   database: mameblo_test
+  <% end %>
 production:
   adapter: postgres
   encoding: utf8
