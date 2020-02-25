@@ -236,7 +236,7 @@ GEM
     multi_json (1.13.1)
     multipart-post (2.1.1)
     nio4r (2.5.2)
-    nokogiri (1.10.7)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     pg (1.1.4)
     pry (0.12.2)
