@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.6.3'
+ruby '2.7.5'
 
 # ref: https://github.com/rails/rails/commit/12d5c21031446686898d5bac924ff3e9e34b6a7d
 git_source(:github) do |repo_name|
@@ -21,7 +21,6 @@ gem 'faraday'
 # Rails5.0.0.beta1 support is none: https://discuss.newrelic.com/t/rails-5-0-support/26595/10
 # gem 'newrelic_rpm'
 
-gem 'github-markdown'
 gem 'active_model_serializers'
 gem 'sprockets'
 gem 'sprockets-rails'

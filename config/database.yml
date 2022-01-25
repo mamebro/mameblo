@@ -14,9 +14,11 @@ default: &default
 development:
   <<: *default
   database: mameblo_development
+  password: password
 test:
   <<: *default
   database: mameblo_test
+  password: password
   <% if ENV.fetch("GITHUB_ACTIONS") { false } %>
   username: <%= ENV["PGUSER"] %>
   host: <%= ENV["PGHOST"] %>

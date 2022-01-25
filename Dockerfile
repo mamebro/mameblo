@@ -1,4 +1,4 @@
-FROM ruby:2.6.3
+FROM ruby:2.7.5
 
 ENV LANG=C.UTF-8 \
     TZ=Asia/Tokyo
@@ -7,5 +7,4 @@ RUN mkdir /myapp
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
-RUN bundle install
 COPY . /myapp

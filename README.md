@@ -11,6 +11,7 @@ http://mameblo.com/
 ### 開発環境構築
 ```
 docker-compose build
+docker-compose run --rm web bundle install
 docker-compose run --rm web rails db:setup
 docker-compose up
 ```

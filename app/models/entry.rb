@@ -16,16 +16,17 @@ class Entry < ActiveRecord::Base
 
   before_validation :set_title_date
 
-  # http://rubygems.org/gems/github-markdown
-  # GitHub-Markdownで出力
   def content_as_markdown
-    GitHub::Markdown.render_gfm(content)
+    renderer = Redcarpet::Render::HTML.new(options)
+    markdown = Redcarpet::Markdown.new(renderer, extensions = {})
+
+    markdown.render(content).html_safe
   end
 
   def self.from_brothers_followed_by(brother)
     followed_brother_ids = brother.followed_brother_ids
     where("brother_id IN (:followed_brother_ids) OR brother_id = :brother_id",
-          followed_brother_ids: followed_brother_ids, brother_id: brother)   
+          followed_brother_ids: followed_brother_ids, brother_id: brother)
   end
 
   def hashtag_names
@@ -35,5 +36,28 @@ class Entry < ActiveRecord::Base
   private
   def set_title_date
     self.title = Date.today.strftime("%Y/%m/%d") if self.title.blank?
+  end
+
+  def options
+    {
+      filter_html:     true,     # htmlを出力しない
+      hard_wrap:       true,     # マークダウン中の空行をhtmlに置き換え
+      space_after_headers: true, # # と文字の間にスペースを要求
+    }
+  end
+
+  def extensions
+    {
+      autolink:           true,  # <>で囲まれてなくてもリンクを認識
+      no_intra_emphasis:  true,  # 単語中の強調を認識しない
+      fenced_code_blocks: true,  # フェンスのあるコードブロックを認識
+      strikethrough:      true,  # ~ 2つで取り消し線
+      superscript:        true,  # ^ の後ろが上付き文字
+      tables:             true,  # テーブルを認識
+      underline:          true,  # 斜線(* *)
+      highlight:          true,  # ハイライト(== ==)
+      quote:              true,  # 引用符(" ")
+      footnotes:          true,  # 脚注( ^[1] )
+    }
   end
 end
