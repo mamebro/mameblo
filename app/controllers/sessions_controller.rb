@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-include Ikachan
   def create
     brother = Brother.find_by_name(params[:session][:name])
     if brother && brother.authenticate(params[:session][:password])
