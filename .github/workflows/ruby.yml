@@ -15,10 +15,10 @@ jobs:
     steps:
     - name: Check out repository code
       uses: actions/checkout@v1
-    - name: Set up Ruby 2.7
+    - name: Set up Ruby 3.1
       uses: actions/setup-ruby@v1
       with:
-        ruby-version: 3.1.0
+        ruby-version: 3.1
 
     - name: Install PostgreSQL client
       run: |
