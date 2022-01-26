@@ -1,5 +1,4 @@
 class BrothersController < ApplicationController
-include Ikachan
   before_action :signed_in_brother, only: [:index, :edit, :update, :destroy, :following, :followers]
   before_action :load_brother,      only: [:show, :edit, :update, :destroy, :following, :followers, :rss]
   before_action :correct_brother,   only: [:edit, :update]
@@ -42,7 +41,6 @@ include Ikachan
     @brother = Brother.new brother_params
     if @brother.save
       sign_in @brother
-      ikachan_post "おめでとう! #{@brother.name} がブラザーになったよ。 #{@brother.name} は #{@brother.id} 番目の弟です。" if Rails.env.production?
       flash[:success] = "!!! まめぶろにようこそ !!!"
       redirect_to root_path
     else

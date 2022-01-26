@@ -1,6 +1,5 @@
 class Brother < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
-  include Ikachan
   has_secure_password
 
   before_save :create_remember_token
