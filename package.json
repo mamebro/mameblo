@@ -3,7 +3,6 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "emojify": "^1.0.0",
-    "fastclick": "^1.0.6",
     "infinite-scroll": "^4.0.1",
     "jquery": "^1.11.3",
     "jquery-autosize": "^1.18.18",
