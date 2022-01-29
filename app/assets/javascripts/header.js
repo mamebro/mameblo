@@ -1,4 +1,4 @@
-$(function() {
+window.addEventListener('DOMContentLoaded', (event) => {
   $('.nav-menu-control').click(function() {
     controlMenu();
   });

@@ -1,4 +1,4 @@
-$(function() {
+window.addEventListener('DOMContentLoaded', (event) => {
   $('#beBrotherAfter').hide();
 
   new WOW().init();
