@@ -1,8 +1,7 @@
-$(function() {
+window.addEventListener('DOMContentLoaded', (event) => {
   $('#beBrotherAfter').hide();
 
   new WOW().init();
-  FastClick.attach(document.body);
 
   $('.alert').delay(5000).queue(function() {
     $(this).addClass('flipOutX').dequeue();

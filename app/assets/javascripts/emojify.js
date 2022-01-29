@@ -1,4 +1,4 @@
-$(function() {
+window.addEventListener('DOMContentLoaded', (event) => {
   emojify.setConfig({
     emojify_tag_type : '.entry',
     img_dir: '/emoji',

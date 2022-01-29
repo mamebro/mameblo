@@ -25,3 +25,5 @@ doc/app
 coverage
 .powder
 .secret
+
+node_modules

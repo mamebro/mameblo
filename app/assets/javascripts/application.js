@@ -1,9 +1,8 @@
 //= require jquery/dist/jquery
 //= require jquery-ujs/src/rails
-//= require jquery-touchswipe/jquery.touchSwipe
-//= require infinite-scroll/jquery.infinitescroll
-//= require emojify/emojify
-//= require WOW/dist/wow
-//= require fastclick/lib/fastclick
-//= require jquery-autosize/jquery.autosize
+//= require jquery-touchswipe/jquery.touchSwipe.js
+//= require jquery-autosize/jquery.autosize.js
+//= require infinite-scroll/dist/infinite-scroll.pkgd.js
+//= require emojify
+//= require wowjs/dist/wow.js
 //= require_tree .

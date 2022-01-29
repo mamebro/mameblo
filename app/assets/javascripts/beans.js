@@ -1,4 +1,4 @@
-$(function() {
+window.addEventListener('DOMContentLoaded', (event) => {
   var touchStartX,
       touchStartY,
       touchEndX,

@@ -1,4 +1,4 @@
-$(function() {
+window.addEventListener('DOMContentLoaded', (event) => {
   var $entryForm = $('#new_entry'),
       $entryFormTitle = $entryForm.find('#entry-form-title'),
       $entryFormContent = $entryForm.find('#entry-form-content');
@@ -79,4 +79,4 @@ $(function() {
       }
     }
   }
-});
+})

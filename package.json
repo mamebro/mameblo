@@ -1,0 +1,13 @@
+{
+  "name": "mameblo",
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "emojify": "^1.0.0",
+    "infinite-scroll": "^4.0.1",
+    "jquery": "^1.11.3",
+    "jquery-autosize": "^1.18.18",
+    "jquery-touchswipe": "^1.6.19",
+    "jquery-ujs": "^1.2.3",
+    "wowjs": "^1.1.3"
+  }
+}
