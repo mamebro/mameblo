@@ -32,10 +32,6 @@ gem 'pg'
 gem 'puma'
 
 group :development, :test do
-  # (requires master-branch versions of all related RSpec libraries)
-  %w[rspec-core rspec-expectations rspec-mocks rspec-support].each do |lib|
-    gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
-  end
   gem 'rspec-rails'
   gem 'annotate'
   gem 'factory_bot_rails'
