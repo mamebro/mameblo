@@ -1,5 +1,0 @@
-#!/bin/sh
-
-set -e
-
-curl -F channel=\#mameblo -F message=":bro: $HOSTNAME のデプロイが完了しました!" http://irc.paperboy.co.jp:4980/notice
