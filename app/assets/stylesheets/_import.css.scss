@@ -1,3 +1,60 @@
+// compass replacement mixins
+@mixin box-sizing($type: border-box) {
+  box-sizing: $type;
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin transition-property($property) {
+  transition-property: $property;
+}
+
+@mixin transition-duration($duration) {
+  transition-duration: $duration;
+}
+
+@mixin transition-timing-function($timing) {
+  transition-timing-function: $timing;
+}
+
+@mixin background-size($size) {
+  background-size: $size;
+}
+
+@mixin display-box {
+  display: flex;
+}
+
+@mixin box-pack($pack) {
+  @if $pack == center {
+    justify-content: center;
+  } @else if $pack == start {
+    justify-content: flex-start;
+  } @else if $pack == end {
+    justify-content: flex-end;
+  }
+}
+
+@mixin box-align($align) {
+  @if $align == center {
+    align-items: center;
+  } @else if $align == start {
+    align-items: flex-start;
+  } @else if $align == end {
+    align-items: flex-end;
+  }
+}
+
 // mixins
 @mixin if-phone {
   @media screen and (max-width: 959px) {
