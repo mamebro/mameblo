@@ -8,10 +8,7 @@ def sign_in(brother)
 end
 
 def sign_in_for_controller(brother)
-  visit signin_path
-  fill_in "session_name", with: brother.name
-  fill_in "session_password", with: brother.password
-  click_button "兄弟元気かな"
+  # For controller specs, set cookie directly
   cookies[:remember_token] = brother.remember_token
 end
 

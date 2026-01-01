@@ -1,51 +1,61 @@
 name: Ruby
 
-on: [push]
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
+
     services:
       postgres:
-        image: postgres:14
+        image: postgres:16
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: password
-        ports: ["5432:5432"]
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      RAILS_ENV: test
+      PGHOST: localhost
+      PGUSER: postgres
+      PGPASSWORD: password
+
     steps:
-    - name: Check out repository code
-      uses: actions/checkout@v1
-    - name: Set up Ruby 3.1
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 3.1
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: setup Node
-      uses: actions/setup-node@v2
-      with:
-        node-version: 14.15
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4.7'
+          bundler-cache: true
 
-    - name: npm install
-      run: npm install
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-    - name: Install PostgreSQL client
-      run: |
-        sudo apt-get -yqq install libpq-dev
+      - name: Install npm dependencies
+        run: npm install
 
-    - name: Build App
-      env:
-        PGHOST: localhost
-        PGUSER: postgres
-        RAILS_ENV: test
-      run: |
-        gem install bundler
-        bundle install --jobs 4 --retry 3
-        bundle exec rails db:setup
+      - name: Install PostgreSQL client
+        run: sudo apt-get -yqq install libpq-dev
 
-    - name: Run Tests
-      env:
-        PGHOST: localhost
-        PGUSER: postgres
-        RAILS_ENV: test
-      run: |
-        bundle exec rspec
+      - name: Setup database
+        run: |
+          bundle exec rails db:create
+          bundle exec rails db:migrate
+
+      - name: Run tests
+        run: bundle exec rspec
