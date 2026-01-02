@@ -1,7 +1,7 @@
 %section.entry{data: {beans: {count: @beans.count}}}
   %h1.entry-title= link_to @entry.title
   %div.entry-content
-    = sanitize convert_bro(@entry.content_as_markdown)
+    = sanitize_markdown convert_bro(@entry.content_as_markdown)
     - if signed_in? && !current_brother?(@entry.brother)
       = form_tag entry_beans_path(@entry), remote: true, class: 'entry-beans is_throwable clearfix', method: 'post', name: 'beans_name' do
         %span.beans-count<>

@@ -53,4 +53,21 @@ module ApplicationHelper
   def initial(name)
     name[0,1].upcase + '.'
   end
+
+  # Markdown用のサニタイズ
+  MARKDOWN_TAGS = %w[
+    p br h1 h2 h3 h4 h5 h6
+    ul ol li
+    a em strong code pre blockquote
+    table thead tbody tr th td
+    hr img span del ins
+  ].freeze
+
+  MARKDOWN_ATTRIBUTES = %w[
+    href title src alt class style
+  ].freeze
+
+  def sanitize_markdown(content)
+    sanitize(content, tags: MARKDOWN_TAGS, attributes: MARKDOWN_ATTRIBUTES)
+  end
 end

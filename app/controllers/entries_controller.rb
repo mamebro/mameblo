@@ -8,7 +8,6 @@ class EntriesController < ApplicationController
 
   def show
     @entry = Entry.find(params[:id])
-    @entry.content = @entry.content_as_markdown
     @beans = @entry.beans
     respond_with @entry
   end
