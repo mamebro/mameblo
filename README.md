@@ -1,7 +1,6 @@
 # まめぶろ
 ![GitHub Actions](https://github.com/mamebro/mameblo/actions/workflows/ruby.yml/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/mamebro/mameblo/badge.svg)](https://coveralls.io/r/mamebro/mameblo)
-[![Code Climate](https://codeclimate.com/github/mamebro/mameblo.svg)](https://codeclimate.com/github/mamebro/mameblo)
 
 https://mameblo.com/
 日本の豊かなブログサービスです。
