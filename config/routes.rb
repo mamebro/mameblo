@@ -6,7 +6,8 @@ Mameblog::Application.routes.draw do
 
   resources :brothers, except: [:destroy] do
     member do
-      get :following, :followers
+      get :following
+      get :followers
     end
   end
   get '/discover', to: 'brothers#discover'
