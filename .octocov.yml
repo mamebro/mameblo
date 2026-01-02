@@ -1,0 +1,8 @@
+coverage:
+  paths:
+    - coverage/.resultset.json
+comment:
+  enable: true
+  hideFooterLink: false
+summary:
+  enable: true
