@@ -31,7 +31,7 @@ module ApplicationHelper
     .gsub(/:brosmile:/, image_tag('stamps/smile.svg', class: 'stamp'))
     .gsub(/:brocry:/, image_tag('stamps/cry.svg', class: 'stamp'))
     .gsub(/:brocheers:/, image_tag('stamps/cheers.svg', class: 'stamp'))
-    .gsub(/[#＃]([Ａ-Ｚａ-ｚA-Za-z一-鿆0-9０-９ぁ-ヶｦ-ﾟー]+)/, link_to('#\1', '/hashtag/\1'))
+    .gsub(/(?<!&)[#＃]([Ａ-Ｚａ-ｚA-Za-z一-鿆0-9０-９ぁ-ヶｦ-ﾟー]+)/, link_to('#\1', '/hashtag/\1'))
   end
 
   # まめぶろ広告
@@ -52,5 +52,22 @@ module ApplicationHelper
   # イニシャル
   def initial(name)
     name[0,1].upcase + '.'
+  end
+
+  # Markdown用のサニタイズ
+  MARKDOWN_TAGS = %w[
+    p br h1 h2 h3 h4 h5 h6
+    ul ol li
+    a em strong code pre blockquote
+    table thead tbody tr th td
+    hr img span del ins
+  ].freeze
+
+  MARKDOWN_ATTRIBUTES = %w[
+    href title src alt class style
+  ].freeze
+
+  def sanitize_markdown(content)
+    sanitize(content, tags: MARKDOWN_TAGS, attributes: MARKDOWN_ATTRIBUTES)
   end
 end

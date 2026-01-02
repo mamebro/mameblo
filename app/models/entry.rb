@@ -18,7 +18,7 @@ class Entry < ActiveRecord::Base
 
   def content_as_markdown
     renderer = Redcarpet::Render::HTML.new(options)
-    markdown = Redcarpet::Markdown.new(renderer, extensions = {})
+    markdown = Redcarpet::Markdown.new(renderer, extensions)
 
     markdown.render(content).html_safe
   end

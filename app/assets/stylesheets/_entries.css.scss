@@ -262,3 +262,17 @@
   margin-bottom: $gap;
   text-align: center;
 }
+
+// InfiniteScroll loading status
+.page-load-status {
+  display: none;
+  padding: $gap;
+  text-align: center;
+
+  .infinite-scroll-request {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
