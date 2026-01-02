@@ -32,8 +32,5 @@ module Mameblog
     # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.default_locale = :ja
     config.middleware.use Rack::GoogleAnalytics, :tracker => 'UA-34081631-1'
-
-    # Rails 8.1 compatibility
-    config.active_support.to_time_preserves_timezone = :zone
   end
 end
