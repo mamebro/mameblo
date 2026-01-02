@@ -1,8 +1,8 @@
 #encoding: utf-8
 
 class EntriesController < ApplicationController
-  before_action :signed_in_brother, only: [:create, :destroy, :edit, :update]
-  before_action :correct_brother, only: [:destroy, :edit, :update]
+  before_action :signed_in_brother, only: [:create, :destroy]
+  before_action :correct_brother, only: [:destroy, :update]
 
   respond_to :html, :json
 
