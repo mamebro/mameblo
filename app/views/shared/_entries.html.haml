@@ -13,4 +13,7 @@
             %div.entry-beans
               %span.beans-count<>
                 = entry.beans.count
+  .page-load-status
+    .infinite-scroll-request
+      = image_tag 'loading.gif', alt: 'Loading...'
 = paginate @entries
