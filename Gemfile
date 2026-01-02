@@ -55,4 +55,5 @@ group :test do
   gem 'timecop'
   gem 'json_expressions'
   gem 'autodoc'
+  gem 'simplecov', require: false
 end
