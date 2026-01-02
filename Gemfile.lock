@@ -198,6 +198,7 @@ GEM
       net-smtp
     marcel (1.1.0)
     matrix (0.4.3)
+    memory_profiler (1.1.0)
     method_source (1.1.0)
     mini_mime (1.1.5)
     minitest (6.0.1)
@@ -243,6 +244,8 @@ GEM
     rack-google-analytics (1.2.0)
       actionpack
       activesupport
+    rack-mini-profiler (4.0.1)
+      rack (>= 1.2.0)
     rack-session (1.0.2)
       rack (< 3)
     rack-test (2.2.0)
@@ -347,6 +350,7 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
+    stackprof (0.2.27)
     stringio (3.2.0)
     tapp (1.5.1)
       thor
@@ -401,11 +405,13 @@ DEPENDENCIES
   json_expressions
   kaminari
   launchy
+  memory_profiler
   pg
   pry-rails
   puma
   rack-cors
   rack-google-analytics
+  rack-mini-profiler
   rails (~> 8.1.0)
   rb-fsevent
   rb-readline
@@ -420,6 +426,7 @@ DEPENDENCIES
   spring-commands-rspec
   sprockets
   sprockets-rails
+  stackprof
   tapp
   timecop
   uglifier
