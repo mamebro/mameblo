@@ -68,6 +68,7 @@ fly open --app mameblo-capjs
 
 ### Rails側の環境変数設定
 
+#### 本番環境
 ```bash
 CAPTCHA_ENABLED=true
 CAPTCHA_SERVER_URL=https://mameblo-capjs.fly.dev
@@ -75,9 +76,9 @@ CAPTCHA_SITE_KEY=<作成したサイトキー>
 CAPTCHA_SECRET_KEY=<作成したシークレットキー>
 ```
 
-### 開発環境でCAPTCHAを無効にする
-
-`CAPTCHA_ENABLED=false`（デフォルト）でCAPTCHAは無効になります。
+#### 開発環境
+開発環境ではCAPTCHAはデフォルトで無効（`CAPTCHA_ENABLED=false`）です。
+ウィジェットは表示されず、認証もスキップされます。
 
 ## Twitter 公式アカウント
 https://twitter.com/mameblo
