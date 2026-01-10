@@ -19,6 +19,11 @@
         %p.help
           パスワードもう一回教えてくれる?
           = f.password_field :password_confirmation, class: 'input input-text', placeholder: 'Confirmation'
+        - if captcha_enabled?
+          %p.help
+            ロボットじゃないよな?
+            = captcha_widget
+            = captcha_token_field
         %p.help
           ブラザーになるか?
           = f.submit 'ブラザーになる!! (無料)', class: 'button button-horizontal button-primary'

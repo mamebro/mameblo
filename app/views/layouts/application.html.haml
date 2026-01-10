@@ -42,6 +42,8 @@
     %title= full_title(yield(:title))
     = stylesheet_link_tag "application", media: "all"
     = javascript_include_tag "application"
+    - if captcha_enabled?
+      %script{ src: "https://cdn.jsdelivr.net/npm/@cap.js/widget", defer: true }
     = csrf_meta_tags
     = render 'layouts/shim'
     = favicon_link_tag "/favicon.png"
