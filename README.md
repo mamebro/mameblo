@@ -19,6 +19,95 @@ docker-compose up
 docker-compose run --rm web bundle exec rspec
 ```
 
+## CAPTCHA (Cap.js)
+
+ログイン・新規登録にProof-of-Work型のCAPTCHAを導入しています。
+https://capjs.js.org/
+
+### Cap.jsサーバーのデプロイ (Fly.io)
+
+1. Fly.io CLIをインストール
+```bash
+# macOS
+brew install flyctl
+
+# Linux
+curl -L https://fly.io/install.sh | sh
+
+# ログイン
+fly auth login
+```
+
+2. 設定ファイルを作成
+```bash
+mkdir capjs-server && cd capjs-server
+
+cat > fly.toml << 'EOF'
+app = "mameblo-capjs"
+primary_region = "nrt"
+
+[build]
+  image = "tiago2/cap:latest"
+
+[env]
+  SERVER_PORT = "3000"
+  SERVER_HOSTNAME = "0.0.0.0"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_start_machines = true
+  auto_stop_machines = false
+  min_machines_running = 1
+
+[mounts]
+  source = "cap_data"
+  destination = "/usr/src/app/.data"
+
+[[vm]]
+  memory = "256mb"
+  cpu_kind = "shared"
+  cpus = 1
+EOF
+```
+
+3. デプロイ
+```bash
+# アプリ作成
+fly apps create mameblo-capjs
+
+# ボリューム作成（データ永続化用）
+fly volumes create cap_data --region nrt --size 1 --app mameblo-capjs
+
+# ADMIN_KEY設定（30文字以上必要、メモしておくこと）
+ADMIN_KEY=$(openssl rand -hex 20)
+echo "ADMIN_KEY: $ADMIN_KEY"
+fly secrets set ADMIN_KEY="$ADMIN_KEY" --app mameblo-capjs
+
+# デプロイ
+fly deploy --app mameblo-capjs
+```
+
+4. サイトキーの取得
+```bash
+fly open --app mameblo-capjs
+```
+ダッシュボードにADMIN_KEYでログインし、「Create Key」でサイトキーを作成。
+`Site Key` と `Secret Key` をコピー。
+
+### Rails側の環境変数設定
+
+```bash
+CAPTCHA_ENABLED=true
+CAPTCHA_SERVER_URL=https://mameblo-capjs.fly.dev
+CAPTCHA_SITE_KEY=<作成したサイトキー>
+CAPTCHA_SECRET_KEY=<作成したシークレットキー>
+```
+
+### 開発環境でCAPTCHAを無効にする
+
+`CAPTCHA_ENABLED=false`（デフォルト）でCAPTCHAは無効になります。
+
 ## Twitter 公式アカウント
 https://twitter.com/mameblo
 
