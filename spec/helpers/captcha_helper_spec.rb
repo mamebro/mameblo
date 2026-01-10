@@ -26,7 +26,7 @@ describe CaptchaHelper, type: :helper do
 
       it 'includes data-cap-api-endpoint attribute' do
         result = helper.captcha_widget
-        expect(result).to have_css('cap-widget[data-cap-api-endpoint="http://localhost:3001/test_site_key"]')
+        expect(result).to have_css('cap-widget[data-cap-api-endpoint="http://localhost:3001/test_site_key/"]')
       end
     end
   end

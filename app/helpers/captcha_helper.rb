@@ -7,7 +7,7 @@ module CaptchaHelper
     content_tag(:'cap-widget', nil, {
       id: options[:id] || 'cap-widget',
       class: options[:class],
-      'data-cap-api-endpoint': "#{CaptchaService.server_url}/#{CaptchaService.site_key}"
+      'data-cap-api-endpoint': "#{CaptchaService.server_url}/#{CaptchaService.site_key}/"
     })
   end
 
