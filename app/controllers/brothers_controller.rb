@@ -35,6 +35,13 @@ class BrothersController < ApplicationController
   end
 
   def create
+    unless verify_captcha
+      flash.now[:error] = "CAPTCHA認証に失敗しました。もう一回お願いします!!!"
+      @brother = Brother.new brother_params
+      render 'new'
+      return
+    end
+
     @brother = Brother.new brother_params
     if @brother.save
       sign_in @brother
@@ -106,5 +113,9 @@ class BrothersController < ApplicationController
 
   def admin_brother
     redirect_to(root_path) unless current_brother.admin?
+  end
+
+  def verify_captcha
+    CaptchaService.validate(params[:captcha_token])
   end
 end
