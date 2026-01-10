@@ -19,15 +19,14 @@ describe CaptchaHelper, type: :helper do
         allow(CaptchaService).to receive(:site_key).and_return('test_site_key')
       end
 
-      it 'renders a div with cap-widget class' do
+      it 'renders a cap-widget element' do
         result = helper.captcha_widget
-        expect(result).to have_css('div.cap-widget')
+        expect(result).to have_css('cap-widget')
       end
 
-      it 'includes data attributes for Cap.js' do
+      it 'includes data-cap-api-endpoint attribute' do
         result = helper.captcha_widget
-        expect(result).to have_css('div[data-cap-widget]')
-        expect(result).to have_css('div[data-cap-api-endpoint="http://localhost:3001/test_site_key"]')
+        expect(result).to have_css('cap-widget[data-cap-api-endpoint="http://localhost:3001/test_site_key"]')
       end
     end
   end
