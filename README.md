@@ -26,6 +26,8 @@ https://capjs.js.org/
 
 ### Cap.jsサーバーのデプロイ (Fly.io)
 
+設定ファイル: `capjs-server/fly.toml`
+
 1. Fly.io CLIをインストール
 ```bash
 # macOS
@@ -38,41 +40,10 @@ curl -L https://fly.io/install.sh | sh
 fly auth login
 ```
 
-2. 設定ファイルを作成
+2. デプロイ
 ```bash
-mkdir capjs-server && cd capjs-server
+cd capjs-server
 
-cat > fly.toml << 'EOF'
-app = "mameblo-capjs"
-primary_region = "nrt"
-
-[build]
-  image = "tiago2/cap:latest"
-
-[env]
-  SERVER_PORT = "3000"
-  SERVER_HOSTNAME = "0.0.0.0"
-
-[http_service]
-  internal_port = 3000
-  force_https = true
-  auto_start_machines = true
-  auto_stop_machines = false
-  min_machines_running = 1
-
-[mounts]
-  source = "cap_data"
-  destination = "/usr/src/app/.data"
-
-[[vm]]
-  memory = "256mb"
-  cpu_kind = "shared"
-  cpus = 1
-EOF
-```
-
-3. デプロイ
-```bash
 # アプリ作成
 fly apps create mameblo-capjs
 
@@ -88,7 +59,7 @@ fly secrets set ADMIN_KEY="$ADMIN_KEY" --app mameblo-capjs
 fly deploy --app mameblo-capjs
 ```
 
-4. サイトキーの取得
+3. サイトキーの取得
 ```bash
 fly open --app mameblo-capjs
 ```
