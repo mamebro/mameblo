@@ -387,24 +387,19 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   annotate
-  autodoc
-  awesome_print
   bcrypt-ruby
   better_errors
   binding_of_caller
-  bootstrap-sass
   capybara
   database_rewinder
   execjs
   factory_bot_rails
   faker
   faraday
-  growl
   haml
   jquery-rails
   json_expressions
   kaminari
-  launchy
   memory_profiler
   pg
   pry-rails
@@ -413,22 +408,17 @@ DEPENDENCIES
   rack-google-analytics
   rack-mini-profiler
   rails (~> 8.1.0)
-  rb-fsevent
   rb-readline
   redcarpet
-  resource_name_validator
   responders
   rspec-rails
   sass-rails
   simplecov
-  spork
   spring
   spring-commands-rspec
   sprockets
   sprockets-rails
   stackprof
-  tapp
-  timecop
   uglifier
   whenever
   yaml_db
