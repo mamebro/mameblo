@@ -32,5 +32,8 @@ module Mameblog
     # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.default_locale = :ja
     config.middleware.use Rack::GoogleAnalytics, :tracker => 'UA-34081631-1'
+
+    # Rack::Attack for rate limiting and brute force protection
+    config.middleware.use Rack::Attack
   end
 end
