@@ -2,9 +2,7 @@ source 'https://rubygems.org'
 ruby '4.0.0'
 
 gem 'rails', '~> 8.1.0'
-gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
-gem 'faker'
 gem 'redcarpet'
 gem 'kaminari'
 gem 'jquery-rails'
@@ -19,25 +17,18 @@ gem 'responders'
 gem 'execjs'
 gem 'uglifier'
 gem 'rack-google-analytics'
-gem 'awesome_print'
-gem 'yaml_db'
-gem 'rb-readline'
-
-gem 'resource_name_validator'
-
-gem 'rack-cors', :require => 'rack/cors'
+gem 'rack-cors', require: 'rack/cors'
 gem 'pg'
-
 gem 'puma'
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'annotate'
+  gem 'annotate', require: false
   gem 'factory_bot_rails'
-  gem 'tapp'
+  gem 'faker'
   gem 'pry-rails'
   gem 'spring'
-  gem 'spring-commands-rspec'
+  gem 'spring-commands-rspec', require: false
   gem 'database_rewinder'
 end
 
@@ -47,16 +38,12 @@ group :development do
   gem 'rack-mini-profiler'
   gem 'memory_profiler'
   gem 'stackprof'
+  gem 'yaml_db', require: false
+  gem 'rb-readline'
 end
 
 group :test do
-  gem 'launchy'
   gem 'capybara'
-  gem 'growl'
-  gem 'rb-fsevent'
-  gem 'spork'
-  gem 'timecop'
   gem 'json_expressions'
-  gem 'autodoc'
   gem 'simplecov', require: false
 end
