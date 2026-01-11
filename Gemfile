@@ -20,6 +20,7 @@ gem 'rack-google-analytics'
 gem 'rack-cors', require: 'rack/cors'
 gem 'pg'
 gem 'puma'
+gem 'resource_name_validator'
 
 group :development, :test do
   gem 'rspec-rails'

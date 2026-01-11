@@ -411,6 +411,7 @@ DEPENDENCIES
   rb-readline
   redcarpet
   responders
+  resource_name_validator
   rspec-rails
   sass-rails
   simplecov
