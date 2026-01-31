@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '4.0.1'
 
 gem 'rails', '~> 8.1.0'
-gem 'bcrypt-ruby'
+gem 'bcrypt'
 gem 'redcarpet'
 gem 'kaminari'
 gem 'jquery-rails'
