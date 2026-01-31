@@ -52,6 +52,9 @@ jobs:
       - name: Install PostgreSQL client
         run: sudo apt-get -yqq install libpq-dev
 
+      - name: Build CSS
+        run: bundle exec rails dartsass:build
+
       - name: Setup database
         run: |
           bundle exec rails db:create
