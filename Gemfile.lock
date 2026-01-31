@@ -3,29 +3,29 @@ GEM
   specs:
     action_text-trix (2.1.16)
       railties
-    actioncable (8.1.1)
-      actionpack (= 8.1.1)
-      activesupport (= 8.1.1)
+    actioncable (8.1.2)
+      actionpack (= 8.1.2)
+      activesupport (= 8.1.2)
       nio4r (~> 2.0)
       websocket-driver (>= 0.6.1)
       zeitwerk (~> 2.6)
-    actionmailbox (8.1.1)
-      actionpack (= 8.1.1)
-      activejob (= 8.1.1)
-      activerecord (= 8.1.1)
-      activestorage (= 8.1.1)
-      activesupport (= 8.1.1)
+    actionmailbox (8.1.2)
+      actionpack (= 8.1.2)
+      activejob (= 8.1.2)
+      activerecord (= 8.1.2)
+      activestorage (= 8.1.2)
+      activesupport (= 8.1.2)
       mail (>= 2.8.0)
-    actionmailer (8.1.1)
-      actionpack (= 8.1.1)
-      actionview (= 8.1.1)
-      activejob (= 8.1.1)
-      activesupport (= 8.1.1)
+    actionmailer (8.1.2)
+      actionpack (= 8.1.2)
+      actionview (= 8.1.2)
+      activejob (= 8.1.2)
+      activesupport (= 8.1.2)
       mail (>= 2.8.0)
       rails-dom-testing (~> 2.2)
-    actionpack (8.1.1)
-      actionview (= 8.1.1)
-      activesupport (= 8.1.1)
+    actionpack (8.1.2)
+      actionview (= 8.1.2)
+      activesupport (= 8.1.2)
       nokogiri (>= 1.8.5)
       rack (>= 2.2.4)
       rack-session (>= 1.0.1)
@@ -33,16 +33,16 @@ GEM
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
       useragent (~> 0.16)
-    actiontext (8.1.1)
+    actiontext (8.1.2)
       action_text-trix (~> 2.1.15)
-      actionpack (= 8.1.1)
-      activerecord (= 8.1.1)
-      activestorage (= 8.1.1)
-      activesupport (= 8.1.1)
+      actionpack (= 8.1.2)
+      activerecord (= 8.1.2)
+      activestorage (= 8.1.2)
+      activesupport (= 8.1.2)
       globalid (>= 0.6.0)
       nokogiri (>= 1.8.5)
-    actionview (8.1.1)
-      activesupport (= 8.1.1)
+    actionview (8.1.2)
+      activesupport (= 8.1.2)
       builder (~> 3.1)
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
@@ -52,22 +52,22 @@ GEM
       activemodel (>= 4.1)
       case_transform (>= 0.2)
       jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
-    activejob (8.1.1)
-      activesupport (= 8.1.1)
+    activejob (8.1.2)
+      activesupport (= 8.1.2)
       globalid (>= 0.3.6)
-    activemodel (8.1.1)
-      activesupport (= 8.1.1)
-    activerecord (8.1.1)
-      activemodel (= 8.1.1)
-      activesupport (= 8.1.1)
+    activemodel (8.1.2)
+      activesupport (= 8.1.2)
+    activerecord (8.1.2)
+      activemodel (= 8.1.2)
+      activesupport (= 8.1.2)
       timeout (>= 0.4.0)
-    activestorage (8.1.1)
-      actionpack (= 8.1.1)
-      activejob (= 8.1.1)
-      activerecord (= 8.1.1)
-      activesupport (= 8.1.1)
+    activestorage (8.1.2)
+      actionpack (= 8.1.2)
+      activejob (= 8.1.2)
+      activerecord (= 8.1.2)
+      activesupport (= 8.1.2)
       marcel (~> 1.0)
-    activesupport (8.1.1)
+    activesupport (8.1.2)
       base64
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.3.1)
@@ -85,17 +85,8 @@ GEM
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
-    autodoc (0.8.1)
-      actionpack
-      activesupport (>= 3.0.0)
-      rspec
-    autoprefixer-rails (10.4.21.0)
-      execjs (~> 2)
-    awesome_print (1.9.2)
     base64 (0.3.0)
     bcrypt (3.1.21)
-    bcrypt-ruby (3.1.5)
-      bcrypt (>= 3.1.3)
     better_errors (2.10.1)
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
@@ -103,9 +94,6 @@ GEM
     bigdecimal (4.0.1)
     binding_of_caller (1.0.1)
       debug_inspector (>= 1.2.0)
-    bootstrap-sass (3.4.1)
-      autoprefixer-rails (>= 5.2.1)
-      sassc (>= 2.0.0)
     builder (3.3.0)
     capybara (3.40.0)
       addressable
@@ -118,8 +106,6 @@ GEM
       xpath (~> 3.2)
     case_transform (0.2)
       activesupport
-    childprocess (5.1.0)
-      logger (~> 1.5)
     chronic (0.10.2)
     coderay (1.1.3)
     concurrent-ruby (1.3.6)
@@ -151,7 +137,6 @@ GEM
     ffi (1.17.3-x86_64-linux-gnu)
     globalid (1.3.0)
       activesupport (>= 6.1)
-    growl (1.0.3)
     haml (6.4.0)
       temple (>= 0.8.2)
       thor
@@ -182,10 +167,6 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
-    launchy (3.1.1)
-      addressable (~> 2.8)
-      childprocess (~> 5.0)
-      logger (~> 1.6)
     logger (1.7.0)
     loofah (2.25.0)
       crass (~> 1.0.2)
@@ -255,20 +236,20 @@ GEM
     rackup (1.0.1)
       rack (< 3)
       webrick
-    rails (8.1.1)
-      actioncable (= 8.1.1)
-      actionmailbox (= 8.1.1)
-      actionmailer (= 8.1.1)
-      actionpack (= 8.1.1)
-      actiontext (= 8.1.1)
-      actionview (= 8.1.1)
-      activejob (= 8.1.1)
-      activemodel (= 8.1.1)
-      activerecord (= 8.1.1)
-      activestorage (= 8.1.1)
-      activesupport (= 8.1.1)
+    rails (8.1.2)
+      actioncable (= 8.1.2)
+      actionmailbox (= 8.1.2)
+      actionmailer (= 8.1.2)
+      actionpack (= 8.1.2)
+      actiontext (= 8.1.2)
+      actionview (= 8.1.2)
+      activejob (= 8.1.2)
+      activemodel (= 8.1.2)
+      activerecord (= 8.1.2)
+      activestorage (= 8.1.2)
+      activesupport (= 8.1.2)
       bundler (>= 1.15.0)
-      railties (= 8.1.1)
+      railties (= 8.1.2)
     rails-dom-testing (2.3.0)
       activesupport (>= 5.0.0)
       minitest
@@ -276,9 +257,9 @@ GEM
     rails-html-sanitizer (1.6.2)
       loofah (~> 2.21)
       nokogiri (>= 1.15.7, != 1.16.7, != 1.16.6, != 1.16.5, != 1.16.4, != 1.16.3, != 1.16.2, != 1.16.1, != 1.16.0.rc1, != 1.16.0)
-    railties (8.1.1)
-      actionpack (= 8.1.1)
-      activesupport (= 8.1.1)
+    railties (8.1.2)
+      actionpack (= 8.1.2)
+      activesupport (= 8.1.2)
       irb (~> 1.13)
       rackup (>= 1.0.0)
       rake (>= 12.2)
@@ -286,7 +267,6 @@ GEM
       tsort (>= 0.2)
       zeitwerk (~> 2.6)
     rake (13.3.1)
-    rb-fsevent (0.11.2)
     rb-readline (0.5.5)
     rdoc (7.0.3)
       erb
@@ -302,10 +282,6 @@ GEM
       actionpack (>= 7.0)
       railties (>= 7.0)
     rouge (4.7.0)
-    rspec (3.13.2)
-      rspec-core (~> 3.13.0)
-      rspec-expectations (~> 3.13.0)
-      rspec-mocks (~> 3.13.0)
     rspec-core (3.13.6)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.5)
@@ -340,7 +316,6 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.13.2)
     simplecov_json_formatter (0.1.4)
-    spork (0.9.2)
     spring (4.4.0)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
@@ -354,12 +329,9 @@ GEM
       sprockets (>= 3.0.0)
     stackprof (0.2.27)
     stringio (3.2.0)
-    tapp (1.5.1)
-      thor
     temple (0.10.4)
     thor (1.4.0)
     tilt (2.6.1)
-    timecop (0.9.10)
     timeout (0.6.0)
     tsort (0.2.0)
     tzinfo (2.0.6)
@@ -389,7 +361,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   annotate
-  bcrypt-ruby
+  bcrypt
   better_errors
   binding_of_caller
   capybara
@@ -413,8 +385,8 @@ DEPENDENCIES
   rails (~> 8.1.0)
   rb-readline
   redcarpet
-  responders
   resource_name_validator
+  responders
   rspec-rails
   sass-rails
   simplecov
@@ -428,7 +400,7 @@ DEPENDENCIES
   yaml_db
 
 RUBY VERSION
-   ruby 4.0.0p0
+  ruby 4.0.1
 
 BUNDLED WITH
-   2.3.26
+  4.0.3
