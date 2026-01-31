@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // compass replacement mixins
 @mixin box-sizing($type: border-box) {
   box-sizing: $type;
@@ -69,7 +71,7 @@
 @mixin font-expand($expand-size, $original-size, $original-line-height) {
   @include if-desktop {
     font-size: $expand-size;
-    line-height: $original-line-height*($expand-size/$original-size);
+    line-height: $original-line-height * math.div($expand-size, $original-size);
   }
 }
 @mixin typography($type: default) {

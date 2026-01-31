@@ -1,3 +1,4 @@
+@use "sass:math";
 .editor {
   display: none;
 }
@@ -55,7 +56,7 @@
 
     .label {
       width: 100%;
-      margin-top: $gap/4;
+      margin-top: math.div($gap, 4);
       text-align: center;
       display: block;
       @include typography(small);
@@ -74,7 +75,7 @@
 
 .brothers {
   li {
-    margin: 0 $gap/2 $gap/2 0;
+    margin: 0 math.div($gap, 2) math.div($gap, 2) 0;
     display: inline-block;
     @include typography(name);
     font-weight: bold;
@@ -85,16 +86,16 @@
 }
 
 .ad {
-  padding: $gap/1.5 0 $gap/1.5 50px;
+  padding: math.div($gap, 1.5) 0 math.div($gap, 1.5) 50px;
   @include if-desktop {
-    padding: $gap/2 0 $gap/2 50px;
+    padding: math.div($gap, 2) 0 math.div($gap, 2) 50px;
   }
   margin-bottom: $gap;
   word-break: break-all;
   display: block;
   @include typography(default);
   color: $asbestos;
-  background-image: image-url('pr_brothers.png');
+  background-image: url('/images/pr_brothers.png');
   @include background-size(40px);
   background-repeat: no-repeat;
   background-position: 0 center;

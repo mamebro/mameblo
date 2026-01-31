@@ -1,3 +1,4 @@
+@use "sass:math";
 .ranking {
   .vote-number {
     font-weight: normal;
@@ -21,7 +22,7 @@
     }
 
     .comment {
-      @extend %font.default !optional;
+      @include typography(default);
     }
   }
 
@@ -46,9 +47,9 @@
 }
 
 .turnout {
-  padding: $gap/2;
+  padding: math.div($gap, 2);
   text-align: center;
-  @extend %font.default !optional;
+  @include typography(default);
 }
 
 #tshirts-designer {

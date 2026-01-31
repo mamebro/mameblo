@@ -1,26 +1,27 @@
+@use "sass:math";
 /* fonts */
 @import url("//fonts.googleapis.com/css?family=Open+Sans:400,700");
 
 @font-face {
   font-family: EntypoIcon;
-  src: font-url('entypo/entypo.eot') format('oldIE'),
-  font-url('entypo/entypo.ttf') format('truetype'),
-  font-url('entypo/entypo.woff') format('woff'),
-  font-url('entypo/entypo.svg') format('svg');
+  src: url('/fonts/entypo/entypo.eot') format('oldIE'),
+  url('/fonts/entypo/entypo.ttf') format('truetype'),
+  url('/fonts/entypo/entypo.woff') format('woff'),
+  url('/fonts/entypo/entypo.svg') format('svg');
 }
 @font-face {
   font-family: EntypoSocialIcon;
-  src: font-url('entypo-social/entypo-social.eot') format('oldIE'),
-  font-url('entypo-social/entypo-social.ttf') format('truetype'),
-  font-url('entypo-social/entypo-social.woff') format('woff'),
-  font-url('entypo-social/entypo-social.svg') format('svg');
+  src: url('/fonts/entypo-social/entypo-social.eot') format('oldIE'),
+  url('/fonts/entypo-social/entypo-social.ttf') format('truetype'),
+  url('/fonts/entypo-social/entypo-social.woff') format('woff'),
+  url('/fonts/entypo-social/entypo-social.svg') format('svg');
 }
 @font-face {
   font-family: Mameblo;
-  src: font-url('mameblo/mameblo.eot') format('oldIE'),
-  font-url('mameblo/mameblo.ttf') format('truetype'),
-  font-url('mameblo/mameblo.woff') format('woff'),
-  font-url('mameblo/mameblo.svg') format('svg');
+  src: url('/fonts/mameblo/mameblo.eot') format('oldIE'),
+  url('/fonts/mameblo/mameblo.ttf') format('truetype'),
+  url('/fonts/mameblo/mameblo.woff') format('woff'),
+  url('/fonts/mameblo/mameblo.svg') format('svg');
 }
 .icon {
   @extend %icon;
@@ -111,14 +112,14 @@ textarea {
 
 .input {
   width: 100%;
-  margin-bottom: $gap/2;
-  padding: $gap/4;
+  margin-bottom: math.div($gap, 2);
+  padding: math.div($gap, 4);
   @include if-desktop {
-    padding: $gap/2;
+    padding: math.div($gap, 2);
   }
   @include typography(input);
   border: 1px solid $gray-light;
-  @extend %border-radius.reset;
+  border-radius: 0;
   @include box-sizing(border-box);
   outline: none;
   -webkit-appearance: none;
@@ -135,14 +136,14 @@ textarea {
     height: 54px;
   }
   padding: 0 20px;
-  margin-bottom: $gap/2;
+  margin-bottom: math.div($gap, 2);
   display: inline-block;
   text-align: center;
   @include typography(button);
   text-shadow: 0 -1px $asbestos;
   border: 0;
   background-color: $concrete;
-  @extend %border-radius.small;
+  border-radius: 5px;
   @include box-sizing(border-box);
   box-shadow: 0 2px 0 $asbestos;
   cursor: pointer;
@@ -216,23 +217,23 @@ textarea {
   .card {
     @include box-sizing(border-box);
     float: left;
-    margin-bottom: $gap/2;
+    margin-bottom: math.div($gap, 2);
     @include if-phone {
       width: 50%;
-      padding: 0 $gap/4 0 0;
+      padding: 0 math.div($gap, 4) 0 0;
       &:nth-child(2n) {
-        padding: 0 0 0 $gap/4;
+        padding: 0 0 0 math.div($gap, 4);
       }
     }
     @include if-desktop {
       width: 33%;
-      padding: 0 $gap/4 0 0;
+      padding: 0 math.div($gap, 4) 0 0;
       &:nth-child(3n+2) {
-        padding: 0 $gap/4;
+        padding: 0 math.div($gap, 4);
       }
       &:nth-child(3n+3) {
         width: 34%;
-        padding: 0 0 0 $gap/4;
+        padding: 0 0 0 math.div($gap, 4);
       }
     }
     .card-content {

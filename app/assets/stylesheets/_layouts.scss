@@ -1,3 +1,4 @@
+@use "sass:math";
 .page {
   max-width: 640px;
   padding: 0 $gap;
@@ -90,7 +91,7 @@ $positionLeft: 4px;
               background-color: $midnightblue;
             }
             span {
-              margin-left: $gap/2;
+              margin-left: math.div($gap, 2);
               font-weight: bold;
               text-shadow:  0px 2px 0 $true-white,
                             0px 1px 0 $true-white,
