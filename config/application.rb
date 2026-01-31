@@ -20,18 +20,13 @@ Bundler.require(*Rails.groups)
 
 module Mameblog
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.0
+    config.load_defaults 8.1
 
-    # Configuration for the application, engines, and railties goes here.
-    #
-    # These settings can be overridden in specific environments using the files
-    # in config/environments, which are processed later.
-    #
-    # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
+    # Enable YJIT in non-local environments for improved performance
+    config.yjit = !Rails.env.local?
+
     config.i18n.default_locale = :ja
-    config.middleware.use Rack::GoogleAnalytics, :tracker => 'UA-34081631-1'
+    config.middleware.use Rack::GoogleAnalytics, tracker: "UA-34081631-1"
 
     # Rack::Attack for rate limiting and brute force protection
     config.middleware.use Rack::Attack
