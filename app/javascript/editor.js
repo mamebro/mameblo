@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       $entryFormTitle = $entryForm.find('#entry-form-title'),
       $entryFormContent = $entryForm.find('#entry-form-content');
 
-  if ($entryForm.size() <= 0) { return; }
+  if ($entryForm.length <= 0) { return; }
 
   $entryFormTitle
     .val(localStorage.getItem('entryFormTitle'));
@@ -15,12 +15,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   $('textarea').autosize();
 
-  $entryFormTitle.bind('keyup', function() {
+  $entryFormTitle.on('keyup', function() {
     // 入力した文字を保存する
     localStorage.setItem('entryFormTitle', $(this).val());
   });
 
-  $entryFormContent.bind('keyup', function() {
+  $entryFormContent.on('keyup', function() {
     // 入力した文字を保存する
     localStorage.setItem('entryFormContent', $(this).val());
     // 日記を投稿できるかどうか調べる
