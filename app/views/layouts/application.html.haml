@@ -41,7 +41,7 @@
     %meta{ name: "description", content: "かわいいブログ。まめぶろ。" }
     %title= full_title(yield(:title))
     = stylesheet_link_tag "application", media: "all"
-    = javascript_include_tag "application"
+    = javascript_importmap_tags
     - if captcha_enabled?
       %script{ src: "https://cdn.jsdelivr.net/npm/@cap.js/widget", defer: true }
     = csrf_meta_tags

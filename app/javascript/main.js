@@ -1,3 +1,6 @@
+import wowjs from "wowjs"
+const WOW = wowjs.WOW
+
 window.addEventListener('DOMContentLoaded', (event) => {
   $('#beBrotherAfter').hide();
 
@@ -35,7 +38,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   });
 
   // anchor
-  $("a[href*=#]").click(function(){
+  $('a[href*="#"]').click(function(){
     if(location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname){
       var $target = $(this.hash);
       $target = $target.length && $target || $("[name=' + this.hash.slice(1) +']");
