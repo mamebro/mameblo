@@ -79,6 +79,89 @@ describe Entry do
     it { is_expected.not_to be_valid }
   end
 
+  describe "associations" do
+    it "belongs to brother" do
+      expect(@entry.brother).to eq(brother)
+    end
+
+    it "has many beans" do
+      @entry.save
+      Bean.create(entry: @entry, throw_brother_id: brother.id)
+      expect(@entry.beans.count).to eq(1)
+    end
+
+    it "destroys beans when entry is destroyed" do
+      @entry.save
+      Bean.create(entry: @entry, throw_brother_id: brother.id)
+      expect { @entry.destroy }.to change(Bean, :count).by(-1)
+    end
+
+    it "has many hashtags through entry_has_hashtags" do
+      @entry.save
+      hashtag = Hashtag.create(name: 'テスト')
+      EntryHasHashtag.create(entry: @entry, hashtag: hashtag)
+      expect(@entry.hashtags).to include(hashtag)
+    end
+  end
+
+  describe "#content_as_markdown" do
+    it "renders markdown content as HTML" do
+      @entry.content = "**bold text**"
+      result = @entry.content_as_markdown
+      expect(result).to include("<strong>bold text</strong>")
+    end
+
+    it "renders links with autolink" do
+      @entry.content = "http://example.com"
+      result = @entry.content_as_markdown
+      expect(result).to include('<a href="http://example.com"')
+    end
+
+    it "renders fenced code blocks" do
+      @entry.content = "```\ncode here\n```"
+      result = @entry.content_as_markdown
+      expect(result).to include("<code>")
+    end
+
+    it "renders strikethrough" do
+      @entry.content = "~~deleted~~"
+      result = @entry.content_as_markdown
+      expect(result).to include("<del>deleted</del>")
+    end
+
+    it "renders tables" do
+      @entry.content = "| Header |\n|--------|\n| Cell   |"
+      result = @entry.content_as_markdown
+      expect(result).to include("<table>")
+    end
+  end
+
+  describe ".from_brothers_followed_by" do
+    let(:followed_brother) { create(:brother) }
+    let(:unfollowed_brother) { create(:brother) }
+
+    before do
+      brother.save
+      brother.follow!(followed_brother)
+    end
+
+    let!(:own_entry) { create(:entry, brother: brother) }
+    let!(:followed_entry) { create(:entry, brother: followed_brother) }
+    let!(:unfollowed_entry) { create(:entry, brother: unfollowed_brother) }
+
+    it "includes own entries" do
+      expect(Entry.from_brothers_followed_by(brother)).to include(own_entry)
+    end
+
+    it "includes followed brother entries" do
+      expect(Entry.from_brothers_followed_by(brother)).to include(followed_entry)
+    end
+
+    it "excludes unfollowed brother entries" do
+      expect(Entry.from_brothers_followed_by(brother)).not_to include(unfollowed_entry)
+    end
+  end
+
   describe "before validation" do
     describe "when blank title" do
       before { @entry.title = "" }
