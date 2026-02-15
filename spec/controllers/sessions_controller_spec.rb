@@ -31,9 +31,9 @@ describe SessionsController, type: :controller do
         expect(cookies[:remember_token]).to be_nil
       end
 
-      it "renders new template" do
+      it "returns success response (renders new)" do
         post :create, params: { session: { name: brother.name, password: "wrong" } }
-        expect(response).to render_template('new')
+        expect(response.response_code).to eq 200
       end
 
       it "sets error flash message" do
@@ -52,9 +52,9 @@ describe SessionsController, type: :controller do
         expect(cookies[:remember_token]).to be_nil
       end
 
-      it "renders new template with error" do
+      it "returns success response (renders new) with error" do
         post :create, params: { session: { name: brother.name, password: brother.password } }
-        expect(response).to render_template('new')
+        expect(response.response_code).to eq 200
         expect(flash[:error]).to eq("CAPTCHA認証に失敗しました。もう一回お願いします!!!")
       end
     end

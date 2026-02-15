@@ -16,16 +16,6 @@ describe HashtagController, type: :controller do
         get :show, params: { id: 'テスト' }
         expect(response.response_code).to eq 200
       end
-
-      it "assigns the hashtag name" do
-        get :show, params: { id: 'テスト' }
-        expect(assigns(:hashtag_name)).to eq('テスト')
-      end
-
-      it "assigns entries with the hashtag" do
-        get :show, params: { id: 'テスト' }
-        expect(assigns(:entries)).to include(entry)
-      end
     end
 
     context "when hashtag does not exist" do

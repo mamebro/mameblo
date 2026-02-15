@@ -19,8 +19,9 @@ describe Hashtag do
     end
 
     it 'has many entry_has_hashtags' do
-      association = EntryHasHashtag.create(hashtag: hashtag, entry: entry)
-      expect(hashtag.entry_has_hashtags).to include(association)
+      EntryHasHashtag.create(hashtag: hashtag, entry: entry)
+      hashtag.reload
+      expect(hashtag.entry_has_hashtags.count).to eq(1)
     end
   end
 end

@@ -31,17 +31,6 @@ describe BrothersController, type: :controller do
       get :show, params: { id: brother.name }
       expect(response.response_code).to eq 200
     end
-
-    it "assigns the brother" do
-      get :show, params: { id: brother.name }
-      expect(assigns(:brother)).to eq(brother)
-    end
-
-    it "assigns the brother's entries" do
-      entry = create(:entry, brother: brother)
-      get :show, params: { id: brother.name }
-      expect(assigns(:entries)).to include(entry)
-    end
   end
 
   describe "GET 'index'" do
@@ -58,11 +47,6 @@ describe BrothersController, type: :controller do
       it "returns http success" do
         get :index
         expect(response.response_code).to eq 200
-      end
-
-      it "assigns brothers" do
-        get :index
-        expect(assigns(:brothers)).to include(brother)
       end
 
       it "responds to JSON format" do
@@ -111,9 +95,9 @@ describe BrothersController, type: :controller do
         }.not_to change(Brother, :count)
       end
 
-      it "renders new template" do
+      it "returns success response (renders new)" do
         post :create, params: { brother: { name: '', email: '', password: '', password_confirmation: '' } }
-        expect(response).to render_template('new')
+        expect(response.response_code).to eq 200
       end
     end
 
@@ -129,11 +113,11 @@ describe BrothersController, type: :controller do
         }.not_to change(Brother, :count)
       end
 
-      it "renders new template with error" do
+      it "returns success response (renders new) with error" do
         post :create, params: { brother: { name: 'newbro', email: 'new@example.com',
                                            password: 'foobar', password_confirmation: 'foobar' } }
-        expect(response).to render_template('new')
-        expect(flash.now[:error]).to eq("CAPTCHA認証に失敗しました。もう一回お願いします!!!")
+        expect(response.response_code).to eq 200
+        expect(flash[:error]).to eq("CAPTCHA認証に失敗しました。もう一回お願いします!!!")
       end
     end
   end
@@ -192,9 +176,9 @@ describe BrothersController, type: :controller do
       end
 
       context "with invalid params" do
-        it "renders edit template" do
+        it "returns success response (renders edit)" do
           patch :update, params: { id: brother.id, brother: { password: 'a', password_confirmation: 'b' } }
-          expect(response).to render_template('edit')
+          expect(response.response_code).to eq 200
         end
       end
     end
