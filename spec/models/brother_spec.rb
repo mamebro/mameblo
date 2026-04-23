@@ -168,4 +168,141 @@ describe Brother do
       expect(Brother.find_by_name_or_id(@brother.id)).to eq(@brother)
     end
   end
+
+  describe "#following?" do
+    let(:other_brother) { create(:brother) }
+
+    before { @brother.save }
+
+    it "returns truthy when following" do
+      @brother.follow!(other_brother)
+      expect(@brother.following?(other_brother)).to be_truthy
+    end
+
+    it "returns falsy when not following" do
+      expect(@brother.following?(other_brother)).to be_falsy
+    end
+  end
+
+  describe "#follow!" do
+    let(:other_brother) { create(:brother) }
+
+    before { @brother.save }
+
+    it "creates a relationship" do
+      expect {
+        @brother.follow!(other_brother)
+      }.to change(Relationship, :count).by(1)
+    end
+
+    it "adds brother to followed_brothers" do
+      @brother.follow!(other_brother)
+      expect(@brother.followed_brothers).to include(other_brother)
+    end
+  end
+
+  describe "#unfollow!" do
+    let(:other_brother) { create(:brother) }
+
+    before do
+      @brother.save
+      @brother.follow!(other_brother)
+    end
+
+    it "destroys the relationship" do
+      expect {
+        @brother.unfollow!(other_brother)
+      }.to change(Relationship, :count).by(-1)
+    end
+
+    it "removes brother from followed_brothers" do
+      @brother.unfollow!(other_brother)
+      expect(@brother.followed_brothers).not_to include(other_brother)
+    end
+  end
+
+  describe "#feed" do
+    let(:followed_brother) { create(:brother) }
+    let(:unfollowed_brother) { create(:brother) }
+
+    before do
+      @brother.save
+      @brother.follow!(followed_brother)
+    end
+
+    let!(:own_entry) { create(:entry, brother: @brother) }
+    let!(:followed_entry) { create(:entry, brother: followed_brother) }
+    let!(:unfollowed_entry) { create(:entry, brother: unfollowed_brother) }
+
+    it "includes own entries" do
+      expect(@brother.feed).to include(own_entry)
+    end
+
+    it "includes followed brother entries" do
+      expect(@brother.feed).to include(followed_entry)
+    end
+
+    it "excludes unfollowed brother entries" do
+      expect(@brother.feed).not_to include(unfollowed_entry)
+    end
+  end
+
+  describe "#to_param" do
+    it "returns the brother name" do
+      expect(@brother.to_param).to eq(@brother.name)
+    end
+  end
+
+  describe "#send_password_reset" do
+    before { @brother.save }
+
+    it "generates a password reset token" do
+      @brother.send_password_reset
+      expect(@brother.password_reset_token).to be_present
+    end
+
+    it "sets the password_reset_sent_at" do
+      @brother.send_password_reset
+      expect(@brother.password_reset_sent_at).to be_present
+    end
+
+    it "sends an email" do
+      expect {
+        @brother.send_password_reset
+      }.to change { ActionMailer::Base.deliveries.size }.by(1)
+    end
+  end
+
+  describe "dependent destroy" do
+    before { @brother.save }
+
+    it "destroys associated entries" do
+      create(:entry, brother: @brother)
+      expect { @brother.destroy }.to change(Entry, :count).by(-1)
+    end
+
+    it "destroys associated relationships" do
+      other = create(:brother)
+      @brother.follow!(other)
+      expect { @brother.destroy }.to change(Relationship, :count).by(-1)
+    end
+
+    it "destroys associated authentications" do
+      @brother.authentications.create
+      expect { @brother.destroy }.to change(Authentication, :count).by(-1)
+    end
+  end
+
+  describe "followers" do
+    let(:other_brother) { create(:brother) }
+
+    before do
+      @brother.save
+      other_brother.follow!(@brother)
+    end
+
+    it "includes the follower" do
+      expect(@brother.followers).to include(other_brother)
+    end
+  end
 end
